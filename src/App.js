@@ -1,15 +1,25 @@
-import logo from './assets/images/JOYSTICK-logo.png';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import HomePage from './pages/Home';
+import WelcomePage from './pages/Welcome';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to JOYSTICK Gamefi Project
-        </p>
-      </header>
+      <Router>
+          <Routes>
+            <Route
+              exact
+              path="/" element={<HomePage/>}
+            />
+            
+            <Route
+              exact
+              path='/welcome' element={<WelcomePage/>}
+            />
+
+          </Routes>
+        </Router >
     </div>
   );
 }
