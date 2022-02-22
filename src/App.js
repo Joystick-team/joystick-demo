@@ -12,7 +12,7 @@ function App() {
               exact
               path="/" element={<HomePage/>}
             />
-            
+
             <Route
               exact
               path='/welcome' element={<WelcomePage/>}

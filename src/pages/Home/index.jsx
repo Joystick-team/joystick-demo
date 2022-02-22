@@ -1,7 +1,10 @@
 import React from 'react'
+import WelcomePage from '../Welcome'
 
 export default function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+       <WelcomePage />
+    </div>
   )
 }

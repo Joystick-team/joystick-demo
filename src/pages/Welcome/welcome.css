@@ -1,5 +1,4 @@
 .Welcome-page {
-  background: #0D0D0D;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,7 +17,12 @@
   color: white;
 }
 
-.Welcome-page .App-logo {
-  min-height: 10vh;
+.Welcome-page .Welcome-page-logo {
+  min-height: 20vh;
+}
+
+.Welcome-page .Welcome-page-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 /*# sourceMappingURL=welcome.css.map */

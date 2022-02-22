@@ -1,5 +1,4 @@
 .Welcome-page{
-    background: #0D0D0D;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -8,7 +7,12 @@
     font-size: calc(10px + 2vmin);
     color: white;
 
-    .App-logo{
-        min-height: 10vh;
+    .Welcome-page-logo{
+        min-height: 20vh;
     }
+
+    .Welcome-page-logo {
+        height: 40vmin;
+        pointer-events: none;
+      }
 }
