@@ -1,7 +1,12 @@
 import React from 'react'
+import Layout from '../../component/Layout'
 
 export default function Socials() {
   return (
-    <div>Our Socials Page</div>
+    <div>
+      <div>
+        <Layout />
+      </div>
+    </div>
   )
 }
