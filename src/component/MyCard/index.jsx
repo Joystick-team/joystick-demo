@@ -13,7 +13,7 @@ export default function MyCard(props) {
                 <Card.Text style={{color: '#ebebf599'}}>
                     {props.text}
                 </Card.Text>
-                <Button variant=''> {props.button} </Button>
+                <Button className='text-white' variant=''> {props.button} </Button>
             </Card.Body>
         </Card>
 
