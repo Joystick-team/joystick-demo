@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.scss';
 import HomePage from './pages/Home';
 import WelcomePage from './pages/Welcome';
 import Socials from './pages/Socials';
+
 function App() {
   return (
     <div className="App">

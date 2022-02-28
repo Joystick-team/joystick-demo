@@ -1,11 +1,11 @@
 import React from 'react'
-import Layout from '../../component/Layout'
+// import Layout from '../../component/Layout'
 
 export default function Socials() {
   return (
     <div>
       <div>
-        <Layout />
+        {/* <Layout /> */}
       </div>
     </div>
   )
