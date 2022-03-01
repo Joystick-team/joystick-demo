@@ -4,6 +4,7 @@ import MyCard from '../../component/MyCard';
 import clash from '../../assets/images/clash.png'
 import axie from '../../assets/images/axie.png'
 import war from '../../assets/images/war.png'
+// import './recentgames.scss';
 
 export default function RecentGames() {
   return (
