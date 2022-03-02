@@ -4,13 +4,15 @@ import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
 import { FiSearch, FiTwitter } from 'react-icons/fi'
 import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
+
+
 import './sidenav.scss';
 export default function SideNav() {
   return (
     <div >
-        <Navbar bg="#0D0D0D"  expand={false} >
-            <Container fluid >
-                <Navbar.Toggle aria-controls="offcanvasNavbar"/>
+        <Navbar variant="dark" fixed="top" expand={false} >
+            <Container fluid>
+                <Navbar.Toggle aria-controls="offcanvasNavbar" variant="dark"/>
                  <Navbar.Brand href="#">
                     <img src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
                  </Navbar.Brand>
@@ -22,15 +24,16 @@ export default function SideNav() {
                 placement="start"
                 className='side-nav'
                 // variant='side-nav'
+                variant="dark"
                 >
-                    <Offcanvas.Header closeButton>
+                    <Offcanvas.Header closeButton variant="dark">
                         
-                        {/* <Offcanvas.Title id="offcanvasNavbarLabel">
+                        {/* {/* <Offcanvas.Title id="offcanvasNavbarLabel">
                             
-                            <img src={JOYSTICK} alt="JOYSTICK-logo" width='80px' height='40px' /> */}
-                        {/* </Offcanvas.Title>  */} 
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
+                            <img src={JOYSTICK} alt="JOYSTICK-logo" width='80px' height='40px' />
+                         </Offcanvas.Title> */}
+                     </Offcanvas.Header>
+                    <Offcanvas.Body variant="dark">
                         <Nav className=" flex-column" variant="tabs" defaultActiveKey="#/">
                             <Nav.Link activeKey="#/" href="#/"> <FaHome /> <span>Home</span></Nav.Link>
                             <Nav.Link href="#/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
