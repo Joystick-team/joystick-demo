@@ -10,9 +10,9 @@ export default function SideNav() {
     <div >
         <Navbar bg="#0D0D0D"  expand={false} >
             <Container fluid >
-                <Navbar.Toggle aria-controls="offcanvasNavbar" variant="text-white"/>
+                <Navbar.Toggle aria-controls="offcanvasNavbar"/>
                  <Navbar.Brand href="#">
-                    <img src={JOYSTICK} alt="JOYSTICK-logo" width='80px' height='40px' />
+                    <img src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
                  </Navbar.Brand>
                 <FiSearch /> 
 
@@ -23,7 +23,7 @@ export default function SideNav() {
                 className='side-nav'
                 // variant='side-nav'
                 >
-                    <Offcanvas.Header closeButton variant="text-white">
+                    <Offcanvas.Header closeButton>
                         
                         {/* <Offcanvas.Title id="offcanvasNavbarLabel">
                             
