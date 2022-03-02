@@ -1,0 +1,65 @@
+import React from 'react'
+import {Nav, Offcanvas, Navbar, Container } from 'react-bootstrap'
+import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
+import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
+import { FiSearch, FiTwitter } from 'react-icons/fi'
+import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
+import './sidenav.scss';
+export default function SideNav() {
+  return (
+    <div >
+        <Navbar bg="#0D0D0D"  expand={false} >
+            <Container fluid >
+                <Navbar.Toggle aria-controls="offcanvasNavbar" variant="text-white"/>
+                 <Navbar.Brand href="#">
+                    <img src={JOYSTICK} alt="JOYSTICK-logo" width='80px' height='40px' />
+                 </Navbar.Brand>
+                <FiSearch /> 
+
+                <Navbar.Offcanvas
+                id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel"
+                placement="start"
+                className='side-nav'
+                // variant='side-nav'
+                >
+                    <Offcanvas.Header closeButton variant="text-white">
+                        
+                        {/* <Offcanvas.Title id="offcanvasNavbarLabel">
+                            
+                            <img src={JOYSTICK} alt="JOYSTICK-logo" width='80px' height='40px' /> */}
+                        {/* </Offcanvas.Title>  */} 
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        <Nav className=" flex-column" variant="tabs" defaultActiveKey="#/">
+                            <Nav.Link activeKey="#/" href="#/"> <FaHome /> <span>Home</span></Nav.Link>
+                            <Nav.Link href="#/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
+                            <Nav.Link href="#/library"> <BsGridFill/> <span>Library</span></Nav.Link>
+                            <Nav.Link href="#/socials"> <BsFillPeopleFill /> <span>Socials</span></Nav.Link>
+                            <Nav.Link href="#/live"> <BsBroadcast /> <span>Live</span></Nav.Link>
+                            <br />
+                            <br /><br /><br /><br /><br /> <hr />
+                            <Nav.Link href="#wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
+                            <Nav.Link href="#settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
+                            <div className="icons-sidenav-footer">
+                                <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
+                                <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
+                                <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
+                            </div>
+                        </Nav>
+                        {/* <Form className="d-flex">
+                        <FormControl
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <Button type='search' variant="outline-success">Search</Button>
+                        </Form> */}
+                    </Offcanvas.Body>
+                </Navbar.Offcanvas>
+            </Container>
+        </Navbar>
+    </div>
+  )
+}
