@@ -1,0 +1,25 @@
+.recent-games{
+    margin-top: 2rem;
+    .recent-games-headings{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        font-size: 16px;
+        font-size: 20px;
+        line-height: 2.5;
+    }
+
+    .recent-games-moves{
+        span{
+            margin: auto .5rem;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    }
+
+
+    // .recent-games-items{
+    //     display: flex;
+    // }
+}

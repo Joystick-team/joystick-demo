@@ -8,21 +8,20 @@ export default function Layout(props) {
     <div>
         <Container fluid>
             <Row>
-                <div className={props.class}>
-                    <div class="grid-container">
-                    <div class="item1">
-                    {/* <TopNav /> */}
-                    </div>
-                    <div class="item2">Menu</div>
-                    {/* <div class="item3">Main */}
-                    {props.children}
-                    {/* </div>   */}
-                    {/* {props.children} */}
-                    {/* <div class="item4">Right</div>
-                    <div class="item5">Footer</div> */}
-                    
-                    </div>
-                </div>
+              <div className={props.class}>
+                  <div class="grid-container">
+                      <div class="item1">
+                        Top Nav
+                      </div>
+                      <div class="item2" >MenuItems</div>
+                      {/* <div class="item3">Main */}
+                      <div className="children-div" style={{display: 'block'}}>
+                        {props.children}
+                      </div>
+                      {/* <div class="item4">Right</div>
+                      <div class="item5">Footer</div> */}
+                  </div>
+              </div>
             </Row>
         </Container>
 

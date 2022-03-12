@@ -4,6 +4,7 @@ import './App.scss';
 import HomePage from './pages/Home';
 import WelcomePage from './pages/Welcome';
 import Socials from './pages/Socials';
+import TestPage from './pages/TestPage';
 
 function App() {
   return (
@@ -23,6 +24,12 @@ function App() {
             <Route
               exact
               path='/socials' element={<Socials/>}
+            />
+
+
+            <Route
+              exact
+              path='/test' element={<TestPage/>}
             />
 
           </Routes>
