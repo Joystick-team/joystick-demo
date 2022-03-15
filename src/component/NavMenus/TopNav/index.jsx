@@ -3,7 +3,7 @@ import {Nav, NavDropdown, Navbar, FormControl, Container, Form, Button, } from '
 
 export default function TopNav() {
   return (
-    <div>
+    <div className='top-nav'>
         <Navbar bg="light" expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>

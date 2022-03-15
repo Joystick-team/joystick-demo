@@ -7,9 +7,9 @@
 .grid-container {
   display: grid;
   grid-template-areas:
-    'menu header header header header header'
-    'menu main main main right right'
-    'menu footer footer footer right right';
+    'menu header header'
+    'menu main right'
+    'menu main right';
   gap: 10px;
   padding: 10px;
   height: 100vh;
@@ -20,6 +20,19 @@
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+}
+
+.item1{
+
+  background-color: aqua;
+  margin-bottom: 5rem;
+  position: relative;
+
+  // .top-nav{
+  // }
+}
+.item4{
+  background-color: aqua;
 }
 
 @media all and (max-width: 480px) {
@@ -43,6 +56,10 @@
             width: 100%;
             z-index: 2;
             left: 0px;
+        }
+
+        .item4{
+          display: none;
         }
       }
 

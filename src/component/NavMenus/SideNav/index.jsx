@@ -10,7 +10,7 @@ import './sidenav.scss';
 export default function SideNav() {
   return (
     <div >
-        <Navbar variant="dark" fixed="top" expand={false} >
+        <Navbar variant="dark"  expand={false} >
             <Container fluid>
                 <Navbar.Toggle aria-controls="offcanvasNavbar" variant="dark"/>
                  <Navbar.Brand href="#">

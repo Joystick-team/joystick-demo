@@ -1,7 +1,5 @@
 import React from 'react'
 import { Carousel, Button, Container } from 'react-bootstrap'
-import announcementbadge from '../../assets/images/announcementbadge.png'
-import war from '../../assets/images/war.png'
 import './announcementcarousel.scss'
 
 export default function AnnouncementCarousel() {
