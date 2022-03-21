@@ -3,7 +3,6 @@ import { Container, Row } from 'react-bootstrap'
 import BottomNav from '../NavMenus/BottomNav'
 import SideNav from '../NavMenus/SideNav'
 import TopNav from '../NavMenus/TopNav'
-import Sliders from '../Sliders'
 import './layout.scss'
 
 export default function Layout(props) {
@@ -16,7 +15,6 @@ export default function Layout(props) {
                       <div class="item1">
                         <TopNav />
                         <BottomNav />
-                        {/* <Sliders /> */}
                       </div>
                       <div class="item2" >
                         <SideNav />

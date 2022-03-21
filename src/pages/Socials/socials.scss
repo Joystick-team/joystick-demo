@@ -1,0 +1,15 @@
+.sliders{
+
+    img{
+        width: 250px;
+        height: 260px;
+    }
+    .slick-next,  .slick-prev{
+        top: -25px;
+        right: 5%;
+        background: transparent;
+    }
+    .slick-prev{
+        left: 90%;
+    }
+}

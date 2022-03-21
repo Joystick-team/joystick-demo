@@ -3,6 +3,7 @@ import { Container, Row, Col} from 'react-bootstrap'
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import MyCard from '../../component/MyCard';
 import GamesData from '../../gamesdata';
+import Sliders from '../Sliders';
 import './recentgames.scss';
 
 export default function RecentGames() {
@@ -31,6 +32,8 @@ export default function RecentGames() {
                     </Col>
                 ))}
             </Row>
+
+            <Sliders />
         </Container>
     </div>
   )
