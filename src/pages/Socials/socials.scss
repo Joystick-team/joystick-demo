@@ -1,13 +1,23 @@
 .sliders{
 
+    width: 100%;
+
     img{
-        width: 250px;
-        height: 260px;
+        width: 300px;
+        height: 250px;
     }
     .slick-next,  .slick-prev{
-        top: -25px;
+        top: -30px;
         right: 5%;
         background: transparent;
+
+        &::after, &::before{
+            font-size: 30px;
+            width: 100px;
+            height: 100px;
+            display: none;
+            background: none;
+        }
     }
     .slick-prev{
         left: 90%;

@@ -3,7 +3,8 @@ import { Container, Row, Col} from 'react-bootstrap'
 import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import MyCard from '../../component/MyCard';
 import GamesData from '../../gamesdata';
-import Sliders from '../Sliders';
+import PreviousNextMethods from '../PreviousNextMethods';
+// import Sliders from '../Sliders';
 import './recentgames.scss';
 
 export default function RecentGames() {
@@ -33,7 +34,8 @@ export default function RecentGames() {
                 ))}
             </Row>
 
-            <Sliders />
+            {/* <Sliders /> */}
+            <PreviousNextMethods />
         </Container>
     </div>
   )

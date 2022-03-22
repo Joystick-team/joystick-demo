@@ -23,9 +23,9 @@ export default function Layout(props) {
                       <div className="children-div" style={{display: 'block'}}>
                         {props.children}
                       </div>
-                       <div class="item4">
+                       {/* <div class="item4">
                        <SideNav />
-                       </div>
+                       </div> */}
                       {/* <div class="item5">Footer</div> */}
                   </div>
               </div>
