@@ -1,0 +1,27 @@
+.test{
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .nav-bar{
+        border: solid grey 2px;
+        box-sizing: border-box;
+        overflow: hidden;
+        flex-basis: content;
+    }
+
+    .main{
+        border: solid grey 2px;
+        box-sizing: border-box;
+        overflow: hidden;
+        flex-basis: auto;
+        flex: 3;
+    }
+
+    .side-advert{
+        border: solid grey 2px;
+        box-sizing: border-box;
+        overflow: hidden;
+        flex: 1;
+    }
+}
