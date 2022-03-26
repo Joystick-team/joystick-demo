@@ -28,12 +28,12 @@ const GamesData = [
         img: forestnight,
         button: "Play",
     },
-    // {        
-    //     title: 'Super Mario',
-    //     text: 'Blockchain',
-    //     img: "https://i.guim.co.uk/img/media/7c2ab1a3e60e445caf0a4d3de302591e830e8f7f/0_0_3800_2280/master/3800.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49331bc571155fab736c3ce179f31770",
-    //     button: "Play",
-    // },
+    {        
+        title: 'Super Mario',
+        text: 'Blockchain',
+        img: "https://i.guim.co.uk/img/media/7c2ab1a3e60e445caf0a4d3de302591e830e8f7f/0_0_3800_2280/master/3800.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49331bc571155fab736c3ce179f31770",
+        button: "Play",
+    },
     // {        
     //     title: 'Clash of Clans',
     //     text: 'Adventure',

@@ -42,12 +42,14 @@ export default function SideNav() {
                             <Nav.Link href="#/live"> <BsBroadcast /> <span>Live</span></Nav.Link>
                             <br />
                             <br /><br /><br /><br /><br /> <hr />
-                            <Nav.Link href="#wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
-                            <Nav.Link href="#settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
-                            <div className="icons-sidenav-footer">
-                                <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
-                                <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
-                                <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
+                            <div className="footer-nav-side">
+                                <Nav.Link href="#wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
+                                <Nav.Link href="#settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
+                                <div className="icons-sidenav-footer">
+                                    <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
+                                    <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
+                                    <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
+                                </div>
                             </div>
                         </Nav>
                         {/* <Form className="d-flex">

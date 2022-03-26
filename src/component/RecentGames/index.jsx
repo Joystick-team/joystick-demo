@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container, Row, Col} from 'react-bootstrap'
-import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
+// import { BsArrowLeftCircle, BsArrowRightCircle } from 'react-icons/bs';
 import MyCard from '../../component/MyCard';
 import GamesData from '../../gamesdata';
-import PreviousNextMethods from '../PreviousNextMethods';
+// import PreviousNextMethods from '../PreviousNextMethods';
 // import Sliders from '../Sliders';
 import './recentgames.scss';
 
@@ -11,7 +11,7 @@ export default function RecentGames() {
   return (
     <div className="recent-games">
         <Container>
-             <div className='recent-games-headings'>
+             {/* <div className='recent-games-headings'> */}
                 {/* <div className="recent-games-title">
                     Recent Games
                 </div>
@@ -19,9 +19,9 @@ export default function RecentGames() {
                     <span className="recent-games-arrowleft"><BsArrowLeftCircle /></span>
                     <span className="recent-games-arrowright"><BsArrowRightCircle /></span>
                 </div> */}
-                 <PreviousNextMethods />
-             </div>
-           {/* <Row xs={1} md={4} className="g-4 recent-games-items">
+                 {/* <PreviousNextMethods /> */}
+             {/* </div> */}
+           <Row xs={3} md={4} className="g-4 recent-games-items">
                 {GamesData.map((game, idx) => (
                     <Col>
                         <MyCard 
@@ -33,7 +33,7 @@ export default function RecentGames() {
                             />
                     </Col>
                 ))}
-            </Row> */}
+            </Row>
 
             {/* <Sliders /> */}
             {/* <PreviousNextMethods /> */}

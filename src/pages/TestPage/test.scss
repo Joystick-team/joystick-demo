@@ -1,13 +1,20 @@
 .test{
     display: flex;
+    flex-wrap: wrap;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
+
 
     .nav-bar{
         border: solid grey 2px;
         box-sizing: border-box;
         overflow: hidden;
         flex-basis: content;
+        // max-width: 260px;
+        height: 100vh;
+        max-width: 260px;
+        flex-basis: auto;
     }
 
     .main{
@@ -15,13 +22,14 @@
         box-sizing: border-box;
         overflow: hidden;
         flex-basis: auto;
-        flex: 3;
+        flex: 2;
     }
 
     .side-advert{
         border: solid grey 2px;
         box-sizing: border-box;
         overflow: hidden;
-        flex: 1;
+        flex-basis: content;
+        max-width: 300px;
     }
 }
