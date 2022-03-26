@@ -1,0 +1,39 @@
+.top-nav{
+    position: relative;
+    margin-bottom: 7rem;
+
+
+    .navbar{
+        height: 110px;
+        position: fixed;
+        top: 0;
+        left: 260px;
+        right: 0;
+        z-index: 999;
+        background: #0D0D0D;
+        color: #FBFBFB;
+        // width: 90%;
+
+        .navbar-nav, .Tab .nav-link, Link, a{
+            color: #FBFBFB;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+        .Tab .nav-link{
+            color: #FBFBFB;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+        }
+
+
+        .nav-link.active{
+            background: #C71F1F;
+            border: transparent;
+        }
+    }
+}

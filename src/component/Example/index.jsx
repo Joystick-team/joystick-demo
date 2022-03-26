@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Collapse, Nav } from "react-bootstrap";
 import {BiMenu} from 'react-icons/bi'
+import { MdClose } from 'react-icons/md'
 import { BsBroadcast, BsDropletFill, BsFillChatLeftQuoteFill, BsFillPeopleFill, BsGearWideConnected, BsGridFill } from "react-icons/bs";
 import { FaFacebookF, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
+import JOYSTICK from '../../assets/images/JOYSTICK-logo.png'
 import './exampls.scss'
 
 export default function Example() {
@@ -11,13 +13,16 @@ export default function Example() {
   
     return (
       <div className="side-nav">
+        <div className="logo-title">
+          <img src={JOYSTICK} alt="JOYSTICK-logo" />
+        </div>
         <p
           onClick={() => setOpen(!open)}
           aria-controls="example-collapse-text"
           aria-expanded={open}
           className='side-nav-burger'
         >
-          <BiMenu />
+          {!open ? <BiMenu /> : <MdClose />}
         </p>
         <div>
           <Collapse in={open} dimension="width">

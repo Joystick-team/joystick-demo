@@ -1,35 +1,51 @@
-.test{
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
+.test-container{
+    // margin-left: 16rem;
 
-
-    .nav-bar{
-        border: solid grey 2px;
+    .test{
+        display: flex;
+        flex-wrap: wrap;
         box-sizing: border-box;
         overflow: hidden;
-        flex-basis: content;
-        // max-width: 260px;
-        height: 100vh;
-        max-width: 260px;
-        flex-basis: auto;
-    }
+        position: relative;
+    
+    
+        .nav-bar{
+            border: solid grey 2px;
+            box-sizing: border-box;
+            overflow: hidden;
+            flex-basis: content;
+            // max-width: 260px;
+            height: 100vh;
+            max-width: 260px;
+            flex-basis: auto;
+            position: relative;
+        }
+    
+        .main-container{
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            // flex: 2;
 
-    .main{
-        border: solid grey 2px;
-        box-sizing: border-box;
-        overflow: hidden;
-        flex-basis: auto;
-        flex: 2;
-    }
+            .main-div{
+                display: flex;
 
-    .side-advert{
-        border: solid grey 2px;
-        box-sizing: border-box;
-        overflow: hidden;
-        flex-basis: content;
-        max-width: 300px;
+                .main{
+                    border: solid grey 2px;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    flex-basis: auto;
+                    flex: 2;
+                }
+            
+                .side-advert{
+                    border: solid grey 2px;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    flex-basis: content;
+                    max-width: 300px;
+                }
+            }
+        }
     }
 }
