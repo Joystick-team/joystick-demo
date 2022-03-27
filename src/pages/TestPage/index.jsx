@@ -27,6 +27,9 @@ export default function TestPage() {
                 <RecentGames />
               </PreviousNextMethods>
             </div>
+            <div className="side-adverts">
+            Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games
+            </div>
             <div className="side-advert">
             Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games
             </div>
