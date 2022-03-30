@@ -9,7 +9,7 @@
         position: relative;
     
     
-        .nav-bar{
+        .side-nav-bar{
             border: solid grey 2px;
             box-sizing: border-box;
             overflow: hidden;
@@ -19,6 +19,15 @@
             max-width: 260px;
             flex-basis: auto;
             position: relative;
+
+            .fixed-top-sidemenu {
+                display: block;
+                top: 0;
+                // right: 0;
+                left: 0;
+                z-index: 1030;
+                background: #0D0D0D;
+            }
         }
     
         .main-container{
@@ -47,5 +56,15 @@
                 }
             }
         }
+    }
+}
+
+
+@supports ( position: sticky){
+    .fixed-top-sidemenu {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
     }
 }

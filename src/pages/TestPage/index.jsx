@@ -11,10 +11,10 @@ export default function TestPage() {
   return (
     <div className='test-container'>
       <div className="test">
-        <div className="nav-bar">
-          {/* <div className="fixed-top-sidemenu"> */}
+        <div className="side-nav-bar">
+          <div className="fixed-top-sidemenu">
           <Example />
-          {/* </div> */}
+          </div>
           
         </div>
 
@@ -30,9 +30,9 @@ export default function TestPage() {
             <div className="side-adverts">
             Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games
             </div>
-            <div className="side-advert">
+            {/* <div className="side-advert">
             Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
