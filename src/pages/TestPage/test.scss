@@ -42,17 +42,28 @@
                 .main{
                     border: solid grey 2px;
                     box-sizing: border-box;
-                    overflow: hidden;
+                    // overflow: hidden;
+                    overflow-y: auto;
+                    max-height: 100vh;
+                
                     flex-basis: auto;
-                    flex: 2;
+                    // flex: 2;
+                    // margin-right: 20.5rem;
                 }
             
                 .side-adverts{
+
                     border: solid grey 2px;
                     box-sizing: border-box;
                     overflow: hidden;
                     flex-basis: content;
-                    max-width: 300px;
+                    max-width: 327px;
+                    height: 850px;
+                    // position: fixed;
+                    // right: 0;
+                    // top: 149px;
+                    background: #141414;
+                    border-radius: 12px;
                 }
             }
         }

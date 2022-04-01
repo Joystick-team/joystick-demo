@@ -22,7 +22,7 @@ export default class PreviousNextMethods extends Component {
     //   dots: true,
     //   infinite: true,
     //   speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1
     };
     return (
@@ -32,10 +32,10 @@ export default class PreviousNextMethods extends Component {
             <h5>Recent Games</h5>
 
             <div style={{display: 'flex'}}>
-            <p className="p" onClick={this.previous} style={{marginRight: '.5rem'}}>
+            <p className="p" onClick={this.previous} style={{marginRight: '1rem', fontSize: '1.3rem'}}>
                 <BsArrowLeftCircle />
             </p>
-            <p className="p" onClick={this.next}>
+            <p className="p" onClick={this.next} style={{ fontSize: '1.3rem'}}>
                 <BsArrowRightCircle />
             </p>
             </div>

@@ -14,16 +14,8 @@ export default function HomePage() {
     <div>
       <SideNav />
       <AnnouncementCarousel />
-      {/* <WelcomePage /> */}
-      {/* <TopNav /> */}
       {/* <ErrorAlert /> */}
-      {/* <LoadingButton color="danger" title='Connect'/>
-      <LoadingButton color="success" title='Go Live'/> */}
-        <PreviousNextMethods 
-          // items={
-          //   <RecentGames />
-          // }
-        />
+        <PreviousNextMethods />
       <BottomNav />
     </div>
   )
