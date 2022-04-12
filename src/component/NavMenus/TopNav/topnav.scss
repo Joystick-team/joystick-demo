@@ -12,11 +12,11 @@
         right: auto;
         z-index: 999;
         background: var(--background);
-        color: #FBFBFB;
+        color: var(--secondary);
         // width: 80%;
 
         .navbar-nav, .Tab .nav-link, Link, a{
-            color: #FBFBFB;
+            color: var(--secondary);
             font-style: normal;
             font-weight: 600;
             font-size: 15px;
@@ -24,7 +24,7 @@
         }
 
         .Tab .nav-link{
-            color: #FBFBFB;
+            color: var(--secondary);
             font-style: normal;
             font-weight: 600;
             font-size: 15px;

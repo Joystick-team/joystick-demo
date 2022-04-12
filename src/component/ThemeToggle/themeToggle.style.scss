@@ -18,7 +18,7 @@
             min-height: 32px;
             border-radius: 16px;
     
-            background-color: var(--secondary);
+            background-color: var(--primary);
             position: absolute;
 
             left: 2x;
@@ -27,6 +27,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            svg{
+                color: #fff;
+            }
         }
 
         &.radioinput__switch--checked {
