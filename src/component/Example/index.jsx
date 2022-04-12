@@ -7,6 +7,7 @@ import { FaFacebookF, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import JOYSTICK from '../../assets/images/JOYSTICK-logo.png'
 import './exampls.scss'
+import ThemeToggle from "../ThemeToggle";
 
 export default function Example() {
     const [open, setOpen] = useState(true);
@@ -46,7 +47,7 @@ export default function Example() {
                             <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
                             <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
                         </div>
-
+                        <ThemeToggle />
                       </div>
 
                   </Nav>

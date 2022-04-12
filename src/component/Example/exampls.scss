@@ -1,6 +1,6 @@
 .side-nav{
     // position: fixed;
-    background: #141414;
+    background: var(--secondary-background);
     width: min-content;
     margin: 0%;
     height: 100vh;
@@ -124,7 +124,7 @@
         .nav-link{
             margin: 1rem auto;
         }
-        height: 450px;
+        height: 400px;
         margin-top: 1rem;
     }
 

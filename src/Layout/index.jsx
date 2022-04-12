@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
-import BottomNav from '../NavMenus/BottomNav'
-import SideNav from '../NavMenus/SideNav'
-import TopNav from '../NavMenus/TopNav'
+import BottomNav from '../component/NavMenus/BottomNav'
+import SideNav from '../component/NavMenus/SideNav'
+import TopNav from '../component/NavMenus/TopNav'
 import './layout.scss'
 
 export default function Layout(props) {

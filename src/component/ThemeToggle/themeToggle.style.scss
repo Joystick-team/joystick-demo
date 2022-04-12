@@ -1,0 +1,41 @@
+#themeToggle{
+    .radioinput__switch {
+        cursor: pointer;
+        height: 36px;
+        width: 60px;
+        min-height: 36px;
+        min-width: 60px;
+        padding: 4px;
+        border-radius: 22px;
+        background-color: var(--color-icon);
+        position: relative;
+        transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        .radioinput__switch__bulb {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            min-height: 32px;
+            border-radius: 16px;
+    
+            background-color: var(--secondary);
+            position: absolute;
+
+            left: 2x;
+            top: 2px;
+            transition: left 300ms cubic-bezier(0.165, 0.84, 0.44, 1), background 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &.radioinput__switch--checked {
+            
+            background-color: var(--color-icon);
+            .radioinput__switch__bulb {
+                left: calc(100% - 36px);
+                background: var(--background);
+            }
+        }
+    }
+}
