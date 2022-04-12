@@ -1,6 +1,6 @@
 .top-nav{
     position: relative;
-    background: #0D0D0D;
+    background: var(--background);
     margin-bottom: 7rem;
 
     .navbar{
@@ -11,7 +11,7 @@
         left: auto;
         right: auto;
         z-index: 999;
-        background: #0D0D0D;
+        background: var(--background);
         color: #FBFBFB;
         // width: 80%;
 

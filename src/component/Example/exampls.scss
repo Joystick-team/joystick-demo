@@ -53,7 +53,7 @@
         display: flex;
         flex-wrap: inherit;
         align-items: center;
-        background: #0D0D0D;
+        background: var(--background);
         justify-content: space-between;
     }
 

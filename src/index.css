@@ -5,7 +5,7 @@ body, html {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0D0D0D;
+  background: var(--background);
   color: white;
   box-sizing: border-box;
   /* max-width: 1440px; */

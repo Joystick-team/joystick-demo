@@ -10,7 +10,7 @@
         z-index: 1030;
         margin: 0;
         padding: 0;
-        background: #0D0D0D;
+        background: var(--background);
     }
 
     .offcanvas-header{
@@ -41,7 +41,7 @@
         display: flex;
         flex-wrap: inherit;
         align-items: center;
-        background: #0D0D0D;
+        background: var(--background);
         justify-content: space-between;
     }
 
