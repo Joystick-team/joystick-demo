@@ -5,6 +5,7 @@ import PreviousNextMethods from '../../component/PreviousNextMethods';
 import RecentGames from '../../component/RecentGames';
 import AnnouncementCarousel from '../../component/AnnouncementCard';
 import TopNav from '../../component/NavMenus/TopNav'
+import SidePost from '../../component/SidePost';
 
 
 export default function TestPage() {
@@ -27,12 +28,9 @@ export default function TestPage() {
                 <RecentGames />
               </PreviousNextMethods>
             </div>
-            <div className="side-adverts">
-            Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games
+            <div className="side-adverts" style={{display:'flex', justifyContent:'center'}}>
+              <SidePost />
             </div>
-            {/* <div className="side-advert">
-            Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games Recent Games
-            </div> */}
           </div>
         </div>
       </div>

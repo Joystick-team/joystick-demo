@@ -1,6 +1,7 @@
 html{
     --primary: #161515;
-    background: #E5E5E5;
+    // --background: #E5E5E5;
+    --background: #fff;
     --button: #C71F1F;
     --secondary: var(--primary);
     --secondary-background: #EEECEC;
@@ -10,6 +11,10 @@ html{
     --color-icon: rgba(22, 21, 21, 0.6);
     --text-icon: rgba(22, 21, 21, 0.8);
     --input-background: #EEECEC;
+    --active-text: #FBFBFB;
+    --plain-text: rgba(22, 21, 21, 0.8);
+    --winner-post: rgba(0, 0, 0, 0.2);
+    --chat-option-icon: #161515;
 }
 html[data-theme='dark']{
     --primary: #fff;
@@ -23,4 +28,8 @@ html[data-theme='dark']{
     --color-icon: rgba(235, 235, 245, 0.6);
     --text-icon: #ebebf5;
     --input-background: #2F2F2F;
+    --active-text: #FBFBFB;
+    --plain-text: #ebebf599;
+    --winner-post: rgba(196, 196, 196, 0.1);
+    --chat-option-icon: #C4C4C4;
 }
