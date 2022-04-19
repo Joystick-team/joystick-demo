@@ -8,7 +8,7 @@ body, html {
   background: var(--background);
   color: white;
   box-sizing: border-box;
-  /* max-width: 1440px; */
+  max-width: 1440px;
 }
 
 code {

@@ -5,7 +5,7 @@ import { MdClose } from 'react-icons/md'
 import { BsBroadcast, BsDropletFill, BsFillChatLeftQuoteFill, BsFillPeopleFill, BsGearWideConnected, BsGridFill } from "react-icons/bs";
 import { FaFacebookF, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
-import JOYSTICK from '../../assets/images/JOYSTICK-logo.png'
+import JOYSTICK from '../../assets/images/JOYSTICK-logo2.png'
 import './exampls.scss'
 import ThemeToggle from "../ThemeToggle";
 

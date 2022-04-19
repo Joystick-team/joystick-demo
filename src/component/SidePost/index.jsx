@@ -15,7 +15,7 @@ export default function SidePost() {
         <div className="profile">
           <img style={{cursor: 'pointer'}} src={userAvarta} alt="user-Avarta" />
           <div className="personaldetails">
-            <p>Hello Ray!</p>
+            <p>Hello Dimgba!</p>
             <p style={{marginTop: '-1rem'}}><span> <GoPrimitiveDot /> </span> Online</p>
           </div>
         </div>
@@ -30,7 +30,7 @@ export default function SidePost() {
         </div>
       <br />
       <VideoPlayer />
-      {/* <br /> */}
+      <br />
       <div className="chat-container">
         Chats
         {ChatsData.map((chat, idx) => (
