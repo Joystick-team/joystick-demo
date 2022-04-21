@@ -1,10 +1,12 @@
 import React from 'react'
-import MySide from '../../component/Widral'
+import Layout from '../../component/Widral'
 
 export default function Store() {
   return (
     <div>
-      <MySide />
+      <Layout>
+      <div>Stores</div>
+      </Layout>
     </div>
   )
 }

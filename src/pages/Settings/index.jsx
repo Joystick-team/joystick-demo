@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../../component/Widral'
 
-export default function Library() {
+export default function Settings() {
   return (
     <Layout>
-      <div>Library Page</div>
+        <div>Settings</div>
     </Layout>
     
   )

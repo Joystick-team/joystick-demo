@@ -3,9 +3,9 @@ import { Container, Row } from 'react-bootstrap'
 import BottomNav from '../component/NavMenus/BottomNav'
 import SideNav from '../component/NavMenus/SideNav'
 import TopNav from '../component/NavMenus/TopNav'
-import './layout.scss'
+import './layout2.scss'
 
-export default function Layout(props) {
+export default function Layout2(props) {
   return (
     <div>
         <Container fluid>

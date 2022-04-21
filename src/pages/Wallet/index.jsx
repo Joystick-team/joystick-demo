@@ -1,12 +1,11 @@
 import React from 'react'
 import Layout from '../../component/Widral'
 
-export default function Livescream() {
+export default function Wallet() {
   return (
-    <div>
       <Layout>
-        Livescream
+          <div>Wallet</div>
       </Layout>
-    </div>
+    
   )
 }

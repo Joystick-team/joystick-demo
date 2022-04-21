@@ -6,6 +6,10 @@ import WelcomePage from './pages/Welcome';
 import Socials from './pages/Socials';
 import TestPage from './pages/TestPage';
 import Store from './pages/Store';
+import Livescream from './pages/Live';
+import Library from './pages/Library';
+import Settings from './pages/Settings';
+import Wallet from './pages/Wallet';
 
 function App() {
   return (
@@ -18,24 +22,32 @@ function App() {
             />
 
             <Route
-              exact
               path='/welcome' element={<WelcomePage/>}
             />
 
             <Route
-              exact
               path='/socials' element={<Socials/>}
             />
 
 
             <Route
-              exact
               path='/test' element={<TestPage/>}
             />
 
             <Route
-              exact
               path='/store' element={<Store/>}
+            />
+            <Route
+              path='/livestream' element={< Livescream/>}
+            />
+            <Route
+              path='/library' element={< Library/>}
+            />
+            <Route
+              path='u/settings' element={<Settings/>}
+            />
+            <Route
+              path='u/wallet' element={<Wallet/>}
             />
           </Routes>
         </Router >
