@@ -15,7 +15,8 @@
             overflow: hidden;
             flex-basis: content;
             // max-width: 260px;
-            height: 100vh;
+            // height: 100vh;
+            height: 1024px;
             max-width: 260px;
             flex-basis: auto;
             position: relative;
@@ -40,25 +41,21 @@
                 display: flex;
 
                 .main{
-                    // border: solid grey 2px;
                     box-sizing: border-box;
-                    // overflow: hidden;
                     overflow-y: auto;
                     max-height: 100vh;
-                
                     flex-basis: auto;
-                    // flex: 2;
-                    // margin-right: 20.5rem;
+                    // max-width: 791px;
+                    margin-right: 19rem;
                 }
             
                 .side-adverts{
-
                     // border: solid grey 2px;
                     box-sizing: border-box;
                     overflow: hidden;
                     flex-basis: content;
                     max-width: 327px;
-                    height: 850px;
+                    height: 85.7vh;
                     // position: fixed;
                     // right: 0;
                     // top: 149px;

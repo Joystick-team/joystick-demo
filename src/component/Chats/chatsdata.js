@@ -5,22 +5,26 @@ import user1 from '../../assets/images/user1.png'
 const ChatsData = [
     {
         image : user1,
-        title : "Hey bro!",
+        title : "Mike",
+        // title : "Hey bro!",
         body : "Wow, this is really epic",
     },
     {
         image : user2,
-        title : "Yeah! You're right.",
+        title : "Henry.",
+        // title : "Yeah! You're right.",
         body : "I hope it goes well.",
     },
     {
         image : user3,
-        title : "No, I can't come tomorrow.",
+        title : "Tochi",
+        // title : "No, I can't come tomorrow.",
         body : "I went there yesterday",
     },
     {
         image : user4,
-        title : "aww",
+        title : "Namsel",
+        // title : "aww",
         body : "omg, this is amazing",
     }
 ];

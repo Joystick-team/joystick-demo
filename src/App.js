@@ -5,6 +5,7 @@ import HomePage from './pages/Home';
 import WelcomePage from './pages/Welcome';
 import Socials from './pages/Socials';
 import TestPage from './pages/TestPage';
+import Store from './pages/Store';
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
               path='/test' element={<TestPage/>}
             />
 
+            <Route
+              exact
+              path='/store' element={<Store/>}
+            />
           </Routes>
         </Router >
     </div>

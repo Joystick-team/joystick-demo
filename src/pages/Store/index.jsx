@@ -1,7 +1,10 @@
 import React from 'react'
+import MySide from '../../component/Widral'
 
 export default function Store() {
   return (
-    <div>Store</div>
+    <div>
+      <MySide />
+    </div>
   )
 }

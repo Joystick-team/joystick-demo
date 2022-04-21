@@ -3,7 +3,8 @@
     background: var(--secondary-background);
     width: min-content;
     margin: 0%;
-    height: 100vh;
+    // height: 100vh;
+    // height: 1024px;
     // top: 0;
     position: sticky !important;
     position: -webkit-sticky !important; // for safari
@@ -37,6 +38,7 @@
     
     .nav-tabs {
         width: 260px;
+        // height : 100vh;
 
         .nav-item.show .nav-link, .nav-link.active {
             background: #C71F1F;
@@ -44,7 +46,7 @@
             color: var(--active-text);
             border: none;
             outline: none;
-            width: 90%;
+            // width: 90%;
             margin: auto;
             display: flex;
             mix-blend-mode: normal;
@@ -135,8 +137,8 @@
     }
 
     .footer-nav-sids{
-        width: 90%;
-        margin: auto;
+        // width: 90%;
+        // margin: auto;
 
         // .nav-link{
         //     margin: 0rem auto;

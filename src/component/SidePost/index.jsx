@@ -31,16 +31,18 @@ export default function SidePost() {
       <br />
       <VideoPlayer />
       <br />
-      <div className="chat-container">
+      <div className="">
         Chats
-        {ChatsData.map((chat, idx) => (
-            <Chats 
-              key={chat.idx}
-              title={chat.title}
-              body={chat.body}
-              image={chat.image}
-            />
-        ))}
+        <div className="chat-container">
+          {ChatsData.map((chat, idx) => (
+              <Chats 
+                key={chat.idx}
+                title={chat.title}
+                body={chat.body}
+                image={chat.image}
+              />
+          ))}
+        </div>
       </div>
     </div>
   )
