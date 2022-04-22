@@ -4,7 +4,7 @@ import './App.scss';
 import HomePage from './pages/Home';
 import WelcomePage from './pages/Welcome';
 import Socials from './pages/Socials';
-// import TestPage from './pages/TestPage';
+import TestPage from './pages/TestPage';
 import Store from './pages/Store';
 import Livescream from './pages/Live';
 import Library from './pages/Library';
@@ -30,9 +30,9 @@ function App() {
             />
 
 
-            {/* <Route
+            <Route
               path='/test' element={<TestPage/>}
-            /> */}
+            />
 
             <Route
               path='/store' element={<Store/>}

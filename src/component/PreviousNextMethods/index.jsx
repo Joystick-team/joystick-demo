@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { Container, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import Slider from "react-slick";
-import GamesData from '../../gamesdata';
-import MyCard from "../MyCard";
 import './sliders.scss'
 export default class PreviousNextMethods extends Component {
   constructor(props) {
@@ -20,7 +18,7 @@ export default class PreviousNextMethods extends Component {
   render() {
     const settings = {
     //   dots: true,
-    //   infinite: true,
+      infinite: false,
     //   speed: 500,
       slidesToShow: 4,
       slidesToScroll: 1
@@ -29,7 +27,7 @@ export default class PreviousNextMethods extends Component {
       <Container>
       <div className="sliders">
         <div className="div" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-            <h5>Recent Games</h5>
+            <h5>{this.props.header}</h5>
 
             <div style={{display: 'flex'}}>
             <p className="p" onClick={this.previous} style={{marginRight: '1rem', cursor:'pointer', fontSize: '1.3rem'}}>
@@ -41,18 +39,7 @@ export default class PreviousNextMethods extends Component {
             </div>
         </div>
         <Slider ref={c => (this.slider = c)} {...settings}>
-                {GamesData.map((game, idx) => (
-                    <Col>
-                        <MyCard 
-                                key={game.idx}
-                                title={game.title}
-                                text={game.text}
-                                img={game.img}
-                                button="Play"
-                            />
-                    </Col>
-                ))}
-            {/* {this.props.children}  */}
+          {this.props.children} 
         </Slider>
       </div>
       </Container>

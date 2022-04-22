@@ -1,0 +1,46 @@
+.library{
+    .library-filter{
+        display: flex;
+        height: 85vh;
+
+        .filter-menu{
+            width: 200px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+            height: 85vh;
+
+            mix-blend-mode: normal;
+
+            .filter-menu-header{
+                display: flex;
+                justify-content: space-around;
+                line-height: 2;
+
+                p{
+                    color: var(--primary);
+                    font-style: bold;
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+            }
+
+            .filter-menu-list{
+                cursor: pointer;
+            }
+        }
+        .library-games{
+            height: 85vh;
+            overflow-y: auto;
+        }
+
+    }
+
+    .recent-games-items img {
+        height: 274px;
+        width: 100%;
+        object-fit: contain;
+        margin-left: -1rem;
+    }
+}
