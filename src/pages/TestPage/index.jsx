@@ -28,7 +28,7 @@ export default function TestPage() {
                 <RecentGames />
               </PreviousNextMethods>
             </div>
-            <div className="side-adverts" style={{display:'flex', justifyContent:'center'}}>
+            <div className="side-adverts" style={{display:'flex'}}>
               <SidePost />
             </div>
           </div>

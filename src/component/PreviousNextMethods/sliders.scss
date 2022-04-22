@@ -1,0 +1,26 @@
+.sliders{
+
+    width: 100%;
+    margin-top: 2rem;
+
+    img{
+        width: 90%;
+        height: 250px;
+    }
+    .slick-next,  .slick-prev{
+        top: -30px;
+        right: 5%;
+        background: transparent;
+
+        &::after, &::before{
+            font-size: 30px;
+            width: 100px;
+            height: 100px;
+            display: none;
+            background: none;
+        }
+    }
+    .slick-prev{
+        left: 90%;
+    }
+}

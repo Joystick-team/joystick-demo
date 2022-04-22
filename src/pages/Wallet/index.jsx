@@ -1,11 +1,11 @@
 import React from 'react'
-import Layout from '../../component/Widral'
+import Layout3 from '../../component/Widral'
 
 export default function Wallet() {
   return (
-      <Layout>
+      <Layout3> 
           <div>Wallet</div>
-      </Layout>
+      </Layout3> 
     
   )
 }

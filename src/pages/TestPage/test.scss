@@ -7,6 +7,7 @@
         box-sizing: border-box;
         overflow: hidden;
         position: relative;
+        height: 100vh;
     
     
         .side-nav-bar{
@@ -36,6 +37,9 @@
             overflow: hidden;
             position: relative;
             flex: 2;
+            height: 100vh;
+            margin-right: .7rem;
+            
 
             .main-div{
                 display: flex;
@@ -43,16 +47,16 @@
                 .main{
                     box-sizing: border-box;
                     overflow-y: auto;
-                    max-height: 100vh;
+                    max-height: 85vh;
                     flex-basis: auto;
                     // max-width: 791px;
-                    margin-right: 19rem;
+                    // margin-right: 19rem;
                 }
             
                 .side-adverts{
                     // border: solid grey 2px;
                     box-sizing: border-box;
-                    overflow: hidden;
+                    // overflow: hidden;
                     flex-basis: content;
                     max-width: 327px;
                     height: 85.7vh;

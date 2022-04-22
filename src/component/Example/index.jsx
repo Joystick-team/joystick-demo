@@ -9,7 +9,7 @@ import JOYSTICK from '../../assets/images/JOYSTICK-logo2.png'
 import './exampls.scss'
 import ThemeToggle from "../ThemeToggle";
 
-export default function Example(props) {
+export default function Example({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
   
     return (
@@ -19,8 +19,8 @@ export default function Example(props) {
             <img src={JOYSTICK} alt="JOYSTICK-logo" />
           </div>
           <p
-            // onClick={() => setOpen(!open)}
-            onClick={props.TogglecloseOpen}
+            onClick={() => setOpen(!open)}
+            // onClick={TogglecloseOpen}
             aria-controls="example-collapse-text"
             aria-expanded={open}
             className='side-nav-burger'

@@ -4,7 +4,7 @@ import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import Slider from "react-slick";
 import GamesData from '../../gamesdata';
 import MyCard from "../MyCard";
-
+import './sliders.scss'
 export default class PreviousNextMethods extends Component {
   constructor(props) {
     super(props);

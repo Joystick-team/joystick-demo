@@ -1,12 +1,12 @@
 import React from 'react'
-import Layout from '../../component/Widral'
+import Layout3 from '../../component/Widral'
 
 export default function Store() {
   return (
     <div>
-      <Layout>
+      <Layout3> 
       <div>Stores</div>
-      </Layout>
+      </Layout3> 
     </div>
   )
 }
