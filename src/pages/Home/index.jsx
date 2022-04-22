@@ -1,23 +1,26 @@
-import React from 'react'
-import AnnouncementCarousel from '../../component/AnnouncementCard';
-// import ErrorAlert from '../../component/ErrorAlert';
-// import LoadingButton from '../../component/LoadingButton';
-// import TopNav from '../../component/NavMenus/TopNav';
-// import RecentGames from '../../component/RecentGames';
-import SideNav from '../../component/NavMenus/SideNav'
-import BottomNav from '../../component/NavMenus/BottomNav';
-import PreviousNextMethods from '../../component/PreviousNextMethods';
-// import WelcomePage from '../Welcome';
+import AnnouncementCarousel from '../../component/AnnouncementCard'
+import Layout from '../../component/Layout'
+import PreviousNextMethods from '../../component/PreviousNextMethods'
+import RecentGames from '../../component/RecentGames'
+import SidePost from '../../component/SidePost'
 
-export default function HomePage() {
+export default function Library() {
   return (
-    <div>
-      <SideNav />
-      <AnnouncementCarousel />
-      {/* <ErrorAlert /> */}
-        <PreviousNextMethods />
-      <BottomNav />
+    <div className="home-container">
+      <Layout> 
+        <div className="main">
+          <AnnouncementCarousel />
+          <PreviousNextMethods>
+            <RecentGames />
+          </PreviousNextMethods>
+        </div>
+        <div className="side-adverts" style={{display:'flex'}}>
+            {/* The left advert/chat/friends should be written here */}
+            <SidePost />
+          </div>
+      </Layout> 
     </div>
+    
   )
 }
 

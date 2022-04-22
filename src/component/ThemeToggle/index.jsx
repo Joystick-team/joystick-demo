@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 // import { FaSun } from "../../assets/svgs/icons"
-import { FaMoon, FaSun } from "react-icons/fa";
+import { CgDarkMode } from "react-icons/cg";
 import "./themeToggle.style.scss";
 
 const ThemeToggle = () => {
@@ -39,7 +39,7 @@ const ThemeToggle = () => {
         }`}
       >
         <div className="radioinput__switch__bulb">
-            <FaMoon/>
+            <CgDarkMode/>
         </div>
       </div>
     </div>
