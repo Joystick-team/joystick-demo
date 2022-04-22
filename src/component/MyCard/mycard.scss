@@ -1,4 +1,13 @@
 .mycard{
+    .mb-3, .card{
+        color: var(--primary);
+        background: var(--background);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+    }
+
     .card-body{
         .card-text{
             color: var(--plain-text);

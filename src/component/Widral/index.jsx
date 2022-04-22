@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './layoutnav.scss'
 import TopNav from '../NavMenus/TopNav'
-import Example from '../Example';
+import DrawalNav from '../DrawalNav';
 import { BiMenu } from 'react-icons/bi';
 // import JOYSTICK from '../../assets/images/JOYSTICK-logo2.png'
 
@@ -18,7 +18,7 @@ export default function Layout(props) {
         }}>
         
         {/* <a href='#' className="closebtn" style={{cursor: 'pointer'}} onClick={closeNav}> &times; </a> */}
-            <Example TogglecloseOpen={e => setOpen(!open)} />
+            <DrawalNav TogglecloseOpen={e => setOpen(!open)} />
         </div>
 
         <div id='main-layout' style={{

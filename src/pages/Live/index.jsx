@@ -1,12 +1,18 @@
 import React from 'react'
-import Layout3 from '../../component/Widral'
+import Layout from '../../component/Layout'
 
 export default function Livescream() {
   return (
-    <div>
-      <Layout3> 
-        Livescream
-      </Layout3> 
+    <div className='livescream'>
+      <Layout> 
+        <div className="main"> 
+          Livescream
+        </div>
+        <div className="side-adverts" style={{display:'flex'}}>
+          {/* The left advert/chat/friends should be written here */}
+          
+        </div>
+      </Layout> 
     </div>
   )
 }

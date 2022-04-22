@@ -1,11 +1,19 @@
 import React from 'react'
-import Layout3 from '../../component/Widral'
+import Layout from '../../component/Layout'
 
 export default function Wallet() {
   return (
-      <Layout3> 
+    <div className="wallet">
+      <Layout> 
+        <div className="main">
           <div>Wallet</div>
-      </Layout3> 
+        </div>
+        <div className="side-adverts" style={{display:'flex'}}>
+          {/* The left advert/chat/friends should be written here */}
+          
+        </div>
+      </Layout>
+    </div> 
     
   )
 }

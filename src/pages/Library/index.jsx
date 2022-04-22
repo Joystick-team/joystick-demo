@@ -1,11 +1,20 @@
 import React from 'react'
-import Layout3 from '../../component/Widral'
+import Layout from '../../component/Layout'
 
 export default function Library() {
   return (
-    <Layout3> 
-      <div>Library Page</div>
-    </Layout3> 
+    <div className="library">
+      <Layout> 
+      
+      <div className="main">
+        <div>Library Page</div>
+      </div>
+      <div className="side-adverts" style={{display:'flex'}}>
+          {/* The left advert/chat/friends should be written here */}
+          
+        </div>
+    </Layout> 
+    </div>
     
   )
 }

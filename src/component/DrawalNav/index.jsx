@@ -6,10 +6,10 @@ import { BsBroadcast, BsDropletFill, BsFillChatLeftQuoteFill, BsFillPeopleFill, 
 import { FaFacebookF, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import JOYSTICK from '../../assets/images/JOYSTICK-logo2.png'
-import './exampls.scss'
+import './drawalNav.scss'
 import ThemeToggle from "../ThemeToggle";
 
-export default function Example({TogglecloseOpen}) {
+export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
   
     return (
@@ -21,7 +21,7 @@ export default function Example({TogglecloseOpen}) {
           <p
             onClick={() => setOpen(!open)}
             // onClick={TogglecloseOpen}
-            aria-controls="example-collapse-text"
+            aria-controls="DrawalNav-collapse-text"
             aria-expanded={open}
             className='side-nav-burger'
           >
@@ -41,8 +41,8 @@ export default function Example({TogglecloseOpen}) {
 
                       <hr />
                       <div className="footer-nav-sids">
-                        <Nav.Link href="wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
-                        <Nav.Link href="settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
+                        <Nav.Link href="/u/wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
+                        <Nav.Link href="/u/settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
                         <div className="icons-sidenav-footer">
                             <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
                             <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
