@@ -26,6 +26,10 @@
                 }
             }
 
+            label{
+                cursor: pointer;
+                display: block;
+            }
             .filter-menu-list{
                 cursor: pointer;
             }
@@ -34,13 +38,20 @@
             height: 85vh;
             overflow-y: auto;
         }
+        .library-listed{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
     }
 
-    .recent-games-items img {
-        height: 274px;
-        width: 100%;
-        object-fit: contain;
-        margin-left: -1rem;
+    .recent-games-items { 
+        img {
+            height: 274px;
+            width: 100%;
+            object-fit: contain;
+            margin-left: -1rem;
+        }
     }
 }

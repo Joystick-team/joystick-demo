@@ -2,6 +2,7 @@ import React from 'react'
 import {Nav, FormControl, Container, Form } from 'react-bootstrap'
 import { MdNotifications } from 'react-icons/md';
 import LoadingButton from '../../LoadingButton';
+import { FiSearch } from 'react-icons/fi'
 import './topnav.scss'
 
 export default function TopNav() {
@@ -22,24 +23,20 @@ export default function TopNav() {
                         <Nav.Item>
                             <Nav.Link eventKey="Staking">Staking</Nav.Link>
                         </Nav.Item>
-                        {/* <Nav.Item>
-                            <Nav.Link eventKey="Chats">Chats</Nav.Link>
-                        </Nav.Item> */}
-
-                        <Nav.Item>
-                            <Nav.Link eventKey="Notifications"> <MdNotifications/> </Nav.Link>
-                        </Nav.Item>
                     </Nav>
-                    <Form className="d-flex">
-                        <FormControl
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        {/* <Button variant="outline-success">Search</Button> */}
-                    </Form>
-                    <LoadingButton color="danger" title='Connect'/>
+                    <div className="notice-search">
+                        <div className='top-notifications-icon'> <MdNotifications/> </div>
+                        <Form className="d-flex">
+                            <span><FiSearch /></span>
+                            <FormControl
+                                type="search"
+                                placeholder={` Search`}
+                                className="me-2 search-box"
+                                aria-label="Search"
+                            />
+                        </Form>
+                    </div>
+                    <LoadingButton className='btn-connect' color="danger" title='Connect'/>
                 </Container>
             {/* </Navbar> */}
     </div>

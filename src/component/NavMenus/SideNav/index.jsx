@@ -34,7 +34,7 @@ export default function SideNav() {
                          </Offcanvas.Title> */}
                      </Offcanvas.Header>
                     <Offcanvas.Body variant="dark">
-                        <Nav className=" flex-column" variant="tabs" defaultActiveKey="#/">
+                        <Nav className=" flex-column" variant="pills" defaultActiveKey="#/">
                             <Nav.Link activeKey="/" href="/"> <FaHome /> <span>Home</span></Nav.Link>
                             <Nav.Link href="/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
                             <Nav.Link href="/library"> <BsGridFill/> <span>Library</span></Nav.Link>

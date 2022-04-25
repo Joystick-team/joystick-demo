@@ -36,7 +36,7 @@ export default function SidePost() {
         <div className="chat-container">
           {ChatsData.map((chat, idx) => (
               <Chats 
-                key={chat.idx}
+                key={idx}
                 title={chat.title}
                 body={chat.body}
                 image={chat.image}

@@ -15,6 +15,7 @@ html{
     --plain-text: rgba(22, 21, 21, 0.8);
     --winner-post: rgba(0, 0, 0, 0.2);
     --chat-option-icon: #161515;
+    --search-box-background: #EEECEC;
 }
 html[data-theme='dark']{
     --primary: #fff;
@@ -32,4 +33,5 @@ html[data-theme='dark']{
     --plain-text: #ebebf599;
     --winner-post: rgba(196, 196, 196, 0.1);
     --chat-option-icon: #C4C4C4;
+    --search-box-background: #2F2F2F;
 }

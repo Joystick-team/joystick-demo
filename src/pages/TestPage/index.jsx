@@ -16,7 +16,7 @@ export default function TestPage() {
             {GamesData.map((game, idx) => (
               <Col>
                   <MyCard 
-                    key={game.idx}
+                    key={idx}
                     title={game.title}
                     text={game.text}
                     img={game.img}

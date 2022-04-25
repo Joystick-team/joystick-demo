@@ -23,6 +23,7 @@ export default function LoadingButton(props) {
         variant={props.color}
         disabled={isLoading}
         onClick={!isLoading ? handleClick : null}
+        className={props.className}
     >
         {isLoading ? 'Loading…' : props.title}
     </Button>

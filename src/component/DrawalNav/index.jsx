@@ -11,7 +11,13 @@ import ThemeToggle from "../ThemeToggle";
 
 export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
-  
+    // const [links, setLinks] = useState('/');
+
+    // const getLinks = () => {
+    //   setLinks()
+    //   console.log(Nav);
+    // }
+
     return (
       <div className="" style={{position: 'relative'}}>
         <div className="side-nav">
@@ -30,9 +36,9 @@ export default function DrawalNav({TogglecloseOpen}) {
           <div>
             <Collapse in={open} dimension="width">
               <div>
-                  <Nav className=" flex-column" variant="tabs" defaultActiveKey="#/">
+                  <Nav className=" flex-column" variant="tabs" defaultActiveKey='/'>
                     <div className="footer-nav">
-                      <Nav.Link activeKey="/" href="/"> <FaHome /> <span>Home</span></Nav.Link>
+                      <Nav.Link href="/"> <FaHome /> <span>Home</span></Nav.Link>
                       <Nav.Link href="/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
                       <Nav.Link href="/library"> <BsGridFill/> <span>Library</span></Nav.Link>
                       <Nav.Link href="/socials"> <BsFillPeopleFill /> <span>Socials</span></Nav.Link>
