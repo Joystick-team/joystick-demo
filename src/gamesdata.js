@@ -5,7 +5,7 @@ import forestnight from '../src/assets/images/forestnight.png'
 import rust from './assets/images/rust.png'
 
 
-const GamesData = [
+const LiberyGamesData = [
     {        
         title: 'Axie Infinity',
         text: 'Blockchain',
@@ -43,4 +43,4 @@ const GamesData = [
         button: "Play",
     },
 ]
-export default GamesData;
+export default LiberyGamesData;

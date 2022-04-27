@@ -4,7 +4,7 @@ import Layout from '../../component/Layout'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import SidePost from '../../component/SidePost'
-import GamesData from '../../gamesdata'
+import LiberyGamesData from '../../gamesdata'
 import './home.scss'
 
 export default function Library() {
@@ -14,7 +14,7 @@ export default function Library() {
         <div className="main">
           <AnnouncementCarousel />
           <PreviousNextMethods header={'Recent Games'}>
-            {GamesData.map((game, idx) => (
+            {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 
                     key={idx}

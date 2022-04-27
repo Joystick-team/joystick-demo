@@ -3,7 +3,7 @@ import AnnouncementCarousel from '../../component/AnnouncementCard';
 import SideNav from '../../component/NavMenus/SideNav'
 import BottomNav from '../../component/NavMenus/BottomNav';
 import PreviousNextMethods from '../../component/PreviousNextMethods';
-import GamesData from '../../gamesdata';
+import LiberyGamesData from '../../gamesdata';
 import { Col } from 'react-bootstrap';
 import MyCard from '../../component/MyCard';
 
@@ -13,7 +13,7 @@ export default function TestPage() {
       <SideNav />
       <AnnouncementCarousel />
         <PreviousNextMethods header={'Test Slide'}>
-            {GamesData.map((game, idx) => (
+            {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 
                     key={idx}
