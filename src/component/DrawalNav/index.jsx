@@ -8,15 +8,12 @@ import { FiTwitter } from "react-icons/fi";
 import JOYSTICK from '../../assets/images/JOYSTICK-logo2.png'
 import './drawalNav.scss'
 import ThemeToggle from "../ThemeToggle";
+import { useLocation } from "react-router-dom";
 
 export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
-    // const [links, setLinks] = useState('/');
 
-    // const getLinks = () => {
-    //   setLinks()
-    //   console.log(Nav);
-    // }
+    const {pathname} = useLocation();
 
     return (
       <div className="" style={{position: 'relative'}}>
@@ -36,7 +33,7 @@ export default function DrawalNav({TogglecloseOpen}) {
           <div>
             <Collapse in={open} dimension="width">
               <div>
-                  <Nav className=" flex-column" variant="tabs" defaultActiveKey='/'>
+                  <Nav className=" flex-column" variant="tabs" defaultActiveKey={pathname}>
                     <div className="footer-nav">
                       <Nav.Link href="/"> <FaHome /> <span>Home</span></Nav.Link>
                       <Nav.Link href="/store"> <BsDropletFill /> <span>Store</span></Nav.Link>

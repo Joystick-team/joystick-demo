@@ -15,13 +15,13 @@ export default function TopNav() {
                         variant="pills"
                     >
                         <Nav.Item>
-                            <Nav.Link eventKey="Leaderboard">Leaderboard</Nav.Link>
+                            <Nav.Link eventKey="/Leaderboard">Leaderboard</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey="Rewards">Rewards</Nav.Link>
+                            <Nav.Link eventKey="/Rewards">Rewards</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link eventKey="Staking">Staking</Nav.Link>
+                            <Nav.Link eventKey="/Staking">Staking</Nav.Link>
                         </Nav.Item>
                     </Nav>
                     <div className="notice-search">
