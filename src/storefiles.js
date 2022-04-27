@@ -1,54 +1,52 @@
-import opensea from './assets/images/opensea.png'
-import afen from './assets/images/afen.png'
-import bioshock from './assets/images/bioshock.png'
-import val from './assets/images/val.png'
-import forestnight from '../src/assets/images/forestnight.png'
-import rust from './assets/images/rust.png'
+import opensea from '../src/assets/images/opensea.png';
+import afen from '../src/assets/images/afen.png';
+import bioshock from '../src/assets/images/bioshock.png';
+import val from '../src/assets/images/val.png';
+import forestnight from '../src/assets/images/forestnight.png';
+import rust from '../src/assets/images/rust.png';
+
 
 const Marketplace = [
     {
-        img : {}
-    }
+        img : afen,
+    },
+    {
+        img : opensea,
+    },
 ]
 
 const Collectible = [
     {
-        img : {}
-    }
-]
+        img : {forestnight}
+    },
+];
 
 const Games = [
     {
-        image: {},
-        btn: '',
-        title: '',
-        type: '',
+        image: forestnight,
+        btn: 'install',
+        title: 'Forest Knight',
+        type: 'Blockchain',
     },
     {
-        image: '',
-        btn: '',
-        title: '',
-        type: '',
+        image: rust,
+        btn: 'install',
+        title: 'Age of Rust',
+        type: 'Blockchain',
     },
     {
-        image: '',
-        btn: '',
-        title: '',
-        type: '',
+        image: bioshock,
+        btn: 'install',
+        title: 'Bioshock',
+        type: 'First Shooter',
     },
     {
-        image: '',
-        btn: '',
-        title: '',
-        type: '',
-    },
-    {
-        image: '',
-        btn: '',
-        title: '',
-        type: '',
+        image: val,
+        btn: 'install',
+        title: 'Valheim',
+        type: 'Adventure',
     },
 
-]
+];
 
-export { Games, Collectible, Marketplace }
+export { Games, Collectible, Marketplace };
