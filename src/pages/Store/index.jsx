@@ -14,7 +14,7 @@ export default function Store() {
 
   const Gamesdetails = Games.map((game, idx) => {
    return  <MyCard 
-            key={idx}
+            key={game.key}
             title={game.title}
             text={game.type}
             button={game.btn}
@@ -25,6 +25,7 @@ export default function Store() {
 
   const CollectibleDetails = Collectible.map((collection, idx) => {
     return <div className="collectible-details">
+              key={collection.key}
               <img src={collection.img} alt="logo" />
             </div>
   })
