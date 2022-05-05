@@ -1,0 +1,42 @@
+.store{
+
+    .main-div{
+        display: block !important;
+    }
+
+    .nft-marketplace-container{
+        margin-left: 1rem;
+
+        .nft-marketplace-content{
+            // height: 190px;
+            width: auto;
+            display: flex;
+            align-items: center;
+            
+    
+            .marketplace-details{
+               
+                img{
+                    width: 283px;
+                    height: 178px;
+                    border: solid 1px black;
+                    margin-left: 1rem;
+
+                    &:first-child(0){
+                        margin-left: 0rem;
+                    }
+                }
+            }
+    
+        }
+    }
+
+    .collectible-container{
+        .sliders {
+            img{
+                height: 143px !important;
+            }
+        }
+    }
+
+}

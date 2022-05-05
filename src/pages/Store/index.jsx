@@ -3,12 +3,13 @@ import Layout from '../../component/Layout'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import { Games, Collectible, Marketplace } from '../../storefiles'
+import './stores.scss'
 
 export default function Store() {
 
   const MarketplaceDetails = Marketplace.map((marketitem, idx) => {
     return <div className="marketplace-details">
-              <img src={marketitem.img} alt="logo" />
+              <img key={marketitem.key} src={marketitem.img} alt="logo" />
             </div>
   })
 
@@ -25,33 +26,32 @@ export default function Store() {
 
   const CollectibleDetails = Collectible.map((collection, idx) => {
     return <div className="collectible-details">
-              key={collection.key}
-              <img src={collection.img} alt="logo" />
+              <img key={collection.key} src={collection.img} alt="logo" />
             </div>
   })
   return (
     <div className='store'>
       <Layout> 
         <div className="main"> 
-        <div className="">
+        <div className="nft-marketplace-container">
         NFT Marketplaces <br />
-        {MarketplaceDetails}
+        <div className="nft-marketplace-content">
+          {MarketplaceDetails}
+        </div>
+        
         </div>
         <br />
         <div className="games-details">
-        <PreviousNextMethods header={'Games'}>
+        <PreviousNextMethods rowNum={4} header={'Games'}>
           {Gamesdetails}
           </PreviousNextMethods>
           </div>
         <br />
-        <div className="">
-        <PreviousNextMethods header={'Collectibles'}>
+        <div className="collectible-container">
+        <PreviousNextMethods rowNum={5} header={'Collectibles'}>
           {CollectibleDetails}
         </PreviousNextMethods>
         </div>
-        </div>
-        <div className="side-adverts2" style={{display:'flex'}}>
-          {/* The left advert/chat/friends should be written here */}
         </div>
       </Layout> 
     </div>

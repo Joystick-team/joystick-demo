@@ -12,7 +12,7 @@ export default function TestPage() {
     <div>
       <SideNav />
       <AnnouncementCarousel />
-        <PreviousNextMethods header={'Test Slide'}>
+        <PreviousNextMethods rowNum={4} header={'Test Slide'}>
             {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 

@@ -12,15 +12,17 @@ export default class PreviousNextMethods extends Component {
   next() {
     this.slider.slickNext();
   }
+
   previous() {
     this.slider.slickPrev();
   }
+
   render() {
     const settings = {
     //   dots: true,
       infinite: false,
     //   speed: 500,
-      slidesToShow: 4,
+      slidesToShow: this.props.rowNum,
       slidesToScroll: 1
     };
     return (

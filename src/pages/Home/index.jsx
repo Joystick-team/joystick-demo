@@ -13,7 +13,7 @@ export default function Library() {
       <Layout> 
         <div className="main">
           <AnnouncementCarousel />
-          <PreviousNextMethods header={'Recent Games'}>
+          <PreviousNextMethods rowNum={4} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 
