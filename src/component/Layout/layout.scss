@@ -1,7 +1,7 @@
-.test-container{
+.layout-container{
     // margin-left: 16rem;
 
-    .test{
+    .layout{
         display: flex;
         flex-wrap: wrap;
         box-sizing: border-box;
@@ -49,20 +49,13 @@
                     overflow-y: auto;
                     max-height: 85vh;
                     flex-basis: auto;
-                    // max-width: 791px;
-                    // margin-right: 19rem;
                 }
             
                 .side-adverts{
-                    // border: solid grey 2px;
                     box-sizing: border-box;
-                    // overflow: hidden;
                     flex-basis: content;
                     max-width: 327px;
                     height: 85.7vh;
-                    // position: fixed;
-                    // right: 0;
-                    // top: 149px;
                     background: var(--secondary-background);
                     border-radius: 12px;
                 }
