@@ -1,16 +1,16 @@
 import React from 'react'
 import Layout from '../../component/Layout'
 import socialsavatar from '../../assets/images/socialsavatar.png'
-import campaign from '../../assets/images/campaign.png'
-import nightwar from '../../assets/images/nightwar.png'
-
 import profilebg from '../../assets/images/profile-bg.png'
 import { MdOutlineEdit } from 'react-icons/md'
-
+import postData from '../../postfile'
+import Posts from '../../component/Posts'
 
 import './socials.scss'
-import SidePost from '../../component/SidePost'
+import { Collectible } from '../../storefiles'
+import PreviousNextMethods from '../../component/PreviousNextMethods'
 export default function Socials() {
+  // const importeddata = 
   return (
     <div className='socials'>
       <Layout> 
@@ -22,7 +22,6 @@ export default function Socials() {
               <div className="img-profile-avatar">
                 <img src={socialsavatar} width='180px' height={'180px'} alt="" />
                 <p>Ray Louis</p>
-                
               </div>
             </div>
             <div className="edit-profile">
@@ -33,22 +32,49 @@ export default function Socials() {
             <div className="">
                 <h4>Post</h4>
               <div className="post-card-container">
-                <div className="post-card"> 
-                    <img src={campaign} className='bg-img' alt=""/>
-                  </div>
-                  <div className="post-card">
-                  <img src={nightwar} className='bg-img' alt=""/>
-                  </div>
+              {
+                postData.map((data, idx) => {
+                  return <Posts 
+                            key={data.id}
+                            img={data.img}
+                            likeicon = {data.likeicon}
+                            dislikeicon={data.dislikeicon}
+                            messageicon={data.messageicon}
+                            shareicon={data.shareicon}
+                            likescount={data.likescount}
+                            dislikescount={data.dislikescount}
+                            name={data.name}
+                            content={data.content}
+                          />
+                })
+              }
+              </div>
+              <div className="friendsrequest-container">       
+               <PreviousNextMethods rowNum={7} header={'Friend Requests'}>
+               {Collectible.map((friend, idx) =>{
+                  return <img src={friend.img} alt="" />
+                })}
+              </PreviousNextMethods>
               </div>
             </div>
           </div>
           </div>
         </div>
 
-        <div className={"side-adverts"}>
+        <div className={"side-adverts"} style={{flexGrow: '1'}}>
           <div className="">
        Friends
-        <SidePost />
+       Friends
+       Friends
+       Friends
+       Friends
+       Friends
+       Friends
+       Friends
+       Friends
+       Friends
+       Friends
+        {/* <SidePost /> */}
       </div>
         </div>
       </Layout> 

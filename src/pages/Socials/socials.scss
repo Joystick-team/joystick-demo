@@ -1,7 +1,8 @@
 .socials{
 
     .main{
-        width: 970px;
+        // width: 970px;
+       
 
         .center-container{
             margin: 0 auto;
@@ -60,12 +61,9 @@
             }
         }
         .social-post{
-            margin: 8rem auto;
+            margin: 8rem auto 1rem;
             margin-left: 2rem;
             // border: 2px red solid;
-            display: flex;
-            justify-content: center !important;
-            align-items: center;
 
             h4{
                 margin-left: 1rem;
@@ -73,15 +71,40 @@
 
             .post-card-container{
                 display: flex;
-                justify-content: center;
+                // justify-content: center;
                 align-items: center;
 
                 .post-card {
                     margin: auto 1rem;
-                    // width: 389px;
                     img{
                         width: 323px;
                         height: 208px;
+                    }
+                    .post-card-icons{
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-end;
+                        font-size: 1.2rem;
+                        
+                        
+                        span{
+                            margin-left: 1rem;
+                            color: var(--chat-option-icon);
+
+                            &:active, &:focus, &:visited{
+                                color: blue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .friendsrequest-container{
+                .sliders {
+                    // margin-left: 2rem;
+                    img{
+                        width: 55px;
+                        height: 55px !important;
                     }
                 }
             }
@@ -90,5 +113,6 @@
 
     .side-adverts{
         background: var(--secondary-background);
+        flex-grow: 1;
     }
 }
