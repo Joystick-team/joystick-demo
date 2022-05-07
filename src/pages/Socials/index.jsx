@@ -9,6 +9,10 @@ import Posts from '../../component/Posts'
 import './socials.scss'
 import { Collectible } from '../../storefiles'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
+import ChatsData from '../../component/Chats/chatsdata'
+import Chats from '../../component/Chats'
+import Friendrequest from '../../component/Chats/Friendrequest'
+import FriendrequestData from '../../component/Chats/Friendrequest/FriendrequestData'
 export default function Socials() {
   // const importeddata = 
   return (
@@ -50,9 +54,13 @@ export default function Socials() {
               }
               </div>
               <div className="friendsrequest-container">       
-               <PreviousNextMethods rowNum={7} header={'Friend Requests'}>
-               {Collectible.map((friend, idx) =>{
-                  return <img src={friend.img} alt="" />
+               <PreviousNextMethods rowNum={6} header={'Friend Requests'}>
+               {FriendrequestData.map((friend, idx) =>{
+                  return <Friendrequest 
+                            key={idx}
+                            title={friend.title}
+                            image={friend.image}
+                          />
                 })}
               </PreviousNextMethods>
               </div>

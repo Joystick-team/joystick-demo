@@ -31,11 +31,19 @@
                 top: 50%;
                 bottom: -60%;
         
-                .img-profile-avatar p{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
+                .img-profile-avatar{
+                    img{
+                        height: 180px;
+                        width: 180px;
+                        border-radius: 50%;
+                    }
+                    p{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                } 
+
             }
 
             .edit-profile{
@@ -101,10 +109,13 @@
 
             .friendsrequest-container{
                 .sliders {
-                    // margin-left: 2rem;
+                    // .chat-profile{
+                    //     // margin-left: 2rem;
+                    // }
                     img{
-                        width: 55px;
-                        height: 55px !important;
+                        
+                        width: 105px;
+                        height: 105px !important;
                     }
                 }
             }
