@@ -7,9 +7,7 @@ import postData from '../../postfile'
 import Posts from '../../component/Posts'
 
 import './socials.scss'
-import { Collectible } from '../../storefiles'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
-import ChatsData from '../../component/Chats/chatsdata'
 import Chats from '../../component/Chats'
 import Friendrequest from '../../component/Chats/Friendrequest'
 import FriendrequestData from '../../component/Chats/Friendrequest/FriendrequestData'
@@ -70,20 +68,18 @@ export default function Socials() {
         </div>
 
         <div className={"side-adverts"} style={{flexGrow: '1'}}>
-          <div className="">
-       Friends
-       Friends
-       Friends
-       Friends
-       Friends
-       Friends
-       Friends
-       Friends
-       Friends
-       Friends
-       Friends
+          <div className="friends-social">
+            <h5>Friends</h5>
+          {FriendrequestData.map((friend, idx) =>{
+                  return <Chats 
+                            key={idx}
+                            title={friend.title}
+                            image={friend.image}
+                          />
+                })}
         {/* <SidePost /> */}
       </div>
+      <h5>Chats</h5>
         </div>
       </Layout> 
 
