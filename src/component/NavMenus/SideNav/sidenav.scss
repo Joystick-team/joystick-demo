@@ -71,9 +71,10 @@
         margin: .5rem 0;
 
         &:active,&:hover, &:focus{
-            background: #C71F1F;
-            color: var(--secondary);
+            // background: #C71F1F;
+            // color: var(--secondary);
             // font-family: Montserrat;
+            color: #C71F1F;
             font-style: normal;
             font-weight: 600;
             font-size: 15px;

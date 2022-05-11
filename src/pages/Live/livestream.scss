@@ -35,27 +35,29 @@
         align-items: center;
         // border: solid 4px blue;
         // height: 538px;
-        height: 60vh;
+        height: 65vh;
 
         .videoplayer{
             // width: 804px;
             // height: 538px;
-            height: 58vh;
+            height: 63vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-grow: 2;
             width: fit-content;
             width: 380px;
+
             video{
                 // height: 397px;
-                height: 58vh;
+                height: 63vh;
                 flex-grow: 2;
-                width: fit-content;
+                // width: fit-content;
                 // width: 480px;
             }
         }
     }
+
     .video-icons{
         display: flex;
         justify-content: center;
@@ -64,18 +66,29 @@
         span{
             font-size: 2.5rem;
             margin-right: 1.5rem;
+            cursor: pointer;
+        }
+
+        .video-icons-one{
+            font-size: 1.7rem;
+            background: red;
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 
     .side-adverts{
         background: var(--secondary-background);
-        // padding: 1rem 1.5rem 1rem;
 
         .winner-post, .videoplayer{
             display: none;
         }
-        .chat-container{
 
+        .chat-container{
             overflow-y: none;
             max-height: 60vh;
         }

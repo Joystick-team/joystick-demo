@@ -4,7 +4,7 @@ import VideoPlayer from '../../component/VideoPlayer'
 import GameVideo from '../../assets/videoclips/games.mp4'
 import livegamecover from '../../assets/images/livegamecover.png'
 
-import { BsFillPauseCircleFill, BsFillPlayCircleFill, BsVoicemail } from 'react-icons/bs'
+import { BsFillPauseFill, BsFillPlayFill, BsVoicemail } from 'react-icons/bs'
 import './livestream.scss'
 import ProfileDetails from '../../component/ProfileDetails'
 
@@ -20,8 +20,8 @@ export default function Livescream() {
           <VideoPlayer source={GameVideo} coverImage={livegamecover} />
           </div>
           <div className="video-icons">
-            <span> <BsFillPlayCircleFill /></span>
-            <span><BsFillPauseCircleFill /></span>
+            <span className="video-icons-one" style={{color: 'white'}}> <BsFillPlayFill /></span>
+            <span><BsFillPauseFill /></span>
             <span><BsVoicemail /></span>
           </div>
         </div>
