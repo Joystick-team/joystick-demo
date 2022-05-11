@@ -18,18 +18,18 @@ export default function Socials() {
       <Layout> 
         <div className="main">
           <div className="center-container">
-          <div className="socials-bg" >
-            <img src={profilebg} className='bg-img' alt=""/> 
-            <div className="profile-avatar">
-              <div className="img-profile-avatar">
-                <img src={socialsavatar} width='180px' height={'180px'} alt="" />
-                <p>Ray Louis</p>
+            <div className="socials-bg" >
+              <img src={profilebg} className='bg-img' alt=""/> 
+              <div className="profile-avatar">
+                <div className="img-profile-avatar">
+                  <img src={socialsavatar} width='180px' height={'180px'} alt="" />
+                  <p>Ray Louis</p>
+                </div>
               </div>
+              <div className="edit-profile">
+                <span><MdOutlineEdit /></span> Edit profile
+                </div>
             </div>
-            <div className="edit-profile">
-               <span><MdOutlineEdit /></span> Edit profile
-              </div>
-          </div>
           <div className="social-post">
             <div className="">
                 <h4>Post</h4>
@@ -79,7 +79,6 @@ export default function Socials() {
                 })}
         {/* <SidePost /> */}
       </div>
-      <h5>Chats</h5>
         </div>
       </Layout> 
 

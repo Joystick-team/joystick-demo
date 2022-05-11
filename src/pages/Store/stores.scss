@@ -19,17 +19,23 @@
                     width: 283px;
                     height: 178px;
                     border: solid 1px black;
-                    margin-left: 1rem;
+                    margin-right: 1rem;
 
-                    &:first-child(0){
-                        margin-left: 0rem;
-                    }
+                    // &:first-child(0){
+                    //     margin-left: 0rem;
+                    // }
                 }
             }
     
         }
     }
 
+    .games-details
+    .sliders {
+        img{
+            background: var(--secondary-background);
+        }
+    }
     .collectible-container{
         .sliders {
             img{

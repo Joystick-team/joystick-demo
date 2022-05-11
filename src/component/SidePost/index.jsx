@@ -1,25 +1,17 @@
 import React from 'react'
 import VideoPlayer from '../VideoPlayer'
-import userAvarta from '../../assets/images/userAvarta.png'
 import qualityStar from '../../assets/images/quality.png'
-import {GoPrimitiveDot} from 'react-icons/go'
+import CarGameVideo from '../../assets/videoclips/car.mp4'
 import ChatsData from '../Chats/chatsdata'
 
 import './sideadvert.scss'
 import Chats from '../Chats'
+import ProfileDetails from '../ProfileDetails'
 
 export default function SidePost() {
   return (
     <div className="side-advert">
-
-        <div className="profile">
-          <img style={{cursor: 'pointer'}} src={userAvarta} alt="user-Avarta" />
-          <div className="personaldetails">
-            <p>Hello Dimgba!</p>
-            <p style={{marginTop: '-1rem'}}><span> <GoPrimitiveDot /> </span> Online</p>
-          </div>
-        </div>
-
+      <ProfileDetails />
         <br />
         <div className="winner-post">
           Post       
@@ -29,7 +21,7 @@ export default function SidePost() {
         </div>
         </div>
       <br />
-      <VideoPlayer />
+      <VideoPlayer source={CarGameVideo} coverImage={''}/>
       <br />
       <div className="">
         Chats
