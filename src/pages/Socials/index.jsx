@@ -11,6 +11,7 @@ import PreviousNextMethods from '../../component/PreviousNextMethods'
 import Chats from '../../component/Chats'
 import Friendrequest from '../../component/Chats/Friendrequest'
 import FriendrequestData from '../../component/Chats/Friendrequest/FriendrequestData'
+import { Tab, Tabs } from 'react-bootstrap'
 export default function Socials() {
   // const importeddata = 
   return (
@@ -31,9 +32,14 @@ export default function Socials() {
                 </div>
             </div>
           <div className="social-post">
-            <div className="">
-                <h4>Post</h4>
-              <div className="post-card-container">
+          <Tabs
+            defaultActiveKey="post"
+            transition={false}
+            id="noanim-tab-example"
+            className="mb-3"
+          >
+            <Tab eventKey="post" title="Post">
+            <div className="post-card-container">
               {
                 postData.map((data, idx) => {
                   return <Posts 
@@ -51,6 +57,15 @@ export default function Socials() {
                 })
               }
               </div>
+            </Tab>
+            <Tab eventKey="feeds" title="Feeds">
+              The Feeds Screen
+            </Tab>
+            <Tab eventKey="community" title="Community">
+            The Community Screen
+            </Tab>
+          </Tabs>
+            {/* <div className=""> */}
               <div className="friendsrequest-container">       
                <PreviousNextMethods rowNum={6} header={'Friend Requests'}>
                {FriendrequestData.map((friend, idx) =>{
@@ -62,7 +77,7 @@ export default function Socials() {
                 })}
               </PreviousNextMethods>
               </div>
-            </div>
+            {/* </div> */}
           </div>
           </div>
         </div>

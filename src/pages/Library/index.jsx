@@ -1,5 +1,7 @@
 // import { Tab } from 'bootstrap'
+// import { Tab } from 'bootstrap'
 import React from 'react'
+// import { Col, Nav, Row, Tabs } from 'react-bootstrap'
 import { IoOptionsOutline } from 'react-icons/io5'
 import Layout from '../../component/Layout'
 // import LibraryfilterSelection from '../../component/LibraryFilter'
@@ -39,6 +41,7 @@ export default function Library() {
           <RecentGames />
         </div>
       </div>
+
       </div>
     </Layout> 
     </div>

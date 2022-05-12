@@ -72,14 +72,33 @@
         }
         .social-post{
             margin-top: 8rem;
-            // margin: 8rem auto 1rem;
-            // margin-left: 2rem;
-            // border: 2px red solid;
+            margin-left: 1rem;
 
-            h4{
-                margin-left: 1rem;
+            .nav-link{
+                color: var(--secondary);
+                background-color: var(--secondary-background);
+                margin-right: 1rem;
             }
 
+            .nav-item:hover{
+                border: none;
+                opacity: .5;
+            }
+
+            .nav-item .active{
+                border: none;
+                border-bottom: red solid 4px;
+            }
+
+            #noanim-tab-example-tab-feeds{
+                color: var(--secondary);
+                background-color: none;
+            }
+
+            .nav-tabs {
+                border: none;
+            }
+            
             .post-card-container{
                 display: flex;
                 // justify-content: center;
@@ -87,18 +106,32 @@
 
                 .post-card {
                     margin: auto 1rem;
+                    color: #fff;
                     img{
                         // width: 323px;
                         width: 100%;
                         height: 208px;
+                    }
+                                            
+                    .content-body{
+                        padding: 0rem .5rem;
+
+                        .content-head-h6{
+                            // font-size: 1rem;
+                            font-weight: 600;
+                            font-size: 15px;
+                            line-height: 18px;
+                        }
+                        small{
+                            font-size: .8rem;
+                        }
                     }
                     .post-card-icons{
                         display: flex;
                         justify-content: flex-end;
                         align-items: flex-end;
                         font-size: 1.2rem;
-                        
-                        
+
                         span{
                             margin-left: 1rem;
                             color: var(--chat-option-icon);
