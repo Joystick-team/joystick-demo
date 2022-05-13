@@ -57,15 +57,6 @@ export default function Socials() {
                 })
               }
               </div>
-            </Tab>
-            <Tab eventKey="feeds" title="Feeds">
-              The Feeds Screen
-            </Tab>
-            <Tab eventKey="community" title="Community">
-            The Community Screen
-            </Tab>
-          </Tabs>
-            {/* <div className=""> */}
               <div className="friendsrequest-container">       
                <PreviousNextMethods rowNum={6} header={'Friend Requests'}>
                {FriendrequestData.map((friend, idx) =>{
@@ -77,6 +68,15 @@ export default function Socials() {
                 })}
               </PreviousNextMethods>
               </div>
+            </Tab>
+            <Tab eventKey="feeds" title="Feeds">
+              The Feeds Screen
+            </Tab>
+            <Tab eventKey="community" title="Community">
+            The Community Screen
+            </Tab>
+          </Tabs>
+            {/* <div className=""> */}
             {/* </div> */}
           </div>
           </div>

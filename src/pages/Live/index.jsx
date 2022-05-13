@@ -28,32 +28,6 @@ export default function Livescream() {
         <div className="side-adverts" >
           {/* The left advert/chat/friends should be written here */}
           <ProfileDetails />
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
-          hello
         </div>
       </Layout> 
     </div>
