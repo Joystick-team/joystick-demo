@@ -1,5 +1,4 @@
 import React from 'react'
-import './videoplayer.scss'
 
 export default function VideoPlayer(props) {
   return (
