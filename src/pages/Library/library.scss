@@ -12,6 +12,7 @@
             // line-height: 24px;
             // height: 85vh;
             display: block;
+            position: relative;
 
             mix-blend-mode: normal;
 
@@ -27,14 +28,88 @@
                     font-size: 16px;
                 }
             }
+            .flex-column{
+                position: relative;
+            }
 
             label{
                 cursor: pointer;
-                display: block;
+            //     display: block;
+
+                .nav-link {
+                    padding: 0 1rem;
+                    color: var(--secondary);
+                }
+
+            //     .active{
+            //         span{
+            //             height: 30px;
+            //             width: 30px;
+            //             border-radius: 50%;
+            //             background-color: yellow;
+            //             border: solid 1px green;
+            //             color: aqua;
+            //         }
+            //         color: red;
+            //     }
             }
-            .filter-menu-list{
+
+            
+            input {
+                position: absolute;
+                opacity: 0;
                 cursor: pointer;
-            }
+              }
+
+              /* Create a custom radio button */
+                .checkmark {
+                    position: absolute;
+                    top: 10;
+                    left: 15px;
+                    // right: -20px;
+                    height: 25px;
+                    width: 25px;
+                    // background-color: #eee;
+                    background: #C4C4C4;
+                    border-radius: 50%;
+                }
+                
+                /* On mouse-over, add a grey background color */
+                &:hover input ~ .checkmark {
+                    background-color: #ccc;
+                }
+                
+                /* When the radio button is checked, add a blue background */
+                //  input:checked ~ .checkmark {
+                //     background-color: #2196F3;
+                // }
+                
+                /* Create the indicator (the dot/circle - hidden when not checked) */
+                .checkmark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+                
+                /* Show the indicator (dot/circle) when checked */
+                input:checked ~ .checkmark:after {
+                    display: block;
+                }
+                
+                /* Style the indicator (dot/circle) */
+                .checkmark:after {
+                    top: 8px;
+                    left: 8px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    // background: var(--secondary);
+                    background: #060606;
+                }
+
+                .nav-link{
+                    margin-left: 2.2rem;
+                }
         }
         .library-games{
             height: 85vh;

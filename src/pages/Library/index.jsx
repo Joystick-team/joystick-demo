@@ -47,17 +47,18 @@ export default function Library() {
 
         <Row>
           <Col sm={2}>
-                   <div className="library-filter"> 
-        <div className="filter-menu">
-          <div className="filter-menu-header">
-            <div>Filter </div>  <p><IoOptionsOutline /></p>
-          </div>
-            <Nav variant="" className="flex-column">
-            <form action="" className="filter-menu-list">
+            <div className="library-filter"> 
+          <div className="filter-menu">
+            <div className="filter-menu-header">
+              <div>Filter </div>  <p><IoOptionsOutline /></p>
+            </div>
+              <Nav variant="" className="flex-column">
+            {/* <form action="" className="filter-menu-list"> */}
               <label htmlFor="All"> 
                 <Nav.Item>
                     <Nav.Link eventKey="first">
                       <input type="radio" id="All" name="fav_games" value="All" /> All
+                      <span class="checkmark"></span>
                     </Nav.Link>
                   </Nav.Item>
               </label>
@@ -66,6 +67,7 @@ export default function Library() {
               <Nav.Item>
                   <Nav.Link eventKey="second">
                     <input type="radio" id="Blockchain" name="fav_games" value="Blockchain" /> Blockchain 
+                    <span class="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item>
               </label>
@@ -74,10 +76,11 @@ export default function Library() {
                 <Nav.Item>
                   <Nav.Link eventKey="third">
                     <input type="radio" id="Native" name="fav_games" value="Native" /> Native
+                    <span class="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item> 
               </label>
-            </form>
+            {/* </form> */}
             </Nav>
             </div>
           </div>
