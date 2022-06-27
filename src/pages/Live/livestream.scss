@@ -1,12 +1,13 @@
 .livescream{
     .main{
         margin: auto 2rem;
+        // flex-grow: 0 !important;
     }
     .btn-live-container{
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin-right: 1.5rem;
+        // margin-right: 1.5rem;
     }
 
     .btn-live{
@@ -38,6 +39,9 @@
         // border: solid 4px blue;
         // height: 538px;
         height: 65vh;
+        max-width: 100%;
+        height: 538px;
+        // background-color: var(--secondary-background);
 
         .videoplayer{
             height: 60vh;
@@ -45,8 +49,7 @@
             justify-content: center;
             align-items: center;
             flex-grow: 2;
-            width: fit-content;
-            // width: 380px;
+            max-width: 100%;
             // max-width: 804px;
             // max-height: 538px;
 
@@ -55,7 +58,7 @@
                 flex-grow: 2;
                 max-width: 100%;
                 // max-height: 538px;
-                width: fit-content;
+                max-width: 100%;
             }
         }
     }

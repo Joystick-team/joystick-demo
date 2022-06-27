@@ -1,8 +1,11 @@
 import React from 'react'
 import Layout from '../../component/Layout'
 import VideoPlayer from '../../component/VideoPlayer'
-import GameVideo from '../../assets/videoclips/games.mp4'
+// import GameVideo from '../../assets/videoclips/games.mp4'
+import GameVideo from '../../assets/videoclips/BirdVideo.mp4'
+// import GameVideo from '../../assets/videoclips/car.mp4'
 import livegamecover from '../../assets/images/livegamecover.png'
+// import { ReactVideoPlayer } from '../../component/VideoPlayer'
 
 import { BsFillPauseFill, BsFillPlayFill, BsVoicemail } from 'react-icons/bs'
 import './livestream.scss'
@@ -17,7 +20,8 @@ export default function Livescream() {
             <button className='btn-live'>Go Live</button>
           </div>
           <div className="live-video">
-          <VideoPlayer source={GameVideo} coverImage={livegamecover} />
+          {/* <VideoPlayer source={GameVideo} coverImage={livegamecover} /> */}
+          <VideoPlayer source={GameVideo} width={'100%'} coverpicture={livegamecover} />
           </div>
           <div className="video-icons">
             <span className="video-icons-one" style={{color: 'white'}}> <BsFillPlayFill /></span>
@@ -26,8 +30,11 @@ export default function Livescream() {
           </div>
         </div>
         <div className="side-adverts" >
-          {/* The left advert/chat/friends should be written here */}
-          <ProfileDetails />
+        <ProfileDetails />
+          The left advert/chat/friends should be written here <br />
+          The left advert/chat/friends should be written here <br />
+          The left advert/chat/friends should be written here <br />
+          
         </div>
       </Layout> 
     </div>

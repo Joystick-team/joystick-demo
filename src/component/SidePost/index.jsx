@@ -1,7 +1,7 @@
 import React from 'react'
 import VideoPlayer from '../VideoPlayer'
 import qualityStar from '../../assets/images/quality.png'
-import CarGameVideo from '../../assets/videoclips/car.mp4'
+import CarGameVideo from '../../assets/videoclips/BirdVideo.mp4'
 import ChatsData from '../Chats/chatsdata'
 
 import './sideadvert.scss'
@@ -16,12 +16,12 @@ export default function SidePost() {
         <div className="winner-post">
           Post       
           <div className="winner-post-card">
-          <img src={qualityStar} alt="" />
-          <p>Winner of the week's tournament</p>
-        </div>
+            <img src={qualityStar} alt="" />
+            <p>Winner of the week's tournament</p>
+          </div>
         </div>
       <br />
-      <VideoPlayer source={CarGameVideo} coverImage={''}/>
+        <VideoPlayer source={CarGameVideo} width={300}/>
       <br />
       <div className="">
         Chats

@@ -9,6 +9,7 @@ body, html {
   color: white;
   box-sizing: border-box;
   max-width: 1440px;
+  margin: auto;
 }
 
 code {
