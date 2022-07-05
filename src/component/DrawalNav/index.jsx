@@ -8,13 +8,14 @@ import { FiTwitter } from "react-icons/fi";
 import JOYSTICK from '../../assets/images/JOYSTICK-logo2.png'
 import './drawalNav.scss'
 import ThemeToggle from "../ThemeToggle";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
 
     const {pathname} = useLocation();
 
+    console.log(pathname);
     return (
       <div className="" style={{position: 'relative'}}>
         <div className="side-nav">
@@ -33,23 +34,23 @@ export default function DrawalNav({TogglecloseOpen}) {
           <div>
             <Collapse in={open} dimension="width">
               <div>
-                  <Nav className=" flex-column" variant="tabs" defaultActiveKey={pathname}>
+                  <Nav className=" flex-column" variant="tabs" defaultActiveKey="/">
                     <div className="footer-nav">
-                      <Nav.Link href="/"> <FaHome /> <span>Home</span></Nav.Link>
-                      <Nav.Link href="/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
-                      <Nav.Link href="/library"> <BsGridFill/> <span>Library</span></Nav.Link>
-                      <Nav.Link href="/socials"> <BsFillPeopleFill /> <span>Socials</span></Nav.Link>
-                      <Nav.Link href="/livestream"> <BsBroadcast /> <span>Live</span></Nav.Link>
+                      <Link to="/" className="active" activeKey="/"> <FaHome /> <span>Home</span></Link>
+                      <Link to="/store"> <BsDropletFill /> <span>Store</span></Link>
+                      <Link to="/library"> <BsGridFill/> <span>Library</span></Link>
+                      <Link to="/socials"> <BsFillPeopleFill /> <span>Socials</span></Link>
+                      <Link to="/livestream"> <BsBroadcast /> <span>Live</span></Link>
                     </div>
 
                       <hr />
                       <div className="footer-nav-sids">
-                        <Nav.Link href="/u/wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
-                        <Nav.Link href="/u/settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
+                        <Link to="/u/wallet"><FaWallet /> <span>Wallet</span></Link>
+                        <Link to="/u/settings"><BsGearWideConnected /> <span>Settings</span></Link>
                         <div className="icons-sidenav-footer">
-                            <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
-                            <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
-                            <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
+                            <Link to="#action2"><FaFacebookF /> </Link>
+                            <Link to="#action3"><FiTwitter /> </Link>
+                            <Link to="#action4"><BsFillChatLeftQuoteFill /> </Link>
                         </div>
                         <ThemeToggle />
                       </div>

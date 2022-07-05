@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../../component/Layout'
 import VideoPlayer from '../../component/VideoPlayer'
 // import GameVideo from '../../assets/videoclips/games.mp4'
 import GameVideo from '../../assets/videoclips/BirdVideo.mp4'
@@ -14,7 +13,7 @@ import ProfileDetails from '../../component/ProfileDetails'
 export default function Livescream() {
   return (
     <div className='livescream'>
-      <Layout> 
+      {/* <Layout>  */}
         <div className="main"> 
           <div className="btn-live-container">
             <button className='btn-live'>Go Live</button>
@@ -36,7 +35,7 @@ export default function Livescream() {
           The left advert/chat/friends should be written here <br />
           
         </div>
-      </Layout> 
+      {/* </Layout>  */}
     </div>
   )
 }

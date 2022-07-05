@@ -1,10 +1,8 @@
 import React from 'react'
-import Layout from '../../component/Layout'
 
 export default function Settings() {
   return (
     <div className="settings">
-      <Layout> 
         <div className="main"> 
           <div >Settings</div> 
         </div>
@@ -12,7 +10,6 @@ export default function Settings() {
           {/* The left advert/chat/friends should be written here */}
           
         </div>
-      </Layout> 
     </div>
     
   )
