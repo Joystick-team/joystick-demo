@@ -6,16 +6,17 @@ import SidePost from '../../component/SidePost'
 import LiberyGamesData from '../../gamesdata'
 import './home.scss'
 
-export default function Library() {
+export default function Home() {
   return (
     <div className="home-container">
         <div className="main">
           <AnnouncementCarousel />
+          {/* <PreviousNextMethods rowNum={4} header=> */}
           <PreviousNextMethods rowNum={4} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 
-                    key={idx}
+                    key={game.key}
                     title={game.title}
                     text={game.text}
                     img={game.img}
