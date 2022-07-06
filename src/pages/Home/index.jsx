@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import MyCard from '../../component/MyCard'
@@ -7,12 +8,23 @@ import LiberyGamesData from '../../gamesdata'
 import './home.scss'
 
 export default function Home() {
+  const [sliderCount, setSliderCount] = useState(Number(4))
+
+  useEffect(() => {
+    if(window.innerWidth < 431){
+      setSliderCount(Number(3))
+    }
+    if(window.innerWidth < 1025){
+      setSliderCount(Number(3))
+    }
+  }, [])
+  
   return (
     <div className="home-container">
         <div className="main">
           <AnnouncementCarousel />
           {/* <PreviousNextMethods rowNum={4} header=> */}
-          <PreviousNextMethods rowNum={4} header={'Recent Games'}>
+          <PreviousNextMethods rowNum={sliderCount} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 

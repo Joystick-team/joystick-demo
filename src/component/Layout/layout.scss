@@ -83,7 +83,7 @@
     }
 }
 
-@media screen and (max-width: 430px){
+@media screen and (max-width: 450px){
     .layout-container{
         .top-nav, .side-nav-bar{
             display: none;
@@ -114,5 +114,27 @@
             }
         }
 
+    }
+}
+
+@media screen and (max-width: 1025px){
+    .layout-container{
+        .side-nav-bar{
+            display: none;
+        }
+        .top-nav .navbar{
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .main-container{
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            flex: 2 1;
+            height: 100vh;
+            margin-right: auto;
+            overflow-y: auto;
+        }
     }
 }
