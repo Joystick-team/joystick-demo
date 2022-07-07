@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../../component/Layout'
 import socialsavatar from '../../assets/images/socialsavatar.png'
 import profilebg from '../../assets/images/profile-bg.png'
 import { MdOutlineEdit } from 'react-icons/md'
@@ -12,11 +11,10 @@ import Chats from '../../component/Chats'
 import Friendrequest from '../../component/Chats/Friendrequest'
 import FriendrequestData from '../../component/Chats/Friendrequest/FriendrequestData'
 import { Tab, Tabs } from 'react-bootstrap'
+
 export default function Socials() {
-  // const importeddata = 
   return (
     <div className='socials'>
-      <Layout> 
         <div className="main">
           <div className="center-container">
             <div className="socials-bg" >
@@ -76,8 +74,6 @@ export default function Socials() {
             The Community Screen
             </Tab>
           </Tabs>
-            {/* <div className=""> */}
-            {/* </div> */}
           </div>
           </div>
         </div>
@@ -95,7 +91,6 @@ export default function Socials() {
         {/* <SidePost /> */}
       </div>
         </div>
-      </Layout> 
 
     </div>
   )

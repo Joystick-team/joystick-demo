@@ -9,39 +9,43 @@ import Livescream from './pages/Live';
 import Library from './pages/Library';
 import Settings from './pages/Settings';
 import Wallet from './pages/Wallet';
+import Layout from './component/Layout';
 
 function App() {
   return (
     <div className="App">
+      
       <Router>
-          <Routes>
-            <Route
-              exact
-              path="/" element={<HomePage/>}
-            />
-            <Route
-              path='/socials' element={<Socials/>}
-            />
-            <Route
-              path='/test' element={<TestPage/>}
-            />
+        <Layout>
+            <Routes>
+              <Route
+                exact
+                path="/" element={<HomePage/>}
+              />
+              <Route
+                path='/socials' element={<Socials/>}
+              />
+              <Route
+                path='/test' element={<TestPage/>}
+              />
 
-            <Route
-              path='/store' element={<Store/>}
-            />
-            <Route
-              path='/livestream' element={< Livescream/>}
-            />
-            <Route
-              path='/library' element={< Library/>}
-            />
-            <Route
-              path='u/settings' element={<Settings/>}
-            />
-            <Route
-              path='u/wallet' element={<Wallet/>}
-            />
-          </Routes>
+              <Route
+                path='/store' element={<Store/>}
+              />
+              <Route
+                path='/livestream' element={< Livescream/>}
+              />
+              <Route
+                path='/library' element={< Library/>}
+              />
+              <Route
+                path='u/settings' element={<Settings/>}
+              />
+              <Route
+                path='u/wallet' element={<Wallet/>}
+              />
+            </Routes>
+          </Layout>
         </Router >
     </div>
   );

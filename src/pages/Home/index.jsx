@@ -1,24 +1,34 @@
+import { useEffect, useState } from 'react'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
-import Layout from '../../component/Layout'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import SidePost from '../../component/SidePost'
 import LiberyGamesData from '../../gamesdata'
 import './home.scss'
 
-export default function Library() {
+export default function Home() {
+  const [sliderCount, setSliderCount] = useState(Number(4))
+
+  useEffect(() => {
+    if(window.innerWidth < 431){
+      setSliderCount(Number(3))
+    }
+    if(window.innerWidth < 1025){
+      setSliderCount(Number(3))
+    }
+  }, [])
+  
   return (
-    
-      <Layout> 
-      
+    <div className="home-container">
         <div className="main">
           <AnnouncementCarousel />
-          <PreviousNextMethods rowNum={4} header={'Recent Games'}>
+          {/* <PreviousNextMethods rowNum={4} header=> */}
+          <PreviousNextMethods rowNum={sliderCount} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 
-                    key={idx}
+                    key={game.key}
                     title={game.title}
                     text={game.text}
                     img={game.img}
@@ -32,8 +42,7 @@ export default function Library() {
             {/* The left advert/chat/friends should be written here */}
             <SidePost />
           </div>
-         
-      </Layout> 
+    </div>
     
    
   )

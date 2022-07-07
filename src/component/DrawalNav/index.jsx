@@ -16,6 +16,7 @@ export default function DrawalNav({TogglecloseOpen}) {
 
     const {pathname} = useLocation();
 
+    console.log(pathname);
     return (
       <div className="" style={{position: 'relative'}}>
          {/**only on mobile-view */}

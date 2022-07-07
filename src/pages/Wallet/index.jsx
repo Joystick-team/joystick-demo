@@ -1,10 +1,8 @@
 import React from 'react'
-import Layout from '../../component/Layout'
 
 export default function Wallet() {
   return (
     <div className="wallet">
-      <Layout> 
         <div className="main">
           <div>Wallet</div>
         </div>
@@ -12,7 +10,6 @@ export default function Wallet() {
           {/* The left advert/chat/friends should be written here */}
           
         </div>
-      </Layout>
     </div> 
     
   )

@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../../component/Layout'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import { Games, Collectible, Marketplace } from '../../storefiles'
@@ -31,7 +30,6 @@ export default function Store() {
   })
   return (
     <div className='store'>
-      <Layout> 
         <div className="main"> 
         <div className="nft-marketplace-container  sm:nft-marketplace-container ">
           <span>NFT Marketplaces</span>  
@@ -54,7 +52,6 @@ export default function Store() {
         </PreviousNextMethods>
         </div>
         </div>
-      </Layout> 
     </div>
   )
 }
