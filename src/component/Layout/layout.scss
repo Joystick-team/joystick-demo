@@ -1,71 +1,93 @@
-.layout-container{
-    // margin-left: 16rem;
 
-    .layout{
-        display: flex;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        overflow: hidden;
-        position: relative;
-        height: 100vh;
+    .layout-container{
+        // margin-left: 16rem;
     
-    
-        .side-nav-bar{
-            // border: solid grey 2px;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-basis: content;
-            // max-width: 260px;
-            // height: 100vh;
-            height: 1024px;
-            max-width: 260px;
-            flex-basis: auto;
-            position: relative;
-
-            .fixed-top-sidemenu {
-                display: block;
-                top: 0;
-                // right: 0;
-                left: 0;
-                z-index: 1030;
-                background: var(--background);
-            }
-        }
-    
-        .main-container{
+        .layout{
+            display: flex;
+            flex-wrap: wrap;
             box-sizing: border-box;
             overflow: hidden;
             position: relative;
-            flex: 2;
             height: 100vh;
-            margin-right: .7rem;
-            
-
-            .main-div{
-                display: flex;
-
-                .main{
-                    box-sizing: border-box;
-                    overflow-y: auto;
-                    max-height: 85vh;
-                    flex-basis: auto;
-                    flex-grow: 2;
+        
+        
+            .side-nav-bar{
+                // border: solid grey 2px;
+                box-sizing: border-box;
+                overflow: hidden;
+                flex-basis: content;
+                // max-width: 260px;
+                // height: 100vh;
+                height: 1024px;
+                max-width: 260px;
+                flex-basis: auto;
+                position: relative;
+    
+                .fixed-top-sidemenu {
+                    display: block;
+                    top: 0;
+                    // right: 0;
+                    left: 0;
+                    z-index: 1030;
+                    background: var(--background);
                 }
-            
-                .side-adverts{
-                    box-sizing: border-box;
-                    flex-basis: content;
-                    max-width: 327px;
-                    height: 85.7vh;
-                    background: var(--secondary-background);
-                    border-radius: 12px;
-                    flex-grow: 1;
-                    padding: 1rem;
+            }
+        
+            .main-container{
+                box-sizing: border-box;
+                overflow: hidden;
+                position: relative;
+                flex: 2;
+                height: 100vh;
+                margin-right: .7rem;
+                
+    
+                .main-div{
+                    display: flex;
+    
+                    .main{
+                        box-sizing: border-box;
+                        overflow-y: auto;
+                        max-height: 85vh;
+                        flex-basis: auto;
+                        flex-grow: 2;
+                    }
+                
+                    .side-adverts{
+                        box-sizing: border-box;
+                        flex-basis: content;
+                        max-width: 327px;
+                        height: 85.7vh;
+                        background: var(--secondary-background);
+                        border-radius: 12px;
+                        flex-grow: 1;
+                        padding: 1rem;
+                    }
                 }
             }
         }
     }
-}
+    
+    @media all and (max-width: 640px) {
+        /**width: 60% !important;*/
+        .sm\:main-div{
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            
+        } 
+        .sm\:layout {
+            display: flex;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            flex-direction: column;
+        }
+       
+        
+    }
 
 
 @supports ( position: sticky){
@@ -74,5 +96,7 @@
         top: 0;
         left: 0;
         right: 0;
+
     }
 }
+

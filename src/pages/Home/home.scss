@@ -1,4 +1,8 @@
 .home-container{
+    .home-main-div{
+        display:flex;
+        flex-direction: row;
+    }
     .sliders{
         img{
             width: 90%;

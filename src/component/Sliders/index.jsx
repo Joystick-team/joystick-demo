@@ -42,7 +42,7 @@ export default class Sliders extends Component {
     };
     return (
       
-      <div className="sliders">
+      <div className="sliders sm:sliders">
         <h2>Recent Games</h2>
         <Slider {...settings}>
             

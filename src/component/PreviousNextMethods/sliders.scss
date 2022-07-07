@@ -28,3 +28,18 @@
         left: 90%;
     }
 }
+
+@media all and (max-width: 640px) {
+
+    .sm\:sliders{
+
+        width:100%;
+        .slider-list{
+            overflow-x: visible;
+            width:200%;
+          
+    }
+
+
+}
+}

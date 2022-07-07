@@ -8,7 +8,7 @@ import './stores.scss'
 export default function Store() {
 
   const MarketplaceDetails = Marketplace.map((marketitem, idx) => {
-    return <div className="marketplace-details">
+    return <div className="marketplace-details sm:marketplace-details">
               <img key={marketitem.key} src={marketitem.img} alt="logo" />
             </div>
   })
@@ -33,9 +33,10 @@ export default function Store() {
     <div className='store'>
       <Layout> 
         <div className="main"> 
-        <div className="nft-marketplace-container">
-        NFT Marketplaces <br />
-        <div className="nft-marketplace-content">
+        <div className="nft-marketplace-container  sm:nft-marketplace-container ">
+          <span>NFT Marketplaces</span>  
+       <br />
+        <div className="nft-marketplace-content sm:nft-marketplace-content">
           {MarketplaceDetails}
         </div>
         

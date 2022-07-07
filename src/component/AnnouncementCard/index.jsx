@@ -4,8 +4,8 @@ import './announcementcarousel.scss'
 
 export default function AnnouncementCarousel() {
   return (
-    <div className='announcement-carousel'>
-       <Container>
+    <div className='announcement-carousel sm:announcement-carousel'>
+          <Container>
             <Carousel>
                 <Carousel.Item> 
                 {/* .carousel-item  */}
@@ -60,7 +60,7 @@ export default function AnnouncementCarousel() {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-       </Container>
+            </Container>
     </div>
   )
 }

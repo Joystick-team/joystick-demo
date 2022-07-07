@@ -9,8 +9,11 @@ export default function TopNav() {
   return (
     <div className='top-nav'>
             {/* <div classname=''> */}
-                <Container className='navbar'>
-                    <Nav   
+                <Container className='navbar '>
+                  
+                  
+              
+                    <Nav className="sm:navbar" 
                         // onSelect={(selectedKey) => alert(`selected = "${selectedKey}"`)} 
                         variant="pills"
                     >
@@ -24,19 +27,21 @@ export default function TopNav() {
                             <Nav.Link eventKey="/Staking">Staking</Nav.Link>
                         </Nav.Item>
                     </Nav>
-                    <div className="notice-search">
-                        <div className='top-notifications-icon'> <MdNotifications/> </div>
-                        <Form className="d-flex">
-                            <span><FiSearch /></span>
+                    <div className="notice-search sm:notice-Search">
+                        <div className='top-notifications-icon sm:top-notifications-icon '> <MdNotifications/> </div>
+                        <Form className="d-flex form">
+                            <span><FiSearch className='sm:search-icon'/></span>
                             <FormControl
                                 type="search"
                                 placeholder={` Search`}
-                                className="me-2 search-box"
+                                className="me-2 search-box "
                                 aria-label="Search"
                             />
                         </Form>
                     </div>
-                    <LoadingButton className='btn-connect' color="danger" title='Connect'/>
+                    <span className='lg:searchicon' style={{display:'block'}}><FiSearch /></span>
+                    <LoadingButton className='btn-connect sm:btn-connect' color="danger" title='Connect'/>
+                  
                 </Container>
             {/* </Navbar> */}
     </div>

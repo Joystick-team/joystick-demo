@@ -49,8 +49,11 @@
     
     .bottom-nav{
         display: block;
+        margin-bottom: 4rem;
         .bottom-nav-icons{
-    
+             display:flex;
+             flex-direction: column;
+             z-index: 10000
             a, Link{
                 font-size: 50px;
                 color: white;
@@ -58,7 +61,21 @@
                 text-decoration: none;
                 display: block;
             }
+            svg{
+                display: flex;
+                color:black;
+                width:28px;
+                height:25px;
+                justify-content: center;
+                align-items: center;
+            }
+           
+            .container-fluid{
+                position: fixed;
+                bottom:0
+            }
             span{
+                color:black;
                 font-size: 12px;
                 line-height: 15px; 
                 display: flex;

@@ -45,3 +45,60 @@
     }
 
 }
+
+@media all and (max-width: 480px) {
+    .store{
+
+        .main-div{
+            display: block !important;
+        }
+    
+        .sm\:nft-marketplace-container{
+            margin-left: 1rem;
+            width:100%;
+    
+            .sm\:nft-marketplace-content{
+                // height: 190px;
+              
+                width: auto;
+                display: flex;
+                align-items: center;
+                
+              
+        
+                .sm\:marketplace-details{
+                     width: 40%;
+                     height: 132px;
+                     margin-right: 26px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border: solid 1px black;
+                        margin-right: 1rem;
+    
+                        // &:first-child(0){
+                        //     margin-left: 0rem;
+                        // }
+                    }
+                }
+        
+            }
+        }
+    
+        .games-details
+        .sliders {
+            img{
+                background: var(--secondary-background);
+            }
+        }
+        .collectible-container{
+            .sliders {
+                img{
+                    height: 143px !important;
+                }
+            }
+        }
+    
+    }
+
+}

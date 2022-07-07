@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import Slider from "react-slick";
 import './sliders.scss'
+import "./index.scss"
 export default class PreviousNextMethods extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +28,7 @@ export default class PreviousNextMethods extends Component {
     };
     return (
       <Container>
-      <div className="sliders">
+      <div className="sliders sm:sliders">
         <div className="div" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <h5>{this.props.header}</h5>
 

@@ -24,7 +24,9 @@
             font-size: 15px;
             line-height: 18px;
         }
-
+        .search{
+            display:none
+        }
         .Tab .nav-link{
             color: var(--secondary);
             font-style: normal;
@@ -52,14 +54,14 @@
             color: var(--color-icon);
             cursor: pointer;
         }
-
+      
         form{
             .form-control {
                 padding-left: 1.9rem;
             }
 
             position: relative;
-
+            
             .search-box{
                 width: 318px;
                 height: 36px;
@@ -92,4 +94,36 @@
             border: transparent;
         }
     }
+}
+
+@media all and (max-width: 640px) {
+    /**width: 60% !important;*/
+    .sm\:navbar{
+        display: none;
+    } 
+
+   
+    input[type=search]{
+       display:none
+        }
+        .sm\:search-icon{
+            display: none;
+
+        }
+     
+     
+    .sm\:top-notifications-icon{
+        display:none
+    }
+   
+    .sm\:btn-connect{
+        display: none;
+    }
+ 
+}
+
+@media all and (max-width: 703px) {
+   .lg\:searchicon{
+    display: none;
+   }
 }

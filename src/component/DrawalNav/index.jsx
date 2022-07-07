@@ -9,15 +9,55 @@ import JOYSTICK from '../../assets/images/JOYSTICK-logo2.png'
 import './drawalNav.scss'
 import ThemeToggle from "../ThemeToggle";
 import { useLocation } from "react-router-dom";
-
+import {AiOutlineMenu} from "react-icons/ai"
 export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
+    const [show,setShow]=useState(false)
 
     const {pathname} = useLocation();
 
     return (
       <div className="" style={{position: 'relative'}}>
-        <div className="side-nav">
+         {/**only on mobile-view */}
+         <div className="menu-nav menu-nav-lg" onClick={()=>setShow(true)}> <AiOutlineMenu/> </div>
+         {
+          show&&(
+            <div className="sm:side-nav">
+              <span className="side-nav-burger" onClick={()=>setShow(false)}> <MdClose /></span>
+            <div>
+            <Nav className=" flex-column" variant="tabs" defaultActiveKey={pathname}>
+              <div className="footer-nav">
+                <Nav.Link href="/"> <FaHome /> <span>Home</span></Nav.Link>
+                <Nav.Link href="/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
+                <Nav.Link href="/library"> <BsGridFill/> <span>Library</span></Nav.Link>
+                <Nav.Link href="/socials"> <BsFillPeopleFill /> <span>Socials</span></Nav.Link>
+                <Nav.Link href="/livestream"> <BsBroadcast /> <span>Live</span></Nav.Link>
+              </div>
+
+                <hr />
+                <div className="footer-nav-sids">
+                  <Nav.Link href="/u/wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
+                  <Nav.Link href="/u/settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
+                  <div className="icons-sidenav-footer">
+                      <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
+                      <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
+                      <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
+                  </div>
+                  <ThemeToggle />
+                </div>
+
+            </Nav>
+
+        </div>
+        </div>
+          )
+         }
+
+          {/**/}
+        <div className="side-nav mobile-side-nav">
+         
+       
+       
           <div className="logo-title">
             <img src={JOYSTICK} alt="JOYSTICK-logo" />
           </div>
