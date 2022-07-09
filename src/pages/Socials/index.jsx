@@ -26,7 +26,7 @@ export default function Socials() {
                 </div>
               </div>
               <div className="edit-profile">
-                <span><MdOutlineEdit /></span> Edit profile
+                <span><MdOutlineEdit /></span><span className='profile-edit-text'>Edit profile</span>
                 </div>
             </div>
           <div className="social-post">

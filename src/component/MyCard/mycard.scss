@@ -1,4 +1,5 @@
-.mycard{
+
+ .mycard{
     .mb-3, .card{
         color: var(--primary);
         background: var(--background);
@@ -7,9 +8,10 @@
         justify-content: center;
         border: none;
     }
-
+     
     .card-body{
-        .card-text{
+      
+      .card-text{
             color: var(--plain-text);
         }
     }
@@ -17,13 +19,10 @@
 }
 
 @media all and (max-width: 640px) {
-    .sm\:card{
-        //width:100%;
-      .sm\:cardimg{
-        //width:300px
-      }
-        
+    .mycard{
+        .card-body{
+            padding-top:0.2rem;
+        }
     }
-
 }
 

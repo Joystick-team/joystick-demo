@@ -66,6 +66,9 @@
                 }
             }
         }
+        .side-navbar{
+            display: none;
+        }
     }
     
     @media all and (max-width: 640px) {
@@ -130,12 +133,16 @@
     }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
+   
     .layout-container{
         .top-nav, .side-nav-bar{
             display: none;
         }
-
+       
+        .side-navbar{
+            display: block;
+        }
         .main-container{
             box-sizing: border-box;
             overflow: hidden;
@@ -153,15 +160,19 @@
             height: 100vh;
 
             .side-adverts{
-                max-width: auto;
-            }
+                //max-width: auto;
+                
+                background-color:white !important;
+                 }
 
             .sliders img {
-                height: auto;
+                height:auto;
             }
         }
 
     }
+
+    
 }
 
 @media screen and (max-width: 1025px){

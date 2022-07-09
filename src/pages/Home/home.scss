@@ -11,11 +11,51 @@
             // width: 204px;
             // height: 274px;
         }
+       
     }
-
+     
     .videoplayer{
         video{
             width: 272px;
         }
+    }
+}
+
+
+
+@media screen and (max-width: 480px){
+    
+    .home-container{
+        .mycard{
+      
+            .mycard-body{
+                display:flex;
+                flex-direction:column;
+                align-items:flex-start;
+                justify-content: flex-start;
+                width: 100%;
+                padding-top:0px;
+                padding-left: 0.2rem;
+            .mycard-title{
+                font-size:0.94rem;
+                font-weight:600;
+
+            }
+            .mycard-text{
+                font-size: 0.85rem;
+                font-weight: 400;
+            }
+            .mycard-btn{
+                font-weight:600;
+                font-size: 0.94rem;
+            }
+              
+            }
+        }
+        .side-advert{
+            display:block;
+            border-radius:0.625rem;
+            padding:0.9rem
+         }
     }
 }

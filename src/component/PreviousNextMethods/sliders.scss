@@ -10,7 +10,9 @@
         // width: 204px;
         height: 274px;
     }
-
+     .slick-slide{
+        width:101px;
+     }
     .slick-next,  .slick-prev{
         top: -30px;
         right: 5%;
@@ -29,17 +31,19 @@
     }
 }
 
-@media all and (max-width: 640px) {
+@media all and (max-width:480px) {
 
-    .sm\:sliders{
+    .sliders{
 
-        width:100%;
-        .slider-list{
-            overflow-x: visible;
-            width:200%;
-          
+        width: 100%;
+        margin-top: 2rem;
+    
+        img{
+            width: 94%;
+            // height: 250px;
+            object-fit: contain;
+            // width: 204px;
+            height: 274px;
+        }
     }
-
-
-}
 }

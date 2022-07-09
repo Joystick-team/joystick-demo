@@ -39,7 +39,7 @@ export default function TopNav() {
                             />
                         </Form>
                     </div>
-                    <span className='lg:searchicon' style={{display:'block'}}><FiSearch /></span>
+                  
                     <LoadingButton className='btn-connect sm:btn-connect' color="danger" title='Connect'/>
                   
                 </Container>

@@ -28,7 +28,7 @@ export default class PreviousNextMethods extends Component {
     };
     return (
       <Container>
-      <div className="sliders sm:sliders">
+      <div className="sliders">
         <div className="div" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <h5>{this.props.header}</h5>
 
@@ -41,7 +41,7 @@ export default class PreviousNextMethods extends Component {
             </p>
             </div>
         </div>
-        <Slider ref={c => (this.slider = c)} {...settings}>
+        <Slider ref={c => (this.slider = c)} {...settings} >
           {this.props.children} 
         </Slider>
       </div>

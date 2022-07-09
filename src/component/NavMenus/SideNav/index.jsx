@@ -4,26 +4,24 @@ import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
 import { FiSearch, FiTwitter } from 'react-icons/fi'
 import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
-
-
 import './sidenav.scss';
+
 export default function SideNav() {
   return (
-    <div >
-        <Navbar variant="dark"  expand={false} >
-            <Container fluid>
-                <Navbar.Toggle aria-controls="offcanvasNavbar" variant="dark"/>
-                 <Navbar.Brand href="#">
-                    <img src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
-                 </Navbar.Brand>
-                <FiSearch /> 
-
-                <Navbar.Offcanvas
+    <div className='side-navbar'>
+       <Navbar  expand={false}  >
+          <Container fluid>
+          
+            <Navbar.Toggle className="sidebar-menubar" aria-controls="offcanvasNavbar" />
+            <Navbar.Brand href="#">
+              <img src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
+             </Navbar.Brand>
+            <FiSearch /> 
+            <Navbar.Offcanvas
                 id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel"
                 placement="start"
-                className='side-nav'
-                // variant='side-nav'
+                //variant='side-nav'
                 variant="dark"
                 >
                     <Offcanvas.Header closeButton variant="dark">
@@ -34,7 +32,7 @@ export default function SideNav() {
                          </Offcanvas.Title> */}
                      </Offcanvas.Header>
                     <Offcanvas.Body variant="dark">
-                        <Nav className=" flex-column" variant="pills" defaultActiveKey="#/">
+                        <Nav className=" flex-column" variant="pills" defaultActiveKey="/">
                             <Nav.Link activeKey="/" href="/"> <FaHome /> <span>Home</span></Nav.Link>
                             <Nav.Link href="/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
                             <Nav.Link href="/library"> <BsGridFill/> <span>Library</span></Nav.Link>
@@ -63,7 +61,7 @@ export default function SideNav() {
                         </Form> */}
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
-            </Container>
+          </Container>
         </Navbar>
     </div>
   )

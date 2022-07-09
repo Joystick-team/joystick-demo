@@ -3,6 +3,7 @@ import DrawalNav from '../DrawalNav'
 import './layout.scss'
 import TopNav from '../NavMenus/TopNav'
 import BottomNav from'../NavMenus/BottomNav'
+import SideNav from '../NavMenus/SideNav'
 
 
 export default function Layout(props) {
@@ -19,15 +20,18 @@ export default function Layout(props) {
 
         <div className="main-container">
         <TopNav />
+        <SideNav />
           <div className="main-div sm:main-div">
             {props.children}
            
           </div>
           <div >
-              <BottomNav />
+             
           </div>
        </div>
+       
       </div>
+      <BottomNav />
     </div>
   )
 }
