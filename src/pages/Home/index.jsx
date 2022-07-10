@@ -28,7 +28,7 @@ export default function Home() {
             {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 
-                    key={game.key}
+                    key={game.key.toString()}
                     title={game.title}
                     text={game.text}
                     img={game.img}

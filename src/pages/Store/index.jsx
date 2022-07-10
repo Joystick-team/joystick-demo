@@ -8,7 +8,7 @@ export default function Store() {
 
   const MarketplaceDetails = Marketplace.map((marketitem, idx) => {
     return <div className="marketplace-details">
-              <img key={marketitem.key} src={marketitem.img} alt="logo" />
+              <img loading='lazy' key={marketitem.key} src={marketitem.img} alt="logo" />
             </div>
   })
 
@@ -25,7 +25,7 @@ export default function Store() {
 
   const CollectibleDetails = Collectible.map((collection, idx) => {
     return <div className="collectible-details">
-              <img key={collection.key} src={collection.img} alt="logo" />
+              <img loading='lazy' key={collection.key} src={collection.img} alt="logo" />
             </div>
   })
   return (

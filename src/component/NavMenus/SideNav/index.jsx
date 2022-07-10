@@ -14,7 +14,7 @@ export default function SideNav() {
             <Container fluid>
                 <Navbar.Toggle aria-controls="offcanvasNavbar" variant="dark"/>
                  <Navbar.Brand href="#">
-                    <img src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
+                    <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
                  </Navbar.Brand>
                 <FiSearch /> 
 
@@ -30,7 +30,7 @@ export default function SideNav() {
                         
                         {/* {/* <Offcanvas.Title id="offcanvasNavbarLabel">
                             
-                            <img src={JOYSTICK} alt="JOYSTICK-logo" width='80px' height='40px' />
+                            <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='80px' height='40px' />
                          </Offcanvas.Title> */}
                      </Offcanvas.Header>
                     <Offcanvas.Body variant="dark">

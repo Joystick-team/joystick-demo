@@ -9,24 +9,28 @@ import pacman from './assets/images/pacman.png'
 
 const AllGamesData = [
     {        
+        key: '1',
         title: 'Axie Infinity',
         text: 'Blockchain',
         img: axie,
         button: "Play",
     },
     {        
+        key: '2',
         title: 'War of Ants',
         text: 'Blockchain',
         img: war,
         button: "Play",
     },
     {        
+        key: '3',
         title: 'Clash of Clans',
         text: 'Adventure',
         img: clash,
         button: "Play",
     },
     {        
+        key: '4',
         title: 'Clash of Clans',
         text: 'Adventure',
         img: forestnight,
@@ -39,24 +43,28 @@ const AllGamesData = [
     //     button: "Play",
     // },
     {        
+        key: '5',
         title: 'Age of Rust',
         text: 'Blockchain',
         img: rust,
         button: "Play",
     },
     {        
+        key: '6',
         title: 'Unravel Two',
         text: 'Adventure',
         img: unravel,
         button: "Play",
     },
     {        
+        key: '7',
         title: 'Tetris',
         text: 'Arcade',
         img: Tetris,
         button: "Play",
     },
     {        
+        key: '8',
         title: 'Pac Man',
         text: 'Arcade',
         img: pacman,

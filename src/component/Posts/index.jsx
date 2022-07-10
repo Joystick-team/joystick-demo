@@ -3,7 +3,7 @@ import React from 'react'
 export default function Posts(props) {
   return (
     <div className="post-card" style={{position: 'relative'}}> 
-        <img src={props.img} className='bg-img' alt=""/>
+        <img loading='lazy' src={props.img} className='bg-img' alt=""/>
         <div className="content-body" style={{position: 'absolute', top: '60%'}}>
             <div className="content-head-h6">{props.name}</div>
             <small>{props.content}</small>
