@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { FaSun } from "../../assets/svgs/icons"
 import { CgDarkMode } from "react-icons/cg";
 import "./themeToggle.style.scss";
 

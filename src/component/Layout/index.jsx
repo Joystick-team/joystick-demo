@@ -6,7 +6,7 @@ import TopNav from '../NavMenus/TopNav'
 
 export default function Layout(props) {
   return (
-    <div className='layout-container'>
+    <div className='layout-container '>
       <div className="layout">
         <div className="side-nav-bar">
           <div className="fixed-top-sidemenu">
@@ -15,7 +15,7 @@ export default function Layout(props) {
           
         </div>
 
-        <div className="main-container">
+        <div className="main-container ">
         <TopNav />
           <div className="main-div">
             {props.children}
