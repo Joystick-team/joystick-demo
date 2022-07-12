@@ -5,7 +5,7 @@ import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import SidePost from '../../component/SidePost'
 import LiberyGamesData from '../../gamesdata'
-import SideNav from '../../component/NavMenus/SideNav'
+// import SideNav from '../../component/NavMenus/SideNav'
 import './home.scss'
 
 export default function Home() {
@@ -25,13 +25,11 @@ export default function Home() {
         <div className="main">
           
           <AnnouncementCarousel />
-          {/* <PreviousNextMethods rowNum={4} header=> */}
           <PreviousNextMethods rowNum={sliderCount} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
               <Col>
                   <MyCard 
-                  
-                    key={game.key}
+                    key={game.key.toString()}
                     title={game.title}
                     text={game.text}
                     img={game.img}

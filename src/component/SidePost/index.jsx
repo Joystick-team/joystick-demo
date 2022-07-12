@@ -16,7 +16,7 @@ export default function SidePost() {
         <div className="winner-post">
           Post       
           <div className="winner-post-card">
-            <img src={qualityStar} alt="" />
+            <img loading='lazy' src={qualityStar} alt="" />
             <p>Winner of the week's tournament</p>
           </div>
         </div>
