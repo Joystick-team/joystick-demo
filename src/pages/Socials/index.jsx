@@ -18,10 +18,10 @@ export default function Socials() {
         <div className="main">
           <div className="center-container">
             <div className="socials-bg" >
-              <img src={profilebg} className='bg-img' alt=""/> 
+              <img loading='lazy' src={profilebg} className='bg-img' alt=""/> 
               <div className="profile-avatar">
                 <div className="img-profile-avatar">
-                  <img src={socialsavatar} width='180px' height={'180px'} alt="" />
+                  <img loading='lazy' src={socialsavatar} width='180px' height={'180px'} alt="" />
                   <p>Ray Louis</p>
                 </div>
               </div>
