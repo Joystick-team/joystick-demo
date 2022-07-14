@@ -52,6 +52,10 @@
             color: var(--color-icon);
             cursor: pointer;
         }
+        
+        .search-box-container{
+            width: 318px;
+        }
 
         form{
             .form-control {
@@ -61,7 +65,7 @@
             position: relative;
 
             .search-box{
-                width: 318px;
+                // width: 318px;
                 height: 36px;
                 border: none;
                 background: var(--search-box-background);
