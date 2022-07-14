@@ -40,6 +40,10 @@
             height: 100vh;
             margin-right: .7rem;
 
+            .mobile-nav{
+                display: none;
+            }
+
             .main-div{
                 display: flex;
 
@@ -97,6 +101,7 @@
             height: 100vh;
             margin-right: auto;
             overflow-y: auto;
+
         }
         
         .layout .main-container .main-div > div {
@@ -106,7 +111,8 @@
             height: 100vh;
 
             .side-adverts{
-                max-width: auto;
+                // max-width: auto;
+                max-width: 100%;
             }
 
             .sliders img {
@@ -135,6 +141,10 @@
             height: 100vh;
             margin-right: auto;
             overflow-y: auto;
+
+            .mobile-nav{
+                display: block !important;
+            }
         }
     }
 }

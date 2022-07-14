@@ -9,7 +9,7 @@ import './bottomnav.scss'
 export default function BottomNav() {
   return (
     <div className='bottom-nav' >
-        <Navbar className='text-center mb-0 bottom-nav-bg' bg="dark" variant="dark" fixed="bottom">
+        <Navbar className='text-center bottom-nav-bg' bg="dark" variant="dark" fixed="bottom">
             <Container fluid>
                 <div className="bottom-nav-icons"><Link to='#'><MdLeaderboard /><span>Leaderboard</span></Link> </div>
                 <div className="bottom-nav-icons"><Link to='#'><BiTrophy /></Link> <span>Rewards</span></div>

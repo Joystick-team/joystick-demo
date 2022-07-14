@@ -2,7 +2,8 @@
     height: 86vh;
     right: 0;
     background: var(--secondary-background);
-    z-index: 99999;
+    // z-index: 99999;
+    margin: 2% auto 3rem;
 
     .profile {
         display: flex;

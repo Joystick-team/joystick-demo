@@ -7,6 +7,7 @@ import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
 
 
 import './sidenav.scss';
+import ThemeToggle from '../../ThemeToggle'
 export default function SideNav() {
   return (
     <div >
@@ -50,6 +51,9 @@ export default function SideNav() {
                                     <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
                                     <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
                                 </div>
+                            </div>
+                            <div className="">
+                                <ThemeToggle />
                             </div>
                         </Nav>
                         {/* <Form className="d-flex">
