@@ -6,7 +6,7 @@ import AllGamesData from '../../librarygamesdata'
 import './library.scss'
 
 export default function Library() {
-  const fetchBlockchain = AllGamesData.filter((game) => game.text === 'Blockchain')
+  const fetchBlockchain = AllGamesData.filter((game) => game.text.includes('Blockchain'))
   const fetchAdventure = AllGamesData.filter((game) => game.text === 'Adventure')
   const fetchArcade = AllGamesData.filter((game) => game.text === 'Arcade')
   

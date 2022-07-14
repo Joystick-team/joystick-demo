@@ -26,7 +26,7 @@ export default function TopNav() {
                     </Nav>
                     <div className="notice-search">
                         <div className='top-notifications-icon'> <MdNotifications/> </div>
-                        <Form className="d-flex">
+                        <Form className="d-flex search-box-container">
                             <span><FiSearch /></span>
                             <FormControl
                                 type="search"
