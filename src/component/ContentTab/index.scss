@@ -1,15 +1,45 @@
-pre{
-    overflow: hidden;
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
-    overflow-y: auto;
-    height: 82vh;
-}
-
-h5{
+.format-pre-text{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    p{
+        margin: 0% .7rem 0% 1.4rem;
+
+        pre{
+            overflow: hidden;
+            box-sizing: border-box;
+            margin: 0%;
+            padding: 0%;
+            overflow-y: auto;
+            height: 82vh;
+        }
+    }
+    
+    h5{
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .format-pre-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p{
+
+            pre{
+    
+                white-space: pre-wrap;       /* Since CSS 2.1 */
+                white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                white-space: -pre-wrap;      /* Opera 4-6 */
+                white-space: -o-pre-wrap;    /* Opera 7 */
+                word-wrap: break-word;       /* Internet Explorer 5.5+ */
+                height: 75vh;
+            }
+        }
+    }
 }
