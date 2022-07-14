@@ -19,10 +19,12 @@ export default function Home() {
     }
   }, [])
   
+  
   return (
     <div className="home-container">
         <div className="main">
           <AnnouncementCarousel />
+        
           {/* <PreviousNextMethods rowNum={4} header=> */}
           <PreviousNextMethods rowNum={sliderCount} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
