@@ -1,7 +1,13 @@
+@media screen and (max-width: 480px) {
+
 .side-nav{
     // margin-top: 4rem;
-    background: var(--secondary-background);
-
+   
+   
+  .offcanvas{
+    width: min-content !important;
+    height: 104vh;
+    background: blue;
     .fixed-top-sidemenu {
         position: fixed;
         top: 0;
@@ -10,15 +16,16 @@
         z-index: 1030;
         margin: 0;
         padding: 0;
-        background: var(--background);
+        background: var(--background) !important;
     }
+
 
     .offcanvas-header{
         button, .btn-close{
             outline: none;
             background-image: none;
 
-            color: #FBFBFB !important;
+            color: #FBFBFB;
             background-image: none;
             float: left;
             margin-left: auto;
@@ -124,6 +131,9 @@
         margin: 0%;
     }
 } 
+}
+}
+
 
 @media all and (max-width: 480px) {
     .side-nav{

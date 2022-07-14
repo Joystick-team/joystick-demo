@@ -62,7 +62,9 @@
                     padding: 1rem;
                 }
             }
-
+            .side-navbar{
+                display: none;
+            }
             .main-div {
                 & > div{
                     display: contents;
@@ -83,12 +85,14 @@
     }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
     .layout-container{
         .top-nav, .side-nav-bar{
             display: none;
         }
-
+        .side-navbar{
+            display: block !important;
+        }
         .main-container{
             box-sizing: border-box;
             overflow: hidden;

@@ -4,12 +4,10 @@ import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
 import { FiSearch, FiTwitter } from 'react-icons/fi'
 import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
-
-
 import './sidenav.scss';
 export default function SideNav() {
   return (
-    <div >
+    <div className="side-navbar" >
         <Navbar variant="dark"  expand={false} >
             <Container fluid>
                 <Navbar.Toggle aria-controls="offcanvasNavbar" variant="dark"/>

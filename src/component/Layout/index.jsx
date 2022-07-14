@@ -2,7 +2,9 @@ import React from 'react'
 import DrawalNav from '../DrawalNav'
 import './layout.scss'
 import TopNav from '../NavMenus/TopNav'
-
+import SideNav from '../NavMenus/SideNav'
+import BottomNav from "../NavMenus/BottomNav"
+ 
 
 export default function Layout(props) {
   return (
@@ -17,9 +19,11 @@ export default function Layout(props) {
 
         <div className="main-container">
         <TopNav />
+        <SideNav />
           <div className="main-div">
             {props.children}
           </div>
+          <BottomNav />
         </div>
       </div>
     </div>

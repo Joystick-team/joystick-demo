@@ -47,20 +47,69 @@
 
 @media all and (max-width: 480px) {
     
+   
     .bottom-nav{
         display: block;
-        .bottom-nav-icons{
+       
+        .navbar{
+            background-color: yellow;
+            .bottom-nav-bg{
+                background-color: yellow;
+            }
+        }
     
+        .bg-dark{
+            background: var(--background);
+            --bs-bg-opacity: none;
+        }
+    
+        .navbar{
+            padding-top: .5rem;
+            padding-bottom: 0%;
+        }
+        .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+            background: var(--background);
+        }
+    
+        .navbar{
+            height: 100px;
+            // font-family: Montserrat;
+            z-index: 999999999999999999;
+            position:fixed;
+           padding-top: 2.5rem;
+           
+        }
+        background-color: red;
+        .bottom-nav-icons{
+             display:flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             width:25%;
+             padding-top:1rem;
+             padding-bottom:1rem;
             a, Link{
                 font-size: 50px;
                 color: white;
                 list-style: none;
                 text-decoration: none;
                 display: block;
+                height: 25px;
+                width: 1.75rem;
             }
+            svg{
+                display: flex;
+                color:black;
+                width:28px;
+                height:25px;
+                justify-content: center;
+                align-items: center;
+            }
+           
             span{
-                font-size: 12px;
-                line-height: 15px; 
+                color:black;
+                font-size: 0.75rem;
+                line-height: 14px; 
                 display: flex;
                 justify-content: center;
                 align-items: center;
