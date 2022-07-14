@@ -1,10 +1,63 @@
 import React from 'react'
-import { Col, Nav, Row, Tab } from 'react-bootstrap'
+import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 import { IoOptionsOutline } from 'react-icons/io5'
-import RecentGames from '../../component/RecentGames'
+import MyCard from '../../component/MyCard'
+import AllGamesData from '../../librarygamesdata'
 import './library.scss'
 
 export default function Library() {
+  const fetchBlockchain = AllGamesData.filter((game) => game.text === 'Blockchain')
+  const fetchAdventure = AllGamesData.filter((game) => game.text === 'Adventure')
+  const fetchArcade = AllGamesData.filter((game) => game.text === 'Arcade')
+  
+  const fetchdata = AllGamesData.map((game, idx) => (
+        <Col>
+            <MyCard 
+                key={idx}
+                title={game.title}
+                text={game.text}
+                img={game.img}
+                button="Play"
+            />
+        </Col>
+    ))
+
+  const Blockchain = fetchBlockchain.map((game, idx) => (
+    <Col>
+        <MyCard 
+            key={idx}
+            title={game.title}
+            text={game.text}
+            img={game.img}
+            button="Play"
+        />
+    </Col>
+))
+
+const Adventure = fetchAdventure.map((game, idx) => (
+  <Col>
+      <MyCard 
+          key={idx}
+          title={game.title}
+          text={game.text}
+          img={game.img}
+          button="Play"
+      />
+  </Col>
+))
+
+const Arcade = fetchArcade.map((game, idx) => (
+  <Col>
+      <MyCard 
+          key={idx}
+          title={game.title}
+          text={game.text}
+          img={game.img}
+          button="Play"
+      />
+  </Col>
+))
+
   return (
     <div className="library">
       <div className="main">
@@ -18,10 +71,9 @@ export default function Library() {
               <div>Filter </div>  <p><IoOptionsOutline /></p>
             </div>
               <Nav variant="" className="flex-column">
-            {/* <form action="" className="filter-menu-list"> */}
               <label htmlFor="All"> 
                 <Nav.Item>
-                    <Nav.Link eventKey="first">
+                    <Nav.Link eventKey="first" >
                       <input type="radio" id="All" name="fav_games" value="All" /> All
                       <span class="checkmark"></span>
                     </Nav.Link>
@@ -37,15 +89,22 @@ export default function Library() {
                 </Nav.Item>
               </label>
 
-              <label htmlFor="Native">
+              <label htmlFor="Adventure">
                 <Nav.Item>
                   <Nav.Link eventKey="third">
-                    <input type="radio" id="Native" name="fav_games" value="Native" /> Native
+                    <input type="radio" id="Adventure" name="fav_games" value="Adventure" /> Adventure
                     <span class="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item> 
               </label>
-            {/* </form> */}
+                <label htmlFor="Arcade">
+                <Nav.Item>
+                  <Nav.Link eventKey="fourth">
+                    <input type="radio" id="Arcade" name="fav_games" value="Arcade" /> Arcade
+                    <span class="checkmark"></span>
+                  </Nav.Link>
+                </Nav.Item> 
+              </label>
             </Nav>
             </div>
           </div>
@@ -53,13 +112,32 @@ export default function Library() {
           <Col sm={10}>
             <Tab.Content>
               <Tab.Pane eventKey="first">
-              <RecentGames />
+                <Container>
+                  <Row xs={3} md={4} className="g-4 recent-games-items">
+                        {fetchdata}
+                    </Row>
+                </Container>
               </Tab.Pane>
               <Tab.Pane eventKey="second">
-              Blockchain  Games
+                <Container>
+                  <Row xs={3} md={4} className="g-4 recent-games-items">
+                      {Blockchain}
+                    </Row>
+                </Container>
               </Tab.Pane>
               <Tab.Pane eventKey="third">
-                Native Games
+               <Container>
+                  <Row xs={3} md={4} className="g-4 recent-games-items">
+                        {Adventure}
+                    </Row>
+                </Container>
+              </Tab.Pane>
+              <Tab.Pane eventKey="fourth">
+                <Container>
+                  <Row xs={3} md={4} className="g-4 recent-games-items">
+                        {Arcade}
+                    </Row>
+                </Container>
               </Tab.Pane>
             </Tab.Content>
           </Col>
