@@ -10,6 +10,10 @@ import Library from './pages/Library';
 import Settings from './pages/Settings';
 import Wallet from './pages/Wallet';
 import Layout from './component/Layout';
+import Leaderboard from './component/ContentTab/Leaderboard';
+import Staking from './component/ContentTab/Staking';
+import Rewards from './component/ContentTab/Rewards';
+
 
 function App() {
   return (
@@ -43,6 +47,18 @@ function App() {
               />
               <Route
                 path='u/wallet' element={<Wallet/>}
+              />
+              <Route
+                exact
+                path="/leaderboard" element={<Leaderboard />}
+              />
+              <Route
+                exact
+                path="/staking" element={<Staking />}
+              />
+              <Route
+                exact
+                path="/rewards" element={<Rewards />}
               />
             </Routes>
           </Layout>

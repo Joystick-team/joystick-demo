@@ -4,25 +4,22 @@ import { MdNotifications } from 'react-icons/md';
 import LoadingButton from '../../LoadingButton';
 import { FiSearch } from 'react-icons/fi'
 import './topnav.scss'
+import { Link } from 'react-router-dom';
 
 export default function TopNav() {
   return (
     <div className='top-nav'>
-            {/* <div classname=''> */}
                 <Container className='navbar'>
                     <Nav   
-                        // onSelect={(selectedKey) => alert(`selected = "${selectedKey}"`)} 
                         variant="pills"
                     >
-                        <Nav.Item>
-                            <Nav.Link eventKey="/Leaderboard">Leaderboard</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="/Rewards">Rewards</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="/Staking">Staking</Nav.Link>
-                        </Nav.Item>
+                        <div className="top-nav-list">
+                            <ul>
+                                <li><Link to="/leaderboard">Leaderboard</Link></li>
+                                <li><Link to="/rewards">Rewards</Link></li>
+                                <li><Link to="/staking">Staking</Link></li>
+                            </ul>
+                        </div>
                     </Nav>
                     <div className="notice-search">
                         <div className='top-notifications-icon'> <MdNotifications/> </div>
@@ -38,7 +35,6 @@ export default function TopNav() {
                     </div>
                     <LoadingButton className='btn-connect' color="danger" title='Connect'/>
                 </Container>
-            {/* </Navbar> */}
     </div>
   )
 }
