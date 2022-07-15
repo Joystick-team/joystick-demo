@@ -45,3 +45,89 @@
     }
 
 }
+
+
+@media screen and (max-width: 480px) {
+    .store{
+   
+        .nft-marketplace-container{
+            .span-nft-text{
+                font-weight: 500;
+                font-size: 1.25rem;
+               }
+            
+            .nft-marketplace-content{
+                   display:flex;
+                   flex-direction:row;
+                   justify-content: center;
+                   padding-top:1rem;
+
+                  
+                .marketplace-details{
+                    width: 40%;
+                    height: 132px;
+                    margin-right: 26px;
+                 
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border: solid 1px black;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+        .sliders{
+           .sliders-title{
+            font-weight: 500;
+            font-size: 1.25rem;
+           }
+        }
+         
+        .mycard{
+
+            .mycard-img{
+                width: 93%;
+            }
+        .mycard-body{
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            padding-top:0px;
+            padding-left: 0.2rem;
+        .mycard-title{
+            font-size:0.94rem;
+            font-weight:600;
+
+        }
+        .mycard-text{
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+        .mycard-btn{
+            font-weight:600;
+            font-size: 0.94rem;
+            color: #D91111;
+        }
+          
+        }
+    }
+    .collectible-container{
+        display:block;
+     .collectible-details{
+           width: 97%  !important;
+           height: 109px !important;
+           margin-right: 13px;
+         .collectible-details-img{
+              height: 100% !important;
+              width: 100%  !important;
+             }
+        }
+     }
+     .empty-div{
+        height: 50px;
+     }
+    }
+}
