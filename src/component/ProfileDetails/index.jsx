@@ -8,7 +8,7 @@ export default function ProfileDetails() {
     <div className="profile">
         <img loading='lazy' style={{cursor: 'pointer'}} src={userAvarta} alt="user-Avarta" />
         <div className="personaldetails">
-            <p>Hello Dimgba!</p>
+            <p className="p-text">Hello Dimgba!</p>
             <p style={{marginTop: '-1rem'}}><span> <GoPrimitiveDot /> </span> Online</p>
         </div>
     </div>

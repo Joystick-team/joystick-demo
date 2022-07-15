@@ -40,6 +40,7 @@ export default function Home() {
         <div className="side-adverts" style={{display:'flex'}}>
             {/* The left advert/chat/friends should be written here */}
             <SidePost />
+            <div className="empty-div" ></div>
           </div>
     </div>
     
