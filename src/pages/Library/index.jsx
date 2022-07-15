@@ -13,7 +13,7 @@ export default function Library() {
   const fetchdata = AllGamesData.map((game, idx) => (
         <Col>
             <MyCard 
-                key={idx}
+                key={game.key}
                 title={game.title}
                 text={game.text}
                 img={game.img}
@@ -25,7 +25,7 @@ export default function Library() {
   const Blockchain = fetchBlockchain.map((game, idx) => (
     <Col>
         <MyCard 
-            key={idx}
+            key={game.key}
             title={game.title}
             text={game.text}
             img={game.img}
@@ -37,7 +37,7 @@ export default function Library() {
 const Adventure = fetchAdventure.map((game, idx) => (
   <Col>
       <MyCard 
-          key={idx}
+          key={game.key}
           title={game.title}
           text={game.text}
           img={game.img}
@@ -49,7 +49,7 @@ const Adventure = fetchAdventure.map((game, idx) => (
 const Arcade = fetchArcade.map((game, idx) => (
   <Col>
       <MyCard 
-          key={idx}
+          key={game.key}
           title={game.title}
           text={game.text}
           img={game.img}
@@ -75,7 +75,7 @@ const Arcade = fetchArcade.map((game, idx) => (
                 <Nav.Item>
                     <Nav.Link eventKey="first" >
                       <input type="radio" id="All" name="fav_games" value="All" /> All
-                      <span class="checkmark"></span>
+                      <span className="checkmark"></span>
                     </Nav.Link>
                   </Nav.Item>
               </label>
@@ -84,7 +84,7 @@ const Arcade = fetchArcade.map((game, idx) => (
               <Nav.Item>
                   <Nav.Link eventKey="second">
                     <input type="radio" id="Blockchain" name="fav_games" value="Blockchain" /> Blockchain 
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item>
               </label>
@@ -93,7 +93,7 @@ const Arcade = fetchArcade.map((game, idx) => (
                 <Nav.Item>
                   <Nav.Link eventKey="third">
                     <input type="radio" id="Adventure" name="fav_games" value="Adventure" /> Adventure
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item> 
               </label>
@@ -101,7 +101,7 @@ const Arcade = fetchArcade.map((game, idx) => (
                 <Nav.Item>
                   <Nav.Link eventKey="fourth">
                     <input type="radio" id="Arcade" name="fav_games" value="Arcade" /> Arcade
-                    <span class="checkmark"></span>
+                    <span className="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item> 
               </label>
