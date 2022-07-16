@@ -152,7 +152,7 @@
                     img{
                         
                         width: 105px;
-                        height: 105px !important;
+                        height: 105px ;
                     }
                 }
             }
@@ -199,4 +199,204 @@
         //     }
         // }
     }
+}
+
+
+@media screen and (max-width: 480px){
+    
+    .socials{
+
+        .main{
+        
+        .center-container{
+            
+
+            .socials-bg{
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                 
+
+                .bg-img{
+                    width: 100%;
+                    // width: 692px;
+                    height: 180px;
+                }
+                    
+                .profile-avatar{
+                    
+            
+                    .img-profile-avatar{
+                        img{
+                            height: 108px;
+                            width: 108px;
+                           
+                        }
+                        p{
+                           font-size:1.25rem;
+                           font-weight: 500;
+                        }
+                    } 
+    
+                }
+    
+                .edit-profile{
+                    width: 100px;
+                    border-radius: 3px;
+                    margin-left: 14px;
+                    cursor: pointer;
+                    .edit-icon{
+                        font-size:18px;
+                    }
+                    .profile-edit-text{
+                        font-size:18px;
+                        span{
+                            display: none;
+                        }
+                    }
+    
+                    span{
+                        margin-right: .7rem;
+                    }
+                }
+            }
+            }
+        }
+
+        .social-post{
+            margin-top: 7rem;
+            margin-left: 1rem;
+            width: 100%;
+
+            .nav{
+                padding-left: 13px;
+            .nav-link{
+              //  width: 60px;
+                color: var(--secondary);
+                background-color: var(--secondary-background);
+                margin-right: 1rem;
+                width: auto;
+                height: 40px;
+                font-size: 17px;
+                padding-left: 13px;
+            }
+
+            .nav-item:hover{
+                border: none;
+                opacity: .5;
+            }
+
+            .nav-item .active{
+                border: none;
+                border-bottom: red solid 4px;
+                
+            }
+
+            #noanim-tab-example-tab-feeds{
+                color: var(--secondary);
+                background-color: none;
+            }
+
+            .nav-tabs {
+                border: none;
+            }
+        }
+            .post-card-container{
+               
+                width: 100%;
+                padding-right: 24px;
+                padding-left: 10px;
+                justify-content: center;
+                .post-card {
+                    margin: auto 0.25rem !important;
+                    color: #fff;
+                    img{
+                        // width: 323px;
+                        width: 90% !important;
+                        height: 208px;
+                    }
+                                            
+                    .content-body{
+                        padding: 0rem .5rem;
+                        position: absolute; 
+                        top:65%;
+                        .content-head-h6{
+                            // font-size: 1rem;
+                            font-weight: 600;
+                            font-size: 15px;
+                            line-height: 18px;
+                        }
+                        small{
+                            font-size: .8rem;
+                        }
+                    }
+                    .post-card-icons{
+                        display: flex;
+                        justify-content: center !important;
+                        align-items: center !important;
+                        font-size: 16px !important;
+
+                        span{
+                            display:flex;
+                            //justify-content: center;
+                            align-items: center;
+                            margin-left: 11px !important;
+                            color: var(--chat-option-icon);
+
+                            &:active, &:focus, &:visited{
+                                color: blue;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    .friendsrequest-container{
+        .sliders {
+            .chat-details{
+              
+             .chat-details{
+                width:100%;
+             }
+             img {
+                width: 111px !important;
+                height: 121px !important;
+             }
+             .chatdetails{
+                width:100%;
+                display: flex;
+                justify-content: center;
+                .profile-chat-title{
+                    font-size: 18px;
+                }
+             }
+            }
+
+        }
+  }
+  .side-adverts{
+      padding-left: 31px !important;
+    .friends-social{
+        margin-bottom: 2rem;
+    }
+
+    .chat-details{
+       
+    }
+    .chat-profile{
+        img{
+            width: 70px;
+            height: 70px;
+                
+            }
+        .profile-chat-title{
+            font-size:20px;
+        }
+        .chat-option-icon{
+            font-size: 14px;
+        }
+}
+}
+}
 }
