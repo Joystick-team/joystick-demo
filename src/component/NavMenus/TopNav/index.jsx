@@ -1,10 +1,10 @@
 import React from 'react'
-import {Nav, FormControl, Container, Form } from 'react-bootstrap'
-import { MdNotifications } from 'react-icons/md';
+import {Nav,Container } from 'react-bootstrap'
 import LoadingButton from '../../LoadingButton';
-import { FiSearch } from 'react-icons/fi'
 import './topnav.scss'
 import { Link } from 'react-router-dom';
+import SearchBox from '../../SearchBox';
+import { MdNotifications } from 'react-icons/md';
 
 export default function TopNav() {
   return (
@@ -22,16 +22,8 @@ export default function TopNav() {
                         </div>
                     </Nav>
                     <div className="notice-search">
-                        <div className='top-notifications-icon'> <MdNotifications/> </div>
-                        <Form className="d-flex search-box-container">
-                            <span><FiSearch /></span>
-                            <FormControl
-                                type="search"
-                                placeholder={` Search`}
-                                className="me-2 search-box"
-                                aria-label="Search"
-                            />
-                        </Form>
+                        <div className='top-notifications-icon'> <MdNotifications /> </div>
+                        <SearchBox />
                     </div>
                     <LoadingButton className='btn-connect' color="danger" title='Connect'/>
                 </Container>

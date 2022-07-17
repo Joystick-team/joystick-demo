@@ -146,6 +146,10 @@
 
             .mobile-nav{
                 display: block !important;
+
+                .navbar-dark{
+                    background: var(--secondary-background);
+                }
             }
         }
     }
