@@ -113,6 +113,7 @@
             .side-adverts{
                 // max-width: auto;
                 max-width: 100%;
+                // height: auto;
             }
 
             .sliders img {
@@ -141,6 +142,7 @@
             height: 100vh;
             margin-right: auto;
             overflow-y: auto;
+            margin-right: 0rem !important;
 
             .mobile-nav{
                 display: block !important;

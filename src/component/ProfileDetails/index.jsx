@@ -6,7 +6,7 @@ import './profiledetails.scss'
 export default function ProfileDetails() {
   return (
     <div className="profile">
-        <img loading='lazy' style={{cursor: 'pointer'}} src={userAvarta} alt="user-Avarta" />
+        <img loading='eager' style={{cursor: 'pointer'}} src={userAvarta} alt="user-Avarta" />
         <div className="personaldetails">
             <p className="p-text">Hello Dimgba!</p>
             <p style={{marginTop: '-1rem'}}><span> <GoPrimitiveDot /> </span> Online</p>

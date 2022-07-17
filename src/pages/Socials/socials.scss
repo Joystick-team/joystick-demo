@@ -209,14 +209,14 @@
         .main{
         
         .center-container{
-            
+            overflow: hidden;
 
             .socials-bg{
                 position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                 
+                
 
                 .bg-img{
                     width: 100%;
@@ -231,11 +231,11 @@
                         img{
                             height: 108px;
                             width: 108px;
-                           
+                        
                         }
                         p{
-                           font-size:1.25rem;
-                           font-weight: 500;
+                        font-size:1.25rem;
+                        font-weight: 500;
                         }
                     } 
     
@@ -261,12 +261,12 @@
                     }
                 }
             }
-            }
         }
+    }
 
         .social-post{
             margin-top: 7rem;
-            margin-left: 1rem;
+            margin-left: 0rem !important;
             width: 100%;
 
             .nav{
@@ -382,7 +382,7 @@
     }
 
     .chat-details{
-       
+        width:100%;
     }
     .chat-profile{
         img{

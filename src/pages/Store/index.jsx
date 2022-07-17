@@ -21,7 +21,7 @@ export default function Store() {
 
   const MarketplaceDetails = Marketplace.map((marketitem, idx) => {
     return <div className="marketplace-details">
-              <img loading='lazy' key={marketitem.key} src={marketitem.img} alt="logo" />
+              <img loading='eager' key={marketitem.key} src={marketitem.img} alt="logo" />
             </div>
   })
 

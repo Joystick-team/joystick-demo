@@ -23,7 +23,7 @@
     }
 
     .navbar{
-        height: 100px;
+        // height: 100px;
         // font-family: Montserrat;
     }
 
@@ -49,21 +49,27 @@
     
     .bottom-nav{
         display: block;
-        .bottom-nav-icons{
-    
-            a, Link{
-                font-size: 38px;
-                color: var(--text-icon);
-                list-style: none;
-                text-decoration: none;
-                display: block;
-            }
-            span{
-                font-size: 15px;
-                line-height: 15px; 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        .bottom-nav-icons-holder{
+            height: 80px;
+            margin-top: 1rem;
+            padding: 2rem 5px;
+
+            .bottom-nav-icons{
+        
+                a, Link{
+                    font-size: 1.2rem;
+                    color: var(--text-icon);
+                    list-style: none;
+                    text-decoration: none;
+                    display: block;
+                }
+                span{
+                    font-size: 15px;
+                    line-height: 15px; 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
         }
     }

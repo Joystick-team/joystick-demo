@@ -106,6 +106,7 @@
 
 @media screen and (max-width: 480px){
     .side-advert{
+        width: 100%;
         .profile {
             display: flex;
             // justify-content: center;
@@ -147,6 +148,7 @@
       
     }
     .chat-section{
+        height: 370px;
         span{
             font-size:21px ;
         }
