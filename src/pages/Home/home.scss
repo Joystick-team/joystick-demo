@@ -15,3 +15,73 @@
         }
     }
 }
+
+@media screen and (max-width: 480px){
+    .home-container{
+        .announcement-carousel{
+            .carousel {
+                height:281px;
+                border-radius: 10px;
+            }
+            .carousel-inner{
+                height:281px;
+                border-radius: 10px;
+            }
+
+            .carousel-caption{
+                bottom: 7.25rem;
+                h3{
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 13px;
+                }
+                .btn{
+                    padding-bottom: 0.3rem;
+                    width: 55px;
+                    font-size: 13px;
+                    height: 31px;
+                    padding-top: 0.3rem;
+                }
+            }
+
+        }
+    }
+
+    .mycard{
+           
+        .mycard-body{
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            padding-top:0px;
+            padding-left: 0.26rem;
+        .mycard-title{
+            font-size: 13px;
+            font-weight: 640;
+
+        }
+        .mycard-text{
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+        .mycard-btn{
+            font-weight:600;
+            font-size: 0.94rem;
+        }
+          
+        }
+    }
+    .empty-div{
+        height: 40px;
+     }
+     .side-advert{
+        width:86%;
+        padding-left: 6px;
+
+      }
+
+
+}

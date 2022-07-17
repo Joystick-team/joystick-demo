@@ -9,7 +9,7 @@ export default function Posts(props) {
             <small>{props.content}</small>
         </div>
         <div className="post-card-icons">
-        <span>{props.likeicon} {props.likescount}</span>
+        <span >{props.likeicon} {props.likescount}</span>
         <span> {props.dislikeicon} {props.dislikescount}</span>
         <span>{props.messageicon}</span>
         <span>{props.shareicon}</span>  

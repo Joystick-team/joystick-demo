@@ -28,7 +28,7 @@ export default class PreviousNextMethods extends Component {
     return (
       <Container>
       <div className="sliders">
-        <div className="div" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <div className="div sliders-title" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <h5>{this.props.header}</h5>
 
             <div style={{display: 'flex'}}>

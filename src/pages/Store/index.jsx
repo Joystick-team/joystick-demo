@@ -1,10 +1,23 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import { Games, Collectible, Marketplace } from '../../storefiles'
 import './stores.scss'
 
+
 export default function Store() {
+  const [sliderCount, setSliderCount] = useState(Number(4))
+  const [CollectibleCount, setCollectibleCount] = useState(Number(5))
+  useEffect(() => {
+    if(window.innerWidth < 431){
+      setSliderCount(Number(3))
+      setCollectibleCount(Number(3))
+    }
+    if(window.innerWidth < 1025){
+      setSliderCount(Number(3))
+      setCollectibleCount(Number(3))
+    }
+  }, [])
 
   const MarketplaceDetails = Marketplace.map((marketitem, idx) => {
     return <div className="marketplace-details">
@@ -25,14 +38,14 @@ export default function Store() {
 
   const CollectibleDetails = Collectible.map((collection, idx) => {
     return <div className="collectible-details">
-              <img loading='lazy' key={collection.key} src={collection.img} alt="logo" />
+              <img className="collectible-details-img" loading='lazy' key={collection.key} src={collection.img} alt="logo" />
             </div>
   })
   return (
     <div className='store'>
         <div className="main"> 
         <div className="nft-marketplace-container">
-        NFT Marketplaces <br />
+         <span className="span-nft-text"> NFT Marketplaces </span><br />
         <div className="nft-marketplace-content">
           {MarketplaceDetails}
         </div>
@@ -40,16 +53,17 @@ export default function Store() {
         </div>
         <br />
         <div className="games-details">
-        <PreviousNextMethods rowNum={4} header={'Games'}>
+        <PreviousNextMethods rowNum={sliderCount} header={'Games'}>
           {Gamesdetails}
           </PreviousNextMethods>
           </div>
-        <br />
+     
         <div className="collectible-container">
-        <PreviousNextMethods rowNum={5} header={'Collectibles'}>
+        <PreviousNextMethods rowNum={CollectibleCount} header={'Collectibles'}>
           {CollectibleDetails}
         </PreviousNextMethods>
         </div>
+        <div className='empty-div'></div>
         </div>
     </div>
   )

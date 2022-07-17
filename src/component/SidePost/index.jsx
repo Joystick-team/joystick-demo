@@ -14,7 +14,7 @@ export default function SidePost() {
       <ProfileDetails />
         <br />
         <div className="winner-post">
-          Post       
+          <span>Post</span>    
           <div className="winner-post-card">
             <img loading='lazy' src={qualityStar} alt="" />
             <p>Winner of the week's tournament</p>
@@ -23,8 +23,8 @@ export default function SidePost() {
       <br />
         <VideoPlayer source={CarGameVideo} width={300}/>
       <br />
-      <div className="">
-        Chats
+      <div className="chat-section">
+        <span>Chats</span>
         <div className="chat-container">
           {ChatsData.map((chat, idx) => (
               <Chats 
