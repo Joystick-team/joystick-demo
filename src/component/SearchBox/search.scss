@@ -1,0 +1,42 @@
+.search-box-holder{
+
+    form{
+        .form-control {
+            padding-left: 1.9rem;
+        }
+
+        position: relative;
+
+        .search-box{
+            // width: 318px;
+            height: 36px;
+            border: none;
+            background: var(--search-box-background);
+            border-radius: 24px;
+            // padding-left: 1.5rem;
+
+            &:focus{
+                border: transparent;
+            }
+        }
+        span{
+            position: absolute;
+            top: 5px;
+            left: 6px;
+            color: var(--color-icon);
+        }
+    }
+
+    input[type=search]{
+        &:focus, &:active{
+            color: var(--secondary-color);
+            border: transparent;
+        }
+    }
+}
+
+@media screen and (max-width: 1025px){
+    .search-mobile{
+        width: 30%;
+    }
+}

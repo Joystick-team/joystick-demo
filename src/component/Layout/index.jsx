@@ -2,8 +2,8 @@ import React from 'react'
 import DrawalNav from '../DrawalNav'
 import './layout.scss'
 import TopNav from '../NavMenus/TopNav'
-import BottomNav from'../NavMenus/BottomNav'
 import SideNav from '../NavMenus/SideNav'
+import BottomNav from '../NavMenus/BottomNav'
 
 
 export default function Layout(props) {
@@ -14,22 +14,22 @@ export default function Layout(props) {
           <div className="fixed-top-sidemenu sm:fixed-top-sidemenu">
           <DrawalNav />
           </div>
-          
         </div>
         
 
         <div className="main-container">
         <TopNav />
-        <SideNav />
-          <div className="main-div sm:main-div">
+        <div className="mobile-nav">
+          <SideNav />
+        </div>
+          <div className="main-div">
             {props.children}
            
           </div>
-          <div >
-             
+          <div className="mobile-bottom-nav">
+            <BottomNav />
           </div>
-       </div>
-       
+        </div>
       </div>
       <BottomNav />
     </div>

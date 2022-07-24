@@ -46,13 +46,14 @@
 
 }
 
-@media all and (max-width: 480px) {
+
+@media screen and (max-width: 480px) {
     .store{
    
         .nft-marketplace-container{
             .span-nft-text{
-                font-weight: 700;
-                font-size: 0.88rem;
+                font-weight: 500;
+                font-size: 1.25rem;
                }
             
             .nft-marketplace-content{
@@ -76,8 +77,15 @@
                 }
             }
         }
-        
+        .sliders{
+           .sliders-title{
+            font-weight: 500;
+            font-size: 1.25rem;
+           }
+        }
+         
         .mycard{
+
             .mycard-img{
                 width: 93%;
             }
@@ -106,21 +114,20 @@
           
         }
     }
-     
     .collectible-container{
         display:block;
      .collectible-details{
-         //height: 90px;
-        
-            img{
-              height: 109px !important;
+           width: 97%  !important;
+           height: 109px !important;
+           margin-right: 13px;
+         .collectible-details-img{
+              height: 100% !important;
+              width: 100%  !important;
              }
-         
-       
-
+        }
      }
-
+     .empty-div{
+        height: 50px;
+     }
     }
 }
-}
-

@@ -10,7 +10,7 @@ export default function AnnouncementCarousel() {
                 <Carousel.Item> 
                 {/* .carousel-item  */}
                     <img
-                    loading='lazy'
+                    loading='eager'
                     className="d-block w-100"
                     src='https://sm.ign.com/t/ign_br/video/4/43-big-gam/43-big-games-coming-in-2017_fdx3.1280.jpg'
                     alt="First slide"
@@ -24,7 +24,7 @@ export default function AnnouncementCarousel() {
 
                 <Carousel.Item >
                     <img
-                    loading='lazy'
+                    loading='eager'
                     className="d-block w-100"
                     src='https://c.files.bbci.co.uk/E909/production/_112375695_crucible976.jpg'
                     alt="Second slide"

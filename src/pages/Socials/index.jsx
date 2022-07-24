@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import socialsavatar from '../../assets/images/socialsavatar.png'
 import profilebg from '../../assets/images/profile-bg.png'
 import { MdOutlineEdit } from 'react-icons/md'
@@ -13,20 +13,31 @@ import FriendrequestData from '../../component/Chats/Friendrequest/Friendrequest
 import { Tab, Tabs } from 'react-bootstrap'
 
 export default function Socials() {
+  const [sliderCount, setSliderCount] = useState(Number(6))
+
+  useEffect(() => {
+    if(window.innerWidth < 1200){
+      setSliderCount(Number(4))
+    }
+    if(window.innerWidth < 431){
+      setSliderCount(Number(3))
+    }
+  }, [])
+  
   return (
     <div className='socials'>
         <div className="main">
           <div className="center-container">
             <div className="socials-bg" >
-              <img loading='lazy' src={profilebg} className='bg-img' alt=""/> 
+              <img loading='eager' src={profilebg} className='bg-img' alt=""/> 
               <div className="profile-avatar">
                 <div className="img-profile-avatar">
-                  <img loading='lazy' src={socialsavatar} width='180px' height={'180px'} alt="" />
+                  <img loading='eager' src={socialsavatar} width='180px' height={'180px'} alt="" />
                   <p>Ray Louis</p>
                 </div>
               </div>
               <div className="edit-profile">
-                <span><MdOutlineEdit /></span><span className='profile-edit-text'>Edit profile</span>
+              <span><MdOutlineEdit className='edit-icon'/></span><span className='profile-edit-text'>Edit <span>profile</span></span>
                 </div>
             </div>
           <div className="social-post">
@@ -56,7 +67,7 @@ export default function Socials() {
               }
               </div>
               <div className="friendsrequest-container">       
-               <PreviousNextMethods rowNum={6} header={'Friend Requests'}>
+               <PreviousNextMethods rowNum={sliderCount} header={'Friend Requests'}>
                {FriendrequestData.map((friend, idx) =>{
                   return <Friendrequest 
                             key={idx}
@@ -68,7 +79,7 @@ export default function Socials() {
               </div>
             </Tab>
             <Tab eventKey="feeds" title="Feeds">
-              The Feeds Screen
+               The Feeds Screen
             </Tab>
             <Tab eventKey="community" title="Community">
             The Community Screen

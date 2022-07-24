@@ -60,7 +60,7 @@ export default function DrawalNav({TogglecloseOpen}) {
        
        
           <div className="logo-title">
-            <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" />
+            <img loading='eager' src={JOYSTICK} alt="JOYSTICK-logo" />
           </div>
           <p
             onClick={() => setOpen(!open)}

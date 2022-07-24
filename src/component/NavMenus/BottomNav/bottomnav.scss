@@ -22,15 +22,15 @@
         background: var(--background);
     }
 
-    .navbar{
-        height: 100px;
-        // font-family: Montserrat;
-    }
+    // .navbar{
+    //     // height: 100px;
+    //     font-family: Montserrat;
+    // }
 
     .bottom-nav-icons{
         a, Link{
             font-size: 50px;
-            color: white;
+            color: var(--text-icon);
             list-style: none;
             text-decoration: none;
             display: block;
@@ -49,67 +49,27 @@
     
     .bottom-nav{
         display: block;
-        .navbar{
-            background-color: yellow;
-            .bottom-nav-bg{
-                background-color: yellow;
-            }
-        }
-    
-        .bg-dark{
-            background: var(--background);
-            --bs-bg-opacity: none;
-        }
-    
-        .navbar{
-            padding-top: .5rem;
-            padding-bottom: 0%;
-        }
-        .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
-            background: var(--background);
-        }
-    
-        .navbar{
-            height: 100px;
-            // font-family: Montserrat;
-            position:fixed;
-           padding-top: 2.5rem;
-           
-        }
-        background-color: red;
-        .bottom-nav-icons{
-             display:flex;
-             flex-direction: column;
-             justify-content: center;
-             align-items: center;
-             width:25%;
-             padding-top:1rem;
-             padding-bottom:1rem;
-            a, Link{
-                font-size: 50px;
-                color: white;
-                list-style: none;
-                text-decoration: none;
-                display: block;
-                height: 25px;
-                width: 1.75rem;
-            }
-            svg{
-                display: flex;
-                color:black;
-                width:28px;
-                height:25px;
-                justify-content: center;
-                align-items: center;
-            }
-           
-            span{
-                color:black;
-                font-size: 0.75rem;
-                line-height: 14px; 
-                display: flex;
-                justify-content: center;
-                align-items: center;
+        .bottom-nav-icons-holder{
+            height: 80px;
+            margin-top: 1rem;
+            padding: 2rem 5px;
+
+            .bottom-nav-icons{
+        
+                a, Link{
+                    font-size: 1.2rem;
+                    color: var(--text-icon);
+                    list-style: none;
+                    text-decoration: none;
+                    display: block;
+                }
+                span{
+                    font-size: 15px;
+                    line-height: 15px; 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
         }
     }

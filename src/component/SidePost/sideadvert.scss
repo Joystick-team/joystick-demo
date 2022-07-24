@@ -3,6 +3,7 @@
     right: 0;
     background: var(--secondary-background);
     // z-index: 99999;
+    margin: 2% auto 3rem;
 
     .profile {
         display: flex;
@@ -18,6 +19,7 @@
 
         .personaldetails{
             margin-left: 1rem;
+          
             span{
                 width: 6px;
                 height: 6px;
@@ -90,6 +92,9 @@
                     font-size: 15px;
                     font-weight: bolder;
                 }
+                .profile-chat-body{
+                    margin-top: -1rem;
+                }
             }
         }
         .chat-option-icon{
@@ -97,4 +102,79 @@
         }
     }
     
+}
+
+@media screen and (max-width: 480px){
+    .side-advert{
+        width: 100%;
+        .profile {
+            display: flex;
+            // justify-content: center;
+            // align-items: center;
+    
+            img{
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: contain;
+            }
+            .personaldetails{
+            .p-text{
+                font-size:22px;
+            }
+            span{
+               
+              font-size: 18px;
+                // display: block;
+            }
+        }
+    }  
+    .winner-post{
+        width: 300px;
+        span{
+            font-size:21px;
+        }
+
+        .winner-post-card{
+             width: 100%;
+             p{
+                font-size: 20px;
+             }
+        }
+
+    }
+    .videoplayer{
+       width: 100%;
+      
+    }
+    .chat-section{
+        height: 370px;
+        span{
+            font-size:21px ;
+        }
+
+        .chat-container{
+
+            .chat-details{
+                width: 96%;
+            }
+            .chat-profile{
+                img{
+                    width: 65px;
+                    height: 65px;
+                   
+                }
+                .chatdetails{
+                    .profile-chat-title{
+                        font-size: 20px;
+                    }
+                    .profile-chat-body{
+                        font-size:17px;
+                        margin-top: 13px;
+                    }
+                }
+        }
+    }
+}
+}
 }
