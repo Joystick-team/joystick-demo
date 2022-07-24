@@ -10,6 +10,7 @@ import './sidenav.scss';
 import ThemeToggle from '../../ThemeToggle'
 import SearchBox from '../../SearchBox'
 import useToggle from '../../../hooks/useToggle'
+import LoadingButton from '../../LoadingButton'
 
 export default function SideNav() {
     const {showSearch, setShowSearch} = useToggle();
@@ -53,7 +54,9 @@ export default function SideNav() {
                             <Nav.Link href="/socials"> <BsFillPeopleFill /> <span>Socials</span></Nav.Link>
                             <Nav.Link href="/livestream"> <BsBroadcast /> <span>Live</span></Nav.Link>
                             <br />
+                          
                             <div className="footer-nav-side">
+                            < LoadingButton title={"Connect"} className={"sideNav-connect"} />
                                 <Nav.Link href="/u/wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
                                 <Nav.Link href="/u/settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
                                 <div className="icons-sidenav-footer">

@@ -66,7 +66,10 @@ const Arcade = fetchArcade.map((game, idx) => (
         <Row>
           <Col sm={2}>
             <div className="library-filter"> 
+            {/* <div className='filter-mobile-menu'>
+              <span className="span-filter-mobile">Games</span> */}
           <div className="filter-menu">
+           <span className="span-filter-mobile">Games</span>
             <div className="filter-menu-header">
               <div>Filter </div>  <p><IoOptionsOutline /></p>
             </div>
@@ -108,6 +111,7 @@ const Arcade = fetchArcade.map((game, idx) => (
             </Nav>
             </div>
           </div>
+        
           </Col>
           <Col sm={10}>
             <Tab.Content>
