@@ -153,6 +153,7 @@
                 justify-content: space-between;
                 padding-left: 16px;
                 padding-right: 16px;
+                position: fixed;
                 .span-filter-mobile{
                     display: flex;
                     width: 40%;
@@ -165,6 +166,7 @@
                    line-height: 0;
                    margin-left: 210px;
                    font-size: 20px;
+                   position: relative;
                 p{
                     margin-top: 19px;
                     margin-left:4px ;
@@ -173,6 +175,18 @@
                 .flex-column{
                     display: none;
                     }
+                .filter-mobile-options{
+                    width: 100%;
+                    height: min-content;
+                    display: flex;
+                    flex-direction: row;
+                    position: absolute;
+                    top: -51px;
+                    left: 145px;
+                    background-color: gray;
+                    opacity: .8;
+                   
+                }
                 }
                
     
@@ -192,8 +206,15 @@
             padding-left: 0px;
         }
         .mycard-title{
-            font-size: 14px;
-            font-weight: 645;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .mycard-text{
+           
+        }
+        .mycard-btn{
+            font-weight:400;
+            font-size: 0.84rem;
         }
       }
     }
