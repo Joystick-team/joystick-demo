@@ -16,10 +16,10 @@ export default function Socials() {
   const [sliderCount, setSliderCount] = useState(Number(6))
 
   useEffect(() => {
-    if(window.innerWidth < 431){
-      setSliderCount(Number(3))
+    if(window.innerWidth < 1200){
+      setSliderCount(Number(4))
     }
-    if(window.innerWidth < 1025){
+    if(window.innerWidth < 431){
       setSliderCount(Number(3))
     }
   }, [])

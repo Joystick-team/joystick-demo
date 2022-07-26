@@ -1,20 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Nav, Offcanvas, Navbar, Container} from 'react-bootstrap'
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
 import { FiMenu, FiSearch, FiTwitter } from 'react-icons/fi'
 import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
-
-
 import './sidenav.scss';
 import ThemeToggle from '../../ThemeToggle'
 import SearchBox from '../../SearchBox'
-import useToggle from '../../../hooks/useToggle'
-import LoadingButton from '../../LoadingButton'
 
 export default function SideNav() {
-    const {showSearch, setShowSearch} = useToggle();
-    console.log('Page ==>', showSearch);
+    const [showSearch, setShowSearch] = useState(false);
+
+    const handleSearch = () => {
+        setShowSearch(true)
+         console.log('Page ==>', showSearch);
+    }
+   
   return (
     <div >
         <Navbar variant="dark"  expand={false} >
@@ -28,7 +29,10 @@ export default function SideNav() {
                  </Navbar.Brand>
                 <div className="search-mobile" onClick={setShowSearch}>
                 {/* <FiSearch /> */}
-                    {showSearch ?  <SearchBox /> : <FiSearch />}
+                    <div className="" >
+                        
+                    {showSearch ?  <SearchBox /> : <span onClick={handleSearch} style={{float: 'right', fontSize: '1.35rem'}}><FiSearch /></span>}
+                    </div>
                 </div>
                 <Navbar.Offcanvas
                 id="offcanvasNavbar"
