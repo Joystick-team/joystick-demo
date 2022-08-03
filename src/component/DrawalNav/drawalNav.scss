@@ -171,6 +171,43 @@
             }
         }
     }
+
+    a, Link{
+        transition: all 500ms ease-in-out;
+        &.active{
+            background: #C71F1F;
+            color: var(--active-text);
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 18px;
+            border: none;
+            outline: none;
+            mix-blend-mode: normal;
+            width: 85%;
+        }
+
+        &:hover{
+            opacity: .5;
+            font-family: Montserrat, sans-serif;
+            background: #C71F1F;
+            color: var(--active-text);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 } 
 
 @media all and (max-width: 480px) {
