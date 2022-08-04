@@ -8,12 +8,10 @@
         position: relative;
 
         .search-box{
-            // width: 318px;
             height: 36px;
-            border: none;
+            border: 1px solid var(--bs-secondary);
             background: var(--search-box-background);
             border-radius: 24px;
-            // padding-left: 1.5rem;
 
             &:focus{
                 border: transparent;
@@ -37,6 +35,6 @@
 
 @media screen and (max-width: 1025px){
     .search-mobile{
-        width: 30%;
+        max-width: 30%;
     }
 }
