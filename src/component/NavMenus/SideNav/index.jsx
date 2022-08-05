@@ -81,7 +81,7 @@ export default function SideNav() {
                                 <div className="icons-sidenav-footer">
                                     <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
                                     <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
-                                    <Nav.Link href="#action4"><BsFillChatLeftQuoteFill /> </Nav.Link>
+                                    <Link to="/message" className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>
                                 </div>
                                 <ThemeToggle />
                             </div>

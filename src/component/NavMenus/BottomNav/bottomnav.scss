@@ -43,6 +43,10 @@
             align-items: center;
         }
     }
+
+&.active{
+    color: green;
+}
 }
 
 @media all and (max-width: 480px) {

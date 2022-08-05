@@ -13,6 +13,7 @@ import Layout from './component/Layout';
 import Leaderboard from './component/ContentTab/Leaderboard';
 import Staking from './component/ContentTab/Staking';
 import Rewards from './component/ContentTab/Rewards';
+import Message from './pages/Message';
 
 
 function App() {
@@ -59,6 +60,10 @@ function App() {
               <Route
                 exact
                 path="/rewards" element={<Rewards />}
+              />
+              <Route
+                exact
+                path="/message" element={<Message />}
               />
             </Routes>
           </Layout>

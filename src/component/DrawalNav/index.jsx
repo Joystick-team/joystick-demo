@@ -45,7 +45,7 @@ export default function DrawalNav({TogglecloseOpen}) {
                         <div className="icons-sidenav-footer">
                             <Link to="#action2"><FaFacebookF /> </Link>
                             <Link to="#action3"><FiTwitter /> </Link>
-                            <Link to="#action4"><BsFillChatLeftQuoteFill /> </Link>
+                            <Link to="/message" className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>
                         </div>
                         <ThemeToggle />
                       </div>

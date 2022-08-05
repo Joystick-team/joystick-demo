@@ -2,11 +2,9 @@ import React from 'react'
 import VideoPlayer from '../VideoPlayer'
 import qualityStar from '../../assets/images/quality.png'
 import CarGameVideo from '../../assets/videoclips/BirdVideo.mp4'
-import ChatsData from '../Chats/chatsdata'
-
 import './sideadvert.scss'
-import Chats from '../Chats'
 import ProfileDetails from '../ProfileDetails'
+import Message from '../../pages/Message'
 
 export default function SidePost() {
   return (
@@ -23,19 +21,7 @@ export default function SidePost() {
       <br />
         <VideoPlayer source={CarGameVideo} width={300}/>
       <br />
-      <div className="chat-section">
-        <span>Chats</span>
-        <div className="chat-container">
-          {ChatsData.map((chat, idx) => (
-              <Chats 
-                key={idx}
-                title={chat.title}
-                body={chat.body}
-                image={chat.image}
-              />
-          ))}
-        </div>
-      </div>
+      <Message />
     </div>
   )
 }
