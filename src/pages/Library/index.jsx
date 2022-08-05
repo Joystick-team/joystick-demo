@@ -4,6 +4,7 @@ import { IoOptionsOutline } from 'react-icons/io5'
 import MyCard from '../../component/MyCard'
 import AllGamesData from '../../librarygamesdata'
 import './library.scss'
+import LibraryfilterSelection from "../../component/LibraryFilter"
 
 export default function Library() {
   const fetchBlockchain = AllGamesData.filter((game) => game.text.includes('Blockchain'))
@@ -76,11 +77,12 @@ const Arcade = fetchArcade.map((game, idx) => (
             {show===true&&(
             
             <>
+              {/* <LibraryfilterSelection /> */}
               {/** mobile view*/}
              <Nav variant="" className="filter-mobile-options">
                  <label htmlFor="All"> 
-                 <Nav.Item>
-                <Nav.Link eventKey="first" >
+                 <Nav.Item >
+                <Nav.Link eventKey="first"  >
                   <input type="radio" id="All" name="fav_games" value="All" onClick={()=>setShow(false)}/> All
                   <span className="checkmark"></span>
                 </Nav.Link>

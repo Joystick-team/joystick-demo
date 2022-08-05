@@ -176,15 +176,23 @@
                     display: none;
                     }
                 .filter-mobile-options{
-                    width: 100%;
+                    width: 70%;
                     height: min-content;
                     display: flex;
                     flex-direction: row;
                     position: absolute;
-                    top: -51px;
-                    left: 145px;
-                    background-color: gray;
-                    opacity: .8;
+                    top: -63px;
+                    left: 238px;
+                    background-color: white;
+                   
+               
+                    label{
+                        .nav-item{
+                            .nav-link{
+                                margin-bottom: 6px;
+                            }
+                        }
+                    }
                    
                 }
                 }
@@ -209,9 +217,7 @@
             font-size: 13px;
             font-weight: 600;
         }
-        .mycard-text{
-           
-        }
+      
         .mycard-btn{
             font-weight:400;
             font-size: 0.84rem;
