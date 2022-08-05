@@ -53,7 +53,8 @@ non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
     `;
 
   return (
-    <div className="format-pre-text">
+    <div className="format-pre-tex">
+        
         <div>
             <div>
             <h5>Rewards</h5>
@@ -62,6 +63,7 @@ non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
                         {title}
                     </pre>
                 </p>
+                
             </div>
         </div>
     </div>

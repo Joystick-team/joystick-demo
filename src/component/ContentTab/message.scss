@@ -1,11 +1,14 @@
-.main-div{
-    display: block;
-}
-
-
+//if you want to flex the message page on desktop just remove the display block on the message-container class
 
 .message-container{
+    margin: 0 auto;
     padding: 10px;
+    width: auto;
+    display: block !important;
+    max-width: 900px; //the width of the message will not exceed the 900px size but will always take the 100% between 0 - 900px width
+    width: 100%;
+    box-sizing: border-box;
+
     .chat-container{
         overflow-y: auto;
         height: 100vh;

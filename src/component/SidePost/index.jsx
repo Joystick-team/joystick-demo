@@ -4,7 +4,7 @@ import qualityStar from '../../assets/images/quality.png'
 import CarGameVideo from '../../assets/videoclips/BirdVideo.mp4'
 import './sideadvert.scss'
 import ProfileDetails from '../ProfileDetails'
-import Message from '../../pages/Message'
+import Message from '../ContentTab/Message'
 
 export default function SidePost() {
   return (

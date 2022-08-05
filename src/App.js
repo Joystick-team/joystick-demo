@@ -13,7 +13,7 @@ import Layout from './component/Layout';
 import Leaderboard from './component/ContentTab/Leaderboard';
 import Staking from './component/ContentTab/Staking';
 import Rewards from './component/ContentTab/Rewards';
-import Message from './pages/Message';
+import Message from './component/ContentTab/Message';
 
 
 function App() {
