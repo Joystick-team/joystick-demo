@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Nav, Offcanvas, Navbar, Container} from 'react-bootstrap'
+import {Nav, Offcanvas, Navbar, Container } from 'react-bootstrap'
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
 import { FiMenu, FiSearch, FiTwitter } from 'react-icons/fi'
@@ -7,10 +7,12 @@ import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
 import './sidenav.scss';
 import ThemeToggle from '../../ThemeToggle'
 import SearchBox from '../../SearchBox'
-import LoadingButton from "../../LoadingButton"
+import { Link, useLocation } from 'react-router-dom'
+
 export default function SideNav() {
     const [showSearch, setShowSearch] = useState(false);
-
+    const {pathname} = useLocation()
+        
     const handleSearch = () => {
         setShowSearch(true)
          console.log('Page ==>', showSearch);
@@ -52,17 +54,18 @@ export default function SideNav() {
                      </Offcanvas.Header>
                     <Offcanvas.Body variant="dark" >
                         <Nav className=" flex-column side-nav-list-item" variant="pills" defaultActiveKey="/">
-                            <Nav.Link activeKey="/" href="/"> <FaHome /> <span>Home</span></Nav.Link>
-                            <Nav.Link href="/store"> <BsDropletFill /> <span>Store</span></Nav.Link>
-                            <Nav.Link href="/library"> <BsGridFill/> <span>Library</span></Nav.Link>
-                            <Nav.Link href="/socials"> <BsFillPeopleFill /> <span>Socials</span></Nav.Link>
-                            <Nav.Link href="/livestream"> <BsBroadcast /> <span>Live</span></Nav.Link>
+                                <Link to="/" className={ (pathname === '/' || pathname === '/home') && `active`}> <FaHome /> <span>Home</span></Link>
+                                <Link to="/store" className={ pathname === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
+                                <Link to="/library" className={ pathname === '/library' && `active`}> <BsGridFill/> <span>Library</span></Link>
+                                <Link to="/socials" className={ pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>
+                                <Link to="/livestream" className={ pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
+                            
                             <br />
                           
                             <div className="footer-nav-side">
-                            < LoadingButton title={"Connect"} className={"sideNav-connect"} />
-                                <Nav.Link href="/u/wallet"><FaWallet /> <span>Wallet</span></Nav.Link>
-                                <Nav.Link href="/u/settings"><BsGearWideConnected /> <span>Settings</span></Nav.Link>
+
+                            <Link to="/u/wallet" className={ pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
+                            <Link to="/u/settings" className={ pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
                                 <div className="icons-sidenav-footer">
                                     <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
                                     <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
