@@ -148,6 +148,17 @@
             bottom: 10px;
             left: 20px;
             right: auto;
+            .sideNav-connect{
+                width:105px;
+                Height:34px;
+                background: #C71F1F;
+                border-radius: 12px;
+                border: transparent;
+                outline: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 
@@ -177,7 +188,7 @@
         }
 
         .footer-nav-side{
-
+            
             position: fixed;
             bottom: 10px;
             left: 20px;

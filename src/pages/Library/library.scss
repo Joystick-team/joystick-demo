@@ -2,7 +2,7 @@
     .library-filter{
         display: flex;
         height: 85vh;
-
+        
         .filter-menu{
             width: 100%;
             max-width: 200px;
@@ -15,6 +15,9 @@
             position: relative;
 
             mix-blend-mode: normal;
+            .span-filter-mobile{
+                display: none;
+            }
 
             .filter-menu-header{
                 display: flex;
@@ -31,7 +34,7 @@
             .flex-column{
                 position: relative;
             }
-
+         
             label{
                 cursor: pointer;
             //     display: block;
@@ -110,6 +113,7 @@
                 .nav-link{
                     margin-left: 2.2rem;
                 }
+            
         }
         .library-games{
             height: 85vh;
@@ -123,6 +127,7 @@
 
     }
 
+
     .recent-games-items { 
         img {
             height: 274px;
@@ -131,4 +136,93 @@
             margin-left: -1rem;
         }
     }
+}
+
+@media screen and (max-width: 480px){
+
+    .library{
+        .library-filter{
+            flex-direction: column;
+            height: 6vh;
+            
+            .filter-menu{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+                padding-left: 16px;
+                padding-right: 16px;
+                position: fixed;
+                .span-filter-mobile{
+                    display: flex;
+                    width: 40%;
+                    font-size: 20px;
+                }
+                .filter-menu-header{
+                   display: flex;
+                   width: 50%;
+                   align-items: center;
+                   line-height: 0;
+                   margin-left: 210px;
+                   font-size: 20px;
+                   position: relative;
+                p{
+                    margin-top: 19px;
+                    margin-left:4px ;
+                }
+                    }
+                .flex-column{
+                    display: none;
+                    }
+                .filter-mobile-options{
+                    width: 70%;
+                    height: min-content;
+                    display: flex;
+                    flex-direction: row;
+                    position: absolute;
+                    top: -63px;
+                    left: 238px;
+                    background-color: white;
+                   
+               
+                    label{
+                        .nav-item{
+                            .nav-link{
+                                margin-bottom: 6px;
+                            }
+                        }
+                    }
+                   
+                }
+                }
+               
+    
+        }
+    }
+
+    .recent-games-items { 
+    .col{
+        height: 200px;
+      .mycard{
+       
+        .mycard-img{
+            height: 138px;
+        }
+        .mycard-body{
+            padding-top: 0px;
+            padding-left: 0px;
+        }
+        .mycard-title{
+            font-size: 13px;
+            font-weight: 600;
+        }
+      
+        .mycard-btn{
+            font-weight:400;
+            font-size: 0.84rem;
+        }
+      }
+    }
+}
 }

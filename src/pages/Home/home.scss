@@ -77,11 +77,15 @@
     .empty-div{
         height: 40px;
      }
+     .side-adverts{
+       
      .side-advert{
         // width:86%;
+
+      
         padding-left: 6px;
 
       }
-
-
+      display: none !important;
+    }
 }

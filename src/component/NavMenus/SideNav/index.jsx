@@ -76,6 +76,7 @@ export default function SideNav() {
                                 <Link to="/livestream" className={ pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
                             
                             <br />
+                          
                             <div className="footer-nav-side">
 
                             <Link to="/u/wallet" className={ pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
