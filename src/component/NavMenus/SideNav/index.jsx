@@ -7,7 +7,7 @@ import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
 import './sidenav.scss';
 import ThemeToggle from '../../ThemeToggle'
 import SearchBox from '../../SearchBox'
-
+import LoadingButton from "../../LoadingButton"
 export default function SideNav() {
     const [showSearch, setShowSearch] = useState(false);
 
