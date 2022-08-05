@@ -4,7 +4,7 @@ import { IoOptionsOutline } from 'react-icons/io5'
 import MyCard from '../../component/MyCard'
 import AllGamesData from '../../librarygamesdata'
 import './library.scss'
-import LibraryfilterSelection from "../../component/LibraryFilter"
+// import LibraryfilterSelection from "../../component/LibraryFilter"
 
 export default function Library() {
   const fetchBlockchain = AllGamesData.filter((game) => game.text.includes('Blockchain'))

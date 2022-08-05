@@ -82,8 +82,8 @@ export default function SideNav() {
                             <Link to="/u/wallet" className={ pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
                             <Link to="/u/settings" className={ pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
                                 <div className="icons-sidenav-footer">
-                                    <Nav.Link href="#action2"><FaFacebookF /> </Nav.Link>
-                                    <Nav.Link href="#action3"><FiTwitter /> </Nav.Link>
+                                    <Nav.Link href="https://facebook.com/joystick" target="_blank"><FaFacebookF /> </Nav.Link>
+                                    <Nav.Link href="https://twitter.com/joystick" target="_blank"><FiTwitter /> </Nav.Link>
                                     <Link to="/message" className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>
                                 </div>
                                 <ThemeToggle />
