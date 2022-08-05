@@ -14,7 +14,7 @@ export default function BottomNav() {
                 <div className="bottom-nav-icons"><Link to="/leaderboard"><MdLeaderboard /><span>Leaderboard</span></Link> </div>
                 <div className="bottom-nav-icons"><Link to="/rewards"><BiTrophy /></Link> <span>Rewards</span></div>
                 <div className="bottom-nav-icons"><Link to="/staking"><BsStack /></Link> <span>Staking</span></div>
-                <div className="bottom-nav-icons"><Link to='#'><BiMessageDetail /></Link> <span>Chats</span></div>
+                <div className="bottom-nav-icons"><Link to='#'><BiMessageDetail /></Link> <span>Chat</span></div>
             </Container>
         </Navbar>
     </div>

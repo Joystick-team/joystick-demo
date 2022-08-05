@@ -14,7 +14,7 @@
         z-index: 999;
         background: var(--background);
         color: var(--secondary);
-        max-width: 85%;
+        max-width: 100vw;
         padding-right: 2rem;
 
         .navbar-nav, .Tab .nav-link, Link, a{
@@ -24,7 +24,17 @@
             font-size: 15px;
             line-height: 18px;
         }
-
+        .logo-title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+    
+            img{
+                width: 127px;
+                // height: 53px;
+            }
+        }
         .Tab .nav-link{
             color: var(--secondary);
             font-style: normal;

@@ -9,7 +9,9 @@ import BottomNav from '../NavMenus/BottomNav'
 export default function Layout(props) {
   return (
     <div className='layout-container'>
+      <TopNav />
       <div className="layout">
+      
         <div className="side-nav-bar">
           <div className="fixed-top-sidemenu">
           <DrawalNav />
@@ -17,7 +19,6 @@ export default function Layout(props) {
         </div>
 
         <div className="main-container">
-        <TopNav />
         <div className="mobile-nav">
           <SideNav />
         </div>

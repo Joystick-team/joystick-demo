@@ -1,5 +1,5 @@
 .side-advert{
-    height: 86vh;
+    height: 100vh;
     right: 0;
     background: var(--secondary-background);
     // z-index: 99999;
@@ -60,7 +60,7 @@
     .chat-container{
 
         overflow-y: auto;
-        max-height: 165px;
+        max-height: 25vh;
         flex-basis: auto;
         // margin-bottom: 2rem;
 
