@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Collapse, Nav } from "react-bootstrap";
 import {BiMenu} from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 import { BsBroadcast, BsDropletFill, BsFillChatLeftQuoteFill, BsFillPeopleFill, BsGearWideConnected, BsGridFill } from "react-icons/bs";
 import { FaFacebookF, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
-import JOYSTICK from '../../assets/images/JOYSTICK-logo.png'
-import JOYSTICK2 from '../../assets/images/JOYSTICK-light.png'
 import './drawalNav.scss'
 import ThemeToggle from "../ThemeToggle";
 import { Link, useLocation } from "react-router-dom";
@@ -15,24 +13,10 @@ export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
 
     const {pathname} = useLocation();
-    let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
-    
-    useEffect(() => {
-          setThemeData(themeData)
-          console.log('mike');
-    }, [themeData])
 
     return (
       <div className="" style={{position: 'relative'}}>
         <div className="side-nav">
-          <div className="logo-title">
-            {/* <img loading='eager' src={JOYSTICK} alt="JOYSTICK-logo" /> */}
-
-            <picture>
-              <source srcSet={JOYSTICK}  media={`(prefers-color-scheme: ${themeData})`}/>
-              <img src={JOYSTICK2} alt="JOYSTICK-logo" />
-            </picture>
-          </div>
           <p
             onClick={() => setOpen(!open)}
             // onClick={TogglecloseOpen}

@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {Nav, Offcanvas, Navbar, Container } from 'react-bootstrap'
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
+// import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
+import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
 import { FiMenu, FiSearch, FiTwitter } from 'react-icons/fi'
 import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
@@ -17,6 +19,13 @@ export default function SideNav() {
         setShowSearch(true)
          console.log('Page ==>', showSearch);
     }
+
+    let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
+    
+    useEffect(() => {
+          setThemeData(localStorage.getItem('theme-dark'))
+          console.log('mike');
+    }, [])
    
   return (
     <div >
@@ -27,7 +36,11 @@ export default function SideNav() {
                     <FiMenu />
                 </Navbar.Toggle>
                  <Navbar.Brand href="/">
-                    <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
+                 <picture>
+                            <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
+                            <img src={JOYSTICK2} alt="JOYSTICK-logo" width={'80px'} height={`auto`} />
+                            </picture>
+                    {/* <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' /> */}
                  </Navbar.Brand>
                 <div className="search-mobile" onClick={setShowSearch}>
                 {/* <FiSearch /> */}

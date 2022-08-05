@@ -6,28 +6,17 @@
     height: 100vh;
     // height: 1024px;
     // top: 0;
-    position: sticky !important;
-    position: -webkit-sticky !important; // for safari
-    top: 0;
+    // position: sticky !important;
+    // position: -webkit-sticky !important; // for safari
+    // top: 100px;
     align-self: flex-start;
-    
-    .logo-title{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100px;
-
-        img{
-            width: 127px;
-            // height: 53px;
-        }
-    }
+    display: block;
 
     .side-nav-burger{
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        font-size: 2.3rem;
+        // font-size: 2.3rem;
         margin: 0% 1rem;
         font-weight: bold;
         font-size: 18px;
@@ -139,7 +128,7 @@
         a, Link{
             margin: 1rem auto;
         }
-        height: 400px;
+        height: 50vh;
         margin-top: 1rem;
     }
 
