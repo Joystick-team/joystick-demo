@@ -162,7 +162,7 @@
     }
 
     a, Link{
-        transition: all 500ms ease-in-out;
+        transition: all 300ms ease-in-out;
         &.active{
             background: #C71F1F;
             color: var(--active-text);
@@ -177,7 +177,7 @@
         }
 
         &:hover{
-            opacity: .5;
+            opacity: .7;
             font-family: Montserrat, sans-serif;
             background: #C71F1F;
             color: var(--active-text);

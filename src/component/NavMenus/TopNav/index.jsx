@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Nav,Container } from 'react-bootstrap'
 import LoadingButton from '../../LoadingButton';
 import './topnav.scss'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
 import { MdNotifications } from 'react-icons/md';
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
@@ -10,7 +10,8 @@ import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 
 export default function TopNav() {
     let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
-    
+    const {pathname} = useLocation()
+
     useEffect(() => {
           setThemeData(localStorage.getItem('theme-dark'))
           console.log('mike');
@@ -29,9 +30,9 @@ export default function TopNav() {
                     >
                         <div className="top-nav-list">
                             <ul>
-                                <li><Link to="/leaderboard">Leaderboard</Link></li>
-                                <li><Link to="/rewards">Rewards</Link></li>
-                                <li><Link to="/staking">Staking</Link></li>
+                                <li><Link to="/leaderboard" className={`${pathname === '/leaderboard'  && 'active'}`}>Leaderboard</Link></li>
+                                <li><Link to="/rewards" className={`${pathname === '/rewards'  && 'active'}`}>Rewards</Link></li>
+                                <li><Link to="/staking" className={`${pathname === '/staking'  && 'active'}`}>Staking</Link></li>
                             </ul>
                         </div>
                     </Nav>
