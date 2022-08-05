@@ -90,7 +90,7 @@
 
 @media screen and (max-width: 480px){
     .layout-container{
-        .top-nav, .side-nav-bar{
+        .top-nav, .side-nav-bar, .side-adverts, .side-advert{
             display: none;
         }
 
@@ -115,6 +115,7 @@
                 // max-width: auto;
                 max-width: 100%;
                 // height: auto;
+                display: none;
             }
 
             .sliders img {

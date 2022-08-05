@@ -6,7 +6,7 @@ export default function Settings() {
         <div className="main"> 
           <div >Settings</div> 
         </div>
-        <div className="side-adverts" style={{display:'flex'}}>
+        <div className="side-adverts">
           {/* The left advert/chat/friends should be written here */}
           
         </div>

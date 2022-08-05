@@ -29,7 +29,7 @@
 //         <TopNav />
 //           <div className="main-div">
 //               {props.children}
-//             {/* <div className="side-adverts" style={{display:'flex'}}>
+//             {/* <div className="side-adverts" >
 //               <SidePost />
 //             </div> */}
 //           </div>

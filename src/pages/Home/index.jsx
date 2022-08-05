@@ -37,7 +37,7 @@ export default function Home() {
             ))}
           </PreviousNextMethods>
         </div>
-        <div className="side-adverts" style={{display:'flex'}}>
+        <div className="side-adverts">
             {/* The left advert/chat/friends should be written here */}
             <SidePost />
             <div className="empty-div" ></div>

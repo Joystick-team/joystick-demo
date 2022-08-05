@@ -6,7 +6,7 @@ export default function Wallet() {
         <div className="main">
           <div>Wallet</div>
         </div>
-        <div className="side-adverts" style={{display:'flex'}}>
+        <div className="side-adverts">
           {/* The left advert/chat/friends should be written here */}
           
         </div>

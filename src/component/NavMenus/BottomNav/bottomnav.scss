@@ -28,6 +28,8 @@
     // }
 
     .bottom-nav-icons{
+
+
         a, Link{
             font-size: 50px;
             color: var(--text-icon);
@@ -35,6 +37,7 @@
             text-decoration: none;
             display: block;
         }
+        
         span{
             font-size: 15px;
             line-height: 15px; 
@@ -43,10 +46,6 @@
             align-items: center;
         }
     }
-
-&.active{
-    color: green;
-}
 }
 
 @media all and (max-width: 480px) {
@@ -56,7 +55,7 @@
         .bottom-nav-icons-holder{
             height: 80px;
             margin-top: 1rem;
-            padding: 2rem 5px;
+            padding: 2rem 10px;
 
             .bottom-nav-icons{
         
@@ -66,6 +65,7 @@
                     list-style: none;
                     text-decoration: none;
                     display: block;
+                    transition: color 200ms ease-in-out;
                 }
                 span{
                     font-size: 15px;
@@ -73,6 +73,10 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                }
+
+                a.active, Link.active{
+                    color: var(--button);
                 }
             }
         }

@@ -53,7 +53,7 @@ non dictum mauris. Nulla at tellus sagittis, viverra est a, bibendum metus.
     `;
 
   return (
-    <div className="format-pre-tex">
+    <div className="format-pre-text">
         
         <div>
             <div>
