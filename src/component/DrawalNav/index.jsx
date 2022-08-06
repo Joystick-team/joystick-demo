@@ -43,10 +43,8 @@ export default function DrawalNav({TogglecloseOpen}) {
                         <Link to="/u/wallet" className={ pathname.toString() === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
                         <Link to="/u/settings" className={ pathname.toString() === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
                         <div className="icons-sidenav-footer">
-                          <Nav.Item></Nav.Item>
-                          <Nav.Item></Nav.Item>
-                            <Nav.Link href="https://facebook.com/joystick" target="_blank"><FaFacebookF /> </Nav.Link>
-                            <Nav.Link href="https://twitter.com/joystick" target="_blank"><FiTwitter /> </Nav.Link>
+                            <Nav.Link href="https://facebook.com/joystick" className={ pathname === '/facebook' && `active`} target="_blank"><FaFacebookF /> </Nav.Link>
+                            <Nav.Link href="https://twitter.com/joystick" className={ pathname === '/twitter' && `active`} target="_blank"><FiTwitter /> </Nav.Link>
                             <Link to="/message" className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>
                         </div>
                         <ThemeToggle />

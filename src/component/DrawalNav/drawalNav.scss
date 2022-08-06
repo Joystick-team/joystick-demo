@@ -1,14 +1,8 @@
 .side-nav{
-    // position: fixed;
     background: var(--secondary-background);
     width: min-content;
     margin: 0%;
-    height: 100vh;
-    // height: 1024px;
-    // top: 0;
-    // position: sticky !important;
-    // position: -webkit-sticky !important; // for safari
-    // top: 100px;
+    height: 90%;
     align-self: flex-start;
     display: block;
 
@@ -23,6 +17,7 @@
         line-height: 20px;
         margin-top: -1rem;
         cursor: pointer;
+        font-family:'Montserrat Alternates', sans-serif;
     }
     
     .nav-tabs {
@@ -30,7 +25,7 @@
         // height : 100vh;
 
         a, Link {
-            // background: #C71F1F;
+            font-family:'Montserrat Alternates', sans-serif;
             color: var(--secondary);
             border: none;
             outline: none;
@@ -57,6 +52,7 @@
     }
     
     a, Link {
+        font-family:'Montserrat Alternates', sans-serif;
         color: var(--secondary);
         font-style: normal;
         font-weight: 600;
@@ -79,7 +75,7 @@
         &:active, &:hover{
             // background: #C71F1F;
             // color: var(--secondary);
-            // font-family: Montserrat;
+            font-family:'Montserrat Alternates', sans-serif;
             color: #C71F1F;
             font-style: normal;
             font-weight: 600;
@@ -139,9 +135,9 @@
         .icons-sidenav-footer{
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            width: 70%;
-            margin: 0 auto 1rem;
+            justify-content: space-evenly;
+            width: 90%;
+            margin: 1rem auto;
             
     
             a, Link{
@@ -149,12 +145,34 @@
     
                 &:first-child{
                     color: #1C5ED7;
+                    &:hover, &:focus, &:visited{
+                        color: #2e6cde;
+                        background: none;
+                    }
+                    &.active{
+                        background: none;
+                    }
                 }
                 &:nth-child(2){
                     color: #35D8FE;
+                    &:hover, &:focus, &:visited{
+                        color: #73e5ff;
+                        background: transparent;
+                    }
+                    &.active{
+                        background: none;
+                    }
                 }
                 &:nth-child(3){
                     color: #B421CC;
+
+                    &:hover{
+                        color: var(--secondary);
+                        background: transparent;
+                    }
+                    &.active{
+                        color: var(--secondary);
+                    }
                 }
             }
         }
@@ -163,6 +181,7 @@
     a, Link{
         transition: all 300ms ease-in-out;
         &.active{
+            font-family:'Montserrat Alternates', sans-serif;
             background: #C71F1F;
             color: var(--active-text);
             font-style: normal;
@@ -177,7 +196,7 @@
 
         &:hover{
             opacity: .7;
-            font-family: Montserrat, sans-serif;
+            font-family: 'Montserrat Alternates', sans-serif;
             background: #C71F1F;
             color: var(--active-text);
         }

@@ -1,8 +1,8 @@
 .side-advert{
-    height: 100vh;
+    height: 80%;
     right: 0;
     background: var(--secondary-background);
-    // z-index: 99999;
+    z-index: 9;
     margin: 2% auto 3rem;
 
     .profile {
@@ -62,7 +62,7 @@
         .chat-container{
 
             overflow-y: auto;
-            max-height: 30vh;
+            max-height: 20vh;
             flex-basis: auto;
         }
     }

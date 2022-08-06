@@ -1,6 +1,6 @@
 .side-nav{
     // margin-top: 4rem;
-    padding-top: 1.5rem;
+    padding: 1.5rem 0;
     background: var(--secondary-background);
 
     .fixed-top-sidemenu {
@@ -57,7 +57,7 @@
     
     .nav-link {
         color: var(--secondary);
-        // font-family: Montserrat;
+        font-family: 'Montserrat Alternates', sans-serif;
         font-style: normal;
         font-weight: 600;
         font-size: 15px;
@@ -76,12 +76,7 @@
         &:active,&:hover, &:focus{
             // background: #C71F1F;
             // color: var(--secondary);
-            // font-family: Montserrat;
             color: #C71F1F;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 15px;
-            line-height: 18px;
             border: none;
             outline: none;
             mix-blend-mode: normal;
@@ -113,12 +108,32 @@
             margin-right: .5rem;
             &:first-child{
                 color: #1C5ED7;
+                &:hover, &:focus, &:visited{
+                    color: #2667e0 !important;
+                    background: transparent;
+                }
+                &.active{
+                    background: none;
+                }
             }
             &:nth-child(2){
                 color: #35D8FE;
+
+                &:hover, &:focus, &:visited{
+                    color: #2cc7ea !important;
+                    background: transparent;
+                }
+                &.active{
+                    background: none;
+                }
             }
             &:nth-child(3){
                 color: #B421CC;
+
+                &:hover{
+                    color: var(--secondary);
+                    background: transparent;
+                }
             }
         }
     }
@@ -150,7 +165,7 @@
             right: auto;
             .sideNav-connect{
                 width:105px;
-                Height:34px;
+                height: 34px;
                 background: #C71F1F;
                 border-radius: 12px;
                 border: transparent;
@@ -177,6 +192,7 @@
 @media all and (max-width: 480px) {
     .side-nav{
         width: 60% !important;
+        height: 100vh !important;
     } 
 
     .side-nav-list-item{
@@ -188,7 +204,6 @@
         }
 
         .footer-nav-side{
-            
             position: fixed;
             bottom: 10px;
             left: 20px;
@@ -198,7 +213,6 @@
 
     .mobile-Hamburger-button{
         .navbar-toggler-icon{
-            background: none;
             background: none;
         }
 

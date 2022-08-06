@@ -1,0 +1,59 @@
+.error-page-container > div{
+    // display: block !important;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin: 5% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .error-page-holder{
+        font-family: 'Montserrat Alternates', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .error-page-title{
+       font-family: 'Montserrat Alternates', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 44px;
+        height: 40px;
+    }
+
+    .error-page-message{
+       font-family: 'Montserrat Alternates', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 29px;
+        color: var(--secondary);
+    }
+
+    .error-page-img{
+        img{
+            max-width: 458px;
+            max-height: 458px;
+            width: 100%;
+            // height: auto;
+            background: var(--secondary-background);
+        }
+    }
+}
+
+@media screen and (max-width: 1025px){
+    .error-page-container > div{
+        // display: block !important;
+        margin: 15% auto;
+        .error-page-img{
+            img{
+                max-width: 358px;
+                max-height: 358px;
+                width: 100%;
+            }
+        }
+    }
+}

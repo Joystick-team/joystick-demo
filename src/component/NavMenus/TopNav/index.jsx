@@ -21,8 +21,8 @@ export default function TopNav() {
                 <Container className='navbar'>
                 <div className="logo-title">
                             <picture>
-                            <source srcSet={JOYSTICK}  media={`(prefers-color-scheme: ${themeData})`}/>
-                            <img src={JOYSTICK2} alt="JOYSTICK-logo" />
+                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
+                                <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
                         </div>
                     <Nav   
