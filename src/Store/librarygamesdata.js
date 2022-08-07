@@ -97,9 +97,7 @@ const game8 = new OffSiteGame('1', 'blade', 'Blockchain', rust, '', false)
 const game9 = new OffSiteGame('1', 'Mobox', 'Blockchain', Mobox, '', false)
 const game10 = new OffSiteGame('1', 'Star Atlas', 'Blockchain', StarAtlas, '', true, )
 
-const OffSiteGames = [
-    game1, game2, game3, game4, game5, game6, game7, game8, game9, game10,
-]
+const OffSiteGames = [ game1, game2, game3, game4, game5, game6, game7, game8, game9, game10 ]
 
 export default AllGamesData;
 export { OffSiteGames };
