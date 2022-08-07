@@ -3,18 +3,29 @@ import { useState } from 'react'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import MyCard from '../../component/MyCard'
-import LiberyGamesData from '../../Store/gamesdata'
-// import AllGamesData from '../Store/librarygamesdata'
+import AllGamesData from '../../Store/librarygamesdata'
+import { OffSiteGames } from '../../Store/librarygamesdata'
 
 import './landingpage.scss'
 
 export default function LandingPage() {
-    const [gameSite, setGameSite] = useState(["OFF-Site", "On-Site", 'Out-site']) 
-
-    const games1 = LiberyGamesData.map((game, idx) => (
+    const gameOptionsList = ["Off-site", "On-site", 'Out-site', 'the-site']
+    const offSiteGame = OffSiteGames.map((game, idx) => (
         <Col>
             <MyCard 
-                key={game.key.toString()}
+                key={game.key.toString() && idx}
+                title={game.title}
+                text={game.text}
+                img={game.img}
+                button={game.btn}
+                icons={game.isOwn}
+            />
+        </Col>
+    ))
+    const games2 = AllGamesData.map((game, idx) => (
+        <Col>
+            <MyCard 
+                key={game.key.toString() && idx}
                 title={game.title}
                 text={game.text}
                 img={game.img}
@@ -23,27 +34,16 @@ export default function LandingPage() {
         </Col>
     ))
 
-// console.log('games1', AllGamesData);
+    const [currentValue, setCurrentValue] = useState(offSiteGame)
 
-//     const games2 = AllGamesData.map((game, idx) => (
-//         <Col>
-//             <MyCard 
-//                 key={game.key.toString()}
-//                 title={game.title}
-//                 text={game.text}
-//                 img={game.img}
-//                 button="Play"
-//             />
-//         </Col>
-//     ))
-
-    const [gameStore, setGameStore] = useState(games1)
-    const [currentValue, setCurrentValue] = useState(games1)
-
-    let handleChange = (event) => {
-        setCurrentValue(event)
-        setGameStore(currentValue.push(event))
-        console.log('solution2 ====', currentValue);
+    let handleChange = (gameOption) => {
+        if(gameOption === 'On-site') { 
+            setCurrentValue(games2)
+        } else if(gameOption === 'Off-site') {
+            setCurrentValue(offSiteGame)
+        }else{
+            setCurrentValue('gameOption out site') 
+        }
     }
 
   return (
@@ -56,14 +56,11 @@ export default function LandingPage() {
 
             <select name="" id="" 
                 onChange={(event) => handleChange(event.target.value)}
-                value={currentValue}
+                // value={currentValue}
             >
-            {/* {gameStore.map((option) => (
-              <option value={option.title}> {option.key} </option>
-            ))} */}
-                <option value='Off-site' >Off-site</option>
-                <option value="Out-site">Out-site</option>
-                <option value="On-site">On-site</option>
+            {gameOptionsList.map((option) => (
+              <option value={option}> {option} </option>
+            ))}
             </select>
 
             <div className="site-games">

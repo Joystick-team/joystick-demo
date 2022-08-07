@@ -7,48 +7,17 @@ import unravel from '../assets/images/unravel.png'
 import Tetris from '../assets/images/Tetris.png'
 import pacman from '../assets/images/pacman.png'
 
+import blades from '../assets/images/blades.png'
+import Nekoverse from '../assets/images/Nekoverse.png'
+import avodaince from '../assets/images/avodaince.png'
+import Decentraland from '../assets/images/Decentraland.png'
+import DefinityLegend from '../assets/images/DefinityLegend.png'
+import InuWars from '../assets/images/Inu Wars.png'
+import BattleVerse from '../assets/images/Battle Verse.png'
+import Mobox from '../assets/images/Mobox.png'
+import StarAtlas from '../assets/images/Star Atlas.png'
+
 const AllGamesData = [
-    {        
-        key: '1',
-        title: 'Axie Infinity',
-        text: 'Blockchain',
-        img: axie,
-        button: "Play",
-    },
-    {        
-        key: '2',
-        title: 'War of Ants',
-        text: 'Blockchain',
-        img: war,
-        button: "Play",
-    },
-    {        
-        key: '3',
-        title: 'Clash of Clans',
-        text: 'Adventure',
-        img: clash,
-        button: "Play",
-    },
-    {        
-        key: '4',
-        title: 'Clash of Clans',
-        text: 'Adventure',
-        img: forestnight,
-        button: "Play",
-    },
-    // {        
-    //     title: 'Super Mario',
-    //     text: 'Blockchain',
-    //     img: "https://i.guim.co.uk/img/media/7c2ab1a3e60e445caf0a4d3de302591e830e8f7f/0_0_3800_2280/master/3800.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=49331bc571155fab736c3ce179f31770",
-    //     button: "Play",
-    // },
-    {        
-        key: '5',
-        title: 'Age of Rust',
-        text: 'Blockchain',
-        img: rust,
-        button: "Play",
-    },
     {        
         key: '6',
         title: 'Unravel Two',
@@ -69,6 +38,68 @@ const AllGamesData = [
         text: 'Arcade',
         img: pacman,
         button: "Play",
+    },
+    {        
+        key: '3',
+        title: 'Clash of Clans',
+        text: 'Adventure',
+        img: clash,
+        button: "Play",
+    },
+    {        
+        key: '1',
+        title: 'Axie Infinity',
+        text: 'Blockchain',
+        img: axie,
+        button: "Play",
+    },
+    {        
+        key: '2',
+        title: 'War of Ants',
+        text: 'Blockchain',
+        img: war,
+        button: "Play",
+    },
+    {        
+        key: '4',
+        title: 'Clash of Clans',
+        text: 'Adventure',
+        img: forestnight,
+        button: "Play",
+    },
+    {        
+        key: '5',
+        title: 'Age of Rust',
+        text: 'Blockchain',
+        img: rust,
+        button: "Play",
     }
 ]
+
+function OffSiteGame(key, title, text, img, btn, isOwn) {
+    this.key = key
+    this.title = title
+    this.text = text 
+    this.img = img
+    this.btn = btn
+    this.btn = 'More Info' 
+    this.isOwn = isOwn
+}
+
+const game1 = new OffSiteGame('1', 'blades', 'Blockchain', blades, '', true, )
+const game2 = new OffSiteGame('1', 'Nekoverse', 'Blockchain', Nekoverse, '', true,)
+const game3 = new OffSiteGame('1', 'avodaince', 'Blockchain', avodaince, '', false)
+const game4 = new OffSiteGame('1', 'Decentraland', 'Blockchain', Decentraland, '', true, )
+const game5 = new OffSiteGame('1', 'Definity Legend', 'Blockchain', DefinityLegend, '', false)
+const game6 = new OffSiteGame('1', 'Inu Wars', 'Blockchain', InuWars, '', true, )
+const game7 = new OffSiteGame('1', 'Battle Verse', 'Blockchain', BattleVerse, '', true, )
+const game8 = new OffSiteGame('1', 'blade', 'Blockchain', rust, '', false)
+const game9 = new OffSiteGame('1', 'Mobox', 'Blockchain', Mobox, '', false)
+const game10 = new OffSiteGame('1', 'Star Atlas', 'Blockchain', StarAtlas, '', true, )
+
+const OffSiteGames = [
+    game1, game2, game3, game4, game5, game6, game7, game8, game9, game10,
+]
+
 export default AllGamesData;
+export { OffSiteGames };

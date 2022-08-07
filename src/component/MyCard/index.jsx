@@ -12,7 +12,7 @@ export default function MyCard(props) {
                     {props.title}
                 </Card.Title>
                 <Card.Text className="mycard-text" style={{color: 'var(--plain-text)', margin: '0px'}}>
-                    {props.text}
+                    {props.text} <span className='card-icons'>{props.icons}</span>
                 </Card.Text>
                 <Button className="mycard-btn" style={{color: 'var(--primary)', padding: '0rem'}} variant='var(--primary)'> {props.button} </Button>
             </Card.Body>
