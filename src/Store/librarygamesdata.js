@@ -1,11 +1,11 @@
-import clash from './assets/images/clash.png'
-import axie from './assets/images/axie.png'
-import war from './assets/images/war.png'
-import forestnight from './assets/images/forestnight.png'
-import rust from './assets/images/rust.png'
-import unravel from './assets/images/unravel.png'
-import Tetris from './assets/images/Tetris.png'
-import pacman from './assets/images/pacman.png'
+import clash from '../assets/images/clash.png'
+import axie from '../assets/images/axie.png'
+import war from '../assets/images/war.png'
+import forestnight from '../assets/images/forestnight.png'
+import rust from '../assets/images/rust.png'
+import unravel from '../assets/images/unravel.png'
+import Tetris from '../assets/images/Tetris.png'
+import pacman from '../assets/images/pacman.png'
 
 const AllGamesData = [
     {        

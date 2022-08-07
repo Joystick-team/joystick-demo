@@ -69,7 +69,7 @@ export default function SideNav() {
                      </Offcanvas.Header>
                     <Offcanvas.Body variant="dark" >
                         <Nav className=" flex-column side-nav-list-item" variant="pills" defaultActiveKey="/">
-                                <Link to="/" className={ (pathname === '/' || pathname === '/home') && `active`}> <FaHome /> <span>Home</span></Link>
+                                <Link to="/home" className={ ( pathname === '/home') && `active`}> <FaHome /> <span>Home</span></Link>
                                 <Link to="/store" className={ pathname === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
                                 <Link to="/library" className={ pathname === '/library' && `active`}> <BsGridFill/> <span>Library</span></Link>
                                 <Link to="/socials" className={ pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>

@@ -4,7 +4,8 @@ import LoadingButton from '../../LoadingButton';
 import './topnav.scss'
 import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
-import { MdNotifications } from 'react-icons/md';
+import { FaUserAlt } from 'react-icons/fa';
+import { MdNotifications, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 
@@ -39,6 +40,9 @@ export default function TopNav() {
                     <div className="notice-search">
                         <div className='top-notifications-icon'> <MdNotifications /> </div>
                         <SearchBox />
+                    </div>
+                    <div className="user-reg" style={{cursor: 'pointer'}}>
+                        <FaUserAlt /> <MdOutlineKeyboardArrowDown />
                     </div>
                     <LoadingButton className='btn-connect' color="danger" title='Connect'/>
                 </Container>

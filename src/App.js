@@ -15,6 +15,7 @@ import Staking from './component/ContentTab/Staking';
 import Rewards from './component/ContentTab/Rewards';
 import Message from './component/ContentTab/Message';
 import ErrorPage from './pages/ErrorPage';
+import LandingPage from './pages/LandingPage';
 
 
 function App() {
@@ -24,9 +25,13 @@ function App() {
       <Router>
         <Layout>
             <Routes>
+            <Route
+                exact
+                path="/" element={<LandingPage />}
+              />
               <Route
                 exact
-                path="/" element={<HomePage/>}
+                path="/home" element={<HomePage/>}
               />
               <Route
                 path='/socials' element={<Socials/>}

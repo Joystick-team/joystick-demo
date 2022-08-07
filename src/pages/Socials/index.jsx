@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import socialsavatar from '../../assets/images/socialsavatar.png'
 import profilebg from '../../assets/images/profile-bg.png'
 import { MdOutlineEdit } from 'react-icons/md'
-import postData from '../../postfile'
+import postData from '../../Store/postfile'
 import Posts from '../../component/Posts'
 
 import './socials.scss'

@@ -1,14 +1,14 @@
-import opensea from '../src/assets/images/opensea.png';
-import afen from '../src/assets/images/afen.png';
-import bioshock from '../src/assets/images/bioshock.png';
-import val from '../src/assets/images/val.png';
-import forestnight from '../src/assets/images/forestnight.png';
-import rust from '../src/assets/images/rust.png';
-import one1 from './assets/images/one1.png'
-import Two2 from './assets/images/Two2.png'
-import Three3 from './assets/images/Three3.png'
-import Four4 from './assets/images/Four4.png'
-import Five5 from './assets/images/Five5.png'
+import opensea from '../../src/assets/images/opensea.png';
+import afen from '../../src/assets/images/afen.png';
+import bioshock from '../../src/assets/images/bioshock.png';
+import val from '../../src/assets/images/val.png';
+import forestnight from '../../src/assets/images/forestnight.png';
+import rust from '../../src/assets/images/rust.png';
+import one1 from '../assets/images/one1.png'
+import Two2 from '../assets/images/Two2.png'
+import Three3 from '../assets/images/Three3.png'
+import Four4 from '../assets/images/Four4.png'
+import Five5 from '../assets/images/Five5.png'
 
 
 const Marketplace = [

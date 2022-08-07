@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
-import { Games, Collectible, Marketplace } from '../../storefiles'
+import { Games, Collectible, Marketplace } from '../../Store/storefiles'
 import './stores.scss'
 
 

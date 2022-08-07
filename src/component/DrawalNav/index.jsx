@@ -31,7 +31,7 @@ export default function DrawalNav({TogglecloseOpen}) {
               <div>
                   <Nav className=" flex-column" variant="tabs" defaultActiveKey={pathname.toString()}>
                     <div className="footer-nav">
-                      <Link to="/" className={ (pathname.toString() === '/' ?? pathname.toString() === '/home') && `active`}> <FaHome /> <span>Home</span></Link>
+                      <Link to="/home" className={ (pathname.toString() === '/home') && `active`}> <FaHome /> <span>Home</span></Link>
                       <Link to="/store" className={ pathname.toString() === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
                       <Link to="/library" className={ pathname.toString() === '/library' && `active`}> <BsGridFill/> <span>Library</span></Link>
                       <Link to="/socials" className={ pathname.toString() === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>

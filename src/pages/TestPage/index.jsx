@@ -3,7 +3,7 @@ import AnnouncementCarousel from '../../component/AnnouncementCard';
 import SideNav from '../../component/NavMenus/SideNav'
 import BottomNav from '../../component/NavMenus/BottomNav';
 import PreviousNextMethods from '../../component/PreviousNextMethods';
-import LiberyGamesData from '../../gamesdata';
+import LiberyGamesData from '../../Store/gamesdata';
 import { Col } from 'react-bootstrap';
 import MyCard from '../../component/MyCard';
 

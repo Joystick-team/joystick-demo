@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 import { IoOptionsOutline } from 'react-icons/io5'
 import MyCard from '../../component/MyCard'
-import AllGamesData from '../../librarygamesdata'
+import AllGamesData from '../../Store/librarygamesdata'
 import './library.scss'
 // import LibraryfilterSelection from "../../component/LibraryFilter"
 

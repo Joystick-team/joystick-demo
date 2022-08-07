@@ -1,8 +1,8 @@
-import clash from '../src/assets/images/clash.png'
-import axie from '../src/assets/images/axie.png'
-import war from '../src/assets/images/war.png'
-import forestnight from '../src/assets/images/forestnight.png'
-import rust from './assets/images/rust.png'
+import clash from '../../src/assets/images/clash.png'
+import axie from '../../src/assets/images/axie.png'
+import war from '../../src/assets/images/war.png'
+import forestnight from '../../src/assets/images/forestnight.png'
+import rust from '../assets/images/rust.png'
 
 
 const LiberyGamesData = [

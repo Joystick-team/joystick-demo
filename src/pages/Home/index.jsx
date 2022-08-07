@@ -4,7 +4,7 @@ import AnnouncementCarousel from '../../component/AnnouncementCard'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import SidePost from '../../component/SidePost'
-import LiberyGamesData from '../../gamesdata'
+import LiberyGamesData from '../../Store/gamesdata'
 import './home.scss'
 
 export default function Home() {

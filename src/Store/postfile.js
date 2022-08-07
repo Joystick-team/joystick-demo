@@ -1,8 +1,8 @@
 import { BiDislike, BiLike } from 'react-icons/bi'
 import { IoChatboxOutline } from 'react-icons/io5'
 import { RiShareForward2Fill } from 'react-icons/ri'
-import campaign from './assets/images/campaign.png'
-import nightwar from './assets/images/nightwar.png'
+import campaign from '../assets/images/campaign.png'
+import nightwar from '../assets/images/nightwar.png'
 
 const postData = [
     {

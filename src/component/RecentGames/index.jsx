@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col} from 'react-bootstrap'
 import MyCard from '../../component/MyCard';
-import AllGamesData from '../../librarygamesdata';
+import AllGamesData from '../../Store/librarygamesdata';
 import './recentgames.scss';
 
 export default function RecentGames() {

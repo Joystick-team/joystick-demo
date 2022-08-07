@@ -5,7 +5,7 @@ import './mycard.scss'
 export default function MyCard(props) {
   return (
     <div className='mycard'>
-        <Card className='mb-3' style={{ border: 'none', color: 'var(--primary)', background: 'var(--background)'}}>
+        <Card className='mb-3 mycard-card' style={{ border: 'none', color: 'var(--primary)', background: 'var(--background)'}}>
             <Card.Img className='cardimg mycard-img' src={props.img} />
             <Card.Body className="mycard-body" style={{/*padding: '1rem 0px 0rem'*/}}>
                 <Card.Title  className="mycard-title" style={{color: 'var(--primary)', margin: '.1rem'}}>
