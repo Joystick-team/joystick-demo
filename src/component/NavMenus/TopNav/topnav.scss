@@ -8,6 +8,7 @@
 
     .navbar{
         height: 10%;
+        height: 14vh;
         position: fixed;
         top: 0;
         // left: 260px;
@@ -22,6 +23,7 @@
         max-width: 1440px;
         width: 100%;
         padding-right: 2rem;
+        padding-bottom: 1rem;
 
         .navbar-nav, .Tab .nav-link, Link, a{
             color: var(--secondary);
@@ -99,19 +101,20 @@
 
     .notice-search{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
-        width: 25%;
         
     
         .top-notifications-icon{
             font-size: 25px;
             color: var(--color-icon);
             cursor: pointer;
+            padding-right: 1.5rem;
         }
 
         .search-box-container{
-            width: 318px;
+            min-width: 318px;
+            width: 100%;
         }
     }
 

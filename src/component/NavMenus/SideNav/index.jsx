@@ -17,15 +17,12 @@ export default function SideNav() {
         
     const handleSearch = () => {
         setShowSearch(true)
-         console.log('Page ==>', showSearch);
     }
 
     let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
-    
     useEffect(() => {
-          setThemeData(localStorage.getItem('theme-dark'))
-          console.log('mike');
-    }, [])
+          setThemeData(themeData)
+    }, [themeData])
    
   return (
     <div >

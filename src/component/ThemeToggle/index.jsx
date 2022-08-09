@@ -13,8 +13,10 @@ const ThemeToggle = () => {
             setHtmlRef(html);
             if(themeData === "dark"){
                 setDark(true);
+                setDark(`(prefers-color-scheme: ${themeData})`)
             }
             html.dataset.theme = themeData
+            window.matchMedia(`(prefers-color-scheme: ${themeData})`)
         }
     },[])
     useEffect(() => {

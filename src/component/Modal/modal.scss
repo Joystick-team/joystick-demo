@@ -1,0 +1,28 @@
+.ReactModal__Overlay {
+    z-index: 999;
+    background: rgba(13, 13, 13, 0.8) !important;
+    // background-color: rgba(255, 255, 255, 0.75);
+
+    .ReactModal__Content{
+        background: #292929 !important;
+        border-radius: 10px;
+        color: #fff;
+        border: transparent !important;
+
+        button{
+            position: absolute;
+            top: 10px;
+            background: transparent;
+            outline: none;
+            border: none;
+            left: auto;
+            right: 0;
+            color: #fff;
+
+            position: absolute;
+            width: 22px;
+            height: none;
+
+        }
+    }
+}

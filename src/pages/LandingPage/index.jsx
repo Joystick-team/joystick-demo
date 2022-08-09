@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
+import ModalEffect from '../../component/Modal'
 import MyCard from '../../component/MyCard'
 import AllGamesData from '../../Store/librarygamesdata'
 import { OffSiteGames } from '../../Store/librarygamesdata'
@@ -42,7 +43,7 @@ export default function LandingPage() {
         } else if(gameOption === 'Off-site') {
             setCurrentValue(offSiteGame)
         }else{
-            setCurrentValue('gameOption out site') 
+            setCurrentValue(`Game Option ${gameOption}`) 
         }
     }
 
@@ -53,20 +54,29 @@ export default function LandingPage() {
                 <AnnouncementCarousel />
             </div>
             <div className="site-games-container">
-
-            <select name="" id="" 
-                onChange={(event) => handleChange(event.target.value)}
-                // value={currentValue}
-            >
-            {gameOptionsList.map((option) => (
-              <option value={option}> {option} </option>
-            ))}
-            </select>
-
+                <div className="select-container">
+                    <select name="" id="" 
+                        onChange={(event) => handleChange(event.target.value)}
+                        // value={currentValue}
+                        >
+                        {gameOptionsList.map((option) => (
+                        <option value={option}> {option} </option>
+                        ))}
+                    </select>
+                    <ModalEffect
+                        // modalTitle='Game title'
+                        // modalCloseButton='X'
+                        // modalHandle='open'
+                    >
+                        {/* <div className="">Lorem ipsum dolor sit amet consectetur.</div>
+                        <div className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae non praesentium.</div>
+                        <div className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae non praesentium.</div> */}
+                    </ModalEffect>
+                </div>
+                
             <div className="site-games">
                 {currentValue}
             </div>
-            
             </div>
         </div>
 
