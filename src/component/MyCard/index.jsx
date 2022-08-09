@@ -3,6 +3,7 @@ import { Button, Card } from 'react-bootstrap'
 import './mycard.scss'
 
 export default function MyCard(props) {
+    // const clickDetails = () => ( console.log('modal here') )
   return (
     <div className='mycard'>
         <Card className='mb-3 mycard-card' style={{ border: 'none', color: 'var(--primary)', background: 'var(--background)'}}>
@@ -14,7 +15,8 @@ export default function MyCard(props) {
                 <Card.Text className="mycard-text" style={{color: 'var(--plain-text)', margin: '0px'}}>
                     {props.text} <span className='card-icons'>{props.icons}</span>
                 </Card.Text>
-                <Button className="mycard-btn" style={{color: 'var(--primary)', padding: '0rem'}} variant='var(--primary)'> {props.button} </Button>
+                <Button className="mycard-btn" style={{color: 'var(--primary)', padding: '0rem'}} variant='var(--primary)' onClick={props.clickDetails}> {props.button} </Button>
+                {/* <button className="mycard-btn" style={{color: 'var(--primary)', padding: '0rem'}} onClick={props.clickDetails}> {props.button} </button> */}
             </Card.Body>
         </Card>
 

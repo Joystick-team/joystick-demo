@@ -11,6 +11,8 @@ import './landingpage.scss'
 
 export default function LandingPage() {
     const gameOptionsList = ["Off-site", "On-site", 'Out-site', 'the-site']
+    const clickDetails = () => ( console.log('modal here') )
+
     const offSiteGame = OffSiteGames.map((game, idx) => (
         <Col>
             <MyCard 
@@ -19,18 +21,22 @@ export default function LandingPage() {
                 text={game.text}
                 img={game.img}
                 button={game.btn}
-                icons={game.isOwn}
+                icons={'Off-site icons'}
+                clickDetails={clickDetails}
             />
         </Col>
     ))
+
     const games2 = AllGamesData.map((game, idx) => (
         <Col>
             <MyCard 
-                key={game.key.toString() && idx}
+                key={game.key}
                 title={game.title}
                 text={game.text}
                 img={game.img}
                 button="Play"
+                icons={'On-site icons'}
+                clickDetails={clickDetails}
             />
         </Col>
     ))
