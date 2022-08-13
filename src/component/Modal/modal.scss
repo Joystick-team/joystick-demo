@@ -2,6 +2,7 @@
     z-index: 999;
     background: rgba(13, 13, 13, 0.8) !important;
     // background-color: rgba(255, 255, 255, 0.75);
+    
 
     .ReactModal__Content{
         background: #292929 !important;
@@ -9,7 +10,7 @@
         color: #fff;
         border: transparent !important;
 
-        button{
+        .close-modal{
             position: absolute;
             top: 10px;
             background: transparent;
@@ -24,5 +25,10 @@
             height: none;
 
         }
+    }
+    .ReactModal__Content--after-open{
+        width: 70%;
+        max-width: 1223px;
+        font-size: 14px;
     }
 }

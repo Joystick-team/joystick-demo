@@ -51,24 +51,43 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+        grid-gap: 20px;
         justify-content: center;
+        padding-left: 10px;
 
         .mycard-card{
             justify-content: start;
             align-items: start;
+            text-transform: capitalize;
+            transition: all ease-in-out 500ms;
 
             img{
-                max-width: 220px;
-                max-height: 250px;
+                max-width: 235px;
+                max-height: 260px;
                 height: auto;
                 width: 100%;
-                object-fit: contain;
+                object-fit: cover;
                 background-color: var(--secondary-background);
+                transition: 500ms all ease-in-out;
+            }
+
+            img{
+                &:hover{
+                    max-width: 240px;
+                    max-height: 240px;
+                }
+            }
+
+            &:hover{
+                color: green;
+                font-size: 17px;
+                box-shadow: 7px 5px 3px grey;
+                padding-bottom: .3rem;
             }
         }
 
         .card-body{
-            padding: .5rem 1rem 0;
+            padding: .5rem 0;
         }
 
         .card-body .active-card{
@@ -79,26 +98,44 @@
                 }
             }
         }
+        .active-game{
+            img{
+                max-width: 390px;
+                max-height: 500px;
+            }
+            .card-title{
+                color: red !important;
+            }
+            color: red !important;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .site-games{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 200px)) !important;
     }
 }
 
 @media screen and (max-width: 480px){
     .site-games{
         grid-auto-rows: minmax(100px, auto);
-        grid-template-columns: auto auto auto !important;
+        grid-template-columns: 1fr 1fr !important;
         gap: 10px;
         padding: 10px;
 
         img{
-            max-width: 150px !important;
-            max-height: 150px !important;
+            // max-width: 150px !important;
+            // max-height: 150px !important;
             height: auto;
             width: 100%;
         }
 
         .mycard-card {
-            max-width: 200px !important;
-            max-height: 200px !important;
+            justify-content: center;
+            align-items: center;
+            // max-width: 200px !important;
+            // max-height: 200px !important;
             height: auto;
             width: 100%;
 
