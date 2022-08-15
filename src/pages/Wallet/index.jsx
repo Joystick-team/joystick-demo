@@ -2,10 +2,13 @@ import React,{useState} from 'react'
 import "./wallet.scss"
 import {GoKebabVertical} from "react-icons/go"
 import {TiArrowLeft,TiArrowRight} from "react-icons/ti"
+import transactions, {tokens, tokenStats} from '../../Store/walletStorage'
+import btcToken from '../../assets/images/btcToken.png'
+
 export default function Wallet() {
    const [transactionState,setTxState]=useState("All")
 
-  const Transactions=transactions.map((transaction)=>{
+  const Transactions= transactions.map((transaction)=>{
      return(
          <>
             {(transactionState==="All")&&(
@@ -89,7 +92,7 @@ const TokenStats= tokenStats.map((token)=>{
                    <div className='btc-card'>
                      <main className='btc-top'>
                        <h5 ><span className='btc-symbol'>BTC</span></h5>
-                       <img src="" alt='btc-logo' className='btc-img'/>
+                       <img src={btcToken} alt='btc-logo' className='btc-img'/>
                      </main>
                      <main  className='btc-bottom'>
                         <h5 className='btc-name'>Bitcoin</h5>
@@ -162,86 +165,3 @@ const TokenStats= tokenStats.map((token)=>{
     
   )
 }
-
-export const transactions=[
-  {
-    token:"BTC",
-    amount:"0.009",
-    date:"16:00,12 dec 2022",
-    address:"0xf3hfhhduu4838fvasdjfjk",
-    tx:"sent"
-},
-{
-  token:"JSK",
-  amount:"55,324",
-  date:"16:00,12 dec 2022",
-  address:"0xf3hfhhduu4838fvasdjfjk",
-  tx:"received"
-},
-{
-  token:"BTC",
-  amount:"0.3",
-  date:"16:00,12 dec 2022",
-  address:"0xf3hfhhduu4838fvasdjfjk",
-  tx:"sent"
-},
-{
-  token:"BNB",
-  amount:"0.5",
-  date:"16:00,12 dec 2022",
-  address:"0xf3hfhhduu4838fvasdjfjk",
-  tx:"sent"
-},
-{
-  token:"BNB",
-  amount:"0.5",
-  date:"16:00,12 dec 2022",
-  address:"0xf3hfhhduu4838fvasdjfjk",
-  tx:"sent"
-},
-]
-
-export const tokens=[
-
-  {
-    title:"Ethereum",
-    symbol:"ETH",
-    logo:"",
- 
-  },
-
-  {
-    title:"Binance Coin",
-    symbol:"BNB",
-    logo:"",
-   
-  },
-
-  {
-    title:"Joystick Token",
-    symbol:"JSK",
-    logo:"",
-   
-  },
-
-]
-
-export const tokenStats=[
-{
-  token:"Bitcoin",
-  stats:"81%",
-  img:""
-},
-{
-  token:"Ethereum",
-  stats:"12%",
-  img:""
-},
-
-{
-  token:"Joystick",
-  stats:"7%",
-  img:""
-
-}
-]

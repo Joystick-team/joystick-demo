@@ -51,9 +51,9 @@
                  }
             }
            
-             .btc-img{
+            //  .btc-img{
 
-             }
+            //  }
             }
             .btc-bottom{
                 display: flex;
@@ -72,7 +72,7 @@
           .othertoken-card{
             display: flex;
             flex-direction: column;
-            background-color:#1D2024;
+            background-color:var(--secondary-background);
             width :120px;
             height: 99.95px;
             border-radius: 2px;
@@ -97,9 +97,9 @@
                  }
             }
            
-             .token-img{
+            //  .token-img{
 
-             }
+            //  }
             }
             .othertoken-bottom{
                 display: flex;
@@ -253,7 +253,7 @@
      .transaction-main-div{
         width:313px;
         height:477px;
-        background-color: #1D2024;
+        background-color: var(--secondary-background);
         border-radius: 2px;
         padding: 20px;
      .transaction-tags{
