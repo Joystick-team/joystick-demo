@@ -31,4 +31,21 @@
         max-width: 1223px;
         font-size: 14px;
     }
+
+    @media screen and (max-width: '450px') {
+        .ReactModal__Content {
+            padding: 10px;
+        }
+        .ReactModal__Content--after-open{
+            max-height: 80vh;
+            height: 80%;
+            margin-top: -2.5rem;
+            width: 90%;
+            font-size: 12px;
+            overflow-x: hidden !important;
+            box-sizing: border-box;
+            padding: 10px !important;
+        }
+    }
+    
 }
