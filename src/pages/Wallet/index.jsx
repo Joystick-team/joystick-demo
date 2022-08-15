@@ -1,16 +1,247 @@
-import React from 'react'
-
+import React,{useState} from 'react'
+import "./wallet.scss"
+import {GoKebabVertical} from "react-icons/go"
+import {TiArrowLeft,TiArrowRight} from "react-icons/ti"
 export default function Wallet() {
-  return (
-    <div className="wallet">
-        <div className="main">
-          <div>Wallet</div>
-        </div>
-        <div className="side-adverts">
-          {/* The left advert/chat/friends should be written here */}
+   const [transactionState,setTxState]=useState("All")
+
+  const Transactions=transactions.map((transaction)=>{
+     return(
+         <>
+            {(transactionState==="All")&&(
+                <div className='tx-card'>
+                  <main className='tx-card-top'>
+                    <h5 className='tx-date'>{transaction.date}</h5>
+                    <h5>{transaction.tx==="sent"?(<TiArrowRight style={{color:"green"}} />):(<TiArrowLeft style={{color:"red"}}/>)}<span className='tx-amt-token'>{transaction.amount} {transaction.token}</span></h5>
+                  </main>
+                  <h5 className='tx-address'>
+                    {transaction.address}
+                  </h5>
+                </div>
+            )
+            
+            }
           
+        
+         {(transactionState==="Send")&&(
+          <div>
+
+          </div>
+         )
+         }
+          {(transactionState==="Recent")&&(
+              <div>
+
+              </div>
+          )
+            }
+           
+       </>
+         
+     )
+  })
+
+
+   const OtherTokenCards= tokens.map((token)=>{
+      
+         return(
+          <div className='othertoken-card'>
+          <main className='othertoken-top'>
+            <h5 ><span className='token-symbol'>{token.symbol}</span></h5>
+           <img src={token.logo} alt='logo' className='token-img'/>
+          </main>
+          <main  className='othertoken-bottom'>
+            <h5>{token.title}</h5>
+          </main>
+
         </div>
+         )
+})
+
+const TokenStats= tokenStats.map((token)=>{
+      
+  return(
+   <div className='token-stat'>
+     <main className='stats'>
+        <img src={token.img} alt="logo"/>
+        <h5 >{token.stats}</h5>
+     </main>
+     <main className='options'>
+       <h5>{token.token}</h5>
+       <h5> <GoKebabVertical /></h5>
+     </main>
+    
+  </div>
+  )
+})
+  return (
+
+
+    <div className="wallet">
+      
+      <h4> My Wallets</h4> 
+         
+          <div className='wallet-container'>
+      
+            
+            <div className='main-wallet-div'>
+                <div className='crypto-cards-div'>
+                   <div className='btc-card'>
+                     <main className='btc-top'>
+                       <h5 ><span className='btc-symbol'>BTC</span></h5>
+                       <img src="" alt='btc-logo' className='btc-img'/>
+                     </main>
+                     <main  className='btc-bottom'>
+                        <h5 className='btc-name'>Bitcoin</h5>
+                        <h5 className='btc-balance'>0.2217346</h5>
+                     </main>
+
+                   </div>
+                   {OtherTokenCards}
+                </div>
+
+                <div className='wallet-transaction'>
+                  <div className='token-stats-div'>
+                    { TokenStats}
+                  </div>
+                 <div className='wallet-tx-div'>
+                    <main className='tx-top'>
+                      <div className='wallet-select'>
+                        <h5>WALLET</h5>
+                        <input 
+                         className='token-select'
+                        />
+                      </div>
+                      <div  className="amt-input">
+                        <h5>AMOUNT</h5>
+                         <input 
+                         type="text"
+                          className='amt-field'
+                         />
+                      </div>
+                    </main>
+                    <main className='tx-mid'>
+                      <h5>Send To</h5>
+                       <input 
+                          className='transfer-field'
+                       />
+                    </main>
+                    <main className='tx-bottom'>
+                      <h5>Receive {"Bitcoin"}</h5>
+                      <button className='send-btn'><span>send</span></button>
+                    </main>
+                 </div>
+
+                </div>
+            </div>
+           
+            <div className='transaction-details'>
+              <div className='transaction-main-div'>
+              <div className='transaction-tags'>
+                 <h5>Transactions</h5>
+                  <main className='filter-tags'>
+                     <h5 onClick={()=>setTxState("All")}>ALL</h5>
+                     <h5 onClick={()=>setTxState("Send")}>SEND</h5>
+                     <h5 onClick={()=>setTxState("Recent")}>RECENT</h5>
+                  </main>
+              </div>
+             <div className='transaction-cards'>
+                {Transactions}
+             </div>
+
+            </div>
+
+            </div>
+
+      
+        </div>
+   
+          
+       
     </div> 
     
   )
 }
+
+export const transactions=[
+  {
+    token:"BTC",
+    amount:"0.009",
+    date:"16:00,12 dec 2022",
+    address:"0xf3hfhhduu4838fvasdjfjk",
+    tx:"sent"
+},
+{
+  token:"JSK",
+  amount:"55,324",
+  date:"16:00,12 dec 2022",
+  address:"0xf3hfhhduu4838fvasdjfjk",
+  tx:"received"
+},
+{
+  token:"BTC",
+  amount:"0.3",
+  date:"16:00,12 dec 2022",
+  address:"0xf3hfhhduu4838fvasdjfjk",
+  tx:"sent"
+},
+{
+  token:"BNB",
+  amount:"0.5",
+  date:"16:00,12 dec 2022",
+  address:"0xf3hfhhduu4838fvasdjfjk",
+  tx:"sent"
+},
+{
+  token:"BNB",
+  amount:"0.5",
+  date:"16:00,12 dec 2022",
+  address:"0xf3hfhhduu4838fvasdjfjk",
+  tx:"sent"
+},
+]
+
+export const tokens=[
+
+  {
+    title:"Ethereum",
+    symbol:"ETH",
+    logo:"",
+ 
+  },
+
+  {
+    title:"Binance Coin",
+    symbol:"BNB",
+    logo:"",
+   
+  },
+
+  {
+    title:"Joystick Token",
+    symbol:"JSK",
+    logo:"",
+   
+  },
+
+]
+
+export const tokenStats=[
+{
+  token:"Bitcoin",
+  stats:"81%",
+  img:""
+},
+{
+  token:"Ethereum",
+  stats:"12%",
+  img:""
+},
+
+{
+  token:"Joystick",
+  stats:"7%",
+  img:""
+
+}
+]
