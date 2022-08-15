@@ -1,0 +1,407 @@
+.wallet{
+  display: block !important;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  h4{
+    font-size: 16px;
+  }
+   .wallet-container{
+     display: flex;
+     height: 100vh;
+     column-gap: 10px;
+   .main-wallet-div{
+      width: 65%;
+   
+      padding-top: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      .crypto-cards-div{
+          display: flex;
+          width: 100%;
+          align-items: center;
+          column-gap: 1.4rem;
+          
+          .btc-card{
+            display: flex;
+            flex-direction: column;
+            background-color: #7AC231;
+            width :200px;
+            height:99.95px;
+            border-radius: 2px;
+            row-gap: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            .btc-top{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            h5{
+                display: flex;
+                padding-top: 13px;
+              
+               
+                .btc-symbol{
+                    
+                  
+                    font-size: 12px;
+                    color:  #65A028;;
+                 }
+            }
+           
+             .btc-img{
+
+             }
+            }
+            .btc-bottom{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+
+                .btc-name{
+                    font-size: 16px;
+                }
+                .btc-balance{
+                    font-size: 24px;
+                }
+            }
+          }
+          .othertoken-card{
+            display: flex;
+            flex-direction: column;
+            background-color:#1D2024;
+            width :120px;
+            height: 99.95px;
+            border-radius: 2px;
+            row-gap: 30px;
+            padding-left: 6px;
+            padding-right: 6px;
+            .othertoken-top{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            h5{
+                display: flex;
+                padding-top: 13px;
+              
+               
+                .token-symbol{
+                    
+                  
+                    font-size: 12px;
+                    color:  #3A3C43;
+                 }
+            }
+           
+             .token-img{
+
+             }
+            }
+            .othertoken-bottom{
+                display: flex;
+               h5{
+                font-size: 16px;
+                color: #FFFFFF;
+               }
+            }
+          }
+      }
+
+      .wallet-transaction{
+            display: flex;
+            column-gap: 25px;
+        .token-stats-div{
+            display: flex;
+            flex-direction: column;
+            width: 269px;
+            height :165px;
+            background-color:#222429;
+          //  opacity: 0.63;
+            border-radius: 2px;
+            align-items: center;
+            justify-content: center;
+            row-gap: 17px;
+            .token-stat{
+                display:flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+               
+                .stats{
+                   display: flex;
+                   width: 50%;
+                  justify-content: space-around;
+                  align-items: center;
+                  h5{
+                    font-size: 24px;
+                    font-weight: 300;
+                  }
+                }
+                .options{
+                 display: flex;
+                 width: 50%;
+                 justify-content: space-around;
+                 align-items: center;
+                 h5{
+                    font-weight:500;
+                    font-size:12px
+                 }
+                }
+            }
+        }
+
+        .wallet-tx-div{
+            display: flex;
+            flex-direction: column;
+            background-color: #0D0D0D;
+            padding: 10px;
+            row-gap: 14px;
+            .tx-top{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+             .wallet-select{
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+                
+                h5{
+                    font-size: 11px;
+                }
+                .token-select{
+                    background-color: #2A2B31;
+                    width:65px;
+                    height:29px;
+                    border:0px;
+                    border-radius: 2px;
+                    outline:none
+                }
+                    
+                }
+             .amt-input{
+               display: flex;
+               align-items: center;
+               column-gap: 10px;
+               h5{
+                font-size: 11px;
+               }
+               .amt-field{
+                background-color: #2A2B31;
+                width:65px;
+                height:29px;
+                border:0px;
+                border-radius: 2px;
+                outline:none
+
+               }
+             }
+            }
+
+            .tx-mid{
+              display: flex;
+              align-items: center;
+              column-gap: 4px;
+              h5{
+                font-size: 11px;
+              }
+             .transfer-field{
+                width:231px;
+                height:29px;
+                background-color:#2A2B31;
+                border-radius: 2px;
+                outline:none;
+                border: 0px;
+             }
+            }
+
+            .tx-bottom{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 44px;
+                h5{
+                    font-size: 12px;
+                    color: #606166;
+                }
+                .send-btn{
+                    width:57px;
+                    height:23px;
+                    border: 2px solid #3F4048;
+                    background-color:  #3F4048;
+                    border-radius: 14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span{
+                        font-size: 12px;
+                        color: white;
+                    }
+                }
+            }
+        }
+           
+      }
+  }
+
+  .transaction-details{
+     width: 30%;
+   
+     .transaction-main-div{
+        width:313px;
+        height:477px;
+        background-color: #1D2024;
+        border-radius: 2px;
+        padding: 20px;
+     .transaction-tags{
+         display: flex;
+         align-items: center;
+        justify-content: space-between;
+         h5{
+            font-size: 16px;
+            width: 60%;
+
+         }
+         .filter-tags{
+           display: flex;
+           align-items: center;
+           justify-content: space-evenly;
+           width: 50%;
+           h5{
+            font-size: 11px;
+            cursor: pointer;
+           }
+         }
+     }
+
+     .transaction-cards{
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        .tx-card{
+            display: flex;
+            flex-direction: column;
+            background: #2A2B31;
+            border-radius: 2px;
+            width:276px;
+            height:72px;
+            padding: 9px;
+            .tx-card-top{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .tx-date{
+                    font-size: 10px;
+                }
+                .tx-amt-token{
+                    font-size: 12px;
+                }
+            }
+            .tx-address{
+                font-size: 12px;
+                color: #42434B;
+            }
+        }
+     }
+    }
+    }
+ 
+
+}
+  
+
+
+}
+
+@media screen and (max-width: 480px){
+    .wallet{
+
+      .wallet-container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        .main-wallet-div{
+         .crypto-cards-div{
+            overflow-x: auto;
+            width: 150%;
+           .btc-card{
+            width:200px;
+            height:80.83px;
+            row-gap: 10px;
+
+           .btc-top{
+              h5{
+              .btc-symbol{
+                     font-size: 15px;
+                    }
+                 }
+                 }
+          .btc-bottom{
+               column-gap: 10px;
+            .btc-name{
+                font-size: 16px;
+                font-weight: 300;
+             }
+            .btc-balance{
+                font-size: 18px;
+                 font-weight: 300;
+             }
+
+             }
+           }
+
+      .othertoken-card{
+        width:150px;
+        height:80.83px;
+        row-gap: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+         .othertoken-top{
+          column-gap: 80px;
+
+          h5{
+           .token-symbol{
+                font-size: 15px;
+              }
+           }
+
+            }
+          }
+        }
+      }
+      .wallet-transaction{
+          flex-direction: column;
+          justify-content: center;
+          width: min-content;
+          row-gap: 10px;
+          .token-stats-div{
+            width: 330px !important;
+            background-color: #0D0D0D !important;
+          }
+          .wallet-tx-div{
+            width: 328px;
+            background-color: #222429 !important;
+            padding: 20px !important;
+          }
+      }
+    }
+
+    .transaction-details{
+        width: min-content !important;
+      
+        .transaction-main-div{
+            background-color: #0D0D0D !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 328px !important;
+            padding: 30px !important;
+        }
+    }
+
+    }
+}
