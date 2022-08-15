@@ -2,13 +2,26 @@ import {React, useEffect, useState} from 'react'
 import {Button} from 'react-bootstrap'
 import detectEthereumProvider from "@metamask/detect-provider"
 import ModalEffect from "../Modal"
-function simulateNetworkRequest() {
-    return new Promise((resolve) => setTimeout(resolve, 2000));
-    }
+
+
       
 export default function ConnectButton(props) {
     const [isLoading, setLoading] = useState(false);
     const [currentAccount,setAccount]=useState("")
+    const [isOpen, setIsOpen] = useState(true)
+
+    function openModal(data) {
+        setIsOpen(true);
+    }
+      
+    const closeModal = () => {
+        setIsOpen(false)
+    }
+
+    function simulateNetworkRequest() {
+        return new Promise((resolve) => setTimeout(resolve, 2000));
+        }
+
     useEffect(() => {
     if (isLoading) {
         simulateNetworkRequest().then(() => {
@@ -79,8 +92,11 @@ export default function ConnectButton(props) {
     >
         {isLoading ? 'Loading…' : (currentAccount.length===0? props.title:currentAccount.slice(0,9)+"...")}
     </Button>
-
-  
+    <ModalEffect show={isOpen} closeModal={closeModal} >
+        <div className="">
+        Bart check this out
+        </div>
+    </ModalEffect>
      </>
     );
 
