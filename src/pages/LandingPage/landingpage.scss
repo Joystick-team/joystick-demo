@@ -62,7 +62,7 @@
             transition: all ease-in-out 500ms;
 
             img{
-                max-width: 235px;
+                max-width: 240px;
                 max-height: 260px;
                 height: auto;
                 width: 100%;
@@ -72,9 +72,12 @@
             }
 
             img{
+                object-fit: cover;
+                transition: 500ms all ease-in-out;
                 &:hover{
-                    max-width: 240px;
-                    max-height: 240px;
+                    max-width: 250px;
+                    max-height: 245px;
+                    object-fit: contain;
                 }
             }
 
@@ -83,6 +86,9 @@
                 font-size: 17px;
                 box-shadow: 7px 5px 3px grey;
                 padding-bottom: .3rem;
+                img{
+                    max-width: 250px;
+                }
             }
         }
 

@@ -149,8 +149,7 @@
             flex-direction: column;
             width: 269px;
             height :165px;
-            background-color:#222429;
-          //  opacity: 0.63;
+            background-color:rgba(34, 36, 41, .63);
             border-radius: 2px;
             align-items: center;
             justify-content: center;
@@ -425,7 +424,8 @@
           .token-stats-div{
             width: 330px !important;
             background-color: var(--background) !important;
-           
+            color: var(--background);
+
             .token-stat{
               .stats{
                 h5{
@@ -469,6 +469,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        
 
         .CircularProgressbar {
           /* width: 100%; */
@@ -487,6 +488,10 @@
 
         .CircularProgressbar-text{
           display: none !important;
+        }
+
+        @media screen and (max-width: '480px') {
+          color: #0d0d0d;
         }
       }
  }
