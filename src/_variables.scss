@@ -16,6 +16,12 @@ html{
     --winner-post: rgba(0, 0, 0, 0.2);
     --chat-option-icon: #161515;
     --search-box-background: #EEECEC;
+    --other-token-text:#161515;
+    --wallet-tx-text:#FFFFFF;
+    --tx-card:#BDBFC9;
+    --wallet-tx-div:#D2D5DC;
+    --token-stat-text :#0D0D0D
+
 }
 html[data-theme='dark']{
     --primary: #fff;
@@ -34,4 +40,9 @@ html[data-theme='dark']{
     --winner-post: rgba(196, 196, 196, 0.1);
     --chat-option-icon: #C4C4C4;
     --search-box-background: #2F2F2F;
+    --other-token-text:#FFFFFF;
+    --wallet-tx-text:#606166;
+    --tx-card:#2A2B31;
+    --wallet-tx-div:#1D2024;
+    --token-stat-text :#FFFFFF
 }

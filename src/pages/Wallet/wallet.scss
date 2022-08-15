@@ -38,6 +38,7 @@
                 align-items: center;
                 justify-content: space-between;
                 width: 100%;
+                padding-top: 4px;
             h5{
                 display: flex;
                 padding-top: 13px;
@@ -50,10 +51,21 @@
                     color:  #65A028;;
                  }
             }
+            .btc-img-container{
+               background-color: #65A028;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               object-fit: contain;
+               width:35px;
+               height:35px;
+              // padding: 4px;
+                .btc-img{
+                  width: 17px;
+                  height:17px;
+                }
+            }
            
-            //  .btc-img{
-
-            //  }
             }
             .btc-bottom{
                 display: flex;
@@ -63,9 +75,11 @@
 
                 .btc-name{
                     font-size: 16px;
+                    color:white
                 }
                 .btc-balance{
                     font-size: 24px;
+                    color:white
                 }
             }
           }
@@ -83,6 +97,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                padding-top: 4px;
                 width: 100%;
             h5{
                 display: flex;
@@ -96,16 +111,27 @@
                     color:  #3A3C43;
                  }
             }
-           
-            //  .token-img{
+           .token-img-container{
+            background-color: #3A3C43;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            object-fit: contain;
+            width:35px;
+            height:35px;
+               .token-img{
+                width: 17px;
+                height:17px;
 
-            //  }
+             }
+           }
+            
             }
             .othertoken-bottom{
                 display: flex;
                h5{
                 font-size: 16px;
-                color: #FFFFFF;
+                color: var( --other-token-text);
                }
             }
           }
@@ -139,6 +165,7 @@
                   h5{
                     font-size: 24px;
                     font-weight: 300;
+                    color: var( --wallet-tx-text);
                   }
                 }
                 .options{
@@ -148,7 +175,8 @@
                  align-items: center;
                  h5{
                     font-weight:500;
-                    font-size:12px
+                    font-size:12px;
+                    color: var( --wallet-tx-text);
                  }
                 }
             }
@@ -173,7 +201,7 @@
                     font-size: 11px;
                 }
                 .token-select{
-                    background-color: #2A2B31;
+                    background-color:var(--secondary-background);
                     width:65px;
                     height:29px;
                     border:0px;
@@ -190,7 +218,7 @@
                 font-size: 11px;
                }
                .amt-field{
-                background-color: #2A2B31;
+                background-color:var(--secondary-background);
                 width:65px;
                 height:29px;
                 border:0px;
@@ -211,7 +239,7 @@
              .transfer-field{
                 width:231px;
                 height:29px;
-                background-color:#2A2B31;
+                background-color:var(--secondary-background);
                 border-radius: 2px;
                 outline:none;
                 border: 0px;
@@ -231,14 +259,14 @@
                     width:57px;
                     height:23px;
                     border: 2px solid #3F4048;
-                    background-color:  #3F4048;
+                    background-color: var(--secondary-background);
                     border-radius: 14px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     span{
                         font-size: 12px;
-                        color: white;
+                        color: var( --other-token-text);
                     }
                 }
             }
@@ -284,7 +312,7 @@
         .tx-card{
             display: flex;
             flex-direction: column;
-            background: #2A2B31;
+            background: var( --tx-card);
             border-radius: 2px;
             width:276px;
             height:72px;
@@ -295,9 +323,11 @@
                 justify-content: space-between;
                 .tx-date{
                     font-size: 10px;
+                    color: var( --wallet-tx-text);
                 }
                 .tx-amt-token{
                     font-size: 12px;
+                    color: var( --wallet-tx-text);
                 }
             }
             .tx-address{
@@ -369,6 +399,16 @@
               }
            }
 
+           .token-img-container{
+            width: 40px !important;
+            height:28.29px !important;
+               .token-img{
+                width: 17px;
+                height:17px;
+
+             }
+           }
+
             }
           }
         }
@@ -381,10 +421,23 @@
           .token-stats-div{
             width: 330px !important;
             background-color: var(--background) !important;
-          }
+           
+            .token-stat{
+              .stats{
+                h5{
+                   color:  var(--token-stat-text) !important;
+                }
+              }
+              .options{
+                h5{
+                   color: var(--token-stat-text) !important;
+               }
+              }
+            }
+           }
           .wallet-tx-div{
             width: 328px;
-            background-color: #222429 !important;
+            background-color:var( --wallet-tx-div) !important;
             padding: 20px !important;
           }
       }

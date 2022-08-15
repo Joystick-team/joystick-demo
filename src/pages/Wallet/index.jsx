@@ -51,7 +51,7 @@ export default function Wallet() {
           <div className='othertoken-card'>
           <main className='othertoken-top'>
             <h5 ><span className='token-symbol'>{token.symbol}</span></h5>
-           <img src={token.logo} alt='logo' className='token-img'/>
+          <div className='token-img-container'> <img src={token.logo} alt='logo' className='token-img'/></div>
           </main>
           <main  className='othertoken-bottom'>
             <h5>{token.title}</h5>
@@ -66,7 +66,7 @@ const TokenStats= tokenStats.map((token)=>{
   return(
    <div className='token-stat'>
      <main className='stats'>
-        <img src={token.img} alt="logo"/>
+       <div> <img src={token.img} alt="logo"/></div>
         <h5 >{token.stats}</h5>
      </main>
      <main className='options'>
@@ -92,7 +92,10 @@ const TokenStats= tokenStats.map((token)=>{
                    <div className='btc-card'>
                      <main className='btc-top'>
                        <h5 ><span className='btc-symbol'>BTC</span></h5>
+                       <div className='btc-img-container'>
                        <img src={btcToken} alt='btc-logo' className='btc-img'/>
+                       </div>
+                      
                      </main>
                      <main  className='btc-bottom'>
                         <h5 className='btc-name'>Bitcoin</h5>
