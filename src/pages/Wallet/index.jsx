@@ -4,6 +4,8 @@ import {GoKebabVertical} from "react-icons/go"
 import {TiArrowLeft,TiArrowRight} from "react-icons/ti"
 import transactions, {tokens, tokenStats} from '../../Store/walletStorage'
 import btcToken from '../../assets/images/btcToken.png'
+import RangeLoader from '../../component/RangeLoader'
+
 
 export default function Wallet() {
    const [transactionState,setTxState]=useState("All")
@@ -64,10 +66,12 @@ export default function Wallet() {
 const TokenStats= tokenStats.map((token)=>{
       
   return(
+    
    <div className='token-stat'>
      <main className='stats'>
-        <img src={token.img} alt="logo"/>
-        <h5 >{token.stats}</h5>
+        {/* <img src={token.img} alt="logo"/>
+        <h5 >{token.stats}</h5> */}
+        <RangeLoader value={token.stats} />
      </main>
      <main className='options'>
        <h5>{token.token}</h5>
@@ -153,13 +157,10 @@ const TokenStats= tokenStats.map((token)=>{
              </div>
 
             </div>
-
             </div>
 
-      
+            
         </div>
-   
-          
        
     </div> 
     

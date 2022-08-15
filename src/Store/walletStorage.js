@@ -69,18 +69,18 @@ const tokens = [
 const tokenStats=[
   {
     token:"Bitcoin",
-    stats:"81%",
+    stats:"81",
     img:""
   },
   {
     token:"Ethereum",
-    stats:"12%",
+    stats:"12",
     img:""
   },
   
   {
     token:"Joystick",
-    stats:"7%",
+    stats:"7",
     img:""
   
   }
