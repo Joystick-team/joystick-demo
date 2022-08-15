@@ -11,7 +11,10 @@
     .card-body{
         .card-text{
             color: var(--plain-text);
+            margin: 0px;
         }
     }
-
+    .mycard-title, .mycard-btn{
+        color: var(--primary);
+    }
 }

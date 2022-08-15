@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+// import { useState } from "react";
 import Modal from "react-modal";
 import './modal.scss'
 
@@ -20,34 +21,25 @@ export default function ModalEffect(props) {
       Modal.setAppElement('#root');
 
         let subtitle;
-        const [modalIsOpen, setIsOpen] = useState(false);
-      
-        function openModal() {
-          setIsOpen(!modalIsOpen);
-        }
-      
+ 
         function afterOpenModal() {
           // references are now sync'd and can be accessed.
           subtitle.style.color = '#f00';
         }
-      
-        function closeModal() {
-          setIsOpen(!modalIsOpen);
-        }
-      
+        
         return (
           <div>
-            <button onClick={openModal}>{props.modalHandle ?? 'click'}</button>
+            {/* <button onClick={openModal}>{props.modalHandle }</button> */}
             <Modal
-              isOpen={modalIsOpen}
+              isOpen={props.show}
               onAfterOpen={afterOpenModal}
-              onRequestClose={closeModal}
+              onRequestClose={props.closeModal.bind()}
               style={customStyles}
               contentLabel="my Component Modal"
             >
-              <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.modalTitle ?? 'pass in modalTitle as props'}</h2>
-              <button onClick={closeModal}>{props.modalCloseButton ?? 'X'}</button>
-              <div>{props.children ?? 'wrap the children/content in ModalEffect as children props'}</div>
+              <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{props.modalTitle}</h2>
+              <button onClick={props.closeModal.bind()} className='close-modal'>{props.modalCloseButton ?? 'X'}</button>
+              <div className="modal__content">{props.children ?? 'wrap the children/content in ModalEffect as children props'}</div>
             </Modal>
           </div>
         );

@@ -35,7 +35,7 @@ export default function SideNav() {
                  <Navbar.Brand href="/">
                     <picture>
                         <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
-                        <img src={JOYSTICK2} alt="JOYSTICK-logo" width={'80px'} height={`auto`} />
+                        
                     </picture>
                     {/* <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' /> */}
                  </Navbar.Brand>
@@ -58,10 +58,12 @@ export default function SideNav() {
                     <Offcanvas.Header closeButton variant="dark">
                         
                         <Offcanvas.Title id="offcanvasNavbarLabel">
+                        <Link to={'/'} >
                             <picture>
-                                <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
-                                <img src={JOYSTICK2} alt="JOYSTICK-logo" width={'80px'} height={`auto`} />
+                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
+                                <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
+                        </Link>
                          </Offcanvas.Title> 
                      </Offcanvas.Header>
                     <Offcanvas.Body variant="dark" >

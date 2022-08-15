@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
+import DetailsCard from '../../component/DetailsCard'
 import ModalEffect from '../../component/Modal'
 import MyCard from '../../component/MyCard'
 import AllGamesData from '../../Store/librarygamesdata'
@@ -11,7 +12,17 @@ import './landingpage.scss'
 
 export default function LandingPage() {
     const gameOptionsList = ["Off-site", "On-site", 'Out-site', 'the-site']
-    const clickDetails = () => ( console.log('modal here') )
+    const [details, setDetails] = useState(null);
+    const [isOpen, setIsOpen] = useState(false)
+
+    function openModal(data) {
+        setIsOpen(true);
+        setDetails(data)
+      }
+      
+        const closeModal = () => {
+            setIsOpen(false)
+        }
 
     const offSiteGame = OffSiteGames.map((game, idx) => (
         <Col>
@@ -21,8 +32,7 @@ export default function LandingPage() {
                 text={game.text}
                 img={game.img}
                 button={game.btn}
-                icons={'Off-site icons'}
-                clickDetails={clickDetails}
+                openModal={openModal.bind(this, game)}
             />
         </Col>
     ))
@@ -35,8 +45,6 @@ export default function LandingPage() {
                 text={game.text}
                 img={game.img}
                 button="Play"
-                icons={'On-site icons'}
-                clickDetails={clickDetails}
             />
         </Col>
     ))
@@ -69,17 +77,14 @@ export default function LandingPage() {
                         <option value={option}> {option} </option>
                         ))}
                     </select>
-                    <ModalEffect
-                        // modalTitle='Game title'
-                        // modalCloseButton='X'
-                        // modalHandle='open'
-                    >
-                        {/* <div className="">Lorem ipsum dolor sit amet consectetur.</div>
-                        <div className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae non praesentium.</div>
-                        <div className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae non praesentium.</div> */}
-                    </ModalEffect>
                 </div>
-                
+                <ModalEffect show={isOpen} closeModal={closeModal}
+                >
+            <div className="site-games">
+               
+               {details && <DetailsCard {...(details ? {...details} : {})} />}
+                </div>
+            </ModalEffect>
             <div className="site-games">
                 {currentValue}
             </div>

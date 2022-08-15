@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Nav,Container } from 'react-bootstrap'
 import LoadingButton from '../../LoadingButton';
-import './topnav.scss'
 import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
 import { FaUserAlt } from 'react-icons/fa';
@@ -9,23 +8,25 @@ import { MdNotifications, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 
+import './topnav.scss'
 export default function TopNav() {
     let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
     const {pathname} = useLocation()
 
     useEffect(() => {
           setThemeData(localStorage.getItem('theme-dark'))
-          console.log('mike');
     }, [])
   return (
     <div className='top-nav'>
                 <Container className='navbar'>
-                <div className="logo-title">
+                    <div className="logo-title">
+                        <Link to={'/'} >
                             <picture>
                                 <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
                                 <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
-                        </div>
+                        </Link>
+                    </div>
                     <Nav   
                         variant="pills"
                     >
