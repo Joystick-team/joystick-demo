@@ -157,7 +157,7 @@
         .wallet-tx-div{
             display: flex;
             flex-direction: column;
-            background-color: #0D0D0D;
+            background-color: var(--background);
             padding: 10px;
             row-gap: 14px;
             .tx-top{
@@ -380,7 +380,7 @@
           row-gap: 10px;
           .token-stats-div{
             width: 330px !important;
-            background-color: #0D0D0D !important;
+            background-color: var(--background) !important;
           }
           .wallet-tx-div{
             width: 328px;
@@ -394,7 +394,7 @@
         width: min-content !important;
       
         .transaction-main-div{
-            background-color: #0D0D0D !important;
+            background-color: var(--background) !important;
             display: flex;
             flex-direction: column;
             justify-content: center;
