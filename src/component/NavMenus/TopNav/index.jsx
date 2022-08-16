@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Nav,Container } from 'react-bootstrap'
-import LoadingButton from '../../LoadingButton';
+import ConnectButton from '../../ConnectButton';
 import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
 import { FaUserAlt } from 'react-icons/fa';
@@ -45,7 +45,7 @@ export default function TopNav() {
                     <div className="user-reg" style={{cursor: 'pointer'}}>
                         <FaUserAlt /> <MdOutlineKeyboardArrowDown />
                     </div>
-                    <LoadingButton className='btn-connect' color="danger" title='Connect'/>
+                    <ConnectButton className='btn-connect' color="danger" title='Connect'/>
                 </Container>
     </div>
   )
