@@ -60,10 +60,10 @@ if (isLoading) {
      setLoading(true);
      try{
     
-      //const accounts = await window.ethereum.request({method: 'eth_requestAccounts'  })
-        //console.log(accounts[0])
-       // setCurrentAccount(accounts[0])
-       setCurrentAccount("ghk")
+      const accounts = await window.ethereum.request({method: 'eth_requestAccounts'  })
+        console.log(accounts[0])
+        setCurrentAccount(accounts[0])
+      
       }catch(error){
         if(error.code === 4001) {
            // EIP-1193 userRejectedRequest error
@@ -75,7 +75,7 @@ if (isLoading) {
     }
     console.log(currentAccount.length)
 
-  if(currentAccount.length !== 3){
+ 
     console.log(currentAccount.length)
     if(chainId !=="0x7"){
       try {
@@ -91,9 +91,7 @@ if (isLoading) {
                 } 
           }
      }
-  }else{
-    throw Error("Please connect with metamask")
-  }
+ 
    
 }
 
