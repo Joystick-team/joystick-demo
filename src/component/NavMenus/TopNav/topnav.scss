@@ -122,6 +122,10 @@
         width: 110px;
         border-radius: 12px;
     }
+
+    abbr{
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 1024px) {

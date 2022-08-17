@@ -15,14 +15,14 @@ export default function DrawalNav({TogglecloseOpen}) {
     const {pathname} = useLocation();
 
     return (
-      <div className="" style={{position: 'relative'}}>
-        <div className="side-nav">
+      <div className="drawal__nav">
+        <div className="drawal-nav">
           <p
             onClick={() => setOpen(!open)}
             // onClick={TogglecloseOpen}
             aria-controls="DrawalNav-collapse-text"
             aria-expanded={open}
-            className='side-nav-burger'
+            className='drawal__nav__burger'
           >
             {!open ? <BiMenu /> : <MdClose />}
           </p>
@@ -30,7 +30,7 @@ export default function DrawalNav({TogglecloseOpen}) {
             <Collapse in={open} dimension="width">
               <div>
                   <Nav className=" flex-column" variant="tabs" defaultActiveKey={pathname.toString()}>
-                    <div className="footer-nav">
+                    <div className="drawal__nav-slide">
                       <Link to="/home" className={ (pathname.toString() === '/home') && `active`}> <FaHome /> <span>Home</span></Link>
                       <Link to="/store" className={ pathname.toString() === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
                       <Link to="/library" className={ pathname.toString() === '/library' && `active`}> <BsGridFill/> <span>Library</span></Link>
@@ -39,10 +39,10 @@ export default function DrawalNav({TogglecloseOpen}) {
                     </div>
 
                       <hr />
-                      <div className="footer-nav-sids">
+                      <div className="drawal_down_nav-sids">
                         <Link to="/u/wallet" className={ pathname.toString() === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
                         <Link to="/u/settings" className={ pathname.toString() === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
-                        <div className="icons-sidenav-footer">
+                        <div className="icons-drawal_nav-footer">
                             <Nav.Link href="https://facebook.com/joystick" className={ pathname === '/facebook' && `active`} target="_blank"><FaFacebookF /> </Nav.Link>
                             <Nav.Link href="https://twitter.com/joystick" className={ pathname === '/twitter' && `active`} target="_blank"><FiTwitter /> </Nav.Link>
                             <Link to="/message" className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>

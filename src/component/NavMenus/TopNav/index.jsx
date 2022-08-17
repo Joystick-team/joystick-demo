@@ -51,7 +51,9 @@ export default function TopNav() {
                         </div>
                     </Nav>
                     <div className="notice-search">
-                        <div className='top-notifications-icon'> <MdNotifications /> </div>
+                        <abbr title="notifications">
+                            <div className='top-notifications-icon'> <MdNotifications /> </div>
+                        </abbr>
                         <SearchBox />
                     </div>
                     <div className="user-reg" style={{cursor: 'pointer'}}>
@@ -61,8 +63,10 @@ export default function TopNav() {
                             </div>
                         </ModalEffect>
                         <div className="user-reg-icons" onClick={toggleRegister}>
-                            <FaUserAlt /> 
-                            <MdOutlineKeyboardArrowDown />
+                            <abbr title="User login">
+                                <FaUserAlt /> 
+                                <MdOutlineKeyboardArrowDown />
+                            </abbr>
                         </div>
                     </div>
                     <LoadingButton className='btn-connect' color="danger" title='Connect'/>
