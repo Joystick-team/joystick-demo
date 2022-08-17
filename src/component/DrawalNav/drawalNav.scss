@@ -9,6 +9,8 @@
     height: 100%;
     align-self: flex-start;
     display: block;
+    box-sizing: border-box;
+    padding: 1rem 0;
 
     .drawal__nav__burger{
         display: flex;
@@ -37,6 +39,7 @@
             margin: auto;
             display: flex;
             mix-blend-mode: normal;
+            margin-bottom: 1rem;
         }
     }
     

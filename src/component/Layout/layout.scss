@@ -40,7 +40,7 @@
             overflow: hidden;
             position: relative;
             flex: 2;
-            height: 80%;
+            // height: 80%;
             margin-right: .7rem;
 
             .mobile-nav{
@@ -103,7 +103,7 @@
             overflow: hidden;
             position: relative;
             flex: 2 1;
-            height: 80%;
+            // height: 80%;
             margin-right: auto;
             overflow-y: auto;
 
@@ -113,7 +113,8 @@
             display: flow-root !important;
             width: 100%;
             overflow-y: auto;
-            height: 80%;
+            // height: 80%;
+            margin-bottom: 1rem;
 
             .side-adverts{
                 // max-width: auto;
@@ -145,7 +146,7 @@
             overflow: hidden;
             position: relative;
             flex: 2 1;
-            height: 80%;
+            // height: 80%;
             margin-right: auto;
             overflow-y: auto;
             margin-right: 0rem !important;
@@ -155,6 +156,7 @@
 
                 .navbar-dark{
                     background: var(--secondary-background);
+                    height: 8vh;
                 }
             }
         }
