@@ -14,8 +14,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - run: pm2 stop joystick-web
+      # - run: pm2 stop joystick-web
       - run: yarn install
       - run: yarn build
-      - run: pm2 start joystick-web
-      - run: pm2 save
+      - run: sudo cp -fR ./build/* /var/www/joysticklabs.io/html
+      # - run: pm2 start joystick-web
+      # - run: pm2 save
