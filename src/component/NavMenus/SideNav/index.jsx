@@ -10,6 +10,7 @@ import './sidenav.scss';
 import ThemeToggle from '../../ThemeToggle'
 import SearchBox from '../../SearchBox'
 import { Link, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function SideNav() {
     const [showSearch, setShowSearch] = useState(false);
@@ -32,13 +33,13 @@ export default function SideNav() {
                 <Navbar.Toggle aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
                     <FiMenu />
                 </Navbar.Toggle>
-                 <Navbar.Brand href="/">
+                 <NavLink to="/">
                     <picture>
                         <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
                         
                     </picture>
-                    {/* <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' /> */}
-                 </Navbar.Brand>
+                    <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
+                 </NavLink>
                 <div className="search-mobile" onClick={setShowSearch}>
                 {/* <FiSearch /> */}
                     <div className="" >
