@@ -468,7 +468,7 @@
 .wallet{
       //the section for the percentage loader with value
       .range__loader{
-        color: #fff;
+        color: var(--primary);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -494,7 +494,7 @@
         }
 
         @media screen and (max-width: '480px') {
-          color: #0d0d0d;
+          color: var(--primary);
         }
       }
  }
