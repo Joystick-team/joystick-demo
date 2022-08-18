@@ -131,7 +131,7 @@
     .recent-games-items { 
         img {
             height: 274px;
-            width: 100%;
+            width: auto;
             object-fit: contain;
             margin-left: -1rem;
         }
@@ -139,7 +139,6 @@
 }
 
 @media screen and (max-width: 480px){
-
     .library{
         .library-filter{
             flex-direction: column;
@@ -154,6 +153,10 @@
                 padding-left: 16px;
                 padding-right: 16px;
                 position: fixed;
+                background-color: var(--background);
+                z-index: 1;
+                max-width: 480px;
+
                 .span-filter-mobile{
                     display: flex;
                     width: 40%;
@@ -167,14 +170,16 @@
                    margin-left: 210px;
                    font-size: 20px;
                    position: relative;
-                p{
-                    margin-top: 19px;
-                    margin-left:4px ;
-                }
+                    p{
+                        margin-top: 19px;
+                        margin-left:4px ;
                     }
+                }
+
                 .flex-column{
                     display: none;
-                    }
+                }
+                
                 .filter-mobile-options{
                     width: 70%;
                     height: min-content;
@@ -195,7 +200,7 @@
                     }
                    
                 }
-                }
+            }
                
     
         }

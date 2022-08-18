@@ -19,12 +19,13 @@ export default function Auth() {
         this.groupClass = groupClass
     }
 
-    const input1 = new InputData('text', 'Enter Username', 'Username', 'login_username', 'login_username', 'login_username',)
-    const input2 = new InputData('email', 'Enter email', 'Email', 'login_email', 'login_email', 'login_email',)
-    const input3 = new InputData('password', 'Password', 'Repeat Password', 'login_password', 'login_password', 'login_password',)
-    const input4 = new InputData('text', 'Enter email address or Username', 'Email address or Username', 'login_username', 'login_username', 'login_username',)
-    const input6 = new InputData('password', 'Password', 'Password', 'login_password', 'login_password', 'login_password',)
-    const input5 = new InputData('password', 'Password', 'Create Password', 'login_password', 'login_password', 'login_password',)
+    const input1 = new InputData('text', 'Enter Username', 'Username', 'login_username1', 'login_username1', 'login_username1',)
+    const input2 = new InputData('email', 'Enter email', 'Email', 'login_email2', 'login_email2', 'login_email2',)
+    const input5 = new InputData('password', 'Password', 'Create Password', 'login_password6', 'login_password6', 'login_password6',)
+    const input3 = new InputData('password', 'Password', 'Repeat Password', 'login_password3', 'login_password3', 'login_password3',)
+
+    const input4 = new InputData('text', 'Enter email address or Username', 'Email address or Username', 'login_username4', 'login_username4', 'login_username4',)
+    const input6 = new InputData('password', 'Password', 'Password', 'login_password5', 'login_password5', 'login_password5',)
 
     const [registerInputData, setRegisterData] = useState([input1, input2, input5, input3])
     const [loginInputData, setloginDate] = useState([input4, input6])
