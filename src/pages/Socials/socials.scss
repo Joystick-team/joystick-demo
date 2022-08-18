@@ -305,16 +305,19 @@
             .post-card-container{
                
                 width: 100%;
-                padding-right: 24px;
-                padding-left: 10px;
+                padding-right: 0px;
+                padding-left: 0;
                 justify-content: center;
                 .post-card {
                     margin: auto 0.25rem !important;
                     color: #fff;
+                    gap: 4rem;
                     img{
                         // width: 323px;
-                        width: 90% !important;
-                        height: 208px;
+                        width: 95% !important;
+                        height: 160px;
+                        object-fit: cover;
+                        gap: 1rem;
                     }
                                             
                     .content-body{

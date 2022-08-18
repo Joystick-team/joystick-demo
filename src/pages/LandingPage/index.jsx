@@ -11,7 +11,7 @@ import { OffSiteGames } from '../../Store/librarygamesdata'
 import './landingpage.scss'
 
 export default function LandingPage() {
-    const gameOptionsList = ["Off-site", "On-site", 'Out-site', 'the-site']
+    const gameOptionsList = ["Off-site", "On-site"]
     const [details, setDetails] = useState(null);
     const [isOpen, setIsOpen] = useState(false)
 
@@ -78,16 +78,14 @@ export default function LandingPage() {
                         ))}
                     </select>
                 </div>
-                <ModalEffect show={isOpen} closeModal={closeModal}
-                >
-            <div className="site-games">
-               
-               {details && <DetailsCard {...(details ? {...details} : {})} />}
+                <ModalEffect show={isOpen} closeModal={closeModal}>
+                    <div className="site-games">
+                        {details && <DetailsCard {...(details ? {...details} : {})} />}
+                    </div>
+                </ModalEffect>
+                <div className="site-games">
+                    {currentValue}
                 </div>
-            </ModalEffect>
-            <div className="site-games">
-                {currentValue}
-            </div>
             </div>
         </div>
 

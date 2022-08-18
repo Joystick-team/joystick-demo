@@ -10,7 +10,7 @@ export default function SearchBox() {
             <span><FiSearch /></span>
             <FormControl
                 type="search"
-                placeholder={` Search`}
+                placeholder={` Search...`}
                 className="me-2 search-box"
                 aria-label="Search"
             />

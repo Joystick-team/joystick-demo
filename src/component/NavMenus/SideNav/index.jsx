@@ -5,11 +5,12 @@ import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
 import { FiMenu, FiSearch, FiTwitter } from 'react-icons/fi'
-import { FaHome, FaWallet, FaFacebookF } from "react-icons/fa";
+import { FaHome, FaWallet, FaTelegram} from "react-icons/fa";
 import './sidenav.scss';
 import ThemeToggle from '../../ThemeToggle'
 import SearchBox from '../../SearchBox'
 import { Link, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function SideNav() {
     const [showSearch, setShowSearch] = useState(false);
@@ -32,13 +33,13 @@ export default function SideNav() {
                 <Navbar.Toggle aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
                     <FiMenu />
                 </Navbar.Toggle>
-                 <Navbar.Brand href="/">
+                 <NavLink to="/">
                     <picture>
                         <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
                         
                     </picture>
-                    {/* <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' /> */}
-                 </Navbar.Brand>
+                    <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
+                 </NavLink>
                 <div className="search-mobile" onClick={setShowSearch}>
                 {/* <FiSearch /> */}
                     <div className="" >
@@ -68,7 +69,7 @@ export default function SideNav() {
                      </Offcanvas.Header>
                     <Offcanvas.Body variant="dark" >
                         <Nav className=" flex-column side-nav-list-item" variant="pills" defaultActiveKey="/">
-                                <Link to="/home" className={ ( pathname === '/home') && `active`}> <FaHome /> <span>Home</span></Link>
+                                <Link to="/home" className={ ( pathname === '/home' || pathname === '/') && `active`}> <FaHome /> <span>Home</span></Link>
                                 <Link to="/store" className={ pathname === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
                                 <Link to="/library" className={ pathname === '/library' && `active`}> <BsGridFill/> <span>Library</span></Link>
                                 <Link to="/socials" className={ pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>
@@ -81,8 +82,8 @@ export default function SideNav() {
                             <Link to="/u/wallet" className={ pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
                             <Link to="/u/settings" className={ pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
                                 <div className="icons-sidenav-footer">
-                                    <Nav.Link href="https://facebook.com/joystick" target="_blank"><FaFacebookF /> </Nav.Link>
-                                    <Nav.Link href="https://twitter.com/joystick" target="_blank"><FiTwitter /> </Nav.Link>
+                                    <Nav.Link href="#" target="_blank" ><FaTelegram /> </Nav.Link>
+                                    <Nav.Link href="https://twitter.com/Joystick_labs?t=tJCfTkFcbIJ4KqJY0Ak4EQ&s=09" target="_blank"><FiTwitter /> </Nav.Link>
                                     <Link to="/message" className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>
                                 </div>
                                 <ThemeToggle />

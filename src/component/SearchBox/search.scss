@@ -36,5 +36,15 @@
 @media screen and (max-width: 1025px){
     .search-mobile{
         max-width: 30%;
+
+        .form-control {
+            padding-left: 1.7rem !important;
+        }
+    }
+    // input[placeholder=' Search...']{
+    //     // font-size: 15px;
+    // }
+    .me-2 {
+        margin: 0 !important;
     }
 }
