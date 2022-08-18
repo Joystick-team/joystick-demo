@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react'
 import {Button} from 'react-bootstrap'
 import detectEthereumProvider from "@metamask/detect-provider"
 import ModalEffect from "../Modal"
+import { useCallback } from 'react';
 
 
       
@@ -12,47 +13,53 @@ export default function ConnectButton(props) {
 
   const [isOpen, setIsOpen] = useState(false)
  
-    function openModal() {
-        setIsOpen(true);
-    }
- 
-    const closeModal = () => {
-        setIsOpen(false)
-    }
- 
+  function openModal() {
+      setIsOpen(true);
+  }
+
+  const closeModal = () => {
+      setIsOpen(false)
+  }
 
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 2000));
-    }
+  }
 
-   useEffect(() => {
-if (isLoading) {
-    simulateNetworkRequest().then(() => {
-    setLoading(false);
-    });
-}
-       }, [isLoading]);
+  useEffect(() => {
+      if (isLoading) {
+            simulateNetworkRequest().then(() => {
+            setLoading(false);
+          });
+      }
+  }, [isLoading]);
 
-   const web3loader=async() =>{
- 
-       const webProvider = await detectEthereumProvider();
+const web3loader = useCallback(
+  async() => {
 
-   console.log(webProvider)
-      if(webProvider){
-         const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-    console.log(chainId)
-       setChainId(chainId )
+    const webProvider = await detectEthereumProvider();
 
-   const accounts = await window.ethereum.request({ method: 'eth_accounts' })
-       handleAccountsChanged(accounts)
-     }
-    }
+    console.log(webProvider)
+        if(webProvider){
+          const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+      console.log(chainId)
+        setChainId(chainId )
 
+    const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+        handleAccountsChanged(accounts)
+      }
+  }
+  , [])
+  // const web3loader = 
+    
    useEffect(()=>{
-  window.addEventListener('load',web3loader)
-  window.ethereum.on('accountsChanged', handleAccountsChanged);
+    window.addEventListener('load', web3loader)
+    window.ethereum.on('accountsChanged', handleAccountsChanged);
 
-    },[])
+    return () => {
+      web3loader()
+    }
+    },[web3loader])
+
    function handleAccountsChanged(accounts) {
      //window.location.reload();
     }
@@ -113,13 +120,43 @@ const AddSkaleChain = async() =>{
           },
         ],
       });
-    } catch (addError) {
-      // handle "add" error
-      console.log(addError)
+      } catch (addError) {
+        // handle "add" error
+        console.log(addError)
+      }
     }
-   }
 
    console.log(currentAccount,currentAccount.length,"accccc>>>")
+
+    const skaleChain = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '200px',
+        padding: '20px',
+        fontSize: '18px',
+        lineHeight: '3',
+    }
+
+    const skaleChainBtn = {
+      height: '50px',
+      // padding: '20px',
+      width: '100%',
+      display: 'flex',
+      color: 'white',
+      background: 'red',
+      border: 'transparent',
+      outline: 'transparent',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transition : 'all 500ms ease-out'
+    }
+
+    const skaleChainBtnContainer = {
+      height: '50px',
+      width: '100%',
+      display: 'block',
+    }
 
     return (
     <>
@@ -132,9 +169,13 @@ const AddSkaleChain = async() =>{
         {isLoading ? 'Loading…' : (currentAccount.length === 0 ? props.title : currentAccount.slice(0,9)+"...")}
     </Button>
     <ModalEffect show={isOpen} closeModal={closeModal} >
-        <div className="">
-             Enable Joystick to add Skale chain to metamask.
-             <button onClick={AddSkaleChain}>Enable</button>
+        <div className="stake__container" style={skaleChain}>
+          <div className="stake__holder">
+              Enable Joystick to add Skale chain to metamask.
+              <div className="stakebtn" style={skaleChainBtnContainer}>
+                <button onClick={AddSkaleChain} style={skaleChainBtn} >Enable</button>
+              </div>
+          </div>
         </div>
     </ModalEffect>
      </>
