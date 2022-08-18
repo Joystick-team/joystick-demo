@@ -27,7 +27,12 @@ export default function Auth() {
     const input4 = new InputData('text', 'Enter email address or Username', 'Email address or Username', 'login_username4', 'login_username4', 'login_username4',)
     const input6 = new InputData('password', 'Password', 'Password', 'login_password5', 'login_password5', 'login_password5',)
 
+    // const [registerInputData, setRegisterData] = useState([input1, input2, input5, input3])
+    // const [loginInputData, setloginDate] = useState([input4, input6])
+
+    // eslint-disable-next-line
     const [registerInputData, setRegisterData] = useState([input1, input2, input5, input3])
+    // eslint-disable-next-line
     const [loginInputData, setloginDate] = useState([input4, input6])
 
     const setLog = {
