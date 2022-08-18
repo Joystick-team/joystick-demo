@@ -30,6 +30,11 @@
 
             .carousel-caption{
                 bottom: 7.25rem;
+                .carousel-caption-holder{
+                    background-color:#1c1c1ca1;
+                    display: table;
+                }
+
                 h3{
                     font-size: 16px;
                 }

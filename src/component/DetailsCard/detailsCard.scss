@@ -1,5 +1,4 @@
 .details-card-container{
-
     .details-card-holder{
 
         .details-card{
@@ -7,10 +6,12 @@
                 position: relative;
                 max-height: 350px;
                 img{
-                    max-height: auto; 
-                    width: 100%; 
+                    width: 100%;
                     max-height: 350px;
-                    opacity: .8;
+                    height: auto;
+                    opacity: 0.8;
+                    max-width: 900px;
+                    object-fit: cover;
                 }
                 .btn-play{
                     position: absolute;
@@ -35,7 +36,30 @@
                     font-size: 80px;
                     line-height: 93px;
                     color: #C8C6C6;   
-                    text-transform: uppercase;                
+                    text-transform: uppercase; 
+                    background-color:#1c1c1ca1;
+                    display: table;
+                    max-width: 700px;
+                    padding: 10px;
+                    transition: all 1000ms ease-in-out;  
+                }
+
+                @media  screen and (max-width: '480px'){
+                    .btn-play, .title{
+                        left: 10px;
+                        padding: 0 10px; 
+                    }
+                    .title{
+                        font-weight: 700;
+                        font-size: 32px; 
+                        line-height: 1.5;
+                    }
+                    img{
+                        max-height: auto; 
+                        width: 100%; 
+                        max-height: 350px;
+                        object-fit: fill;
+                    }
                 }
             }
 

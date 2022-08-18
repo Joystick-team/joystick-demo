@@ -39,6 +39,7 @@
             box-sizing: border-box;
             overflow: hidden;
             position: relative;
+            overflow-y: auto;
             flex: 2;
             height: 80%;
             margin-right: .7rem;
@@ -57,6 +58,10 @@
                     flex-basis: auto;
                     flex-grow: 2;
                     // padding-top: 1.5rem;
+                    @media screen and (max-width: 480px){
+                        overflow: hidden;
+                        overflow-y: auto;
+                    }
                 }
             
                 .side-adverts{
@@ -75,6 +80,8 @@
             .main-div {
                 & > div{
                     display: contents;
+                    overflow: hidden;
+                    overflow-y: auto;
                 }
             }
 
@@ -103,7 +110,7 @@
             overflow: hidden;
             position: relative;
             flex: 2 1;
-            height: 80%;
+            // height: 80%;
             margin-right: auto;
             overflow-y: auto;
 
@@ -113,7 +120,8 @@
             display: flow-root !important;
             width: 100%;
             overflow-y: auto;
-            height: 80%;
+            // height: 80%;
+            margin-bottom: 1rem;
 
             .side-adverts{
                 // max-width: auto;
@@ -145,7 +153,7 @@
             overflow: hidden;
             position: relative;
             flex: 2 1;
-            height: 80%;
+            // height: 80%;
             margin-right: auto;
             overflow-y: auto;
             margin-right: 0rem !important;
@@ -155,6 +163,7 @@
 
                 .navbar-dark{
                     background: var(--secondary-background);
+                    height: 8vh;
                 }
             }
         }

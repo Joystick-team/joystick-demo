@@ -34,16 +34,18 @@ const ThemeToggle = () => {
     return (
     <div className={"radioinput"} id="themeToggle">
       {/* The main switch of the radio input  */}
-      <div
-        onClick={() => setDark(v => !v)}
-        className={`radioinput__switch ${
-          dark ? 'radioinput__switch--checked' : ''
-        }`}
-      >
-        <div className="radioinput__switch__bulb">
-            <CgDarkMode/>
+      <abbr title="Toggle Light & Dark Theme">
+        <div
+            onClick={() => setDark(v => !v)}
+            className={`radioinput__switch ${
+            dark ? 'radioinput__switch--checked' : ''
+            }`}
+        >
+            <div className="radioinput__switch__bulb">
+                <CgDarkMode/>
+            </div>
         </div>
-      </div>
+      </abbr>
     </div>
     )
 }

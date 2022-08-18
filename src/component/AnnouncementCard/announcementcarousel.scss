@@ -27,11 +27,16 @@
 
         img{
             width: 100%;
-            height: 100%;
-            object-fit: revert;
+            height: auto;
+            object-fit: fill;
             filter: grayscale(30%);
             background-color: rgba(0,0,0,0.5);
             opacity: .7;
+
+            @media  screen and (max-width: '480px') {
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 
@@ -39,6 +44,13 @@
         left: 10%;
         right: 10%;
         text-align: start;
+        // background-color:#1c1c1ca1;
+        // display: table;
+        // max-width: 700px;
+        .carousel-caption-holder{
+            background-color:#1c1c1ca1;
+            display: table;
+        }
         
         .btn{
             width: 79px;

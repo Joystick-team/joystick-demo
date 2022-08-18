@@ -68,63 +68,22 @@ const Arcade = fetchArcade.map((game, idx) => (
           <Col sm={2}>
             <div className="library-filter"> 
         
-          <div className="filter-menu">
-           <span className="span-filter-mobile">Games</span>
-            <div className="filter-menu-header">
-              <div>Filter </div>  <p onClick={()=>setShow(true)}><IoOptionsOutline /></p>
-             
-            </div>
-            {show===true&&(
-            
-            <>
-              {/* <LibraryfilterSelection /> */}
-              {/** mobile view*/}
-             <Nav variant="" className="filter-mobile-options">
-                 <label htmlFor="All"> 
-                 <Nav.Item >
-                <Nav.Link eventKey="first"  >
-                  <input type="radio" id="All" name="fav_games" value="All" onClick={()=>setShow(false)}/> All
-                  <span className="checkmark"></span>
-                </Nav.Link>
-              </Nav.Item>
-          </label>
-
-          <label htmlFor="Blockchain">
-          <Nav.Item>
-              <Nav.Link eventKey="second">
-                <input type="radio" id="Blockchain" name="fav_games" value="Blockchain" onClick={()=>setShow(false)}/> Blockchain 
-                <span className="checkmark"></span>
-              </Nav.Link>
-            </Nav.Item>
-          </label>
-
-            <label htmlFor="Adventure">
-              <Nav.Item>
-               <Nav.Link eventKey="third">
-                 <input type="radio" id="Adventure" name="fav_games" value="Adventure" onClick={()=>setShow(false)}/> Adventure
-                 <span className="checkmark"></span>
-               </Nav.Link>
-             </Nav.Item> 
-             </label>
-             <label htmlFor="Arcade">
-             <Nav.Item>
-               <Nav.Link eventKey="fourth">
-                 <input type="radio" id="Arcade" name="fav_games" value="Arcade" onClick={()=>setShow(false)}/> Arcade
-                 <span className="checkmark"></span>
-               </Nav.Link>
-             </Nav.Item> 
-           </label>
-              </Nav>
-            
-            </>
-          )
-          }
-            {/* Desktop view */}
-              <Nav variant="" className="flex-column">
-              <label htmlFor="All"> 
-                <Nav.Item>
-                    <Nav.Link eventKey="first" >
-                      <input type="radio" id="All" name="fav_games" value="All" /> All
+              <div className="filter-menu">
+              <div className="span-filter-mobile">Games</div>
+                <div className="filter-menu-header">
+                  <div>Filter </div>  <p onClick={()=>setShow(true)}><IoOptionsOutline /></p>
+                
+                </div>
+                {show === true && (
+                
+                <>
+                  {/* <LibraryfilterSelection /> */}
+                  {/** mobile view*/}
+                <Nav variant="" className="filter-mobile-options">
+                    <label htmlFor="All"> 
+                    <Nav.Item >
+                    <Nav.Link eventKey="first"  >
+                      <input type="radio" id="All" name="fav_games" value="All" onClick={()=>setShow(false)}/> All
                       <span className="checkmark"></span>
                     </Nav.Link>
                   </Nav.Item>
@@ -133,31 +92,72 @@ const Arcade = fetchArcade.map((game, idx) => (
               <label htmlFor="Blockchain">
               <Nav.Item>
                   <Nav.Link eventKey="second">
-                    <input type="radio" id="Blockchain" name="fav_games" value="Blockchain" /> Blockchain 
+                    <input type="radio" id="Blockchain" name="fav_games" value="Blockchain" onClick={()=>setShow(false)}/> Blockchain 
                     <span className="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item>
               </label>
 
-              <label htmlFor="Adventure">
-                <Nav.Item>
+                <label htmlFor="Adventure">
+                  <Nav.Item>
                   <Nav.Link eventKey="third">
-                    <input type="radio" id="Adventure" name="fav_games" value="Adventure" /> Adventure
+                    <input type="radio" id="Adventure" name="fav_games" value="Adventure" onClick={()=>setShow(false)}/> Adventure
                     <span className="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item> 
-              </label>
+                </label>
                 <label htmlFor="Arcade">
                 <Nav.Item>
                   <Nav.Link eventKey="fourth">
-                    <input type="radio" id="Arcade" name="fav_games" value="Arcade" /> Arcade
+                    <input type="radio" id="Arcade" name="fav_games" value="Arcade" onClick={()=>setShow(false)}/> Arcade
                     <span className="checkmark"></span>
                   </Nav.Link>
                 </Nav.Item> 
               </label>
-            </Nav>
+                  </Nav>
+                
+                </>
+              )
+              }
+                {/* Desktop view */}
+                  <Nav variant="" className="flex-column">
+                  <label htmlFor="All"> 
+                    <Nav.Item>
+                        <Nav.Link eventKey="first" >
+                          <input type="radio" id="All" name="fav_games" value="All" /> All
+                          <span className="checkmark"></span>
+                        </Nav.Link>
+                      </Nav.Item>
+                  </label>
+
+                  <label htmlFor="Blockchain">
+                  <Nav.Item>
+                      <Nav.Link eventKey="second">
+                        <input type="radio" id="Blockchain" name="fav_games" value="Blockchain" /> Blockchain 
+                        <span className="checkmark"></span>
+                      </Nav.Link>
+                    </Nav.Item>
+                  </label>
+
+                  <label htmlFor="Adventure">
+                    <Nav.Item>
+                      <Nav.Link eventKey="third">
+                        <input type="radio" id="Adventure" name="fav_games" value="Adventure" /> Adventure
+                        <span className="checkmark"></span>
+                      </Nav.Link>
+                    </Nav.Item> 
+                  </label>
+                    <label htmlFor="Arcade">
+                    <Nav.Item>
+                      <Nav.Link eventKey="fourth">
+                        <input type="radio" id="Arcade" name="fav_games" value="Arcade" /> Arcade
+                        <span className="checkmark"></span>
+                      </Nav.Link>
+                    </Nav.Item> 
+                  </label>
+                </Nav>
+              </div>
             </div>
-          </div>
         
           </Col>
           <Col sm={10}>

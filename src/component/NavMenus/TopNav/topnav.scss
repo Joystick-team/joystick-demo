@@ -40,7 +40,7 @@
     
             img{
                 width: 127px;
-                // height: 53px;
+                height: auto;
             }
         }
         .Tab .nav-link, Link, a{
@@ -89,6 +89,13 @@
                 // li:nth-child(2){
                 //     // margin: auto 23%;
                 // }
+                a, Link{
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 18px;
+                    font-style: normal;
+                    letter-spacing: 1.2;
+                }
             }
 
             // a.active, Link.active{
@@ -121,6 +128,10 @@
     .btn-connect{
         width: 110px;
         border-radius: 12px;
+    }
+
+    abbr{
+        cursor: pointer;
     }
 }
 

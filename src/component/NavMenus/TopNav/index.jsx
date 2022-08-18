@@ -9,9 +9,20 @@ import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 
 import './topnav.scss'
+import ModalEffect from '../../Modal';
+import Auth from '../../../pages/Auth';
 export default function TopNav() {
     let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
     const {pathname} = useLocation()
+    const [isOpen, setIsOpen] = useState(false)
+
+    // const closeRegister = () => {
+    //     setIsOpen(false);
+    // }
+    
+    const toggleRegister = () => {
+        setIsOpen(!isOpen);
+    }
 
     useEffect(() => {
           setThemeData(localStorage.getItem('theme-dark'))
@@ -39,11 +50,23 @@ export default function TopNav() {
                         </div>
                     </Nav>
                     <div className="notice-search">
-                        <div className='top-notifications-icon'> <MdNotifications /> </div>
+                        <abbr title="notifications">
+                            <div className='top-notifications-icon'> <MdNotifications /> </div>
+                        </abbr>
                         <SearchBox />
                     </div>
                     <div className="user-reg" style={{cursor: 'pointer'}}>
-                        <FaUserAlt /> <MdOutlineKeyboardArrowDown />
+                        <ModalEffect show={isOpen} closeModal={toggleRegister}>
+                            <div className="">
+                                <Auth />
+                            </div>
+                        </ModalEffect>
+                        <div className="user-reg-icons" onClick={toggleRegister}>
+                            <abbr title="User login">
+                                <FaUserAlt /> 
+                                <MdOutlineKeyboardArrowDown />
+                            </abbr>
+                        </div>
                     </div>
                     <ConnectButton className='btn-connect' color="danger" title='Connect'/>
                 </Container>

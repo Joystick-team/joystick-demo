@@ -16,8 +16,10 @@ export default function AnnouncementCarousel() {
                     alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>The Hunt is on in this Epic battle between good and evil</h3>
-                        <p>Play to Earn Exclusive NFTs</p>
+                        <div className="carousel-caption-holder">
+                            <h3>The Hunt is on in this Epic battle between good and evil</h3>
+                            <p>Play to Earn Exclusive NFTs</p>
+                        </div>
                     <Button href="#" size="lg">Play</Button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -30,8 +32,10 @@ export default function AnnouncementCarousel() {
                     alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h3>43 Big Games Coming in 2017</h3>
-                        <p>This year's games lineup.</p>
+                        <div className="carousel-caption-holder">
+                            <h3>43 Big Games Coming in 2017</h3>
+                            <p>This year's games lineup.</p>
+                        </div>
                     <Button href="#" size="lg">Play</Button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -44,8 +48,10 @@ export default function AnnouncementCarousel() {
                     alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3>Pocket Tactics</h3>
-                        <p>Play to Earn Exclusive NFTs</p>
+                        <div className="carousel-caption-holder">
+                            <h3>Pocket Tactics</h3>
+                            <p>Play to Earn Exclusive NFTs</p>
+                        </div>
                     <Button href="#" size="lg">Play</Button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -58,8 +64,10 @@ export default function AnnouncementCarousel() {
                     alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3>Best PS4 Games 2022</h3>
-                        <p>Play to Earn Exclusive NFTs</p>
+                        <div className="carousel-caption-holder">
+                            <h3>Best PS4 Games 2022</h3>
+                            <p>Play to Earn Exclusive NFTs</p>
+                        </div>
                     <Button href="#" size="lg">Play</Button>
                     </Carousel.Caption>
                 </Carousel.Item>

@@ -4,7 +4,6 @@ import { SiHiveBlockchain } from 'react-icons/si'
 import './mycard.scss'
 
 export default function MyCard(props) {
-    // const clickDetails = () => ( console.log('modal here') )
   return (
     <div className='mycard'>
         <Card className={`${props.cardClass ?? 'mb-3 mycard-card' }`} style={{ border: 'none', color: 'var(--primary)', background: 'var(--background)'}}>
