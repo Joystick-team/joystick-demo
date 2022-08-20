@@ -40,11 +40,11 @@ const web3loader = useCallback(
 
     // console.log(webProvider)
         if(webProvider){
-          const chainId = await window.ethereum.request({ method: 'eth_chainId' });
+          const chainId = await window.ethereum?.request({ method: 'eth_chainId' });
       // console.log(chainId)
         setChainId(chainId )
 
-    const accounts = await window.ethereum.request({ method: 'eth_accounts' })
+    const accounts = await window.ethereum?.request({ method: 'eth_accounts' })
         handleAccountsChanged(accounts)
       }
   }
@@ -53,7 +53,7 @@ const web3loader = useCallback(
     
    useEffect(()=>{
     window.addEventListener('load', web3loader)
-    window.ethereum.on('accountsChanged', handleAccountsChanged);
+    window.ethereum?.on('accountsChanged', handleAccountsChanged);
 
     return () => {
       web3loader()
@@ -67,7 +67,7 @@ const web3loader = useCallback(
      setLoading(true);
      try{
     
-      const accounts = await window.ethereum.request({method: 'eth_requestAccounts'  })
+      const accounts = await window.ethereum?.request({method: 'eth_requestAccounts'  })
         // console.log(accounts[0])
         setCurrentAccount(accounts[0])
       
@@ -86,7 +86,7 @@ const web3loader = useCallback(
     // console.log(currentAccount.length)
     if(chainId !=="0x7"){
       try {
-          await window.ethereum.request({
+          await window.ethereum?.request({
             method: 'wallet_switchEthereumChain',
             params: [{ chainId: '0x785b4b9847b9' }],
           });
@@ -104,7 +104,7 @@ const web3loader = useCallback(
 
 const AddSkaleChain = async() =>{
   try {
-      await window.ethereum.request({
+      await window.ethereum?.request({
         method: 'wallet_addEthereumChain',
         params: [
           {
