@@ -38,7 +38,7 @@ export default function SideNav() {
                         <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
                         
                     </picture>
-                    <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
+                    <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='auto' />
                  </NavLink>
                 <div className="search-mobile" onClick={setShowSearch}>
                 {/* <FiSearch /> */}

@@ -43,6 +43,7 @@
             flex: 2;
             height: 80%;
             margin-right: .7rem;
+            margin-top: 7rem;
 
             .mobile-nav{
                 display: none;
@@ -113,7 +114,7 @@
             // height: 80%;
             margin-right: auto;
             overflow-y: auto;
-
+            margin-top: 0rem;
         }
         
         .layout .main-container .main-div > div {
@@ -122,6 +123,7 @@
             overflow-y: auto;
             // height: 80%;
             margin-bottom: 1rem;
+            margin-top: 0rem;
 
             .side-adverts{
                 // max-width: auto;
@@ -157,6 +159,7 @@
             margin-right: auto;
             overflow-y: auto;
             margin-right: 0rem !important;
+            margin-top: 0rem !important;   
 
             .mobile-nav{
                 display: block !important;

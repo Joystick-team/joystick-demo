@@ -1,5 +1,15 @@
+.empty__image{
+    background: transparent;
+    margin-top: 7rem;
+
+    .drawal__image__none{
+        display: none;
+    }
+}
+
 .drawal__nav{
     position: relative;
+    height: 100vh;
     max-height: 1920px;
 }
 .drawal-nav{
@@ -11,6 +21,23 @@
     display: block;
     box-sizing: border-box;
     padding: 1rem 0;
+
+    .drawal__image-continer{
+        height: 90px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 127px;
+            height: auto;
+        }
+
+        .no__link, a, Link, a:hover, Link:hover, .active, .no__link:hover{
+            background: none !important;
+        }
+    }
 
     .drawal__nav__burger{
         display: flex;
@@ -62,7 +89,7 @@
         font-family:'Montserrat Alternates', sans-serif;
         color: var(--secondary);
         font-style: normal;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 15px;
         line-height: 18px;
         // width: 163px;
@@ -85,7 +112,7 @@
             font-family:'Montserrat Alternates', sans-serif;
             color: #C71F1F;
             font-style: normal;
-            font-weight: 600;
+            font-weight: 400;
             font-size: 15px;
             line-height: 18px;
             border: none;
@@ -192,7 +219,7 @@
             background: #C71F1F;
             color: var(--active-text);
             font-style: normal;
-            font-weight: 600;
+            font-weight: 400;
             font-size: 15px;
             line-height: 18px;
             border: none;
@@ -228,3 +255,4 @@
         width: 60% !important;
     } 
 }
+
