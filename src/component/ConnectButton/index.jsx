@@ -38,10 +38,10 @@ const web3loader = useCallback(
 
     const webProvider = await detectEthereumProvider();
 
-    console.log(webProvider)
+    // console.log(webProvider)
         if(webProvider){
           const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-      console.log(chainId)
+      // console.log(chainId)
         setChainId(chainId )
 
     const accounts = await window.ethereum.request({ method: 'eth_accounts' })
@@ -68,22 +68,22 @@ const web3loader = useCallback(
      try{
     
       const accounts = await window.ethereum.request({method: 'eth_requestAccounts'  })
-        console.log(accounts[0])
+        // console.log(accounts[0])
         setCurrentAccount(accounts[0])
       
       }catch(error){
         if(error.code === 4001) {
            // EIP-1193 userRejectedRequest error
            // If this happens, the user rejected the connection request.
-           console.log('metamask did not connect');
+          //  console.log('metamask did not connect');
          } else {
            console.error(error);
         }
     }
-    console.log(currentAccount.length)
+    // console.log(currentAccount.length)
 
  
-    console.log(currentAccount.length)
+    // console.log(currentAccount.length)
     if(chainId !=="0x7"){
       try {
           await window.ethereum.request({
@@ -126,7 +126,7 @@ const AddSkaleChain = async() =>{
       }
     }
 
-   console.log(currentAccount,currentAccount.length,"accccc>>>")
+  //  console.log(currentAccount,currentAccount.length,"accccc>>>")
 
     const skaleChain = {
         display: 'flex',

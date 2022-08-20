@@ -4,10 +4,11 @@
     background: var(--secondary-background);
 
     .fixed-top-sidemenu {
-        // position: fixed;
+        position: fixed;
         // top: 200px;
         // right: 0;
         // left: 0;
+        top: -20px;
         z-index: 9999;
         margin: 0;
         padding: 0;

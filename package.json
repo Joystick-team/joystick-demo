@@ -25,6 +25,7 @@
     "scss": "^0.2.4",
     "serve": "^14.0.1",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

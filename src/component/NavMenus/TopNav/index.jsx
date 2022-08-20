@@ -4,21 +4,22 @@ import ConnectButton from '../../ConnectButton';
 import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
 import { FaUserAlt } from 'react-icons/fa';
-import { MdNotifications, MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { MdNotifications } from 'react-icons/md';
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 
 import './topnav.scss'
 import ModalEffect from '../../Modal';
 import Auth from '../../../pages/Auth';
+import SelectDropDown from '../../SelectDropDown';
+
 export default function TopNav() {
+
     let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
     const {pathname} = useLocation()
     const [isOpen, setIsOpen] = useState(false)
-
-    // const closeRegister = () => {
-    //     setIsOpen(false);
-    // }
+    const options = ['Login', 'Sign Up']
+    const [isRegister, setIsRegister] = useState(false)
     
     const toggleRegister = () => {
         setIsOpen(!isOpen);
@@ -27,6 +28,23 @@ export default function TopNav() {
     useEffect(() => {
           setThemeData(localStorage.getItem('theme-dark'))
     }, [])
+
+    const checkRegister = () => {
+        setIsRegister(!isRegister)
+    }
+
+    let handleChange = (options) => {
+        if(options === 'Login') { 
+            setIsOpen(true);
+            setIsRegister(true)
+        } else if(options === 'Sign Up') {
+            setIsOpen(true);
+            setIsRegister(false)
+        }else{
+            // setCurrentValue(`Game Option ${options}`) 
+        }
+    }
+
   return (
     <div className='top-nav'>
                 <Container className='navbar'>
@@ -55,16 +73,20 @@ export default function TopNav() {
                         </abbr>
                         <SearchBox />
                     </div>
+
                     <div className="user-reg" style={{cursor: 'pointer'}}>
                         <ModalEffect show={isOpen} closeModal={toggleRegister}>
                             <div className="">
-                                <Auth />
+                                <Auth isRegister={isRegister} checkRegister={checkRegister} />
                             </div>
                         </ModalEffect>
-                        <div className="user-reg-icons" onClick={toggleRegister}>
+                        <div className="user-reg-icons">
                             <abbr title="User login">
-                                <FaUserAlt /> 
-                                <MdOutlineKeyboardArrowDown />
+                                <SelectDropDown options={options} 
+                                    placeholder={'Login'}
+                                    label={<FaUserAlt />}
+                                    onChange={handleChange}
+                                /> 
                             </abbr>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ import AnnouncementCarousel from '../../component/AnnouncementCard'
 import DetailsCard from '../../component/DetailsCard'
 import ModalEffect from '../../component/Modal'
 import MyCard from '../../component/MyCard'
+import SelectDropDown from '../../component/SelectDropDown'
 import AllGamesData from '../../Store/librarygamesdata'
 import { OffSiteGames } from '../../Store/librarygamesdata'
 
@@ -69,14 +70,11 @@ export default function LandingPage() {
             </div>
             <div className="site-games-container">
                 <div className="select-container">
-                    <select name="" id="" 
-                        onChange={(event) => handleChange(event.target.value)}
-                        // value={currentValue}
-                        >
-                        {gameOptionsList.map((option) => (
-                        <option value={option}> {option} </option>
-                        ))}
-                    </select>
+                    <SelectDropDown 
+                        onChange={(event) => handleChange(event.target.value)} 
+                        options={gameOptionsList} 
+                        placeholder={'Off-site'}
+                    />
                 </div>
                 <ModalEffect show={isOpen} closeModal={closeModal}>
                     <div className="site-games">

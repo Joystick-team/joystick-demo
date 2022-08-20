@@ -17,7 +17,7 @@ export default function ModalEffect(props) {
         },
       };
       
-      // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+      // Make sure to bind modal
       Modal.setAppElement('#root');
 
         let subtitle;

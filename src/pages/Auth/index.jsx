@@ -4,9 +4,7 @@ import InputField from '../../component/InputField'
 import GamePad from '../../assets/images/GamePad.png'
 import './auth.scss'
 
-export default function Auth() {
-    const [isRegister, setIsRegister] = useState(true)
-
+export default function Auth(props) {
     function InputData(type, placeholder, label, htmlFor, name, id, labelClass, inputClass, groupClass){
         this.type = type
         this.placeholder = placeholder
@@ -27,9 +25,6 @@ export default function Auth() {
     const input4 = new InputData('text', 'Enter email address or Username', 'Email address or Username', 'login_username4', 'login_username4', 'login_username4',)
     const input6 = new InputData('password', 'Password', 'Password', 'login_password5', 'login_password5', 'login_password5',)
 
-    // const [registerInputData, setRegisterData] = useState([input1, input2, input5, input3])
-    // const [loginInputData, setloginDate] = useState([input4, input6])
-
     // eslint-disable-next-line
     const [registerInputData, setRegisterData] = useState([input1, input2, input5, input3])
     // eslint-disable-next-line
@@ -44,10 +39,6 @@ export default function Auth() {
         transition: `all 500ms ease-out`
     }
 
-    const checkRegister = () => {
-        setIsRegister(!isRegister)
-    }
-
   return (
     <div className="auth">
        <div className="auth-container">
@@ -59,31 +50,8 @@ export default function Auth() {
                 </div>
             </div>
             <div className="auth__content">
-                { isRegister ? 
-                <div className='register-auth'>
-                    <form action="" method="post">
-                        <div className="register-form-title">Join the game!</div>
-                        <p className="register-description">Go inside the best gamers social network!</p>
-                        
-                        {registerInputData.map((item, idx) => {
-                            return <InputField key={idx} item={item} />
-                        })}
-                        <div className="form-group">
-                            <label htmlFor="register_checkbox">
-                                <input type="checkbox" className='register_checkbox' id='register_checkbox' name='register_checkbox' />
-                                {' '} I agree to terms & conditions
-                            </label>
-                        </div>
-                        <div className="form-group">
-                            <button type="submit" >Register</button>
-                        </div>
-                        <div className="check-register">
-                            Do you already have an account?  <span style={setLog} onClick={checkRegister} >Log in</span>
-                        </div>
-                    </form>
-
-                </div>
-                :
+                { props.isRegister ? 
+                
                 <div className='login-auth'>
                     <form action="" method="post">
                         <div className="login-form-title">Welcome Back!</div>
@@ -97,10 +65,34 @@ export default function Auth() {
                             <button type="submit"> Login</button>
                         </div>
                         <div className="check-register">
-                            Don’t have an account?  <span style={setLog} onClick={checkRegister} >Sign Up</span>
+                            Don’t have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Sign Up</span>
                         </div>
                     </form>
                 </div>
+                 :
+                 <div className='register-auth'>
+                 <form action="" method="post">
+                     <div className="register-form-title">Join the game!</div>
+                     <p className="register-description">Go inside the best gamers social network!</p>
+                     
+                     {registerInputData.map((item, idx) => {
+                         return <InputField key={idx} item={item} />
+                     })}
+                     <div className="form-group">
+                         <label htmlFor="register_checkbox">
+                             <input type="checkbox" className='register_checkbox' id='register_checkbox' name='register_checkbox' />
+                             {' '} I agree to terms & conditions
+                         </label>
+                     </div>
+                     <div className="form-group">
+                         <button type="submit" >Register</button>
+                     </div>
+                     <div className="check-register">
+                         Do you already have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Log in</span>
+                     </div>
+                 </form>
+
+             </div>
             }
             </div>
        </div>
