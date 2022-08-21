@@ -17,18 +17,31 @@ export default function Auth(props) {
         this.groupClass = groupClass
     }
 
-    const input1 = new InputData('text', 'Enter Username', 'Username', 'login_username1', 'login_username1', 'login_username1',)
-    const input2 = new InputData('email', 'Enter email', 'Email', 'login_email2', 'login_email2', 'login_email2',)
-    const input5 = new InputData('password', 'Password', 'Create Password', 'login_password6', 'login_password6', 'login_password6',)
-    const input3 = new InputData('password', 'Password', 'Repeat Password', 'login_password3', 'login_password3', 'login_password3',)
+    const input1 = new InputData('text', 'Enter Username', 'Username', 'username', 'username', 'login_username1',)
+    const input2 = new InputData('email', 'Enter email', 'Email', 'email', 'email', 'login_email2',)
+    const input5 = new InputData('password', 'Password', 'Create Password', 'password', 'password', 'login_password6',)
+    const input3 = new InputData('password', 'Password', 'Repeat Password', 'repeat_password', 'repeat_password', 'login_password3',)
 
-    const input4 = new InputData('text', 'Enter email address or Username', 'Email address or Username', 'login_username4', 'login_username4', 'login_username4',)
-    const input6 = new InputData('password', 'Password', 'Password', 'login_password5', 'login_password5', 'login_password5',)
+    const input4 = new InputData('text', 'Enter email address or Username', 'Email address or Username', 'email', 'email', 'login_username4',)
+    const input6 = new InputData('password', 'Password', 'Password', 'password', 'password', 'login_password5',)
 
     // eslint-disable-next-line
     const [registerInputData, setRegisterData] = useState([input1, input2, input5, input3])
     // eslint-disable-next-line
     const [loginInputData, setloginDate] = useState([input4, input6])
+
+    const [inputs, setInputs] = useState({});
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+
+    const handleSubmit = (event) => {
+        console.log(inputs);
+        event.preventDefault();
+    }
 
     const setLog = {
         fontSize: '16px',
@@ -53,13 +66,22 @@ export default function Auth(props) {
                 { props.isRegister ? 
                 
                 <div className='login-auth'>
-                    <form action="" method="post">
+                    <form action="" method="post" onSubmit={handleSubmit}>
                         <div className="login-form-title">Welcome Back!</div>
                         <p className="login-description">Go inside the best gamers social network!</p>
                         
-                        {loginInputData.map((item, idx) => {
-                            return <InputField key={idx} item={item} />
-                        })}
+                        {/* {loginInputData.map((item, idx) => {
+                            return <InputField key={idx} onChange={handleChange} item={item} />
+                        })} */}
+                        <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Email address <span>*</span></label>
+                            <input name={'email'} type={'email'} onChange={handleChange} className={`form-control `} placeholder={'Enter Email'} required/>
+                        </div>
+
+                        <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Password <span>*</span></label>
+                            <input name={'password'} type={'password'} onChange={handleChange} className={`form-control `} placeholder={'Enter Password'} required/>
+                        </div>
 
                         <div className="form-group">
                             <button type="submit"> Login</button>
@@ -71,13 +93,14 @@ export default function Auth(props) {
                 </div>
                  :
                  <div className='register-auth'>
-                 <form action="" method="post">
+                 <form action="" method="post" onSubmit={handleSubmit}>
                      <div className="register-form-title">Join the game!</div>
                      <p className="register-description">Go inside the best gamers social network!</p>
                      
                      {registerInputData.map((item, idx) => {
-                         return <InputField key={idx} item={item} />
+                         return <InputField key={idx} onChange={handleChange} item={item} />
                      })}
+
                      <div className="form-group">
                          <label htmlFor="register_checkbox">
                              <input type="checkbox" className='register_checkbox' id='register_checkbox' name='register_checkbox' />
