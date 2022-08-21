@@ -35,7 +35,7 @@ export default function Auth(props) {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
+        setInputs(prev => ({...prev, [name]: value}))
     }
 
     const handleSubmit = (event) => {
