@@ -20,8 +20,8 @@ html{
     --wallet-tx-text:#FFFFFF;
     --tx-card:#BDBFC9;
     --wallet-tx-div:#D2D5DC;
-    --token-stat-text :#0D0D0D
-
+    --token-stat-text :#0D0D0D;
+    --select-background : var(--secondary-background);
 }
 html[data-theme='dark']{
     --primary: #fff;
@@ -44,5 +44,6 @@ html[data-theme='dark']{
     --wallet-tx-text:#606166;
     --tx-card:#2A2B31;
     --wallet-tx-div:#1D2024;
-    --token-stat-text :#FFFFFF
+    --token-stat-text :#FFFFFF;
+    --select-background: #141414;
 }

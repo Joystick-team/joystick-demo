@@ -1,7 +1,8 @@
 .select{
     .dropdown{
+        // background: var(--select-background);
         button, .btn-primary{
-            background: none;
+            background: transparent;
             border: none;
             outline: none;
             color: var(--secondary);
@@ -14,21 +15,21 @@
 
     .dropdown-menu, .show{
         color: var(--secondary);
-        background: #141414;
-        border: 1px solid #FBFBFB;
+        background: var(--select-background);
+        border: 1px solid var(--secondary);
         border-radius: 10px;
         max-width: 100px;
     }
 
     .dropdown-toggle{
-        background: none;
+        background: transparent;
         border: none;
         outline: none;
         color: var(--secondary);
     }
 
     .show>.btn-primary.dropdown-toggle {
-        background: none;
+        background: transparent;
         border: none;
         outline: none;
         color: var(--secondary);
