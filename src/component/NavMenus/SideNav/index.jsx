@@ -50,8 +50,8 @@ export default function SideNav() {
                 </Navbar.Toggle>
                  <NavLink to="/">
                     <picture>
-                        <source srcSet={JOYSTICK2} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
-                        <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='auto' />
+                        <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
+                        <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='auto' />
                     </picture>
                     
                  </NavLink>
@@ -76,8 +76,8 @@ export default function SideNav() {
                         <Offcanvas.Title id="offcanvasNavbarLabel">
                         <Link to={'/'} >
                             <picture>
-                                <source srcSet={JOYSTICK2}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
-                                <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
+                                <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
                         </Link>
                          </Offcanvas.Title> 

@@ -7,7 +7,8 @@ export const useTheme = () => {
 }
 
 export function ThemeProvider({children}) {
-    const [theme, setTheme] = useState(localStorage.getItem('theme-dark') ?? 'light')
+    // const [theme, setTheme] = useState(localStorage.getItem('theme-dark') ?? 'light')
+    const [theme, setTheme] = useState('light')
 
     // const toggleTheme = useCallback(() => {
     //     setTheme((prev) => !prev)
