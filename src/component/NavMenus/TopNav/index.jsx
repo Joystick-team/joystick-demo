@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {Nav,Container } from 'react-bootstrap'
 import ConnectButton from '../../ConnectButton';
 import { Link, useLocation } from 'react-router-dom';
@@ -12,10 +12,11 @@ import './topnav.scss'
 import ModalEffect from '../../Modal';
 import Auth from '../../../pages/Auth';
 import SelectDropDown from '../../SelectDropDown';
+import { useTheme } from '../../../ThemeContext';
 
 export default function TopNav() {
-
-    let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
+    // eslint-disable-next-line
+    const [show, setShow] = useTheme()
     const {pathname} = useLocation()
     const [isOpen, setIsOpen] = useState(false)
     const options = ['Login', 'Sign Up']
@@ -24,10 +25,6 @@ export default function TopNav() {
     const toggleRegister = () => {
         setIsOpen(!isOpen);
     }
-
-    useEffect(() => {
-          setThemeData(localStorage.getItem('theme-dark'))
-    }, [])
 
     const checkRegister = () => {
         setIsRegister(!isRegister)
@@ -51,7 +48,7 @@ export default function TopNav() {
                     <div className="logo-title">
                         <Link to={'/'} >
                             <picture>
-                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
+                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
                                 <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
                         </Link>

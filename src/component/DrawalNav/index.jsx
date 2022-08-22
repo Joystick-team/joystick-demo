@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Collapse, Nav } from "react-bootstrap";
 import {BiMenu} from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
@@ -11,30 +11,29 @@ import './drawalNav.scss'
 import ThemeToggle from "../ThemeToggle";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useTheme } from "../../ThemeContext";
 
 export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
-
-    // const {pathname} = useLocation();
-
-    let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
-    useEffect(() => {
-          setThemeData(themeData)
-    }, [themeData])
+    // eslint-disable-next-line
+    const [show, setShow] = useTheme()
+    
     return (
       <div className={`${open ? 'drawal__nav' : 'empty__image'} `} >
         <div className="drawal-nav">
           <div className={`${open ? 'drawal__image-continer' : 'drawal__image__none'}`}>
+            
             { open && 
                 <Link className={'no__link'} to="/">
                     <picture>
-                        <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
-                        
+                        <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
+                        <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='60px' />
                     </picture>
-                    <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='60px' />
+                    
                 </Link>
             }
           </div>
+         
           <p
             onClick={() => setOpen(!open)}
             // onClick={TogglecloseOpen}

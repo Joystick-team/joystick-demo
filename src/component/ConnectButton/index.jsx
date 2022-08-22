@@ -49,7 +49,6 @@ const web3loader = useCallback(
       }
   }
   , [])
-  // const web3loader = 
     
    useEffect(()=>{
     window.addEventListener('load', web3loader)
@@ -165,6 +164,7 @@ const AddSkaleChain = async() =>{
         disabled={isLoading}
         onClick={!isLoading ? handleClick : null}
         className={props.className}
+        style={props.style}
     >
         {isLoading ? 'Loading…' : (currentAccount.length === 0 ? props.title : currentAccount.slice(0,9)+"...")}
     </Button>

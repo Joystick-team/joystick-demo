@@ -16,6 +16,7 @@ import Rewards from './component/ContentTab/Rewards';
 import Message from './component/ContentTab/Message';
 import ErrorPage from './pages/ErrorPage';
 import LandingPage from './pages/LandingPage';
+import { ThemeProvider } from './ThemeContext';
 
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
     <div className="App">
       
       <Router>
+        <ThemeProvider>
         <Layout>
+        
+        
             <Routes>
             <Route
                 exact
@@ -77,6 +81,7 @@ function App() {
               />
             </Routes>
           </Layout>
+          </ThemeProvider>
         </Router >
     </div>
   );

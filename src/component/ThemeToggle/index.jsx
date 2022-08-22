@@ -1,24 +1,36 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 // import { FaSun } from "../../assets/svgs/icons"
 import { CgDarkMode } from "react-icons/cg";
+import { useTheme } from "../../ThemeContext";
 import "./themeToggle.style.scss";
 
 const ThemeToggle = () => {
     const [dark, setDark] = useState(false);
     const [htmlRef, setHtmlRef] = useState(null);
+    const [show, setShow] = useTheme()
+    const html = document.querySelector('html');
+
+    // let themeSet = htmlRef.dataset.theme;
+
     useEffect(() => {
-        const html = document.querySelector('html');
         let themeData = localStorage.getItem('theme-dark');
         if(html){
             setHtmlRef(html);
             if(themeData === "dark"){
                 setDark(true);
                 setDark(`(prefers-color-scheme: ${themeData})`)
+                // if(show == 'dark'){
+                //   html.setAttribute('data-theme', themeData)
+                // }else{
+                //   html.setAttribute('data-theme', themeData)
+                // }
             }
             html.dataset.theme = themeData
             window.matchMedia(`(prefers-color-scheme: ${themeData})`)
         }
-    },[])
+    },[html])
+
+
     useEffect(() => {
         if(!htmlRef){
             return;
@@ -31,14 +43,38 @@ const ThemeToggle = () => {
             htmlRef.dataset.theme = "light";
         }
     },[dark, htmlRef])
+
+    const toggleTheme = useCallback( async () => {
+      setShow((prev) => (show === 'dark' ? 'light' : 'dark'))
+      setDark(prev => !prev)
+      // if(!dark){
+      //   if(show === 'dark'){
+      //     html.setAttribute('data-theme', 'light')
+      //   }else{
+      //     html.setAttribute('data-theme', 'dark')
+      //   }
+      //   localStorage.setItem('theme-dark', 'dark');
+      //     htmlRef.dataset.theme = "dark";
+      // }else{
+      //   if(show === 'light'){
+      //     html.setAttribute('data-theme', 'dark')
+      //   }else{
+      //     html.setAttribute('data-theme', 'light')
+      //   }
+      //   localStorage.setItem('theme-dark', 'light');
+      //   htmlRef.dataset.theme = "light";
+      // }
+    }, [show, setShow])
+
+
     return (
     <div className={"radioinput"} id="themeToggle">
       {/* The main switch of the radio input  */}
       <abbr title="Toggle Light & Dark Theme">
         <div
-            onClick={() => setDark(v => !v)}
+            onClick={toggleTheme}
             className={`radioinput__switch ${
-            dark ? 'radioinput__switch--checked' : ''
+              dark ? 'radioinput__switch--checked' : ''
             }`}
         >
             <div className="radioinput__switch__bulb">

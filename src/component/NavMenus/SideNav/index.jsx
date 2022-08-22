@@ -1,44 +1,43 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {Nav, Offcanvas, Navbar, Container } from 'react-bootstrap'
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 // import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
-import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast} from 'react-icons/bs'
+import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast, BsCurrencyBitcoin} from 'react-icons/bs'
 import { FiMenu, FiSearch, FiTwitter } from 'react-icons/fi'
 import { FaHome, FaWallet, FaTelegram} from "react-icons/fa";
+// import { TbBrandMeta} from "react-icons/fa";
 import './sidenav.scss';
 import ThemeToggle from '../../ThemeToggle'
 import SearchBox from '../../SearchBox'
 import { Link, useLocation } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { useTheme } from '../../../ThemeContext'
+import ConnectButton from '../../ConnectButton'
 
 export default function SideNav() {
     const [showSearch, setShowSearch] = useState(false);
     const {pathname} = useLocation()
+    //eslint-disable-next-line
+    const [show, setShow] = useTheme()
         
     const handleSearch = () => {
         setShowSearch(true)
     }
-
-    let [themeData, setThemeData] = useState(localStorage.getItem('theme-dark'))
-    useEffect(() => {
-          setThemeData(themeData)
-    }, [themeData])
    
   return (
     <div >
         <Navbar variant="dark"  expand={false} >
-
         <Container fluid className='Mobile-Hamburger-container'>
                 <Navbar.Toggle aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
                     <FiMenu />
                 </Navbar.Toggle>
                  <NavLink to="/">
                     <picture>
-                        <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
-                        
+                        <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
+                        <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='auto' />
                     </picture>
-                    <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='auto' />
+                    
                  </NavLink>
                 <div className="search-mobile" onClick={setShowSearch}>
                 {/* <FiSearch /> */}
@@ -61,7 +60,7 @@ export default function SideNav() {
                         <Offcanvas.Title id="offcanvasNavbarLabel">
                         <Link to={'/'} >
                             <picture>
-                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeData})`}/>
+                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
                                 <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
                         </Link>
@@ -74,11 +73,12 @@ export default function SideNav() {
                                 <Link to="/library" className={ pathname === '/library' && `active`}> <BsGridFill/> <span>Library</span></Link>
                                 <Link to="/socials" className={ pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>
                                 <Link to="/livestream" className={ pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
-                            
                             <br />
-                          
                             <div className="footer-nav-side">
-
+                            <div>{show}</div>
+                            <div className="mobile-connect-btn">
+                                <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{width: '100%', borderRadius: '12px'}} color="danger" title='Connect'/>
+                            </div>
                             <Link to="/u/wallet" className={ pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
                             <Link to="/u/settings" className={ pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
                                 <div className="icons-sidenav-footer">
