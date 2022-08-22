@@ -21,12 +21,28 @@ export default function SideNav() {
     //eslint-disable-next-line
     const [show, setShow] = useTheme()
         
-    const handleSearch = () => {
+    const closeSearch = () => {
+        setShowSearch(false)
+       }
+       window.addEventListener('click', closeSearch)
+
+    function handleSearch (event) {
         setShowSearch(true)
+        // if(showSearch){
+            // setShowSearch(true)
+            event.stopPropagation()
+        // }
     }
-   
+
+
+    function preventSearch(event){
+            setShowSearch(true)
+            event.stopPropagation()
+        
+   }
+
   return (
-    <div >
+    <div>
         <Navbar variant="dark"  expand={false} >
         <Container fluid className='Mobile-Hamburger-container'>
                 <Navbar.Toggle aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
@@ -34,16 +50,16 @@ export default function SideNav() {
                 </Navbar.Toggle>
                  <NavLink to="/">
                     <picture>
-                        <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
-                        <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='auto' />
+                        <source srcSet={JOYSTICK2} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
+                        <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='auto' />
                     </picture>
                     
                  </NavLink>
-                <div className="search-mobile" onClick={setShowSearch}>
+                <div className="search-mobile">
                 {/* <FiSearch /> */}
                     <div className="" >
                         
-                    {showSearch ?  <SearchBox /> : <span onClick={handleSearch} style={{float: 'right', fontSize: '1.35rem'}}><FiSearch /></span>}
+                    {showSearch ?  <SearchBox onClick={preventSearch} /> : <span onClick={handleSearch} style={{float: 'right', fontSize: '1.35rem'}}><FiSearch /></span>}
                     </div>
                 </div>
                 <Navbar.Offcanvas
@@ -60,8 +76,8 @@ export default function SideNav() {
                         <Offcanvas.Title id="offcanvasNavbarLabel">
                         <Link to={'/'} >
                             <picture>
-                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
-                                <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                                <source srcSet={JOYSTICK2}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
+                                <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
                         </Link>
                          </Offcanvas.Title> 
