@@ -75,7 +75,6 @@ export default function SideNav() {
                                 <Link to="/livestream" className={ pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
                             <br />
                             <div className="footer-nav-side">
-                            <div>{show}</div>
                             <div className="mobile-connect-btn">
                                 <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{width: '100%', borderRadius: '12px'}} color="danger" title='Connect'/>
                             </div>
