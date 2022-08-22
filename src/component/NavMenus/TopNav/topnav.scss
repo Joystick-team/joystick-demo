@@ -7,26 +7,33 @@
     height: 100%;
 
     .select{
-        position: relative;
+    
+        // select{
+        //     background: none;
+        //     border: none;
+        //     outline: none;
+        //     color: var(--secondary);
+        //     cursor: pointer;
+        // }
 
-        .label{
-            position: absolute;
-            // top: 50%;
-            // bottom: 50%;
-            right: 70%;
-            z-index: 1;
-    
+        .dropdown{
+            button{
+                background: none;
+                border: none;
+                outline: none;
+                color: var(--secondary);
+
+                &.dropdown-item:hover{
+                    background: #C71F1F;
+                }
+            }
         }
-    
-        select{
-            // position: absolute;
-            z-index: 6;
-            background: none;
-            border: none;
-            outline: none;
+
+        .dropdown-menu, .show{
             color: var(--secondary);
-            width: 20px;
-            cursor: pointer;
+            background: #141414;
+            border: 1px solid #FBFBFB;
+            border-radius: 10px;
         }
     }
 

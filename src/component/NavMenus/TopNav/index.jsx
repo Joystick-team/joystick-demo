@@ -80,7 +80,7 @@ export default function TopNav() {
                         <div className="user-reg-icons">
                             <abbr title="User login">
                                 <SelectDropDown options={options} 
-                                    placeholder={'Login'}
+                                    placeholder={<FaUserAlt />}
                                     label={<FaUserAlt />}
                                     onChange={handleChange}
                                 /> 

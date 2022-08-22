@@ -1,0 +1,40 @@
+.select{
+    .dropdown{
+        button{
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--secondary);
+
+            &.dropdown-item:hover{
+                background: #C71F1F;
+            }
+        }
+    }
+
+    .dropdown-menu, .show{
+        color: var(--secondary);
+        background: #141414;
+        border: 1px solid #FBFBFB;
+        border-radius: 10px;
+        max-width: 100px;
+    }
+
+    .dropdown-toggle{
+        background: none;
+        border: none;
+        outline: none;
+        color: var(--secondary);
+    }
+
+    .show>.btn-primary.dropdown-toggle {
+        background: none;
+        border: none;
+        outline: none;
+        color: var(--secondary);
+
+        &:focus{
+            box-shadow: none;
+        }
+    }
+}
