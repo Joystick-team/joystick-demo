@@ -16,7 +16,7 @@ import { useTheme } from '../../../ThemeContext';
 
 export default function TopNav() {
     // eslint-disable-next-line
-    const [show, setShow] = useTheme()
+    const [themeDetector, setThemeDetector] = useTheme()
     const {pathname} = useLocation()
     const [isOpen, setIsOpen] = useState(false)
     const options = ['Login', 'Sign Up']
@@ -48,8 +48,8 @@ export default function TopNav() {
                     <div className="logo-title">
                         <Link to={'/'} >
                             <picture>
-                                <source srcSet={JOYSTICK}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
-                                <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                                <source srcSet={JOYSTICK2}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeDetector})`}/>
+                                <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture>
                         </Link>
                     </div>

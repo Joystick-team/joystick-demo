@@ -7,8 +7,22 @@ export const useTheme = () => {
 }
 
 export function ThemeProvider({children}) {
-    // const [theme, setTheme] = useState(localStorage.getItem('theme-dark') ?? 'light')
-    const [theme, setTheme] = useState('light')
+  function getDeviceTheme() {
+    if (window.matchMedia) {
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        return 'dark';
+      } else {
+        return 'light';
+      }
+    }
+    return 'light';
+  }
+  const deviceTheme = getDeviceTheme()
+  
+    const [themeDetector, setThemeDetector] = useState(localStorage.getItem('theme-dark') ?? deviceTheme)
+
+
+    // const [theme, setTheme] = useState('light')
 
     // const toggleTheme = useCallback(() => {
     //     setTheme((prev) => !prev)
@@ -16,7 +30,7 @@ export function ThemeProvider({children}) {
 
   return (
     <>
-        <ThemeContext.Provider value={[theme, setTheme]}>
+        <ThemeContext.Provider value={[themeDetector, setThemeDetector]}>
             {children}
         </ThemeContext.Provider>
     </>

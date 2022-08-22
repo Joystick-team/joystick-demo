@@ -16,8 +16,7 @@ import { useTheme } from "../../ThemeContext";
 export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
     // eslint-disable-next-line
-    const [show, setShow] = useTheme()
-    
+    const [themeDetector, setThemeDetector] = useTheme()
     return (
       <div className={`${open ? 'drawal__nav' : 'empty__image'} `} >
         <div className="drawal-nav">
@@ -26,14 +25,16 @@ export default function DrawalNav({TogglecloseOpen}) {
             { open && 
                 <Link className={'no__link'} to="/">
                     <picture>
-                        <source srcSet={JOYSTICK} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${show})`}/>
-                        <img loading='lazy' src={JOYSTICK2} alt="JOYSTICK-logo" width='100px' height='60px' />
+                        <source srcSet={JOYSTICK2} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeDetector})`}/>
+                        <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
                     </picture>
                     
                 </Link>
             }
           </div>
-         
+          <div className="">
+          {themeDetector}
+         </div>
           <p
             onClick={() => setOpen(!open)}
             // onClick={TogglecloseOpen}

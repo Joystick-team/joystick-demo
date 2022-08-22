@@ -8,7 +8,7 @@ const ThemeToggle = () => {
     const [dark, setDark] = useState(false);
     // eslint-disable-next-line
     const [htmlRef, setHtmlRef] = useState(null);
-    const [show, setShow] = useTheme()
+    const [themeDetector, setThemeDetector] = useTheme()
     const html = document.querySelector('html');
 
     // let themeSet = htmlRef.dataset.theme;
@@ -20,16 +20,16 @@ const ThemeToggle = () => {
     //         if(themeData === "dark"){
     //             setDark(true);
     //             setDark(`(prefers-color-scheme: ${themeData})`)
-    //             // if(show == 'dark'){
-    //             //   html.setAttribute('data-theme', themeData)
-    //             // }else{
-    //             //   html.setAttribute('data-theme', themeData)
-    //             // }
+    //             if(themeDetector === 'dark'){
+    //               html.setAttribute('data-theme', themeData)
+    //             }else{
+    //               html.setAttribute('data-theme', themeData)
+    //             }
     //         }
     //         html.dataset.theme = themeData
     //         window.matchMedia(`(prefers-color-scheme: ${themeData})`)
     //     }
-    // },[html])
+    // },[html, themeDetector])
 
 
     useEffect(() => {
@@ -43,14 +43,14 @@ const ThemeToggle = () => {
             localStorage.setItem('theme-dark', 'light');
             htmlRef.dataset.theme = "light";
         }
-        window.matchMedia(`(prefers-color-scheme: ${show})`)
-    },[dark, htmlRef, show])
+        window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
+    },[dark, htmlRef, themeDetector])
 
     const toggleTheme = useCallback( async () => {
-      setShow((prev) => (show === 'dark' ? 'light' : 'dark'))
+      setThemeDetector((prev) => (themeDetector === 'dark' ? 'light' : 'dark'))
       setDark(prev => !prev)
       if(!dark){
-        if(show === 'dark'){
+        if(themeDetector === 'dark'){
           html.setAttribute('data-theme', 'light')
         }else{
           html.setAttribute('data-theme', 'dark')
@@ -58,7 +58,7 @@ const ThemeToggle = () => {
         localStorage.setItem('theme-dark', 'dark');
           htmlRef.dataset.theme = "dark";
       }else{
-        if(show === 'light'){
+        if(themeDetector === 'light'){
           html.setAttribute('data-theme', 'dark')
         }else{
           html.setAttribute('data-theme', 'light')
@@ -66,7 +66,7 @@ const ThemeToggle = () => {
         localStorage.setItem('theme-dark', 'light');
         htmlRef.dataset.theme = "light";
       }
-    }, [show, setShow, dark, html, htmlRef?.dataset])
+    }, [themeDetector, setThemeDetector, dark, html, htmlRef?.dataset])
 
 
     return (
