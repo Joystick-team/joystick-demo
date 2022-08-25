@@ -7,20 +7,20 @@ import { FaTelegram, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import JOYSTICK from '../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../assets/images/JOYSTICK-light.png'
-import './drawalNav.scss'
+import './drawerNav.scss'
 import ThemeToggle from "../ThemeToggle";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../ThemeContext";
 
-export default function DrawalNav({TogglecloseOpen}) {
+export default function DrawerNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
     // eslint-disable-next-line
     const [themeDetector, setThemeDetector] = useTheme()
     return (
-      <div className={`${open ? 'drawal__nav' : 'empty__image'} `} >
-        <div className="drawal-nav">
-          <div className={`${open ? 'drawal__image-continer' : 'drawal__image__none'}`}>
+      <div className={`${open ? 'drawer__nav' : 'empty__image'} `} >
+        <div className="drawer-nav">
+          <div className={`${open ? 'drawer__image-continer' : 'drawer__image__none'}`}>
             
             { open && 
                 <Link className={'no__link'} to="/">
@@ -38,9 +38,9 @@ export default function DrawalNav({TogglecloseOpen}) {
           <p
             onClick={() => setOpen(!open)}
             // onClick={TogglecloseOpen}
-            aria-controls="DrawalNav-collapse-text"
+            aria-controls="DrawerNav-collapse-text"
             aria-expanded={open}
-            className='drawal__nav__burger'
+            className='drawer__nav__burger'
           >
             
             {!open ? <BiMenu /> : <MdClose />}
@@ -49,7 +49,7 @@ export default function DrawalNav({TogglecloseOpen}) {
             <Collapse in={open} dimension="width">
               <div>
                   <Nav className=" flex-column" variant="tabs">
-                    <div className="drawal__nav-slide">
+                    <div className="drawer__nav-slide">
                       <NavLink to="/home"> <FaHome /> <span>Home</span></NavLink>
                       <NavLink to="/store" > <BsDropletFill /> <span>Store</span></NavLink>
                       <NavLink to="/library" > <BsGridFill/> <span>Library</span></NavLink>
@@ -58,10 +58,10 @@ export default function DrawalNav({TogglecloseOpen}) {
                     </div>
 
                       <hr />
-                      <div className="drawal_down_nav-sids">
+                      <div className="drawer_down_nav-sids">
                         <NavLink to="/u/wallet" ><FaWallet /> <span>Wallet</span></NavLink>
                         <NavLink to="/u/settings"><BsGearWideConnected /> <span>Settings</span></NavLink>
-                        <div className="icons-drawal_nav-footer">
+                        <div className="icons-drawer_nav-footer">
                             <Nav.Link href="#"  target="_blank"><FaTelegram/> </Nav.Link>
                             <Nav.Link href="https://twitter.com/Joystick_labs?t=tJCfTkFcbIJ4KqJY0Ak4EQ&s=09" target="_blank"><FiTwitter /> </Nav.Link>
                             <NavLink to="/message" ><BsFillChatLeftQuoteFill /> </NavLink>

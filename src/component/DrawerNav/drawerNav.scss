@@ -2,17 +2,17 @@
     background: transparent;
     margin-top: 7rem;
 
-    .drawal__image__none{
+    .drawer__image__none{
         display: none;
     }
 }
 
-.drawal__nav{
+.drawer__nav{
     position: relative;
     height: 100vh;
     max-height: 1920px;
 }
-.drawal-nav{
+.drawer-nav{
     background: var(--secondary-background);
     width: min-content;
     margin: 0%;
@@ -22,7 +22,7 @@
     box-sizing: border-box;
     padding: 1rem 0;
 
-    .drawal__image-continer{
+    .drawer__image-continer{
         height: 90px;
         width: 100%;
         display: flex;
@@ -39,7 +39,7 @@
         }
     }
 
-    .drawal__nav__burger{
+    .drawer__nav__burger{
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -138,7 +138,7 @@
         }
     }
 
-    .drawal__nav-slide{
+    .drawer__nav-slide{
         a, Link, .nav-tabs .nav-item.show {
             // background: #C71F1F;
             color: var(--secondary);
@@ -154,7 +154,7 @@
         border-bottom: none;
     }
 
-    .drawal__nav-slide{
+    .drawer__nav-slide{
         a, Link{
             margin: 1rem auto;
         }
@@ -162,11 +162,11 @@
         // margin-top: 1rem;
     }
 
-    .drawal_down_nav-sids{
+    .drawer_down_nav-sids{
         // width: 90%;
         // margin: auto;
 
-        .icons-drawal_nav-footer{
+        .icons-drawer_nav-footer{
             display: flex;
             align-items: center;
             justify-content: space-evenly;
@@ -251,7 +251,7 @@
 } 
 
 @media all and (max-width: 480px) {
-    .drawal-nav{
+    .drawer-nav{
         width: 60% !important;
     } 
 }

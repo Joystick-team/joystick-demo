@@ -1,5 +1,5 @@
 import React from 'react'
-import DrawalNav from '../DrawalNav'
+import DrawerNav from '../DrawerNav'
 import './layout.scss'
 import TopNav from '../NavMenus/TopNav'
 import SideNav from '../NavMenus/SideNav'
@@ -14,7 +14,7 @@ export default function Layout(props) {
       
         <div className="side-nav-bar">
           <div className="fixed-top-sidemenu">
-          <DrawalNav />
+          <DrawerNav />
           </div>
         </div>
 
