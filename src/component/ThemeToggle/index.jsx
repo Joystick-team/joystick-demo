@@ -46,7 +46,7 @@ const ThemeToggle = () => {
             window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
         }
         
-    },[dark, htmlRef])
+    },[dark, htmlRef, themeDetector])
     
     const toggleTheme = useCallback( async () => {
       setThemeDetector((prev) => (prev === 'dark' ? 'light' : 'dark'))

@@ -96,8 +96,15 @@
             }
     
             input[type='checkbox']{
-                width: auto;
-                height: auto;
+                // width: auto;
+                // height: auto;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                accent-color: #292929;
+            }
+            input[type='checkbox']:checked{
+                accent-color: #C71F1F;
             }
             label{
                 line-height: 2.5;
