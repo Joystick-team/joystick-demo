@@ -37,36 +37,33 @@ const ThemeToggle = () => {
             return;
         }
         if(dark){
-            localStorage.setItem('theme-dark', 'dark');
+            localStorage.setItem('dark', 'dark');
             htmlRef.dataset.theme = "dark";
+            window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
         }else{
-            localStorage.setItem('theme-dark', 'light');
+            localStorage.setItem('dark', 'light');
             htmlRef.dataset.theme = "light";
+            window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
         }
-        window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
-    },[dark, htmlRef, themeDetector])
-
+        
+    },[dark, htmlRef])
+    
     const toggleTheme = useCallback( async () => {
-      setThemeDetector((prev) => (themeDetector === 'dark' ? 'light' : 'dark'))
+      setThemeDetector((prev) => (prev === 'dark' ? 'light' : 'dark'))
       setDark(prev => !prev)
-      if(!dark){
-        if(themeDetector === 'dark'){
-          html.setAttribute('data-theme', 'light')
-        }else{
-          html.setAttribute('data-theme', 'dark')
-        }
-        localStorage.setItem('theme-dark', 'dark');
-          htmlRef.dataset.theme = "dark";
+      if(themeDetector === 'dark'){
+        html.setAttribute('data-theme', 'dark')
       }else{
-        if(themeDetector === 'light'){
-          html.setAttribute('data-theme', 'dark')
-        }else{
-          html.setAttribute('data-theme', 'light')
-        }
-        localStorage.setItem('theme-dark', 'light');
-        htmlRef.dataset.theme = "light";
+        html.setAttribute('data-theme', 'light')
       }
-    }, [themeDetector, setThemeDetector, dark, html, htmlRef?.dataset])
+      if(!dark){
+        localStorage.setItem('dark', 'dark');
+        html.setAttribute('data-theme', 'dark')
+      }else{
+        localStorage.setItem('dark', 'light');
+        html.setAttribute('data-theme', 'light')
+      }
+    }, [themeDetector, setThemeDetector, dark, html])
 
 
     return (

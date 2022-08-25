@@ -33,7 +33,7 @@ export default function DrawalNav({TogglecloseOpen}) {
             }
           </div>
           <div className="">
-          {themeDetector}
+          {/* {themeDetector} */}
          </div>
           <p
             onClick={() => setOpen(!open)}

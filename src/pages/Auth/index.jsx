@@ -39,7 +39,7 @@ export default function Auth(props) {
     }
 
     const handleSubmit = (event) => {
-        console.log(inputs);
+        console.table(inputs);
         event.preventDefault();
     }
 
