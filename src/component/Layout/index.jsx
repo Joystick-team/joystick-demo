@@ -1,9 +1,10 @@
 import React from 'react'
-import DrawalNav from '../DrawalNav'
+import DrawalNav from '../NavMenus/DrawalNav'
 import './layout.scss'
 import TopNav from '../NavMenus/TopNav'
 import SideNav from '../NavMenus/SideNav'
 import BottomNav from '../NavMenus/BottomNav'
+import MobileSideNav from '../NavMenus/MobileSideNav'
 
 
 export default function Layout(props) {
@@ -20,7 +21,8 @@ export default function Layout(props) {
 
         <div className="main-container">
         <div className="mobile-nav">
-          <SideNav />
+          {/* <SideNav /> */}
+          <MobileSideNav />
         </div>
           <div className="main-div">
             {props.children}

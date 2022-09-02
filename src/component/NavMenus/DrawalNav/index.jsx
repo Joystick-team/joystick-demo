@@ -5,13 +5,13 @@ import { MdClose } from 'react-icons/md'
 import { BsBroadcast, BsDropletFill, BsFillChatLeftQuoteFill, BsFillPeopleFill, BsGearWideConnected, BsGridFill } from "react-icons/bs";
 import { FaTelegram, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
-import JOYSTICK from '../../assets/images/JOYSTICK-logo.png'
-import JOYSTICK2 from '../../assets/images/JOYSTICK-light.png'
+import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
+import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 import './drawalNav.scss'
-import ThemeToggle from "../ThemeToggle";
+import ThemeToggle from "../../ThemeToggle";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { useTheme } from "../../ThemeContext";
+import { useTheme } from "../../../ThemeContext";
 
 export default function DrawalNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
@@ -53,7 +53,7 @@ export default function DrawalNav({TogglecloseOpen}) {
                   <Nav className=" flex-column" variant="tabs">
                     <div className="drawal__nav-slide">
                       <NavLink to="/home"> <FaHome /> <span>Home</span></NavLink>
-                      <NavLink to="/store" > <BsDropletFill /> <span>Store</span></NavLink>
+                      <NavLink to="/store"> <BsDropletFill /> <span>Store</span></NavLink>
                       <NavLink to="/library" > <BsGridFill/> <span>Library</span></NavLink>
                       <NavLink to="/socials" > <BsFillPeopleFill /> <span>Socials</span></NavLink>
                       <NavLink to="/livestream"> <BsBroadcast /> <span>Live</span></NavLink>

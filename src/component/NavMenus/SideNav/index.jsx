@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {Nav, Offcanvas, Navbar, Container } from 'react-bootstrap'
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
-// import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast, BsCurrencyBitcoin} from 'react-icons/bs'
 import { FiMenu, FiSearch, FiTwitter } from 'react-icons/fi'
