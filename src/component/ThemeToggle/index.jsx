@@ -12,24 +12,26 @@ const ThemeToggle = () => {
     const html = document.querySelector('html');
 
     // let themeSet = htmlRef.dataset.theme;
-
-    // useEffect(() => {
-    //     let themeData = localStorage.getItem('theme-dark');
-    //     if(html){
-    //         setHtmlRef(html);
-    //         if(themeData === "dark"){
-    //             setDark(true);
-    //             setDark(`(prefers-color-scheme: ${themeData})`)
-    //             if(themeDetector === 'dark'){
-    //               html.setAttribute('data-theme', themeData)
-    //             }else{
-    //               html.setAttribute('data-theme', themeData)
-    //             }
-    //         }
-    //         html.dataset.theme = themeData
-    //         window.matchMedia(`(prefers-color-scheme: ${themeData})`)
-    //     }
-    // },[html, themeDetector])
+    let themeData = localStorage.getItem('theme-dark');
+    useEffect(() => {
+        
+        if(html){
+            setHtmlRef(html);
+            if(themeData === "dark"){
+                setDark(true);
+                setDark(`(prefers-color-scheme: ${themeData})`)
+                if(themeDetector === 'dark'){
+                  html.setAttribute('data-theme', 'dark')
+                }else{
+                  html.setAttribute('data-theme', 'light')
+                }
+                setThemeDetector(themeData)
+            }
+            html.dataset.theme = themeData
+            setThemeDetector(themeData)
+            // window.matchMedia(`(prefers-color-scheme: ${themeData})`)
+        }
+    },[html, themeDetector, setThemeDetector, themeData])
 
 
     useEffect(() => {
@@ -39,34 +41,47 @@ const ThemeToggle = () => {
         if(dark){
             localStorage.setItem('theme-dark', 'dark');
             htmlRef.dataset.theme = "dark";
+            setThemeDetector(themeData)
         }else{
             localStorage.setItem('theme-dark', 'light');
             htmlRef.dataset.theme = "light";
+            setThemeDetector(themeData)
         }
-        window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
-    },[dark, htmlRef, themeDetector])
+        // window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
+    },[dark, htmlRef, themeDetector, setThemeDetector, themeData])
 
     const toggleTheme = useCallback( async () => {
-      setThemeDetector((prev) => (themeDetector === 'dark' ? 'light' : 'dark'))
+      setThemeDetector((prev) => (prev === 'dark' ? 'dark' : 'light'))
       setDark(prev => !prev)
       if(!dark){
-        if(themeDetector === 'dark'){
-          html.setAttribute('data-theme', 'light')
-        }else{
-          html.setAttribute('data-theme', 'dark')
-        }
+        // if(themeData === 'light'){
+          setThemeDetector(themeData)
+        // }
+        
+        // if(themeDetector === 'dark'){
+        //   html.setAttribute('data-theme', 'light')
+        // }else{
+        //   html.setAttribute('data-theme', 'dark')
+        // }
         localStorage.setItem('theme-dark', 'dark');
           htmlRef.dataset.theme = "dark";
+          setThemeDetector('dark')
       }else{
-        if(themeDetector === 'light'){
-          html.setAttribute('data-theme', 'dark')
-        }else{
-          html.setAttribute('data-theme', 'light')
+        if(themeData === 'dark'){
+          setThemeDetector('dark')
         }
+        // if(themeDetector === 'light'){
+        //   html.setAttribute('data-theme', 'dark')
+        // }else{
+        //   html.setAttribute('data-theme', 'light')
+        // }
         localStorage.setItem('theme-dark', 'light');
         htmlRef.dataset.theme = "light";
+        setThemeDetector(themeData)
       }
-    }, [themeDetector, setThemeDetector, dark, html, htmlRef?.dataset])
+      const files = window.matchMedia(`(prefers-color-scheme: ${themeDetector})`)
+      console.log('fileTheme', files);
+    }, [themeDetector, setThemeDetector, dark, htmlRef?.dataset, themeData])
 
 
     return (

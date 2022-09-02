@@ -24,17 +24,19 @@ export default function DrawalNav({TogglecloseOpen}) {
             
             { open && 
                 <Link className={'no__link'} to="/">
-                    <picture>
+                    {/* <picture>
                         <source srcSet={JOYSTICK2} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeDetector})`}/>
                         <img loading='lazy' src={JOYSTICK} alt="JOYSTICK-logo" width='100px' height='60px' />
-                    </picture>
+                    </picture> */}
                     
+                    { themeDetector === 'light' || themeDetector === null ? 
+                        <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                        :
+                        <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                    }
                 </Link>
             }
           </div>
-          <div className="">
-          {themeDetector}
-         </div>
           <p
             onClick={() => setOpen(!open)}
             // onClick={TogglecloseOpen}
