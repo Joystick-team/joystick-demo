@@ -3,38 +3,41 @@ import { FaUserAlt } from 'react-icons/fa'
 import Auth from '..'
 import ModalEffect from '../../../component/Modal'
 import SelectDropDown from '../../../component/SelectDropDown'
+import { AppContextInit } from '../../../context/AppContext'
 
 export default function AuthButton() {
-    const [isOpen, setIsOpen] = useState(false)
+    // const [isOpen, setIsOpen] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
-    
+    const {setMobileDrawer, regModal, setRegModal, signUp, setSignUp} = AppContextInit();
+
     const toggleRegister = () => {
-        setIsOpen(!isOpen);
+        setRegModal(false);
     }
 
     const checkRegister = () => {
-        setIsRegister(!isRegister)
+        setSignUp(!signUp)
     }
 
     const options = ['Login', 'Sign Up']
 
     let handleChange = (options) => {
+        // console.log(options)
         if(options === 'Login') { 
-            setIsOpen(true);
-            setIsRegister(true)
+           setRegModal(true)
+           setSignUp(false)
         } else if(options === 'Sign Up') {
-            setIsOpen(true);
-            setIsRegister(false)
-        }else{
-            // setCurrentValue(`Game Option ${options}`) 
+            setRegModal(true)
+           setSignUp(true)
         }
+            setMobileDrawer(false)
+        
     }
 
   return (
     <div className="user-reg" style={{cursor: 'pointer'}}>
-    <ModalEffect show={isOpen} closeModal={toggleRegister}>
+    <ModalEffect show={regModal} closeModal={toggleRegister}>
         <div className="">
-            <Auth isRegister={isRegister} checkRegister={checkRegister} />
+            <Auth isRegister={!signUp} checkRegister={checkRegister} />
         </div>
     </ModalEffect>
 
@@ -43,7 +46,8 @@ export default function AuthButton() {
                 <SelectDropDown options={options} 
                     placeholder={<FaUserAlt />}
                     label={<FaUserAlt />}
-                    onChange={handleChange}
+                    getValue={handleChange}
+                    // clicked={props.clicked}
                 /> 
             </abbr>
         </div>

@@ -16,11 +16,12 @@ import SearchBox from '../../SearchBox';
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 import './mobileSideNav.scss';
+import { AppContextInit } from '../../../context/AppContext';
 
 export default function MobileSideNav() {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const { setMobileDrawer, mobileDrawer } = AppContextInit()
+    const handleClose = () => setMobileDrawer(false);
+    const handleShow = () => setMobileDrawer(true);
     const [showSearch, setShowSearch] = useState(false);
     const {pathname} = useLocation()
     //eslint-disable-next-line
@@ -78,7 +79,7 @@ export default function MobileSideNav() {
         </div>
 
   
-        <Offcanvas className='side-nav' show={show} onHide={handleClose}>
+        <Offcanvas className='side-nav' show={mobileDrawer} onHide={handleClose.bind()}>
           <Offcanvas.Header closeButton>
             { themeDetector === 'light' || themeDetector === null ? 
                 <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
@@ -106,7 +107,7 @@ export default function MobileSideNav() {
                         <Nav.Link href="https://twitter.com/Joystick_labs?t=tJCfTkFcbIJ4KqJY0Ak4EQ&s=09" target="_blank"><FiTwitter /> </Nav.Link>
                         <Link to="/message" onClick={handleClose} className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>
                     </div>
-                    <AuthButton />
+                    <AuthButton clicked={handleClose}/>
                     <ThemeToggle />
                 </div>
             </Nav>

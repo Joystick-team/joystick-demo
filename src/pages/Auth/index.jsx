@@ -92,7 +92,7 @@ export default function Auth(props) {
                     </form>
                 </div>
                  :
-                 <div className='register-auth'>
+                 (<div className='register-auth'>
                  <form action="" method="post" onSubmit={handleSubmit}>
                      <div className="register-form-title">Join the game!</div>
                      <p className="register-description">Go inside the best gamers social network!</p>
@@ -115,7 +115,7 @@ export default function Auth(props) {
                      </div>
                  </form>
 
-             </div>
+             </div>)
             }
             </div>
        </div>
