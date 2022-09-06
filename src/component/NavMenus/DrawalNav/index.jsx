@@ -7,11 +7,11 @@ import { FaTelegram, FaHome, FaWallet } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
-import './drawalNav.scss'
 import ThemeToggle from "../../ThemeToggle";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../../ThemeContext";
+import './drawalNav.scss'
 
 export default function DrawerNav({TogglecloseOpen}) {
     const [open, setOpen] = useState(true);
