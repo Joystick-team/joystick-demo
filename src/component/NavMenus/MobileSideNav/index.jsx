@@ -5,7 +5,6 @@ import { FaHome, FaWallet, FaTelegram} from "react-icons/fa";
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
-import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useTheme } from '../../../ThemeContext';
 import '../SideNav/sidenav.scss';

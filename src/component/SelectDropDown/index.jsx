@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Dropdown, DropdownButton } from 'react-bootstrap'
-import { AppContextInit } from '../../context/AppContext'
 import './dropdown.scss'
+
 export default function SelectDropDown(props) {
   const optionsList = props.options
 const [currentOption, setCurrentOption] = useState();
@@ -11,8 +11,9 @@ const [currentOption, setCurrentOption] = useState();
   useEffect(() => {
     if(currentOption){
       props.getValue(currentOption)
-      // props.clicked()
+      
     }
+    //eslint-disable-next-line
   }, [currentOption])
   return (
     <div className='select'>

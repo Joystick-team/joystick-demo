@@ -12,6 +12,9 @@ export default function AppContextContainer({children}) {
 const [mobileDrawer, setMobileDrawer] = useState(false);
 const [regModal, setRegModal] = useState()
 const [signUp, setSignUp] = useState(false)
+const [isUser, setIsUser] = useState(false)
+const [message, setMessage] = useState()
+const [success, setSuccess] = useState(true)
   return (
     <AppContext.Provider value={{
         mobileDrawer, 
@@ -19,7 +22,13 @@ const [signUp, setSignUp] = useState(false)
         regModal, 
         setRegModal,
         signUp,
-        setSignUp
+        setSignUp,
+        isUser,
+        setIsUser,
+        message, 
+        setMessage,
+        success, 
+        setSuccess
     }} >
         {children}
     </AppContext.Provider>

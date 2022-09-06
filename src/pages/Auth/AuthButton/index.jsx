@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FaUserAlt } from 'react-icons/fa'
 import Auth from '..'
 import ModalEffect from '../../../component/Modal'
@@ -7,8 +7,8 @@ import { AppContextInit } from '../../../context/AppContext'
 
 export default function AuthButton() {
     // const [isOpen, setIsOpen] = useState(false)
-    const [isRegister, setIsRegister] = useState(false)
-    const {setMobileDrawer, regModal, setRegModal, signUp, setSignUp} = AppContextInit();
+    // const [isRegister, setIsRegister] = useState(false)
+    const {setMobileDrawer, regModal, setRegModal, signUp, setSignUp, isUser} = AppContextInit();
 
     const toggleRegister = () => {
         setRegModal(false);
@@ -34,23 +34,26 @@ export default function AuthButton() {
     }
 
   return (
-    <div className="user-reg" style={{cursor: 'pointer'}}>
-    <ModalEffect show={regModal} closeModal={toggleRegister}>
-        <div className="">
-            <Auth isRegister={!signUp} checkRegister={checkRegister} />
+    <>{
+        !isUser &&     
+        <div className="user-reg" style={{cursor: 'pointer'}}>
+        <ModalEffect show={regModal} closeModal={toggleRegister}>
+            <div className="">
+                <Auth isRegister={!signUp} checkRegister={checkRegister} />
+            </div>
+        </ModalEffect>
+    
+            <div className="user-reg-icons">
+                <abbr title="User login">
+                    <SelectDropDown options={options} 
+                        placeholder={<FaUserAlt />}
+                        label={<FaUserAlt />}
+                        getValue={handleChange}
+                        // clicked={props.clicked}
+                    /> 
+                </abbr>
+            </div>
         </div>
-    </ModalEffect>
-
-        <div className="user-reg-icons">
-            <abbr title="User login">
-                <SelectDropDown options={options} 
-                    placeholder={<FaUserAlt />}
-                    label={<FaUserAlt />}
-                    getValue={handleChange}
-                    // clicked={props.clicked}
-                /> 
-            </abbr>
-        </div>
-    </div>
+    }</>
   )
 }
