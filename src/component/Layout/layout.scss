@@ -79,6 +79,11 @@
             }
 
             .main-div {
+                .drop-message-alert{
+                    // display: none;
+                    z-index: 999999999;
+                }
+
                 & > div{
                     display: contents;
                     overflow: hidden;
@@ -104,6 +109,10 @@
     .layout-container{
         .top-nav, .side-nav-bar, .side-adverts, .side-advert{
             display: none;
+        }
+
+        .drop-message-alert{
+            display: block;
         }
 
         .main-container{

@@ -18,8 +18,8 @@ export function ThemeProvider({children}) {
     return 'light';
   }
   const deviceTheme = getDeviceTheme()
-  // console.log('deviceTheme ', deviceTheme);
-    const [themeDetector, setThemeDetector] = useState(localStorage.getItem('dark') ?? deviceTheme)
+  
+    const [themeDetector, setThemeDetector] = useState(localStorage.getItem('theme-dark') ?? deviceTheme)
 
 
     // const [theme, setTheme] = useState('light')

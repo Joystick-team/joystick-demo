@@ -4,15 +4,15 @@ import { Button } from 'react-bootstrap';
 import { FaTimes } from "react-icons/fa";
 import './erroralert.scss'
 
-export default function ErrorAlert() {
+export default function DropAlert(props) {
   const [show, setShow] = useState(true);
 
   return (
-    <div className='error-alert'>
+    <div className='drop-message-alert'>
     <Alert show={show} variant="danger">
-      <Alert.Heading>oops! You got an error!</Alert.Heading>
+      <Alert.Heading>{props.title}</Alert.Heading>
       <p>
-        Check your internet connection!.
+        {props.children}
       </p>
         {/* <hr /> */}
         <div className="d-flex justify-content-end close-alert">

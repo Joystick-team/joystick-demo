@@ -6,8 +6,8 @@ import DetailsCard from '../../component/DetailsCard'
 import ModalEffect from '../../component/Modal'
 import MyCard from '../../component/MyCard'
 import SelectDropDown from '../../component/SelectDropDown'
-// import useFetch from '../../hooks/useFetch'
-// import  { default as api } from '../../config/config.json'
+import useFetch from '../../hooks/useFetch'
+import  { default as api } from '../../config/config.json'
 import AllGamesData from '../../Store/librarygamesdata'
 import { OffSiteGames } from '../../Store/librarygamesdata'
 
@@ -17,9 +17,11 @@ export default function LandingPage() {
     const gameOptionsList = ["Off-site", "On-site"]
     const [details, setDetails] = useState(null);
     const [isOpen, setIsOpen] = useState(false)
-    // const [loading, data, error] = useFetch(`${api?.testServer}/users`)
+    
+    //eslint-disable-next-line
+    const [loading, data, error] = useFetch(`${api?.url}/game?game_type=off_site&sort=asc-name&search_term=meta&page=1&limit=15`)
 
-    // console.log(data?.data);
+    console.log(data?.data);
 
     function openModal(data) {
         setIsOpen(true);
@@ -76,7 +78,8 @@ export default function LandingPage() {
             <div className="site-games-container">
                 <div className="select-container">
                     <SelectDropDown 
-                        onChange={handleChange} 
+                        // onChange={handleChange} 
+                        getValue={handleChange}
                         options={gameOptionsList} 
                         placeholder={'Off-site'}
                     />

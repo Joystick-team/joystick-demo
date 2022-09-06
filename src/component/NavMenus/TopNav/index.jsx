@@ -1,56 +1,35 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {Nav,Container } from 'react-bootstrap'
 import ConnectButton from '../../ConnectButton';
 import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
-import { FaUserAlt } from 'react-icons/fa';
 import { MdNotifications } from 'react-icons/md';
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 
 import './topnav.scss'
-import ModalEffect from '../../Modal';
-import Auth from '../../../pages/Auth';
-import SelectDropDown from '../../SelectDropDown';
 import { useTheme } from '../../../ThemeContext';
+import AuthButton from '../../../pages/Auth/AuthButton';
 
 export default function TopNav() {
     // eslint-disable-next-line
     const [themeDetector, setThemeDetector] = useTheme()
     const {pathname} = useLocation()
-    const [isOpen, setIsOpen] = useState(false)
-    const options = ['Login', 'Sign Up']
-    const [isRegister, setIsRegister] = useState(false)
-    
-    const toggleRegister = () => {
-        setIsOpen(!isOpen);
-    }
-
-    const checkRegister = () => {
-        setIsRegister(!isRegister)
-    }
-
-    let handleChange = (options) => {
-        if(options === 'Login') { 
-            setIsOpen(true);
-            setIsRegister(true)
-        } else if(options === 'Sign Up') {
-            setIsOpen(true);
-            setIsRegister(false)
-        }else{
-            // setCurrentValue(`Game Option ${options}`) 
-        }
-    }
 
   return (
     <div className='top-nav'>
                 <Container className='navbar'>
                     <div className="logo-title">
                         <Link to={'/'} >
-                            <picture>
+                            {/* <picture>
                                 <source srcSet={JOYSTICK2}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeDetector})`}/>
                                 <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
-                            </picture>
+                            </picture> */}
+                            { themeDetector === 'light' || themeDetector === null ? 
+                                <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                                :
+                                <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                            }
                         </Link>
                     </div>
                     <Nav   
@@ -70,23 +49,7 @@ export default function TopNav() {
                         </abbr>
                         <SearchBox />
                     </div>
-
-                    <div className="user-reg" style={{cursor: 'pointer'}}>
-                        <ModalEffect show={isOpen} closeModal={toggleRegister}>
-                            <div className="">
-                                <Auth isRegister={isRegister} checkRegister={checkRegister} />
-                            </div>
-                        </ModalEffect>
-                        <div className="user-reg-icons">
-                            <abbr title="User login">
-                                <SelectDropDown options={options} 
-                                    placeholder={<FaUserAlt />}
-                                    label={<FaUserAlt />}
-                                    onChange={handleChange}
-                                /> 
-                            </abbr>
-                        </div>
-                    </div>
+                        <AuthButton />
                     <ConnectButton className='btn-connect' color="danger" title='Connect'/>
                 </Container>
     </div>
