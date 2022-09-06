@@ -38,7 +38,7 @@ export default function Store() {
 
   const CollectibleDetails = Collectible.map((collection, idx) => {
     return <div className="collectible-details">
-              <img className="collectible-details-img" loading='lazy' key={collection.key} src={collection.img} alt="logo" />
+              <img className="collectible-details-img" loading='lazy' key={idx ?? collection.key} src={collection.img} alt="logo" />
             </div>
   })
   return (
