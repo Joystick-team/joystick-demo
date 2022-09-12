@@ -33,12 +33,15 @@ export default function Layout(props) {
           {/* <SideNav /> */}
           <MobileSideNav />
         </div>
-          <div className="main-div">
-            {props.children}
+          <div className="center-div">
+            <div className="main-div">
+              {props.children}
+            </div>
+            <div className='subscribers'>
+              <Subscription />
+            </div>
           </div>
-          <div>
-            <Subscription />
-          </div>
+ 
           <div className="mobile-bottom-nav">
             <BottomNav />
           </div>

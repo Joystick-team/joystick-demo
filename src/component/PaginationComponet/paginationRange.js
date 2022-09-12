@@ -10,7 +10,7 @@ const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, currentP
     }
 
     const incrementCount = () => {
-        setCurrentPost(currentPage + 1 < pages.length)
+        setCurrentPost(currentPage + 1)
     }
 
     const decrementCount = () => {

@@ -6,7 +6,7 @@ import "./subscription.scss"
 export default function Subscription() {
   return (
       <div className='subscription'>
-        <main className='main-div'>
+        <main className='subscription-main-div'>
             <h5>Stay up to date</h5>
             <div className='subscription-form'>
                 <input

@@ -45,12 +45,16 @@
             margin-right: .7rem;
             margin-top: 7rem;
 
+            .center-div{
+                height: 86vh;
+            }
             .mobile-nav{
                 display: none;
             }
 
             .main-div{
                 display: flex;
+                height: 72vh;
 
                 .main{
                     box-sizing: border-box;
