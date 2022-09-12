@@ -64,6 +64,28 @@
             }
         }
     }
+    .page_sites{
+        display: block;
+
+        .pagination-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--secondary);
+
+            .page-link {
+                margin: 0 .1rem;
+                background-color: var(--secondary-background);
+                color: var(--secondary);
+            }            
+
+            .page-item.active .page-link{
+                color: #C71F1F;
+                border-color: var(--secondary);
+                background-color: var(--secondary-background);
+            }
+        }
+    }
     .site-games{
         // display: flex;
         width: 100%;

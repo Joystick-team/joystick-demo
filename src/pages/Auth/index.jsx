@@ -6,6 +6,7 @@ import  { default as api } from '../../config/config.json'
 import './auth.scss'
 import { AppContextInit } from '../../context/AppContext'
 import axios from 'axios'
+import usePost from '../../hooks/usePost'
 
 export default function Auth(props) {
     // eslint-disable-next-line
@@ -36,81 +37,65 @@ export default function Auth(props) {
     // eslint-disable-next-line
     const [loginInputData, setloginDate] = useState([input4, input6])
 
+    const [isLoading, setIsLoading] = useState(false)
     const [inputsData, setInputsData] = useState({});
+
+    async function postDataAuth({url, option, res}) {
+        var config = {
+            method: 'post',
+            url: url,
+            headers: { },
+            data : option
+          };
+
+        try{ 
+            setIsLoading(true)
+            const response =  await axios(config);
+                setSuccess(true)
+                setMessage(() => res)
+                localStorage.setItem('userToken', response.data.access_token)
+                setIsLoading(false)
+                setIsUser(true)
+
+        }catch(error){ 
+            setIsLoading(true)
+            setSuccess(false)
+            
+            setMessage(() => error.response.data.message ?? res)
+            console.log(error.response.data.message);
+            setIsLoading(false)
+            setIsUser(true)
+
+            setTimeout(() => {
+                setIsUser(false)
+            }, 2000);
+        }   
+
+    }
 
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
         setInputsData(prev => ({...prev, [name]: value}))
     }
-
-    const handleLoginSubmit = (event) => {
-        event.preventDefault();
-        var config = {
-            method: 'post',
-            url: `${api.url}/auth/login`,
-            headers: { },
-            data : inputsData
-          };
-           
-          axios(config)
-          .then(function (response) {
-            console.log(response.data);
-                JSON.stringify(response.inputsData);
-                
-                setSuccess(true)
-                setMessage("Welcome Back");
-                setIsUser(true)
-                console.log('test 1', success);
-                localStorage.setItem('userToken', response.inputsData.access_token)
-          })
-          .catch(function (error) {
-            
-            setSuccess(false)
-            setMessage("An error occured during Login");
-            setIsUser(true)
-            console.log('test 2', success);
-            
-            console.log(error);
-
-            setTimeout(() => {
-                setIsUser(false)
-            }, 2000);
-          });
+    
+    const handleLoginSubmit = async (event) => {
+        event.preventDefault(); 
+        postDataAuth({
+            url: `${api.url}/auth/login`, 
+            option : inputsData, 
+            res : success ? "Welcome Back" : "An error occured during Login"
+        })     
     }
 
     let handleRegisterSubmit = async (e) => {
         e.preventDefault();
 
-        var config = {
-            method: 'post',
-            url: `${api.url}/auth/signup`,
-            headers: { },
-            data : inputsData
-          };
-          axios(config)
-          .then(function (response) {
-            console.log(response.inputsData);
-            JSON.stringify(response.inputsData);
-            
-            console.log('test 3', success);
-                localStorage.setItem('userToken', response.inputsData.access_token)
-                setMessage("User created successfully");
-                setIsUser(true)
-                setSuccess(true)
-          })
-          .catch(function (error) {
-            
-            console.log('test 4', success);
-            setMessage("An error occured during Registration");
-            setIsUser(true)
-            setSuccess(false)
-            console.log(error);
-
-            setTimeout(() => {
-                setIsUser(false)
-            }, 2000);
-          });
+        postDataAuth({
+            url: `${api.url}/auth/signup`, 
+            option : inputsData, 
+            res :  success ? "User created successfully" : "An error occured during signup"
+        })  
       };
 
     const setLog = {
@@ -154,7 +139,7 @@ export default function Auth(props) {
                         </div>
 
                         <div className="form-group">
-                            <button type="submit"> Login</button>
+                            <button type="submit"> {`${isLoading ? 'Loading...' : 'Login'}`}</button>
                         </div>
                         <div className="check-register">
                             Don’t have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Sign Up</span>
@@ -178,7 +163,7 @@ export default function Auth(props) {
                          </label>
                      </div>
                      <div className="form-group">
-                         <button type="submit" >Register</button>
+                         <button type="submit" >{`${isLoading ? 'Loading...' : 'Register'}`}</button>
                      </div>
                      <div className="check-register">
                          Do you already have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Log in</span>

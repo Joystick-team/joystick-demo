@@ -1,0 +1,18 @@
+.pagination-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary);
+
+  .page-link {
+      margin: 0 .3rem;
+      background-color: var(--secondary-background);
+      color: var(--secondary);
+  }            
+
+  .page-item.active .page-link{
+      color: #C71F1F;
+      background-color: var(--secondary-background);
+      border-color: var(--secondary);
+  }
+}

@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import DetailsCard from '../../component/DetailsCard'
@@ -8,44 +7,59 @@ import MyCard from '../../component/MyCard'
 import SelectDropDown from '../../component/SelectDropDown'
 import useFetch from '../../hooks/useFetch'
 import  { default as api } from '../../config/config.json'
-import AllGamesData from '../../Store/librarygamesdata'
+import { default as OnsiteGames} from '../../Store/librarygamesdata'
 import { OffSiteGames } from '../../Store/librarygamesdata'
 
 import './landingpage.scss'
+import PaginationComponet from '../../component/PaginationComponet'
+import PaginationRange from '../../component/PaginationComponet/paginationRange'
+// import Pagination from '../Pagination';
 
-export default function LandingPage() {
+export default function LandingPage(props) {
     const gameOptionsList = ["Off-site", "On-site"]
     const [details, setDetails] = useState(null);
     const [isOpen, setIsOpen] = useState(false)
-    
-    //eslint-disable-next-line
-    const [loading, data, error] = useFetch(`${api?.url}/game?game_type=off_site&sort=asc-name&search_term=meta&page=1&limit=15`)
+    const [paginate, setPaginate] = useState(false)
+    const [defaultPage, setDefaultPage] = useState(1)
+    const [currentPage, setCurrentPost] = useState(1)
+    const [postPerPage, setPostPerPage] = useState(4)
 
-    console.log(data?.data);
+       //eslint-disable-next-line
+   const [loading, data, error] = useFetch(`${api?.url}/game?game_type=off_site&sort=asc-name&page=1&limit=15`)
+//    console.log('loading', loading);
+//    console.log('loading', error);
+//    console.log('loading', data?.data?.data);
+
 
     function openModal(data) {
         setIsOpen(true);
         setDetails(data)
       }
-      
+
         const closeModal = () => {
             setIsOpen(false)
         }
 
-    const offSiteGame = OffSiteGames.map((game, idx) => (
-        <Col>
-            <MyCard 
-                key={game.key && idx}
-                title={game.title}
-                text={game.text}
-                img={game.img}
-                button={game.btn}
-                openModal={openModal.bind(this, game)}
-            />
-        </Col>
-    ))
+        const lastPageIndex = currentPage * postPerPage;
+        const firstPageIndex = lastPageIndex - postPerPage;
+        const currentPost = (OffSiteGames).slice(firstPageIndex, lastPageIndex);
+        const [totalPages, setTotalPages] = useState( paginate ? OnsiteGames.length : OffSiteGames.length )
+        const currentPostOnsite = OnsiteGames.slice(firstPageIndex, lastPageIndex);
 
-    const games2 = AllGamesData.map((game, idx) => (
+        const offSiteGame = currentPost.map((game, idx) => (
+            <Col>
+                <MyCard 
+                    key={game.key && idx}
+                    title={game.title}
+                    text={game.text}
+                    img={game.img}
+                    button={game.btn}
+                    openModal={openModal.bind(this, game)}
+                />
+            </Col>
+        ))
+
+    const games2 = currentPostOnsite.map((game, idx) => (
         <Col>
             <MyCard 
                 key={game.key && idx}
@@ -62,13 +76,15 @@ export default function LandingPage() {
     let handleChange = (gameOption) => {
         if(gameOption === 'On-site') { 
             setCurrentValue(games2)
+            setPaginate(true)
         } else if(gameOption === 'Off-site') {
             setCurrentValue(offSiteGame)
+            setPaginate(false)
         }else{
             setCurrentValue(`Game Option ${gameOption}`) 
         }
     }
-
+    
   return (
     <div className='landing-page-container'>
         <div className="landing-page-holder">
@@ -89,8 +105,25 @@ export default function LandingPage() {
                         {details && <DetailsCard {...(details ? {...details} : {})} />}
                     </div>
                 </ModalEffect>
-                <div className="site-games">
-                    {currentValue}
+                {/* <div className="page_sites">
+                    <div className="site-games">
+                        {currentValue}
+                    </div>
+                    <div className='pagination-container'>
+                        <PaginationRange 
+                        firstPosts={defaultPage}
+                        totalPosts={totalPages} 
+                        postPerPage={postPerPage} 
+                        // displayPages={3}
+                        setCurrentPageIndex={setCurrentPost}
+                        setCurrentPost={setCurrentPost}
+                        currentPage={currentPage}
+                        active={currentPage}
+                        />
+                    </div>
+                </div> */}
+                <div className="">
+                    <PaginationComponet api={paginate ? OnsiteGames : OffSiteGames}/>
                 </div>
             </div>
         </div>

@@ -11,7 +11,6 @@ import DrawerNav from '../NavMenus/DrawalNav'
 
 export default function Layout(props) {
   const { isUser, message, success } = AppContextInit()
-console.log('success', success);
   return (
     <div className='layout-container'>
 
