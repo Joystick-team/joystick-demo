@@ -1,4 +1,5 @@
 import React from 'react'
+import LoadingButton from "../LoadingButton"
 
 import "./subscription.scss"
 
@@ -13,7 +14,8 @@ export default function Subscription() {
                  placeholder='your email for updates'
                  type="text"
                  />
-                <button className='subscription-btn'>Subscribe</button>
+                 <LoadingButton title={"Subscribe"} variant='red'  className='subscription-btn'/>
+                {/* <button className='subscription-btn'>Subscribe</button> */}
             </div>
         </main>
         
