@@ -3,10 +3,6 @@ import './layout.scss'
 import TopNav from '../NavMenus/TopNav'
 // import SideNav from '../NavMenus/SideNav'
 import BottomNav from '../NavMenus/BottomNav'
-import MobileSideNav from '../NavMenus/MobileSideNav'
-import { AppContextInit } from '../../context/AppContext'
-import DropAlert from '../ErrorAlert'
-import DrawerNav from '../NavMenus/DrawalNav'
 
 
 export default function Layout(props) {
@@ -34,6 +30,9 @@ export default function Layout(props) {
         </div>
           <div className="main-div">
             {props.children}
+          </div>
+          <div>
+            <Subscription />
           </div>
           <div className="mobile-bottom-nav">
             <BottomNav />
