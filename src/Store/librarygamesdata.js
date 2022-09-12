@@ -26,6 +26,13 @@ const AllGamesData = [
         button: "Play",
     },
     {        
+        key: '3',
+        title: 'Clash of Clans',
+        text: 'Adventure',
+        img: clash,
+        button: "Play",
+    },
+    {        
         key: '7',
         title: 'Tetris',
         text: 'Arcade',
@@ -100,7 +107,7 @@ const game11 = new OffSiteGame('1', 'Clash of Clans', 'Blockchain', forestnight,
 const game12 = new OffSiteGame('1', 'Pac Man', 'Blockchain', pacman, '', true, )
 const game13 = new OffSiteGame('1', 'unravel', 'Blockchain', unravel, '', false)
 
-const OffSiteGames = [ game1, game2, game3, game4, game5, game6, game7, game8, game9, game10, game11, game12, game13 ]
+const OffSiteGames = [ game5, game6, game1, game2, game3, game4, game7, game8, game9, game10, game11, game12, game13 ]
 
 export default AllGamesData;
 export { OffSiteGames };

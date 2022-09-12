@@ -102,8 +102,8 @@
             transition: all ease-in-out 500ms;
 
             img{
-                max-width: 240px;
-                max-height: 260px;
+                max-width: 200px;
+                max-height: 220px;
                 height: auto;
                 width: 100%;
                 object-fit: cover;
@@ -114,11 +114,11 @@
             img{
                 object-fit: cover;
                 transition: 500ms all ease-in-out;
-                &:hover{
-                    max-width: 250px;
-                    max-height: 245px;
-                    object-fit: contain;
-                }
+                // &:hover{
+                //     max-width: 250px;
+                //     max-height: 245px;
+                //     object-fit: contain;
+                // }
             }
 
             &:hover{
@@ -164,9 +164,13 @@
 }
 
 @media screen and (max-width: 480px){
+    .select-container{
+        height: 70px !important;
+    }
     .site-games{
         grid-auto-rows: minmax(100px, auto);
         grid-template-columns: 1fr 1fr !important;
+        // grid-template-columns: repeat(auto-fill, minmax(130px, 160px)) !important;
         gap: 10px;
         padding: 10px;
 
