@@ -12,16 +12,19 @@ import { OffSiteGames } from '../../Store/librarygamesdata'
 
 import './landingpage.scss'
 import PaginationComponet from '../../component/PaginationComponet'
+// eslint-disable-next-line
 import PaginationRange from '../../component/PaginationComponet/paginationRange'
-// import Pagination from '../Pagination';
 
 export default function LandingPage(props) {
     const gameOptionsList = ["Off-site", "On-site"]
     const [details, setDetails] = useState(null);
     const [isOpen, setIsOpen] = useState(false)
     const [paginate, setPaginate] = useState(false)
+    // eslint-disable-next-line
     const [defaultPage, setDefaultPage] = useState(1)
+    // eslint-disable-next-line
     const [currentPage, setCurrentPost] = useState(1)
+    // eslint-disable-next-line
     const [postPerPage, setPostPerPage] = useState(4)
 
        //eslint-disable-next-line
@@ -43,6 +46,7 @@ export default function LandingPage(props) {
         const lastPageIndex = currentPage * postPerPage;
         const firstPageIndex = lastPageIndex - postPerPage;
         const currentPost = (OffSiteGames).slice(firstPageIndex, lastPageIndex);
+        // eslint-disable-next-line
         const [totalPages, setTotalPages] = useState( paginate ? OnsiteGames.length : OffSiteGames.length )
         const currentPostOnsite = OnsiteGames.slice(firstPageIndex, lastPageIndex);
 
@@ -70,7 +74,7 @@ export default function LandingPage(props) {
             />
         </Col>
     ))
-
+// eslint-disable-next-line
     const [currentValue, setCurrentValue] = useState(offSiteGame)
 
     let handleChange = (gameOption) => {

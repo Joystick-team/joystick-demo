@@ -6,7 +6,6 @@ import  { default as api } from '../../config/config.json'
 import './auth.scss'
 import { AppContextInit } from '../../context/AppContext'
 import axios from 'axios'
-import usePost from '../../hooks/usePost'
 
 export default function Auth(props) {
     // eslint-disable-next-line

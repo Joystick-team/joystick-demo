@@ -1,118 +1,12 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import { AppContextInit } from '../context/AppContext'
 
 const usePost = async ({url, option, res}) => {
+    // eslint-disable-next-line
     const [isLoading, setIsLoading] = useState(false)
+    // eslint-disable-next-line
     const { isUser, setIsUser, message, setMessage, success, setSuccess } = AppContextInit()
-//     var config = {
-//         method: 'post',
-//         url: url,
-//         headers: { },
-//         data : option
-//     };
-
-//     useEffect(() => {
-//         let isMounted = true
-//         setIsLoading(true)
-
-//         async function fetchData() {        
-//             try{ 
-//                 const response = await axios(config);
-//                 console.log(response.data);
-//                 if(isMounted){
-//                     JSON.stringify(response.data);
-                    
-//                     setSuccess(true)
-//                     localStorage.setItem('userToken', response.data.access_token)
-//                     setError(null)
-//                     setSuccess(true)
-//                 }
-//             }catch(error){ 
-//                 if(isMounted){
-//                     setSuccess(false)
-//                     setError(error)
-//                     // console.log(error);
-//                 }
-//             }
-//         }
-//         fetchData();
-
-//         isMounted && setIsLoading(false)
-
-//         return () => {
-//             isMounted = false
-//         }
-//         // eslint-disable-next-line
-//     }, [url, option])
-//   return (
-//     [isLoading, error ]
-//   )
-
-    
-
-    
-    // // You POST method here
-    // const postData = useCallback(() => {
-    //     let isMounted = true
-    //     setIsLoading(true)
-
-    //     //  setRes(prevState => ({...prevState}));
-    //      axios.post(url, headers, option)
-    //      .then(res => {
-    //         setError(null)
-    //         setSuccess(true)
-    //         // setRes({data: res.data});
-    //         setIsLoading(false)
-    //      })
-    //      .catch((error) => {
-    //         // setRes({data: null});
-    //         setError(error)
-    //         setSuccess(false)
-    //         setIsLoading(false)
-    //      })
-    //      .finally(() => {
-    //         isMounted && setIsLoading(false)
-    //      })
-    //      isMounted = false
-    //      // eslint-disable-next-line
-    // }, [url, headers, option])
-
-    // return { postData, error, isLoading };
-
-
-
-
-    // const postData = async ({url, option}) => {
-
-    //     var config = {
-    //         method: 'post',
-    //         url: url,
-    //         headers: { },
-    //         data : option
-    //     };
-
-    //     try{ 
-    //         setIsLoading(true)
-    //         const response =  await axios(config);
-            
-    //             console.log(response.data);
-    //             JSON.stringify(response.data);
-    //             setSuccess(true)
-    //             // localStorage.setItem('userToken', response.data.access_token)
-    //             setIsLoading(true)
-    //     }catch(error){ 
-    //         setSuccess(false)
-    //         console.log(error.message);
-    //         setIsLoading(false)
-    //     }
-    // // }
-    // // postData()
-
-    // return (
-    //     [ isLoading, error ]
-    //   )
-
 
     async function postDataAuth({url, option, res}) {
         var config = {

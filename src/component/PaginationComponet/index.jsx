@@ -5,12 +5,15 @@ import { Col } from 'react-bootstrap';
 import PaginationRange from './paginationRange';
 
 function PaginationComponet(props) {
+  // eslint-disable-next-line
   const [defaultPage, setDefaultPage] = useState(1)
   const [currentPage, setCurrentPost] = useState(1)
+  // eslint-disable-next-line
   const [postPerPage, setPostPerPage] = useState(4)
   const lastPageIndex = currentPage * postPerPage
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (props.api).slice(firstPageIndex, lastPageIndex)
+  // eslint-disable-next-line
   const [totalPages, setTotalPages] = useState(props.api.length)
 
   const offSiteGame = currentPost.map((game, idx) => (
