@@ -97,7 +97,11 @@ const game8 = new OffSiteGame('1', 'blade', 'Blockchain', rust, '', false)
 const game9 = new OffSiteGame('1', 'Mobox', 'Blockchain', Mobox, '', false)
 const game10 = new OffSiteGame('1', 'Star Atlas', 'Blockchain', StarAtlas, '', true, )
 
-const OffSiteGames = [ game1, game2, game3, game4, game5, game6, game7, game8, game9, game10 ]
+const game11 = new OffSiteGame('1', 'Clash of Clans', 'Blockchain', forestnight, '', false)
+const game12 = new OffSiteGame('1', 'Pac Man', 'Blockchain', pacman, '', true, )
+const game13 = new OffSiteGame('1', 'unravel', 'Blockchain', unravel, '', false)
+
+const OffSiteGames = [ game1, game2, game3, game4, game5, game6, game7, game8, game9, game10, game11, game12, game13 ]
 
 export default AllGamesData;
 export { OffSiteGames };

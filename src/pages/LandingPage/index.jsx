@@ -126,7 +126,7 @@ export default function LandingPage(props) {
                         />
                     </div>
                 </div> */}
-                <div className="">
+                <div className="page_sites">
                     <PaginationComponet api={paginate ? OnsiteGames : OffSiteGames}/>
                 </div>
             </div>

@@ -9,7 +9,7 @@ function PaginationComponet(props) {
   const [defaultPage, setDefaultPage] = useState(1)
   const [currentPage, setCurrentPost] = useState(1)
   // eslint-disable-next-line
-  const [postPerPage, setPostPerPage] = useState(4)
+  const [postPerPage, setPostPerPage] = useState(6)
   const lastPageIndex = currentPage * postPerPage
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (props.api).slice(firstPageIndex, lastPageIndex)
@@ -32,7 +32,7 @@ function PaginationComponet(props) {
 
   return (
     <div style={{display: 'block'}}>
-      <div className="site-games" style={{display: 'flex'}}>
+      <div className="site-games">
       {offSiteGame}
       </div>
       
