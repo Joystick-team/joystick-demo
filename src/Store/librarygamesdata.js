@@ -96,7 +96,6 @@ const game7 = new OffSiteGame('1', 'Battle Verse', 'Blockchain', BattleVerse, ''
 const game8 = new OffSiteGame('1', 'blade', 'Blockchain', rust, '', false)
 const game9 = new OffSiteGame('1', 'Mobox', 'Blockchain', Mobox, '', false)
 const game10 = new OffSiteGame('1', 'Star Atlas', 'Blockchain', StarAtlas, '', true, )
-
 const game11 = new OffSiteGame('1', 'Clash of Clans', 'Blockchain', forestnight, '', false)
 const game12 = new OffSiteGame('1', 'Pac Man', 'Blockchain', pacman, '', true, )
 const game13 = new OffSiteGame('1', 'unravel', 'Blockchain', unravel, '', false)
