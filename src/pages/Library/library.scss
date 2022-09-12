@@ -167,12 +167,22 @@
                    width: 50%;
                    align-items: center;
                    line-height: 0;
-                   margin-left: 210px;
+                   margin-left: 150px;
                    font-size: 20px;
                    position: relative;
                     p{
                         margin-top: 19px;
                         margin-left:4px ;
+                    }
+
+                    .dropdown-menu{
+                        &:focus, &:active, &:hover, &:visited{
+                            color: red;
+                        }
+                    }
+                    .dropdown-item {
+                        padding: 1rem;
+
                     }
                 }
 
