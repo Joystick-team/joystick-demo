@@ -19,7 +19,7 @@ function PaginationComponet(props) {
   const offSiteGame = currentPost.map((game, idx) => (
     <Col>
         <MyCard 
-            key={game.key && idx}
+            key={idx}
             title={game.title}
             text={game.text}
             img={game.img}

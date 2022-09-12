@@ -6,8 +6,9 @@
         flex-wrap: wrap;
         box-sizing: border-box;
         overflow: hidden;
+        overflow-y: auto;
         position: relative;
-        // height: 85vh;
+        height: 95vh;
         height: auto;
         width: 100%;
     
@@ -46,7 +47,22 @@
             margin-top: 7rem;
 
             .center-div{
-                height: 86vh;
+                // height: 85vh;
+                // height: 90vh;
+                overscroll-behavior: auto;
+                overflow-y: scroll;
+
+                .subscribers{
+                    // position: fixed;
+                    bottom: 50px;
+                    // background: red;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    max-width: 480px;
+                    width: 100%;
+                    z-index: 7;
+                }
             }
             .mobile-nav{
                 display: none;
@@ -62,13 +78,21 @@
                     max-height: 85vh;
                     flex-basis: auto;
                     flex-grow: 2;
+                    overflow-x: hidden;
                     // padding-top: 1.5rem;
                     @media screen and (max-width: 480px){
                         overflow: hidden;
                         overflow-y: auto;
+                        max-height: 750px;
                     }
                 }
             
+                @media screen and (max-width: 480px){
+                    height: 62vh;
+                    margin-top: 4.3rem;
+                }
+
+
                 .side-adverts{
                     box-sizing: border-box;
                     flex-basis: content;
@@ -180,6 +204,10 @@
                 .navbar-dark{
                     background: var(--secondary-background);
                     height: 8vh;
+                    position: fixed;
+                    z-index: 5;
+                    width: 100vw;
+
                 }
             }
         }

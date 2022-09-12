@@ -304,3 +304,20 @@
         font-size: 1.5rem;
     }
 }
+
+@media all and (min-width: 320px) {
+    .side-nav{
+        .nav-link {
+            height: 40px;
+        }
+    }
+
+    .footer-nav-side{
+        a, Link{
+            height: 40px;
+        }
+    }
+    .icons-sidenav-footer{
+        height: 25px;
+    }
+}

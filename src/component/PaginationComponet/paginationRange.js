@@ -29,8 +29,8 @@ const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, currentP
             {/* <Pagination.Item onClick={() => setCurrentPost(() => pages.at(0))}>{firstPosts}</Pagination.Item> */}
             <Pagination.Prev onClick={decrementCount} />
             <Pagination.Ellipsis onClick={decrementCountPage} />
-                {pages.map((page, idx) => {
-                    return <Pagination.Item active={page === active} onClick={() => setCurrentPageIndex(page)} key={idx} value={page}>{page}</Pagination.Item>
+                {pages.map((page) => {
+                    return <Pagination.Item active={page === active} onClick={() => setCurrentPageIndex(page)} key={page} value={page}>{page}</Pagination.Item>
                 })}
                 <Pagination.Ellipsis onClick={incrementCountPage} />
                 <Pagination.Next onClick={incrementCount} />
