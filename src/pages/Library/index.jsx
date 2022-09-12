@@ -139,7 +139,7 @@ useEffect(() => {
                   <label htmlFor="All"> 
                     <Nav.Item>
                         <Nav.Link eventKey="first" >
-                          <input type="radio" id="All" name="fav_games" defaultChecked checked defaultActiveKey value="All" /> All
+                          <input type="radio" id="All" name="fav_games" value="All" /> All
                           <span className="checkmark"></span>
                         </Nav.Link>
                       </Nav.Item>
