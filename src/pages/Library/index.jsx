@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Col, Container, Nav, Row, Tab } from 'react-bootstrap'
 import { IoOptionsOutline } from 'react-icons/io5'
 import MyCard from '../../component/MyCard'
+import SelectDropDown from '../../component/SelectDropDown'
 import AllGamesData from '../../Store/librarygamesdata'
 import './library.scss'
 // import LibraryfilterSelection from "../../component/LibraryFilter"
@@ -59,6 +60,15 @@ const Arcade = fetchArcade.map((game, idx) => (
   </Col>
 ))
 
+const [isMobile, setIsMobile] = useState(false)
+
+useEffect(() => {
+  if(window.innerWidth > 481){
+    setIsMobile(true)
+  }
+}, [isMobile])
+
+
   return (
     <div className="library">
       <div className="main">
@@ -71,8 +81,13 @@ const Arcade = fetchArcade.map((game, idx) => (
               <div className="filter-menu">
               <div className="span-filter-mobile">Games</div>
                 <div className="filter-menu-header">
-                  <div>Filter </div>  <p onClick={()=>setShow(true)}><IoOptionsOutline /></p>
-                
+                  <div>Filter </div>  <p> { isMobile ? <span><IoOptionsOutline /></span> :
+                <SelectDropDown options={['all', 'bart', 'mike']} 
+                    placeholder={<IoOptionsOutline />}
+                    label={<IoOptionsOutline />}
+                    getValue={()=>setShow(true)}
+                /> }
+                </p>
                 </div>
                 {show === true && (
                 
@@ -124,7 +139,7 @@ const Arcade = fetchArcade.map((game, idx) => (
                   <label htmlFor="All"> 
                     <Nav.Item>
                         <Nav.Link eventKey="first" >
-                          <input type="radio" id="All" name="fav_games" value="All" /> All
+                          <input type="radio" id="All" name="fav_games" defaultChecked checked defaultActiveKey value="All" /> All
                           <span className="checkmark"></span>
                         </Nav.Link>
                       </Nav.Item>

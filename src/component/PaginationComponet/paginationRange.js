@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Button, Pagination } from 'react-bootstrap';
+import React from 'react';
+import { Pagination } from 'react-bootstrap';
 
 const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, currentPage, setCurrentPost, firstPosts, active}) => {
-    const displayPages = Math.ceil(totalPosts/postPerPage)
-    const firstItem = Math.ceil(firstPosts / displayPages)
+    // const displayPages = Math.ceil(totalPosts/postPerPage)
+    // const firstItem = Math.ceil(firstPosts / displayPages)
     let pages = [];
     for (let index = 1; index <= Math.ceil(totalPosts/postPerPage); index++) {
         pages.push(index)
@@ -30,7 +30,6 @@ const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, currentP
             <Pagination.Prev onClick={decrementCount} />
             <Pagination.Ellipsis onClick={decrementCountPage} />
                 {pages.map((page, idx) => {
-                    // return <Button onClick={() => setCurrentPageIndex(page)} key={idx} value={page}>{page}</Button>
                     return <Pagination.Item active={page === active} onClick={() => setCurrentPageIndex(page)} key={idx} value={page}>{page}</Pagination.Item>
                 })}
                 <Pagination.Ellipsis onClick={incrementCountPage} />
