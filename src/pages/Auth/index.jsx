@@ -2,9 +2,15 @@ import React from 'react'
 import { useState } from 'react'
 import InputField from '../../component/InputField'
 import GamePad from '../../assets/images/GamePad.png'
+import  { default as api } from '../../config/config.json'
 import './auth.scss'
+import { AppContextInit } from '../../context/AppContext'
+import axios from 'axios'
 
 export default function Auth(props) {
+    // eslint-disable-next-line
+    const { isUser, setIsUser, message, setMessage, success, setSuccess } = AppContextInit()
+
     function InputData(type, placeholder, label, htmlFor, name, id, labelClass, inputClass, groupClass){
         this.type = type
         this.placeholder = placeholder
@@ -30,18 +36,82 @@ export default function Auth(props) {
     // eslint-disable-next-line
     const [loginInputData, setloginDate] = useState([input4, input6])
 
-    const [inputs, setInputs] = useState({});
+    const [inputsData, setInputsData] = useState({});
 
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInputs(prev => ({...prev, [name]: value}))
+        setInputsData(prev => ({...prev, [name]: value}))
     }
 
-    const handleSubmit = (event) => {
-        console.table(inputs);
+    const handleLoginSubmit = (event) => {
         event.preventDefault();
+        var config = {
+            method: 'post',
+            url: `${api.url}/auth/login`,
+            headers: { },
+            data : inputsData
+          };
+           
+          axios(config)
+          .then(function (response) {
+            console.log(response.data);
+                JSON.stringify(response.inputsData);
+                
+                setSuccess(true)
+                setMessage("Welcome Back");
+                setIsUser(true)
+                console.log('test 1', success);
+                localStorage.setItem('userToken', response.inputsData.access_token)
+          })
+          .catch(function (error) {
+            
+            setSuccess(false)
+            setMessage("An error occured during Login");
+            setIsUser(true)
+            console.log('test 2', success);
+            
+            console.log(error);
+
+            setTimeout(() => {
+                setIsUser(false)
+            }, 2000);
+          });
     }
+
+    let handleRegisterSubmit = async (e) => {
+        e.preventDefault();
+
+        var config = {
+            method: 'post',
+            url: `${api.url}/auth/signup`,
+            headers: { },
+            data : inputsData
+          };
+          axios(config)
+          .then(function (response) {
+            console.log(response.inputsData);
+            JSON.stringify(response.inputsData);
+            
+            console.log('test 3', success);
+                localStorage.setItem('userToken', response.inputsData.access_token)
+                setMessage("User created successfully");
+                setIsUser(true)
+                setSuccess(true)
+          })
+          .catch(function (error) {
+            
+            console.log('test 4', success);
+            setMessage("An error occured during Registration");
+            setIsUser(true)
+            setSuccess(false)
+            console.log(error);
+
+            setTimeout(() => {
+                setIsUser(false)
+            }, 2000);
+          });
+      };
 
     const setLog = {
         fontSize: '16px',
@@ -66,7 +136,7 @@ export default function Auth(props) {
                 { props.isRegister ? 
                 
                 <div className='login-auth'>
-                    <form action="" method="post" onSubmit={handleSubmit}>
+                    <form action="" method="post" onSubmit={handleLoginSubmit}>
                         <div className="login-form-title">Welcome Back!</div>
                         <p className="login-description">Go inside the best gamers social network!</p>
                         
@@ -74,8 +144,8 @@ export default function Auth(props) {
                             return <InputField key={idx} onChange={handleChange} item={item} />
                         })} */}
                         <div className={`form-group bmd-form-group`}>
-                            <label className={`bmd-label-static`}>Email address <span>*</span></label>
-                            <input name={'email'} type={'email'} onChange={handleChange} className={`form-control `} placeholder={'Enter Email'} required/>
+                            <label className={`bmd-label-static`}>Enter Username <span>*</span></label>
+                            <input name={'username'} type={'username'} onChange={handleChange} className={`form-control `} placeholder={'Enter Username'} required/>
                         </div>
 
                         <div className={`form-group bmd-form-group`}>
@@ -92,8 +162,8 @@ export default function Auth(props) {
                     </form>
                 </div>
                  :
-                 <div className='register-auth'>
-                 <form action="" method="post" onSubmit={handleSubmit}>
+                 (<div className='register-auth'>
+                 <form action="" method="post" onSubmit={handleRegisterSubmit}>
                      <div className="register-form-title">Join the game!</div>
                      <p className="register-description">Go inside the best gamers social network!</p>
                      
@@ -115,7 +185,7 @@ export default function Auth(props) {
                      </div>
                  </form>
 
-             </div>
+             </div>)
             }
             </div>
        </div>

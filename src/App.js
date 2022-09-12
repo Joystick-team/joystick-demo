@@ -17,10 +17,15 @@ import Message from './component/ContentTab/Message';
 import ErrorPage from './pages/ErrorPage';
 import LandingPage from './pages/LandingPage';
 import { ThemeProvider } from './ThemeContext';
+import AppContextContainer from './context/AppContext';
 
 
 function App() {
+
   return (
+  <AppContextContainer>
+
+  
     <div className="App">
       
       <Router>
@@ -84,6 +89,7 @@ function App() {
           </ThemeProvider>
         </Router >
     </div>
+    </AppContextContainer>
   );
 }
 
