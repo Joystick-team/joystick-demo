@@ -15,6 +15,8 @@ const [signUp, setSignUp] = useState(false)
 const [isUser, setIsUser] = useState(false)
 const [message, setMessage] = useState()
 const [success, setSuccess] = useState(true)
+const [isSubscriber, setIsSubscriber] = useState(true)
+
   return (
     <AppContext.Provider value={{
         mobileDrawer, 
@@ -28,7 +30,9 @@ const [success, setSuccess] = useState(true)
         message, 
         setMessage,
         success, 
-        setSuccess
+        setSuccess,
+        isSubscriber, 
+        setIsSubscriber
     }} >
         {children}
     </AppContext.Provider>
