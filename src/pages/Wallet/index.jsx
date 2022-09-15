@@ -69,7 +69,7 @@ const TokenStats= tokenStats.map((token)=>{
     
    <div className='token-stat'>
      <main className='stats'>
-        {/* <img src={token.img} alt="logo"/>
+        {/* <img src={token.images} alt="logo"/>
         <h5 >{token.stats}</h5> */}
         <RangeLoader value={token.stats} />
      </main>

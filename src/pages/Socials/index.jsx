@@ -53,7 +53,7 @@ export default function Socials() {
                 postData.map((data, idx) => {
                   return <Posts 
                             key={data.id}
-                            img={data.img}
+                            img={data.images}
                             likeicon = {data.likeicon}
                             dislikeicon={data.dislikeicon}
                             messageicon={data.messageicon}

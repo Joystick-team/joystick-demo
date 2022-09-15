@@ -14,34 +14,34 @@ import Five5 from '../assets/images/Five5.png'
 const Marketplace = [
     {
         key: 1,
-        img : afen,
+        images : afen,
     },
     {
         key: 2,
-        img : opensea,
+        images : opensea,
     },
 ]
 
 const Collectible = [
     {
         key: 1,
-        img : one1
+        images : one1
     },
     {
         key: 2,
-        img : Two2
+        images : Two2
     },
     {
         key: 3,
-        img : Three3
+        images : Three3
     },
     {
         key: 4,
-        img : Four4
+        images : Four4
     },
     {
         key: 5,
-        img : Five5
+        images : Five5
     },
 ];
 
@@ -50,28 +50,28 @@ const Games = [
         key: 1,
         image: forestnight,
         btn: 'install',
-        title: 'Forest Knight',
+        name: 'Forest Knight',
         type: 'Blockchain',
     },
     {
         key: 2,
         image: rust,
         btn: 'install',
-        title: 'Age of Rust',
+        name: 'Age of Rust',
         type: 'Blockchain',
     },
     {
         key: 3,
         image: bioshock,
         btn: 'install',
-        title: 'Bioshock',
+        name: 'Bioshock',
         type: 'First Shooter',
     },
     {
         key: 4,
         image: val,
         btn: 'install',
-        title: 'Valheim',
+        name: 'Valheim',
         type: 'Adventure',
     },
 

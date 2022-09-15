@@ -16,9 +16,9 @@ export default function Library() {
         <Col>
             <MyCard 
                 key={game.key}
-                title={game.title}
+                title={game.name}
                 text={game.text}
-                img={game.img}
+                img={game.images}
                 button="Play"
             />
         </Col>
@@ -28,9 +28,9 @@ export default function Library() {
     <Col>
         <MyCard 
             key={game.key}
-            title={game.title}
+            title={game.name}
             text={game.text}
-            img={game.img}
+            img={game.images}
             button="Play"
         />
     </Col>
@@ -40,9 +40,9 @@ const Adventure = fetchAdventure.map((game, idx) => (
   <Col>
       <MyCard 
           key={game.key}
-          title={game.title}
+          title={game.name}
           text={game.text}
-          img={game.img}
+          img={game.images}
           button="Play"
       />
   </Col>
@@ -52,9 +52,9 @@ const Arcade = fetchArcade.map((game, idx) => (
   <Col>
       <MyCard 
           key={game.key}
-          title={game.title}
+          title={game.name}
           text={game.text}
-          img={game.img}
+          img={game.images}
           button="Play"
       />
   </Col>

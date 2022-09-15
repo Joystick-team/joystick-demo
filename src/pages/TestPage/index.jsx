@@ -17,9 +17,9 @@ export default function TestPage() {
               <Col>
                   <MyCard 
                     key={idx}
-                    title={game.title}
+                    title={game.name}
                     text={game.text}
-                    img={game.img}
+                    img={game.images}
                     button="Play"
                   />
               </Col>

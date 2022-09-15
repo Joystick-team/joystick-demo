@@ -7,7 +7,7 @@ import nightwar from '../assets/images/nightwar.png'
 const postData = [
     {
         id: 1,
-        img: campaign,
+        images: campaign,
         name: 'Campaign',
         content: 'Join the epic battle this weekend',
         likeicon: <BiLike />,
@@ -19,7 +19,7 @@ const postData = [
     },
     {
         id: 2,
-        img: nightwar,
+        images: nightwar,
         name: 'Night Wars',
         content: 'Challenge me in this fight and win NFTs',
         likeicon: <BiLike /> ,

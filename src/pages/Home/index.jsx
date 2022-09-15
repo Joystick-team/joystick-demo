@@ -28,9 +28,9 @@ export default function Home() {
               <Col>
                   <MyCard 
                     key={game.key.toString()}
-                    title={game.title}
+                    title={game.name}
                     text={game.text}
-                    img={game.img}
+                    img={game.images}
                     button="Play"
                   />
               </Col>

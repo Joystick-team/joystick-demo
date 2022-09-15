@@ -21,14 +21,14 @@ export default function Store() {
 
   const MarketplaceDetails = Marketplace.map((marketitem, idx) => {
     return <div className="marketplace-details">
-              <img loading='eager' key={marketitem.key} src={marketitem.img} alt="logo" />
+              <img loading='eager' key={marketitem.key} src={marketitem.images} alt="logo" />
             </div>
   })
 
   const Gamesdetails = Games.map((game, idx) => {
    return  <MyCard 
             key={game.key}
-            title={game.title}
+            title={game.name}
             text={game.type}
             button={game.btn}
             img={game.image}
@@ -38,7 +38,7 @@ export default function Store() {
 
   const CollectibleDetails = Collectible.map((collection, idx) => {
     return <div className="collectible-details">
-              <img className="collectible-details-img" loading='lazy' key={idx ?? collection.key} src={collection.img} alt="logo" />
+              <img className="collectible-details-img" loading='lazy' key={idx ?? collection.key} src={collection.images} alt="logo" />
             </div>
   })
   return (

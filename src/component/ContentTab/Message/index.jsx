@@ -7,7 +7,7 @@ export default function Message() {
   const messages = ChatsData.map((chat, idx) => (
             <Chats 
                 key={idx}
-                title={chat.title}
+                title={chat.name}
                 body={chat.body}
                 image={chat.image}
             />

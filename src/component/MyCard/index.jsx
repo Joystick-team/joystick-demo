@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap'
-import { SiHiveBlockchain } from 'react-icons/si'
 import './mycard.scss'
 
 export default function MyCard(props) {
@@ -13,7 +12,8 @@ export default function MyCard(props) {
                     {props.title}
                 </Card.Title>
                 <Card.Text className="mycard-text" style={{color: 'var(--plain-text)', margin: '0px'}}>
-                    {props.text} <span className='card-icons'>{props.network ?? <SiHiveBlockchain />}</span>
+                    {props.text} <span className='card-icons'>{props.network}</span>
+                    {/* {props.text} <span className='card-icons'>{props.network ?? <SiHiveBlockchain />}</span> */}
                 </Card.Text>
                 <Button className="mycard-btn" style={{ padding: '0rem'}} variant='var(--primary)' onClick={props.openModal}> {props.button} </Button>
                 {/* <button className="mycard-btn" style={{color: 'var(--primary)', padding: '0rem'}} onClick={props.clickDetails}> {props.button} </button> */}

@@ -20,74 +20,74 @@ import StarAtlas from '../assets/images/Star Atlas.png'
 const AllGamesData = [
     {        
         key: '6',
-        title: 'Unravel Two',
+        name: 'Unravel Two',
         text: 'Adventure',
-        img: unravel,
+        images: unravel,
         button: "Play",
     },
     {        
         key: '3',
-        title: 'Clash of Clans',
+        name: 'Clash of Clans',
         text: 'Adventure',
-        img: clash,
+        images: clash,
         button: "Play",
     },
     {        
         key: '7',
-        title: 'Tetris',
+        name: 'Tetris',
         text: 'Arcade',
-        img: Tetris,
+        images: Tetris,
         button: "Play",
     },
     {        
         key: '8',
-        title: 'Pac Man',
+        name: 'Pac Man',
         text: 'Arcade',
-        img: pacman,
+        images: pacman,
         button: "Play",
     },
     {        
         key: '3',
-        title: 'Clash of Clans',
+        name: 'Clash of Clans',
         text: 'Adventure',
-        img: clash,
+        images: clash,
         button: "Play",
     },
     {        
         key: '1',
-        title: 'Axie Infinity',
+        name: 'Axie Infinity',
         text: 'Blockchain',
-        img: axie,
+        images: axie,
         button: "Play",
     },
     {        
         key: '2',
-        title: 'War of Ants',
+        name: 'War of Ants',
         text: 'Blockchain',
-        img: war,
+        images: war,
         button: "Play",
     },
     {        
         key: '4',
-        title: 'Clash of Clans',
+        name: 'Clash of Clans',
         text: 'Adventure',
-        img: forestnight,
+        images: forestnight,
         button: "Play",
     },
     {        
         key: '5',
-        title: 'Age of Rust',
+        name: 'Age of Rust',
         text: 'Blockchain',
-        img: rust,
+        images: rust,
         button: "Play",
     }
 ]
 
-function OffSiteGame(key, title, text, img, btn, isOwn) {
+function OffSiteGame(key, name, text, images, btn, isOwn) {
     this.key = key
-    this.title = title
+    this.name = name
     this.text = text 
-    this.img = img
+    this.images = images
     this.btn = btn
     this.btn = 'More Info' 
     this.isOwn = isOwn
