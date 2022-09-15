@@ -3,6 +3,7 @@
     .subscription-main-div{
         display: flex;
         flex-direction: column;
+
         width: 50%;
         h5{ 
             display: flex;
@@ -43,7 +44,9 @@
 @media screen and (max-width: 480px){
     .subscription{
         padding: 20px 20px 30px 20px;
-        .main-div{
+         max-width: 500px;
+         width: 100%;
+         .subscription-main-div{
             display: flex !important;
             flex-direction: column;
             width: 100%;
@@ -51,14 +54,15 @@
              display: flex !important;
              width: 100%;
              column-gap: 12px;
+            //  gap: 2rem;
              
-             .subscription-input{
-                width:116px;
+            //  .subscription-input{
+            //     width:20;
                 
-             }
-             .subscription-btn{
-                width: 49px;
-             }
+            //  }
+            //  .subscription-btn{
+            //     width: 25%;
+            //  }
     
           }  
         }

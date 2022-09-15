@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pagination } from 'react-bootstrap';
 
-const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, currentPage, setCurrentPost, firstPosts, active}) => {
+const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, totalPage, currentPage, setCurrentPost, firstPosts, active}) => {
     // const displayPages = Math.ceil(totalPosts/postPerPage)
     // const firstItem = Math.ceil(firstPosts / displayPages)
     let pages = [];
@@ -10,17 +10,41 @@ const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, currentP
     }
 
     const incrementCount = () => {
-        setCurrentPost(currentPage + 1)
+        if(currentPage < (totalPage ?? 12)){
+            setCurrentPost(currentPage + 1)
+            console.log('goA ', currentPage);
+        }else{
+            setCurrentPost(e => e)
+            console.log('go-1A ', currentPage);
+        }
     }
 
     const decrementCount = () => {
-        setCurrentPost(currentPage - 1)
+        if(1 < currentPage && currentPage < (totalPage ?? 12)){
+            setCurrentPost(currentPage - 1)
+            console.log('goB ', currentPage);
+        }else{
+            setCurrentPost(e => e)
+            console.log('go-1B ', currentPage);
+        }
     }
     const incrementCountPage = () => {
-        setCurrentPost(currentPage + 3)
+        if(currentPage <= (totalPage ?? 12)){
+            setCurrentPost(currentPage + 3)
+            console.log('go2A ', currentPage);
+        }else{
+            setCurrentPost(e => e)
+            console.log('go-2A ', currentPage);
+        }
     }
     const decrementCountPage = () => {
-        setCurrentPost(currentPage - 3)
+        if(1 < currentPage && currentPage >= (totalPage ?? 12)){
+            setCurrentPost(currentPage - 3)
+            console.log('go2B ', currentPage);
+        }else{
+            setCurrentPost(e => e)
+            console.log('go-2B ', currentPage);
+        }
     }
 
     return (

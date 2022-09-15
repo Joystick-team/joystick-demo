@@ -102,8 +102,8 @@
             transition: all ease-in-out 500ms;
 
             img{
-                max-width: 200px;
-                max-height: 220px;
+                max-width: 220px;
+                max-height: 250px;
                 height: auto;
                 width: 100%;
                 object-fit: cover;
@@ -122,12 +122,13 @@
             }
 
             &:hover{
-                color: green;
                 font-size: 17px;
-                box-shadow: 7px 5px 3px grey;
+                // box-shadow: 7px 5px 3px grey;
+                border: 5px solid yellow;
                 padding-bottom: .3rem;
                 img{
                     max-width: 250px;
+                    max-height: 270px;
                 }
             }
         }
@@ -164,6 +165,11 @@
 }
 
 @media screen and (max-width: 480px){
+    .modal__content{
+        .site-games{
+            max-height: 600px;
+        }
+    }
     .select-container{
         height: 70px !important;
     }
@@ -173,7 +179,7 @@
         // grid-template-columns: repeat(auto-fill, minmax(130px, 160px)) !important;
         gap: 10px;
         padding: 10px;
-        max-height: 600px;
+        // max-height: 600px;
         height: auto;
         overflow-y: auto;
 

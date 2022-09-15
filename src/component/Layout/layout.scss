@@ -47,22 +47,27 @@
             margin-top: 7rem;
 
             .center-div{
-                // height: 85vh;
+                height: 100vh;
                 // height: 90vh;
                 overscroll-behavior: auto;
                 overflow-y: scroll;
 
                 .subscribers{
-                    // position: fixed;
-                    bottom: 50px;
-                    // background: red;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    max-width: 480px;
-                    width: 100%;
-                    z-index: 7;
+                //     // position: fixed;
+                //     bottom: 50px;
+                //     // background: red;
+                //     display: flex;
+                //     align-items: center;
+                //     justify-content: flex-start;
+                //     // max-width: 480px;
+                //     width: 100%;
+                //     z-index: 7;
+                // margin-top: 3rem;
+                margin-bottom: 3rem;
                 }
+                // @media screen and (max-width: '430px') {
+                //     height: 95vh !important;
+                // }
             }
             .mobile-nav{
                 display: none;
@@ -70,7 +75,7 @@
 
             .main-div{
                 display: flex;
-                height: 72vh;
+                
 
                 .main{
                     box-sizing: border-box;
@@ -88,8 +93,10 @@
                 }
             
                 @media screen and (max-width: 480px){
-                    height: 62vh;
+                    height: 88vh;
                     margin-top: 4.3rem;
+
+
                 }
 
 

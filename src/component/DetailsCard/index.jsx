@@ -13,8 +13,13 @@ export default function DetailsCard(props) {
     }
 
     const sanitizedData = () => ({
-    __html: DOMPurify.sanitize(read ? (props.description ?? "CryptoBlades is a Play to Earn RPG that revolves around the gathering of legendary Blades, and mighty heroes to wield them! Strategically equip your party, and take advantage of the enemy's weaknesses as you gather experience and build your heroes up to take down legendary foes! Earn SKILL tokens and use them to forge Blades that you can use or sell on the marketplace." ).substr(0, 100) : props.description)
+        __html: DOMPurify.sanitize(read ? (props.description ?? "CryptoBlades is a Play to Earn RPG that revolves around the gathering of legendary Blades, and mighty heroes to wield them! Strategically equip your party, and take advantage of the enemy's weaknesses as you gather experience and build your heroes up to take down legendary foes! Earn SKILL tokens and use them to forge Blades that you can use or sell on the marketplace." ).substr(0, 100) : props.description)
     })
+    var msg = "Name Surname a"
+    var acronym = msg.split(" ");
+    const listNames = acronym.map((list) => {return list})
+console.log(listNames);
+
   return (
     <div className='details-card-container'>
         <div className="details-card-holder">

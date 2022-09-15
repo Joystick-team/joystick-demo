@@ -6,9 +6,9 @@ import  { default as api } from '../../config/config.json'
 import DetailsCard from '../DetailsCard';
 import ModalEffect from '../Modal';
 import useFetch from '../../hooks/useFetch';
-import Spinner from 'react-bootstrap/Spinner';
 import './pagination.scss';
 import { AppContextInit } from '../../context/AppContext';
+import LoadingScreen from '../LoadingScreen';
 
 
 function PaginationComponet(props) {
@@ -22,14 +22,15 @@ function PaginationComponet(props) {
   const [defaultPage, setDefaultPage] = useState(1)
   const [currentPage, setCurrentPost] = useState(1)
   // eslint-disable-next-line
-  const [postPerPage, setPostPerPage] = useState(6)
+  const [postPerPage, setPostPerPage] = useState(10)
   const lastPageIndex = currentPage * postPerPage
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (props.api)?.slice(firstPageIndex, lastPageIndex)
 
   // eslint-disable-next-line
-  const totalPages = data && data?.data?.metadata?.total
-console.log(totalPages);
+  const totalPost = data && data?.data?.metadata?.total;
+  const totalPage = totalPost / postPerPage;
+
   const [isOpen, setIsOpen] = useState(false)
   const [details, setDetails] = useState(null);
 
@@ -71,8 +72,8 @@ console.log(totalPages);
               {details && <DetailsCard {...(details ? {...details} : {})} />}
           </div>
       </ModalEffect>
+            <LoadingScreen isloading={loading} />
       <div className="site-games">
-      {loading && <span style={{textAlign: 'center', margin: '5% 50%'}}> <Spinner animation="border" /></span>}
       {siteGames}
       </div>
       
@@ -80,7 +81,8 @@ console.log(totalPages);
       <div className='pagination-container'>
         <PaginationRange 
           firstPosts={defaultPage}
-          totalPosts={totalPages} 
+          totalPosts={totalPost} 
+          totalPage={totalPage}
           postPerPage={postPerPage} 
           // displayPages={3}
           setCurrentPageIndex={setCurrentPost}
