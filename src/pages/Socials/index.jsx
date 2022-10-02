@@ -2,8 +2,7 @@ import React,{useState,useEffect} from 'react'
 import socialsavatar from '../../assets/images/socialsavatar.png'
 import profilebg from '../../assets/images/profile-bg.png'
 import { MdOutlineEdit } from 'react-icons/md'
-import postData from '../../Store/postfile'
-import Posts from '../../component/Posts'
+
 
 import './socials.scss'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
@@ -11,11 +10,29 @@ import Chats from '../../component/Chats'
 import Friendrequest from '../../component/Chats/Friendrequest'
 import FriendrequestData from '../../component/Chats/Friendrequest/FriendrequestData'
 import { Tab, Tabs } from 'react-bootstrap'
+import MyPost from './pages/MyPost'
+import Feed from './pages/Feeds'
+import  { default as api } from '../../config/config.json'
+import axios from 'axios';
 
 export default function Socials() {
   const [sliderCount, setSliderCount] = useState(Number(6))
-
+  const token = localStorage.getItem('userToken')
+  const getData = async()=>{
+    var config = {
+        method: 'get',
+        url: `${api.test_url}/api/v1/auth/profile`,
+        headers: { Authorization: `Bearer ${token}` },
+      };
+    try {
+        const res = await axios(config)
+        console.log(res.data)
+    } catch (error) {
+        console.log(error.response.data)
+    }
+  }
   useEffect(() => {
+    getData()
     if(window.innerWidth < 1200){
       setSliderCount(Number(4))
     }
@@ -48,27 +65,12 @@ export default function Socials() {
             className="mb-3"
           >
             <Tab eventKey="post" title="Post">
-            <div className="post-card-container">
-              {
-                postData.map((data, idx) => {
-                  return <Posts 
-                            key={data.id}
-                            img={data.images}
-                            likeicon = {data.likeicon}
-                            dislikeicon={data.dislikeicon}
-                            messageicon={data.messageicon}
-                            shareicon={data.shareicon}
-                            likescount={data.likescount}
-                            dislikescount={data.dislikescount}
-                            name={data.name}
-                            content={data.content}
-                          />
-                })
-              }
-              </div>
+              {/* My post component here */}
+              <MyPost/>
             </Tab>
             <Tab eventKey="feeds" title="Feeds">
-               The Feeds Screen
+               {/* The Feeds Screen */}
+               <Feed/>
             </Tab>
             <Tab eventKey="community" title="Community">
             The Community Screen
