@@ -18,6 +18,7 @@ import ErrorPage from './pages/ErrorPage';
 import LandingPage from './pages/LandingPage';
 import { ThemeProvider } from './ThemeContext';
 import AppContextContainer from './context/AppContext';
+import WebinarCall from './pages/Live/WebinarCall';
 
 
 function App() {
@@ -53,7 +54,10 @@ function App() {
                 path='/store' element={<Store/>}
               />
               <Route
-                path='/livestream' element={< Livescream/>}
+                exact path='/livestream' element={< Livescream/>}
+              />
+              <Route
+                exact path='/livestream/:url' element={<WebinarCall/>}
               />
               <Route
                 path='/library' element={< Library/>}
