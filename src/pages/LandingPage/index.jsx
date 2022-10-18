@@ -17,8 +17,6 @@ export default function LandingPage(props) {
     //eslint-disable-next-line
     const [loading, data, error] = useFetch(url)
     const offSiteGame = useMemo(() => { return data?.data}, [data])
-    console.log('data', offSiteGame);
-
 
     // function openModal(data) {
     //     setIsOpen(true);

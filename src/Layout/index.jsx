@@ -1,13 +1,13 @@
 import React from 'react'
 import './layout.scss'
-import TopNav from '../NavMenus/TopNav'
+import TopNav from '../component/NavMenus/TopNav'
 // import SideNav from '../NavMenus/SideNav'
-import BottomNav from '../NavMenus/BottomNav'
-import MobileSideNav from '../NavMenus/MobileSideNav'
-import { AppContextInit } from '../../context/AppContext'
-import DropAlert from '../ErrorAlert'
-import DrawerNav from '../NavMenus/DrawalNav'
-import Subscription from '../Subscription'
+import BottomNav from '../component/NavMenus/BottomNav'
+import MobileSideNav from '../component/NavMenus/MobileSideNav'
+import { AppContextInit } from '../context/AppContext'
+import DropAlert from '../component/ErrorAlert'
+import DrawerNav from '../component/NavMenus/DrawalNav'
+import Subscription from '../component/Subscription'
 
 
 export default function Layout(props) {
