@@ -22,7 +22,7 @@ export default function DetailsCard(props) {
         <div className="details-card-holder">
             <div className="details-card">
                 <div className="details-card-banner">
-                    <img src={props.images.large ?? banner} alt={''} />
+                    <img src={props.image ?? banner} alt={''} />
                     <div className="title">{props.name}</div>
                     <LoadingButton className='btn-play' color="danger" title='play'/>
                 </div>
@@ -33,7 +33,7 @@ export default function DetailsCard(props) {
                     </div>
                     <div className="genres">
                         <div className='topic'>Genres</div>
-                        <p>{props.genres ?? 'RPG, DeFi'}</p>
+                        <p>{props.tags_names.map((tag) => [tag]) ?? 'RPG, DeFi'}</p>
                     </div>
                     <div className="infomation">
                         <div className='topic'>Information</div>

@@ -18,6 +18,15 @@ export default function LandingPage(props) {
     const [loading, data, error] = useFetch(url)
     const offSiteGame = useMemo(() => { return data?.data}, [data])
 
+    const online = navigator.onLine
+    const connection = navigator.connection
+    const userAgent = navigator.userAgent
+    console.log('====================================');
+    console.log('online', online);
+    console.log('connection', connection);
+    console.log('userAgent', userAgent);
+    console.log('Data', offSiteGame);
+    console.log('====================================');
     // function openModal(data) {
     //     setIsOpen(true);
     //     setDetails(data)

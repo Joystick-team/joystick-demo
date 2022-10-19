@@ -22,7 +22,7 @@ function PaginationComponet(props) {
   const [defaultPage, setDefaultPage] = useState(1)
   const [currentPage, setCurrentPost] = useState(1)
   // eslint-disable-next-line
-  const [postPerPage, setPostPerPage] = useState(10)
+  const [postPerPage, setPostPerPage] = useState(15)
   const lastPageIndex = currentPage * postPerPage
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (props.api)?.slice(firstPageIndex, lastPageIndex)
@@ -37,7 +37,7 @@ function PaginationComponet(props) {
   if (error) {
       setSuccess(false)
       setIsUser(true)
-      setMessage('Check your internet Connection')
+      setMessage('Games are currectly not available')
   }
 
   function openModal(data) {
@@ -54,9 +54,8 @@ function PaginationComponet(props) {
         <MyCard 
             key={game.id?.toString() ?? game.key.toString()}
             title={game.name ?? game.name}
-            text={game.text}
-            img={game?.images?.large ?? game.images}
-            // button={game.btn}
+            // text={game.description}
+            img={game?.images?.large ?? game.image}
             button={props.btn === 'OnsiteGames' ? "Play" : "More Info" }
             openModal={props.btn === 'OnsiteGames' ? "onsitefunction()" : openModal.bind(this, game)
             }
@@ -69,12 +68,18 @@ function PaginationComponet(props) {
     <div style={{display: 'block'}}>
       <ModalEffect show={isOpen} closeModal={closeModal}>
           <div className="site-games">
-              {details && <DetailsCard {...(details ? {...details} : {})} />}
+              {details && <DetailsCard {...(details && {...details})} />}
           </div>
       </ModalEffect>
-            <LoadingScreen isloading={loading} />
+      {loading && <LoadingScreen isloading={loading} /> }
       <div className="site-games">
-      {siteGames}
+      { 
+          !error ? siteGames 
+           :
+          <div className="" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+             No Data Found 
+          </div>
+      }
       </div>
       
       <br />
