@@ -1,6 +1,5 @@
 import React from 'react'
-import Layout from '..';
-
+import Layout from '../index'
 class ErrorBoundary extends React.Component {
     
     state = { hasError: false };
@@ -17,11 +16,13 @@ class ErrorBoundary extends React.Component {
         if (this.state.hasError) {
             return  <> 
                 {/* <Layout> */}
-                    <h1>Oops, we done goofed up <a href='/'> Go Back Home</a></h1>
+                    <h1>Oops, an Error occurred <a href='/'> Go Back Home</a></h1>
                 {/* </Layout> */}
             </>
+        }else{
+            return <> {this.props.children} </>
         }
-        return <> {this.props.children} </>
+        
     }  
 }
 
