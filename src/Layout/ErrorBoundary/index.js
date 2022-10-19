@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../index'
 class ErrorBoundary extends React.Component {
     
     state = { hasError: false };
