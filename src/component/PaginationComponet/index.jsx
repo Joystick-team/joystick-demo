@@ -33,7 +33,6 @@ function PaginationComponet(props) {
 
   const [isOpen, setIsOpen] = useState(false)
   const [details, setDetails] = useState(null);
-
   if (error) {
       setSuccess(false)
       setIsUser(true)

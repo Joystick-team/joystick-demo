@@ -24,11 +24,10 @@ import ErrorBoundary from './Layout/ErrorBoundary/index.js';
 function App() {
 
   return (
-    <ErrorBoundary>
-    <AppContextContainer>
       <div className="App">
-        
         <Router>
+          <ErrorBoundary>
+          <AppContextContainer>
           <ThemeProvider>
           <Layout>
           
@@ -96,10 +95,10 @@ function App() {
               </Routes>
             </Layout>
             </ThemeProvider>
+            </AppContextContainer>
+            </ErrorBoundary>
           </Router >
       </div>
-      </AppContextContainer>
-    </ErrorBoundary>
   );
 }
 
