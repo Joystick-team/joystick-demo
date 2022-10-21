@@ -84,17 +84,19 @@ function PaginationComponet(props) {
       
       <br />
       <div className='pagination-container'>
-        <PaginationRange 
-          firstPosts={defaultPage}
-          totalPosts={totalPost} 
-          totalPage={totalPage}
-          postPerPage={postPerPage} 
-          // displayPages={3}
-          setCurrentPageIndex={setCurrentPost}
-          setCurrentPost={setCurrentPost}
-          currentPage={currentPage}
-          active={currentPage}
-        />
+        {!error &&
+          <PaginationRange 
+            firstPosts={defaultPage}
+            totalPosts={totalPost} 
+            totalPage={totalPage}
+            postPerPage={postPerPage} 
+            // displayPages={3}
+            setCurrentPageIndex={setCurrentPost}
+            setCurrentPost={setCurrentPost}
+            currentPage={currentPage}
+            active={currentPage}
+          />
+        }
       </div>
     </div>
   );
