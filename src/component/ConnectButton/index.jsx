@@ -121,7 +121,7 @@ const AddSkaleChain = async() =>{
       });
       } catch (addError) {
         // handle "add" error
-        console.log(addError)
+        throw Error(addError)
       }
     }
 

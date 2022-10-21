@@ -12,38 +12,30 @@ const PaginationRange = ({totalPosts, postPerPage, setCurrentPageIndex, totalPag
     const incrementCount = () => {
         if(currentPage < (totalPage ?? 12)){
             setCurrentPost(currentPage + 1)
-            console.log('goA ', currentPage);
         }else{
             setCurrentPost(e => e)
-            console.log('go-1A ', currentPage);
         }
     }
 
     const decrementCount = () => {
         if(1 < currentPage && currentPage < (totalPage ?? 12)){
             setCurrentPost(currentPage - 1)
-            console.log('goB ', currentPage);
         }else{
             setCurrentPost(e => e)
-            console.log('go-1B ', currentPage);
         }
     }
     const incrementCountPage = () => {
         if(currentPage <= (totalPage ?? 12)){
             setCurrentPost(currentPage + 3)
-            console.log('go2A ', currentPage);
         }else{
             setCurrentPost(e => e)
-            console.log('go-2A ', currentPage);
         }
     }
     const decrementCountPage = () => {
         if(1 < currentPage && currentPage >= (totalPage ?? 12)){
             setCurrentPost(currentPage - 3)
-            console.log('go2B ', currentPage);
         }else{
             setCurrentPost(e => e)
-            console.log('go-2B ', currentPage);
         }
     }
 

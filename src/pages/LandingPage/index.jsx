@@ -17,9 +17,8 @@ export default function LandingPage(props) {
     //eslint-disable-next-line
     const [loading, data, error] = useFetch(url)
     const offSiteGame = useMemo(() => { return data?.data}, [data])
-    console.log('data', offSiteGame);
 
-
+    const online = navigator.onLine
     // function openModal(data) {
     //     setIsOpen(true);
     //     setDetails(data)
@@ -106,7 +105,9 @@ export default function LandingPage(props) {
                     </div>
                 </div>  */}
                 <div className="page_sites">
-                    <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/>
+                    {!online ? 'Check your internet connection' :
+                        <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/>
+                    }
                 </div>
             </div>
         </div>

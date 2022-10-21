@@ -15,17 +15,14 @@ export default function DetailsCard(props) {
     const sanitizedData = () => ({
         __html: DOMPurify.sanitize(read ? (props.description ?? "CryptoBlades is a Play to Earn RPG that revolves around the gathering of legendary Blades, and mighty heroes to wield them! Strategically equip your party, and take advantage of the enemy's weaknesses as you gather experience and build your heroes up to take down legendary foes! Earn SKILL tokens and use them to forge Blades that you can use or sell on the marketplace." ).substr(0, 100) : props.description)
     })
-    var msg = "Name Surname a"
-    var acronym = msg.split(" ");
-    const listNames = acronym.map((list) => {return list})
-console.log(listNames);
+
 
   return (
     <div className='details-card-container'>
         <div className="details-card-holder">
             <div className="details-card">
                 <div className="details-card-banner">
-                    <img src={props.images.large ?? banner} alt={''} />
+                    <img src={props.image ?? banner} alt={''} />
                     <div className="title">{props.name}</div>
                     <LoadingButton className='btn-play' color="danger" title='play'/>
                 </div>
@@ -36,7 +33,7 @@ console.log(listNames);
                     </div>
                     <div className="genres">
                         <div className='topic'>Genres</div>
-                        <p>{props.genres ?? 'RPG, DeFi'}</p>
+                        <p>{props.tags_names.map((tag) => [tag]) ?? 'RPG, DeFi'}</p>
                     </div>
                     <div className="infomation">
                         <div className='topic'>Information</div>

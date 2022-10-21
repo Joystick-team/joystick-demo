@@ -96,7 +96,7 @@ const createAndJoinCallFrame = useCallback(async () => {
  return (
   <>
     <VideoContainer height={height}>
-       <Callframe ref={videoRef} />
+       <CallFrame ref={videoRef} />
      </VideoContainer>
   </>
 );

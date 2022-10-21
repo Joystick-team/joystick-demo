@@ -22,72 +22,72 @@ const AllGamesData = [
         key: '6',
         name: 'Unravel Two',
         text: 'Adventure',
-        images: unravel,
+        image: unravel,
         button: "Play",
     },
     {        
         key: '3',
         name: 'Clash of Clans',
         text: 'Adventure',
-        images: clash,
+        image: clash,
         button: "Play",
     },
     {        
         key: '7',
         name: 'Tetris',
         text: 'Arcade',
-        images: Tetris,
+        image: Tetris,
         button: "Play",
     },
     {        
         key: '8',
         name: 'Pac Man',
         text: 'Arcade',
-        images: pacman,
+        image: pacman,
         button: "Play",
     },
     {        
         key: '3',
         name: 'Clash of Clans',
         text: 'Adventure',
-        images: clash,
+        image: clash,
         button: "Play",
     },
     {        
         key: '1',
         name: 'Axie Infinity',
         text: 'Blockchain',
-        images: axie,
+        image: axie,
         button: "Play",
     },
     {        
         key: '2',
         name: 'War of Ants',
         text: 'Blockchain',
-        images: war,
+        image: war,
         button: "Play",
     },
     {        
         key: '4',
         name: 'Clash of Clans',
         text: 'Adventure',
-        images: forestnight,
+        image: forestnight,
         button: "Play",
     },
     {        
         key: '5',
         name: 'Age of Rust',
         text: 'Blockchain',
-        images: rust,
+        image: rust,
         button: "Play",
     }
 ]
 
-function OffSiteGame(key, name, text, images, btn, isOwn) {
+function OffSiteGame(key, name, text, image, btn, isOwn) {
     this.key = key
     this.name = name
     this.text = text 
-    this.images = images
+    this.image = image
     this.btn = btn
     this.btn = 'More Info' 
     this.isOwn = isOwn
