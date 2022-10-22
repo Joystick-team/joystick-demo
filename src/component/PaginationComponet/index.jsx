@@ -12,11 +12,7 @@ import LoadingScreen from '../LoadingScreen';
 
 
 function PaginationComponet(props) {
-  //eslint-disable-next-line
-  const { isUser, setIsUser, message, setMessage, setSuccess} = AppContextInit()
-  const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=1&limit=15`
-  //eslint-disable-next-line
-  const [loading, data, error] = useFetch(url)
+  const { setIsUser, setMessage, setSuccess} = AppContextInit()
   
   // eslint-disable-next-line
   const [defaultPage, setDefaultPage] = useState(1)
@@ -26,6 +22,9 @@ function PaginationComponet(props) {
   const lastPageIndex = currentPage * postPerPage
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (props.api)?.slice(firstPageIndex, lastPageIndex)
+
+  const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=${currentPage}&limit=15`
+  const [loading, data, error] = useFetch(url)
 
   // eslint-disable-next-line
   const totalPost = data && data?.data?.metadata?.total;

@@ -3,6 +3,10 @@
   justify-content: center;
   align-items: center;
   color: var(--secondary);
+  overflow-x: auto;
+  max-width: 310px;
+  width: 100%;
+  margin: 0 auto;
 
   .page-link {
       margin: 0 .3rem;
