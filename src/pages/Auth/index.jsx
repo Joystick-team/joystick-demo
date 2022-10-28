@@ -50,9 +50,9 @@ export default function Auth(props) {
         try{ 
             setIsLoading(true)
             const response =  await axios(config);
+            console.log(response.status)
                 setSuccess(true)
                 setMessage(() => res)
-                console.log(success)
                 localStorage.setItem('userToken', response.data.access_token)
                 setIsLoading(false)
                 setIsUser(true)
