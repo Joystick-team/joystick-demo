@@ -9,6 +9,10 @@ export default function ErrorPage({message, btn, ...rest}) {
     
     const goBack = () => {
         navigate(-1)
+
+        setTimeout(() => {
+            window.location.reload(false)
+        }, 200);
     }
   return (
     <div className='error-page-container'>

@@ -65,7 +65,6 @@ export default function LandingPage(props) {
 
 // eslint-disable-next-line
     // const [currentValue, setCurrentValue] = useState(offSiteGame)
-
     let handleChange = (gameOption) => {
         if(gameOption === 'On-site') { 
             // setCurrentValue(games2)
