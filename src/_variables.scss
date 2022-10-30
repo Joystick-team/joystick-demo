@@ -22,6 +22,8 @@ html{
     --wallet-tx-div:#D2D5DC;
     --token-stat-text :#0D0D0D;
     --select-background : var(--secondary-background);
+    --nodata-title: #141414;
+    --nodata-text: rgba(83, 78, 78, 0.9);
 }
 html[data-theme='dark']{
     --primary: #fff;
@@ -46,4 +48,7 @@ html[data-theme='dark']{
     --wallet-tx-div:#1D2024;
     --token-stat-text :#FFFFFF;
     --select-background: #141414;
+    --nodata-title: #fff;
+    --nodata-text: rgba(146, 137, 137, 0.9);
+
 }

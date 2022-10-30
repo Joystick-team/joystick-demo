@@ -1,0 +1,30 @@
+.nodata__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .nodata{
+
+        img{
+            max-width: 211px;
+            max-height: 211px;
+        }
+
+        h3{
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 49px;
+            color: var(--nodata-title);
+        }
+
+        p{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 29px;
+            color: var(--secondary);
+            // color: hsla(0, 3%, 32%, 0.9);
+        }
+    }
+}

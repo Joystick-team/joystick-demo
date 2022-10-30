@@ -9,6 +9,7 @@ import useFetch from '../../hooks/useFetch';
 import './pagination.scss';
 import { AppContextInit } from '../../context/AppContext';
 import LoadingScreen from '../LoadingScreen';
+import NoData from '../../pages/ErrorPage/NoDataPage/nodata';
 
 
 function PaginationComponet(props) {
@@ -23,7 +24,7 @@ function PaginationComponet(props) {
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (props.api)?.slice(firstPageIndex, lastPageIndex)
 
-  const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=${currentPage}&limit=15`
+  const url = `${api?.url}/game?game_type=off_ite&sort=asc-name&page=${currentPage}&limit=15`
   const [loading, data, error] = useFetch(url)
 
   // eslint-disable-next-line
@@ -69,16 +70,14 @@ function PaginationComponet(props) {
               {details && <DetailsCard {...(details && {...details})} />}
           </div>
       </ModalEffect>
-      {loading && <LoadingScreen isloading={loading} /> }
-      <div className="site-games">
-      { 
-          !error ? siteGames 
+      {loading ? <LoadingScreen isloading={loading} /> :
+      
+          !error ? 
+          <div className="site-games"> {siteGames}  </div>
            :
-          <div className="" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-             No Data Found 
-          </div>
-      }
-      </div>
+          <NoData />
+      
+    }
       
       <br />
       <div className='pagination-container'>
