@@ -24,7 +24,7 @@ function PaginationComponet(props) {
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (props.api)?.slice(firstPageIndex, lastPageIndex)
 
-  const url = `${api?.url}/game?game_type=off_ite&sort=asc-name&page=${currentPage}&limit=15`
+  const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=${currentPage}&limit=15`
   const [loading, data, error] = useFetch(url)
 
   // eslint-disable-next-line
