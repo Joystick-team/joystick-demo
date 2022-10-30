@@ -7,6 +7,7 @@ import { default as OnsiteGames} from '../../Store/librarygamesdata'
 
 import PaginationComponet from '../../component/PaginationComponet'
 import './landingpage.scss'
+import NoInternet from '../ErrorPage/NoConnection/internet'
 
 export default function LandingPage(props) {
     const gameOptionsList = ["Off-site", "On-site"]
@@ -80,8 +81,11 @@ export default function LandingPage(props) {
     
   return (
     <div className='landing-page-container'>
+                { !online ? 
+                    <NoInternet />
+                    :
         <div className="landing-page-holder">
-            <div className="landing-page-anouncement">
+            (<div className="landing-page-anouncement">
                 <AnnouncementCarousel />
             </div>
             <div className="site-games-container">
@@ -104,13 +108,12 @@ export default function LandingPage(props) {
                     </div>
                 </div>  */}
                 <div className="page_sites">
-                    {!online ? 'Check your internet connection' :
-                        <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/>
-                    }
+                    <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/>
                 </div>
             </div>
+        )
         </div>
-
+    }
     </div>
   )
 }

@@ -25,7 +25,7 @@
                 line-height: 2;
 
                 p{
-                    color: var(--primary);
+                    color: var(--primary--text);
                     font-style: bold;
                     font-weight: 500;
                     font-size: 16px;
@@ -41,7 +41,7 @@
 
                 .nav-link {
                     padding: 0 1rem;
-                    color: var(--secondary);
+                    color: var(--secondary--text);
                 }
 
             //     .active{
@@ -106,7 +106,7 @@
                     width: 10px;
                     height: 10px;
                     border-radius: 50%;
-                    // background: var(--secondary);
+                    // background: var(--secondary--text);
                     background: #060606;
                 }
 

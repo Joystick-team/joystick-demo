@@ -11,7 +11,7 @@ export default function NoData() {
 
         setTimeout(() => {
             window.location.reload(false)
-        }, 200);
+        }, 100);
        
     }
   return (
