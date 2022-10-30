@@ -85,7 +85,7 @@ export default function LandingPage(props) {
                     <NoInternet />
                     :
         <div className="landing-page-holder">
-            (<div className="landing-page-anouncement">
+            <div className="landing-page-anouncement">
                 <AnnouncementCarousel />
             </div>
             <div className="site-games-container">
@@ -111,7 +111,7 @@ export default function LandingPage(props) {
                     <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/>
                 </div>
             </div>
-        )
+        
         </div>
     }
     </div>
