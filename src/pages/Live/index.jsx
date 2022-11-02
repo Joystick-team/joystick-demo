@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import VideoPlayer from '../../component/VideoPlayer'
+import VideoPlayer from '../../component/VideoPlayer';
+import { Tab, Tabs } from 'react-bootstrap';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { Alert} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { AppContextInit } from '../../context/AppContext'
 // import GameVideo from '../../assets/videoclips/games.mp4'
 import GameVideo from '../../assets/videoclips/BirdVideo.mp4'
 import  { default as api } from '../../config/config.json'
@@ -14,36 +16,59 @@ import { BsFillPauseFill, BsFillPlayFill, BsVoicemail } from 'react-icons/bs'
 import './livestream.scss'
 import ProfileDetails from '../../component/ProfileDetails'
 import axios from 'axios';
-import Pagination from './Pagination';
 import AllRooms from './AllRooms';
+import PaginationRange from '../../component/PaginationComponet/paginationRange';
+import History from './History';
 
 export default function Livescream() {
   const [modal, setModal] = useState(false)
-  const [message, setMessage] = useState('')
+  const [message, setMessage] = useState({success:'', failure:''})
   const [isLoading, setIsLoading] = useState(false)
+  const [state, setState] = useState({privacy: 'public', room_name:''})
   const [allRoom, setAllRoom] = useState([])
+  const [history, setHistory] = useState([])
   const [room, setRoom] = useState('');
   const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(5)
+  const [defaultPage, setDefaultPage] = useState(1)
+  const [postPerPage, setPostPerPage] = useState(4)
   const navigate = useNavigate()
 
   const getAllRoom = async()=>{
     try {
-      const res = await axios.get(`${api.test_url}/api/v1/room`)
-      setAllRoom(res.data.message.data)
+      const res = await axios.get(`${api.test_url}/api/v1/room/get-all-live-stream`)
+      // console.log(res.data)
+      setAllRoom(res.data.filter(r=> r.privacy === 'public'))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const getUserHistory = async()=>{
+    const token = localStorage.getItem('userToken')
+    try {
+      var config = {
+        method: 'get',
+        url: `${api.test_url}/api/v1/room/get-user-live-stream`,
+        headers: { Authorization: `Bearer ${token}` }
+      };
+      const res = await axios(config)
+      console.log(res.data)
+      setHistory(res.data)
     } catch (error) {
       console.log(error)
     }
   }
   useEffect(()=>{
     getAllRoom()
+    getUserHistory()
+    return () => {}
   }, [])
 
   const lastPageIndex = currentPage * postPerPage
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (allRoom)?.slice(firstPageIndex, lastPageIndex)
+  const historyPost = (history)?.slice(firstPageIndex, lastPageIndex)
 
-  console.log(allRoom)
+
   const toggleModal=()=>{
       setModal(!modal)
   }
@@ -52,18 +77,32 @@ export default function Livescream() {
   const handleSubmit = async(e)=>{
     e.preventDefault()
     setIsLoading(true)
+    console.log(state)
+    const token = localStorage.getItem('userToken')
+    if(!token){
+      return setMessage({failure: "User login is required!!"})
+    }
     try{
-      const res = await axios.post(`${api.test_url}/api/v1/room/create-room`, {room_name: room})
-      if(res.data.data.info){
-        setMessage(res.data.data.info)
-      }
-      else{
-        setMessage('room created')
-        navigate(`/livestream/${room}`, { state: {token: res.data.data2.token } });
-      }
+      var config = {
+        method: 'post',
+        url: `${api.test_url}/api/v1/room`,
+        headers: { Authorization: `Bearer ${token}` },
+        data: state
+      };
+      const res = await axios(config)
+      setMessage({success: 'room created'})
+      console.log(res.data)
+      localStorage.setItem("meeting-token", res.data.meeting_token.token)
+      // navigate(`/livestream/${res.data.room.name}`);
       setIsLoading(false)
+      setTimeout(()=>{
+        toggleModal()
+        setMessage({success: '', failure: ''})
+        window.location.reload()
+      }, 5000)
     }catch(err){
-      console.log(err.response.data);
+      console.log(err);
+      setMessage({failure: "Something went wrong"})
       setIsLoading(false)
     }
   }
@@ -72,31 +111,80 @@ export default function Livescream() {
       {/* <Layout>  */}
         <div className="main"> 
           <div className="btn-live-container">
-            <button className='btn-live mt-2' onClick={toggleModal}>
+            <button className='btn-live mt-2 mb-3' onClick={toggleModal}>
               Go Live
             </button>
           </div>
-          {allRoom.length > 0 ? (
-            <>
-              <AllRooms allRoom={allRoom}/>
-              <div className='row mt-3'>
-                <Pagination
-                postPerPage={postPerPage}
-                totalPosts={allRoom.length} />
+          <div className="stream-tab">
+            <div className="row">
+              <div className='col-12'>
+                <Tabs
+                defaultActiveKey="post"
+                transition={false}
+                id="noanim-tab-example"
+                className="mb-1 pt-2 pl-2"
+                >
+                <Tab eventKey="post" title="Active Stream">
+                    {allRoom.length > 0 ? (
+                      <>
+                        <AllRooms allRoom={currentPost}/>
+                        <div className='pagination-container mt-2'>
+                          <PaginationRange 
+                            firstPosts={defaultPage}
+                            totalPosts={allRoom.length} 
+                            totalPage={allRoom.length/postPerPage}
+                            postPerPage={postPerPage} 
+                            // displayPages={3}
+                            setCurrentPageIndex={setCurrentPage}
+                            setCurrentPost={setCurrentPage}
+                            currentPage={currentPage}
+                            active={currentPage}
+                          />
+                        </div>
+                      </>
+                    ): (
+                      <>
+                        <div className="live-video">
+                          <VideoPlayer source={GameVideo} width={'100%'} coverpicture={livegamecover} />
+                        </div>
+                        <div className="video-icons">
+                          <span className="video-icons-one" style={{color: 'white'}}> <BsFillPlayFill /></span>
+                          <span><BsFillPauseFill /></span>
+                          <span><BsVoicemail /></span>
+                        </div>
+                      </>
+                    )}
+                </Tab>
+                <Tab eventKey="feeds" title="History">
+                {allRoom.length > 0 ? (
+                  <>
+                  
+                    <History history={historyPost}/>
+                    <div className='pagination-container mt-2'>
+                        <PaginationRange 
+                          firstPosts={defaultPage}
+                          totalPosts={history.length} 
+                          totalPage={history.length/postPerPage}
+                          postPerPage={postPerPage} 
+                          // displayPages={3}
+                          setCurrentPageIndex={setCurrentPage}
+                          setCurrentPost={setCurrentPage}
+                          currentPage={currentPage}
+                          active={currentPage}
+                        />
+                    </div>
+                  </>
+                  ):
+                  (
+                    <div className='container mt-2'>
+                      <h4>No livestream records found</h4>
+                    </div>
+                  )}
+                </Tab>
+              </Tabs>
               </div>
-            </>
-          ): (
-            <>
-              <div className="live-video">
-                <VideoPlayer source={GameVideo} width={'100%'} coverpicture={livegamecover} />
-              </div>
-              <div className="video-icons">
-                <span className="video-icons-one" style={{color: 'white'}}> <BsFillPlayFill /></span>
-                <span><BsFillPauseFill /></span>
-                <span><BsVoicemail /></span>
-              </div>
-            </>
-          )}
+            </div>
+          </div>
         </div>
         <div className="side-adverts" >
         <ProfileDetails />
@@ -113,17 +201,24 @@ export default function Livescream() {
                       <h6>Create a meeting room</h6>
                   </ModalHeader>
                     <ModalBody>
-                        {message && <Alert variant='danger' className='text-center'>{message}</Alert>}
+                        {message.success && 
+                        <Alert variant='success' className='text-center'>{message.success}</Alert>}
+                        {message.failure && <Alert variant='danger' className=' text-center'>{message.failure}</Alert>}
                         <form className="mt-2" onSubmit={(v)=> handleSubmit(v)}>
                             <div className='mt-2'>
                               <div className='form-group'>
                                 <input type='text' 
-                                onChange={(e)=> setRoom(e.target.value)}
+                                onChange={(e)=> setState({...state, room_name:e.target.value})}
                                 className='form-control'
                                 placeholder='Meeting-name'
                                 />
                               </div>
-                              <div className='form-group'>
+                              <label>Room privacy</label>
+                              <div onChange={(e)=> setState({...state,privacy:e.target.value})}>
+                                <input type="radio" value="public" name="privacy" checked /> Public <span>{ }</span>
+                                <input type="radio" value="private" name="privacy" /> Private
+                              </div>
+                              <div className='form-group mt-2'>
                                 <button 
                                 className='btn btn-md btn-success w-100'>
                                   {isLoading ? "Loading..." : "Create room"}

@@ -65,11 +65,9 @@ export default function Socials() {
             className="mb-3"
           >
             <Tab eventKey="post" title="Post">
-              {/* My post component here */}
               <MyPost/>
             </Tab>
             <Tab eventKey="feeds" title="Feeds">
-               {/* The Feeds Screen */}
                <Feed/>
             </Tab>
             <Tab eventKey="community" title="Community">
