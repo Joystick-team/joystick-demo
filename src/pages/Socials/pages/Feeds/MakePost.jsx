@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import socialsavatar from '../../../../assets/images/socialsavatar.png'
 import styled from 'styled-components'
 
@@ -119,7 +119,7 @@ function MakePost(props) {
                             <div className='row sl'>
                                 <div className='col-2 col-md-1 pl-4 pr-0'>
                                     <img loading='eager' height={'40px'} className='rounded'
-                                    src={socialsavatar}  alt="Profile-pics" />
+                                    src={socialsavatar}  alt="Profile-picture" />
                                 </div>
                                 <div className='col-10 col-md-11 pl-0'>
                                     <textarea type='text' 

@@ -31,7 +31,7 @@
         text-transform: uppercase;
     }
 
-
+    
     .live-video{
         display: flex;
         justify-content: center;
@@ -96,6 +96,46 @@
         .chat-container{
             overflow-y: none;
             max-height: 60vh;
+        }
+    }
+    .row{
+        color: var(--secondary);
+        background-color: var(--secondary-background);
+        table{
+            color: var(--secondary);
+            background-color: var(--secondary-background);
+        }
+        .modal-content {
+            margin-top: 300px !important;
+            background-color: var(--secondary-background);
+          }
+        .modal-backdrop {
+        background-color: black !important;
+        }
+    }
+    .stream-tab{
+        .nav-link{
+            color: var(--secondary);
+            background-color: var(--secondary-background);
+            margin-right: 1rem;
+        }
+
+        .nav-item:hover{
+            border: none;
+            opacity: .5;
+        }
+
+        .nav-item .active{
+            border-bottom: red solid 4px;
+        }
+
+        #noanim-tab-example-tab-feeds{
+            color: var(--secondary);
+            background-color: none;
+        }
+
+        .nav-tabs {
+            border: none;
         }
     }
 }
