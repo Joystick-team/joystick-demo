@@ -7,7 +7,6 @@ import { default as OnsiteGames} from '../../Store/librarygamesdata'
 
 import PaginationComponet from '../../component/PaginationComponet'
 import './landingpage.scss'
-import NoInternet from '../ErrorPage/NoConnection/internet'
 
 export default function LandingPage(props) {
     const gameOptionsList = ["Off-site", "On-site"]
@@ -18,8 +17,9 @@ export default function LandingPage(props) {
     //eslint-disable-next-line
     const [loading, data, error] = useFetch(url)
     const offSiteGame = useMemo(() => { return data?.data}, [data])
+    console.log('data', offSiteGame);
 
-    const online = navigator.onLine
+
     // function openModal(data) {
     //     setIsOpen(true);
     //     setDetails(data)
@@ -66,6 +66,7 @@ export default function LandingPage(props) {
 
 // eslint-disable-next-line
     // const [currentValue, setCurrentValue] = useState(offSiteGame)
+
     let handleChange = (gameOption) => {
         if(gameOption === 'On-site') { 
             // setCurrentValue(games2)
@@ -81,9 +82,6 @@ export default function LandingPage(props) {
     
   return (
     <div className='landing-page-container'>
-                { !online ? 
-                    <NoInternet />
-                    :
         <div className="landing-page-holder">
             <div className="landing-page-anouncement">
                 <AnnouncementCarousel />
@@ -111,9 +109,8 @@ export default function LandingPage(props) {
                     <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/>
                 </div>
             </div>
-        
         </div>
-    }
+
     </div>
   )
 }

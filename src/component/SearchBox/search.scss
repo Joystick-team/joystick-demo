@@ -27,7 +27,7 @@
 
     input[type=search]{
         &:focus, &:active{
-            color: var(--secondary--text-color);
+            color: var(--secondary-color);
             border: transparent;
         }
     }

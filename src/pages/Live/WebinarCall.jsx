@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import { useNavigate,  useParams } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import DailyIframe from "@daily-co/daily-js";
 import styled from "styled-components";
 import  { default as api } from '../../config/config.json'
@@ -52,8 +52,13 @@ const WebinarCall = (props) => {
 
  const leftMeeting = useCallback(async() => {
    try {
+    var config = {
+      method: 'delete',
+      url: `${api.url}/room/${url}`,
+      headers: { Authorization: `Bearer ${token}` }
+    };
     if(token){
-      const res = await axios.delete(`${api.test_url}/api/v1/room/${url}`)
+      const res = await axios(config)
       localStorage.clear('meeting-token')
       window.alert(
         "Are you sure you want to leave?"
@@ -109,11 +114,14 @@ const createAndJoinCallFrame = useCallback(async () => {
   }, [updateSize]);
 
   const getRoom = async()=>{
-    // sFKdMo
-    // let priv = 'private'
-    // let data = {privacy: priv, pass_code :'sFKdMo'}
+    const token = localStorage.getItem('userToken')
+    var config = {
+      method: 'get',
+      url: `${api.url}/room/${url}`,
+      headers: { Authorization: `Bearer ${token}` }
+    };
     try {
-      const result = await axios.get(`${api.test_url}/api/v1/room/${url}`)
+      const result = await axios(config)
       if(result.data.privacy === 'private'){
         toggleModal()
       }

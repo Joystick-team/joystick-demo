@@ -12,7 +12,7 @@ function AllRooms({allRoom}) {
                 <div className='row pt-3'>
                     <div className='col-7 col-md-6'>
                         <ProfileDetails />
-                        <h6>Livestream name: {a.room_name}</h6>
+                        <h6>Livestream name: {a.name}</h6>
                         {/* <small>Created at: {a.created_at}</small> */}
                     </div>
                     <div className='col-5 col-md-6 text-right align-self-center'>

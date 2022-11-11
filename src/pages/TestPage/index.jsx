@@ -8,11 +8,6 @@ import { Col } from 'react-bootstrap';
 import MyCard from '../../component/MyCard';
 
 export default function TestPage() {
-  
-  if (LiberyGamesData) {
-          throw Error('WE are cooking!!!')  
-  }
-
   return (
     <div>
       <SideNav />

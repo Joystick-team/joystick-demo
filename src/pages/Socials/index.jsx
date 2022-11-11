@@ -21,7 +21,7 @@ export default function Socials() {
   const getData = async()=>{
     var config = {
         method: 'get',
-        url: `${api.test_url}/api/v1/auth/profile`,
+        url: `${api.url}/auth/profile`,
         headers: { Authorization: `Bearer ${token}` },
       };
     try {

@@ -213,7 +213,7 @@
                     border:0px;
                     border-radius: 2px;
                     outline:none;
-                   color: var(--primary--text);
+                   color: var(--primary);
                 }
                     
                 }
@@ -231,7 +231,7 @@
                 border:0px;
                 border-radius: 2px;
                 outline:none;
-                color: var( --primary--text);
+                color: var( --primary);
 
                }
              }
@@ -251,7 +251,7 @@
                 border-radius: 2px;
                 outline:none;
                 border: 0px;
-                color: var( --primary--text);
+                color: var( --primary);
              }
             }
 
@@ -471,7 +471,7 @@
 .wallet{
       //the section for the percentage loader with value
       .range__loader{
-        color: var(--primary--text);
+        color: var(--primary);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -497,7 +497,7 @@
         }
 
         @media screen and (max-width: '480px') {
-          color: var(--primary--text);
+          color: var(--primary);
         }
       }
  }

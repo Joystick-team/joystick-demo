@@ -15,7 +15,7 @@ function Feed(props) {
     const getData = async()=>{
         var config = {
             method: 'get',
-            url: `${api.test_url}/api/v1/auth/profile`,
+            url: `${api.url}/auth/profile`,
             headers: { },
           };
         try {
