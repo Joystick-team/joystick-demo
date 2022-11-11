@@ -1,7 +1,5 @@
 
 {
     "url": "https://api.joysticklabs.io/api/v1",
-    "test_url": "https://api-game-coin.herokuapp.com",
     "testServer" : "https://jsonplaceholder.typicode.com",
-    "daily_url": "https://api.daily.co/v1"
 }
