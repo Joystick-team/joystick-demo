@@ -15,7 +15,7 @@ export default function LandingPage(props) {
     const dispatch = useDispatch()
     const params = useParams()
     const id = params?.id||1
-    const {games,loading,error} = useSelector(state=>state.fetchAllGames)
+    const {games} = useSelector(state=>state.fetchAllGames)
     useEffect(() => {
         dispatch(fetchGameAction(id))
     },[dispatch,id])
