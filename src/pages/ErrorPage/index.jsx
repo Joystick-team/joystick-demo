@@ -2,7 +2,20 @@ import React from 'react'
 import ErrorImag from '../../assets/gif/404new.gif'
 
 import './errorpage.scss'
+<<<<<<< HEAD
 export default function ErrorPage() {
+=======
+export default function ErrorPage({message, btn, ...rest}) {
+    const navigate = useNavigate()
+    
+    const goBack = () => {
+        navigate(-1)
+
+        setTimeout(() => {
+            window.location.reload(false)
+        }, 200);
+    }
+>>>>>>> origin/develop
   return (
     <div className='error-page-container'>
         <div className="error-page-holder">

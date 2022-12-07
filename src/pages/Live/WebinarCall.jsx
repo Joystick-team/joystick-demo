@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import { useNavigate, useLocation, useParams } from 'react-router-dom';
+import { useNavigate,  useParams } from 'react-router-dom';
 import DailyIframe from "@daily-co/daily-js";
 import styled from "styled-components";
 import  { default as api } from '../../config/config.json'

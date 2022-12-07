@@ -1,6 +1,6 @@
 .mycard{
     .mb-3, .card{
-        color: var(--primary);
+        color: var(--primary--text);
         background: var(--background);
         display: flex;
         align-items: center;
@@ -16,6 +16,6 @@
         }
     }
     .mycard-title, .mycard-btn{
-        color: var(--primary);
+        color: var(--primary--text);
     }
 }

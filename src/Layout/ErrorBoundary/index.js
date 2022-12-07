@@ -1,5 +1,5 @@
 import React from 'react'
-import ErrorPage from '../../pages/ErrorPage';
+import DevErrorPage from '../../pages/ErrorPage/DevErrorPage/deverrorpage';
 
 class ErrorBoundary extends React.Component {
     
@@ -19,7 +19,7 @@ class ErrorBoundary extends React.Component {
 
     render() {
         if (this.state.hasError) {
-            return  <ErrorPage message={'An error has been encountered.'} btn={'Go Back'}/>
+            return  <DevErrorPage />
         }else{
             return <>
                 {this.props.children}

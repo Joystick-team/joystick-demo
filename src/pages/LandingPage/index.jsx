@@ -10,12 +10,14 @@ import { default as OnsiteGames} from '../../Store/librarygamesdata'
 
 import PaginationComponet from '../../component/PaginationComponet'
 import './landingpage.scss'
+import NoInternet from '../ErrorPage/NoConnection/internet'
 
 export default function LandingPage(props) {
+     const online = navigator.onLine
     const dispatch = useDispatch()
     const params = useParams()
     const id = params?.id||1
-    const {games} = useSelector(state=>state.fetchAllGames)
+    const {games,loading,error} = useSelector(state=>state.fetchAllGames)
     useEffect(() => {
         dispatch(fetchGameAction(id))
     },[dispatch,id])
@@ -77,7 +79,6 @@ export default function LandingPage(props) {
 
 // eslint-disable-next-line
     // const [currentValue, setCurrentValue] = useState(offSiteGame)
-
     let handleChange = (gameOption) => {
         if(gameOption === 'On-site') { 
             // setCurrentValue(games2)
@@ -93,6 +94,9 @@ export default function LandingPage(props) {
     
   return (
     <div className='landing-page-container'>
+                { !online ? 
+                    <NoInternet />
+                    :
         <div className="landing-page-holder">
             <div className="landing-page-anouncement">
                 <AnnouncementCarousel />
@@ -121,8 +125,9 @@ export default function LandingPage(props) {
                       <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} />
                 </div>
             </div>
+        
         </div>
-
+    }
     </div>
   )
 }
