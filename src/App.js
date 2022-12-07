@@ -38,6 +38,10 @@ function App() {
                   exact
                   path="/" element={<LandingPage />}
                 />
+              <Route
+                  exact
+                  path="/page/:id" element={<LandingPage />}
+                />
                 <Route
                   exact
                   path="/home" element={<HomePage/>}

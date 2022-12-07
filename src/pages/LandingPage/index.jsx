@@ -1,23 +1,34 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState,useEffect } from 'react'
+import { useSelector, useDispatch } from "react-redux"
+import {useParams}  from "react-router-dom"
+import { fetchGameAction } from '../../Actions/Games.Action'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import SelectDropDown from '../../component/SelectDropDown'
-import useFetch from '../../hooks/useFetch'
-import  { default as api } from '../../config/config.json'
+// import useFetch from '../../hooks/useFetch'
+// import  { default as api } from '../../config/config.json'
 import { default as OnsiteGames} from '../../Store/librarygamesdata'
 
 import PaginationComponet from '../../component/PaginationComponet'
 import './landingpage.scss'
 
 export default function LandingPage(props) {
+    const dispatch = useDispatch()
+    const params = useParams()
+    const id = params?.id||1
+    const {games,loading,error} = useSelector(state=>state.fetchAllGames)
+    useEffect(() => {
+        dispatch(fetchGameAction(id))
+    },[dispatch,id])
     const gameOptionsList = ["Off-site", "On-site"]
     const [paginate, setPaginate] = useState(false)
     
-    const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=1&limit=15`
+    // const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=${id}&limit=15`;
 
     //eslint-disable-next-line
-    const [loading, data, error] = useFetch(url)
-    const offSiteGame = useMemo(() => { return data?.data}, [data])
-    console.log('data', offSiteGame);
+    // const [loading, data, error] = useFetch(url)
+    const offSiteGame = useMemo(() => { return games?.data }, [games])
+    const metaData = useMemo(() => { return games?.metadata }, [games])
+    // console.log('data', offSiteGame);
 
 
     // function openModal(data) {
@@ -106,7 +117,8 @@ export default function LandingPage(props) {
                     </div>
                 </div>  */}
                 <div className="page_sites">
-                    <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/>
+                    {/* <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/> */}
+                      <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} />
                 </div>
             </div>
         </div>

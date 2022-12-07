@@ -1,6 +1,8 @@
 import React from 'react'
-import { useState } from 'react'
-import InputField from '../../component/InputField'
+import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from "react-redux"
+import { signupAction } from '../../Actions/Authentication/Sigup.Action'
+// import InputField from '../../component/InputField'
 import GamePad from '../../assets/images/GamePad.png'
 import  { default as api } from '../../config/config.json'
 import './auth.scss'
@@ -9,6 +11,26 @@ import axios from 'axios'
 
 export default function Auth(props) {
     // eslint-disable-next-line
+    const [first_name,setFirstname] = useState("")
+    const [last_name,setLastname] = useState("")
+    const [email,setEmail] = useState("")
+    const [username,setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const dispatch = useDispatch()
+    const { loading, error, userId } = useSelector(state => state.signup)
+    
+    useEffect(() => {
+        
+    }, [])
+    console.log("sucess", userId)
+    console.log("error", error)
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(first_name,last_name,email,password,username)
+        dispatch(signupAction(first_name,last_name,email,password,username))
+    }
+    
     const { isUser, setIsUser, message, setMessage, success, setSuccess } = AppContextInit()
 
     function InputData(type, placeholder, label, htmlFor, name, id, labelClass, inputClass, groupClass){
@@ -147,7 +169,7 @@ export default function Auth(props) {
                 </div>
                  :
                  (<div className='register-auth'>
-                 <form action="" method="post" onSubmit={handleRegisterSubmit}>
+                 {/* <form action="" method="post" onSubmit={handleRegisterSubmit}>
                      <div className="register-form-title">Join the game!</div>
                      <p className="register-description">Go inside the best gamers social network!</p>
                      
@@ -163,6 +185,50 @@ export default function Auth(props) {
                      </div>
                      <div className="form-group">
                          <button type="submit" >{`${isLoading ? 'Loading...' : 'Register'}`}</button>
+                     </div>
+                     <div className="check-register">
+                         Do you already have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Log in</span>
+                     </div>
+                 </form> */}
+                 <form action="" method="post" onSubmit={handleSubmit}>
+                     <div className="register-form-title">Join the game!</div>
+                     <p className="register-description">Go inside the best gamers social network!</p>
+                              {
+                                  loading&& <p>Loading...</p>
+                              }
+                        <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Enter Username <span>*</span></label>
+                            <input name="username" type="text" onChange={(e)=>{setUsername(e.target.value)}} value={username} className={`form-control `} placeholder={'Enter Username'} required/>
+                        </div>
+                        <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Enter Firstname <span>*</span></label>
+                            <input name="first_name" type="text" onChange={(e)=>{setFirstname(e.target.value)}} value={first_name} className={`form-control `} placeholder={'Enter Firstname'} required/>
+                        </div>
+                        <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Enter Lastname <span>*</span></label>
+                            <input name="last_name" type="text" onChange={(e)=>{setLastname(e.target.value)}} value={last_name} className={`form-control `} placeholder={'Enter Lastname'} required/>
+                        </div>
+                        <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Enter Email <span>*</span></label>
+                            <input name="email" type="email" onChange={(e)=>{setEmail(e.target.value)}} value={email} className={`form-control `} placeholder={'Enter Email'} required/>
+                        </div>
+                        <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Enter Password <span>*</span></label>
+                            <input name="password" type="password" onChange={(e)=>{setPassword(e.target.value)}} value={password} className={`form-control `} placeholder={'Enter Password'} required/>
+                        </div>
+                        {/* <div className={`form-group bmd-form-group`}>
+                            <label className={`bmd-label-static`}>Enter Username <span>*</span></label>
+                            <input name="password2" type="password" onChange={handleChange} className={`form-control `} placeholder={'Enter Confirm password'} required/>
+                        </div> */}
+
+                     <div className="form-group">
+                         <label htmlFor="register_checkbox">
+                             <input type="checkbox" className='register_checkbox' id='register_checkbox' name='register_checkbox' />
+                             {' '} I agree to terms & conditions
+                         </label>
+                     </div>
+                     <div className="form-group">
+                         <button type="submit" >Signup</button>
                      </div>
                      <div className="check-register">
                          Do you already have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Log in</span>

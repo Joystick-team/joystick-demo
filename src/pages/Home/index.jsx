@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from "react-redux"
+import { fetchGameAction } from '../../Actions/Games.Action'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import MyCard from '../../component/MyCard'
@@ -9,7 +11,9 @@ import './home.scss'
 
 export default function Home() {
   const [sliderCount, setSliderCount] = useState(Number(4))
-
+  // const {loading,success,error,games} = useSelector(state=>state.fetchAllGames)
+  // console.log(games)
+  const dispatch = useDispatch()
   useEffect(() => {
     if(window.innerWidth < 431){
       setSliderCount(Number(3))
@@ -17,7 +21,8 @@ export default function Home() {
     if(window.innerWidth < 1025){
       setSliderCount(Number(3))
     }
-  }, [])
+    dispatch(fetchGameAction())
+  }, [dispatch])
   
   return (
     <div className="home-container">
@@ -25,7 +30,7 @@ export default function Home() {
           <AnnouncementCarousel />
           <PreviousNextMethods rowNum={sliderCount} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
-              <Col>
+              <Col key={game.key}>
                   <MyCard 
                     key={game.key.toString()}
                     title={game.name}
