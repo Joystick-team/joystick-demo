@@ -6,8 +6,8 @@ export const signupAction = (first_name,last_name,email,password,username) => as
         dispatch({ type: SIGNUP_REQUEST });
         const { data } = await axios.post("https://api.joysticklabs.io/api/v1/auth/signup", { first_name, last_name, email, password, username })
         dispatch({ type: SIGNUP_SUCCESS, payload: data });
+        localStorage.setItem("signup_id",JSON.stringify(data))
     } catch (error) {
-        dispatch({ type: SIGNUP_FAIL, payload: error?.response?.data?.message[0] })
-        console.log("signup-error", error);
+        dispatch({ type: SIGNUP_FAIL, payload: error?.response?.data?.message })
     }
 }

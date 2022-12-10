@@ -7,14 +7,17 @@ import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import SidePost from '../../component/SidePost'
 import LiberyGamesData from '../../Store/gamesdata'
+import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import './home.scss'
 
 export default function Home() {
   const [sliderCount, setSliderCount] = useState(Number(4))
   // const {loading,success,error,games} = useSelector(state=>state.fetchAllGames)
+  const {userToken} = useSelector(state=>state.signin)
   // console.log(games)
   const dispatch = useDispatch()
   useEffect(() => {
+    userToken&& dispatch(profileAction())
     if(window.innerWidth < 431){
       setSliderCount(Number(3))
     }

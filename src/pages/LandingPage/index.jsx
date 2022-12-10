@@ -2,6 +2,7 @@ import React, { useMemo, useState,useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import {useParams}  from "react-router-dom"
 import { fetchGameAction } from '../../Actions/Games.Action'
+import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import SelectDropDown from '../../component/SelectDropDown'
 // import useFetch from '../../hooks/useFetch'
@@ -13,14 +14,18 @@ import './landingpage.scss'
 import NoInternet from '../ErrorPage/NoConnection/internet'
 
 export default function LandingPage(props) {
-     const online = navigator.onLine
+    const online = navigator.onLine
     const dispatch = useDispatch()
     const params = useParams()
     const id = params?.id||1
-    const {games,loading,error} = useSelector(state=>state.fetchAllGames)
+    const { games, loading, error } = useSelector(state => state.fetchAllGames)
+    const { userToken } = useSelector(state => state.signin)
+    
     useEffect(() => {
+        userToken&& dispatch(profileAction())
         dispatch(fetchGameAction(id))
-    },[dispatch,id])
+    }, [dispatch, id,userToken])
+    
     const gameOptionsList = ["Off-site", "On-site"]
     const [paginate, setPaginate] = useState(false)
     

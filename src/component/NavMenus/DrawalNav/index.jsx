@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Collapse, Nav } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import {BiMenu} from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
 import { BsBroadcast, BsDropletFill, BsFillChatLeftQuoteFill, BsFillPeopleFill, BsGearWideConnected, BsGridFill } from "react-icons/bs";
@@ -14,7 +15,10 @@ import { useTheme } from "../../../ThemeContext";
 import './drawalNav.scss'
 
 export default function DrawerNav({TogglecloseOpen}) {
-    const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(true);
+  // const {profile_data} = useSelector(state=>state.profile)
+  const { userToken } = useSelector(state => state.signin)
+  console.log("token-in-layout",userToken?.access_token)
     // eslint-disable-next-line
     const [themeDetector, setThemeDetector] = useTheme()
     return (
@@ -61,7 +65,7 @@ export default function DrawerNav({TogglecloseOpen}) {
 
                       <hr />
                       <div className="drawer_down_nav-sids">
-                        <NavLink to="/u/wallet" ><FaWallet /> <span>Wallet</span></NavLink>
+                        {userToken?.access_token && <NavLink to="/u/wallet" ><FaWallet /> <span>Wallet</span></NavLink>}
                         <NavLink to="/u/settings"><BsGearWideConnected /> <span>Settings</span></NavLink>
                         <div className="icons-drawer_nav-footer">
                             <Nav.Link href="#"  target="_blank"><FaTelegram/> </Nav.Link>

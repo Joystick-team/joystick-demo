@@ -1,7 +1,11 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState,useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from 'react-router-dom'
 import { signupAction } from '../../Actions/Authentication/Sigup.Action'
+import { loginAction } from '../../Actions/Authentication/Signin.Action'
+import Message from '../../component/Message'
+import Loader from '../../component/Loader'
 // import InputField from '../../component/InputField'
 import GamePad from '../../assets/images/GamePad.png'
 import  { default as api } from '../../config/config.json'
@@ -16,20 +20,35 @@ export default function Auth(props) {
     const [email,setEmail] = useState("")
     const [username,setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [login_username,setLogin_username] = useState("")
+    const [login_password, setLogin_password] = useState("")
+
+    const [check, setCheck] = useState(false)
+    const [disable, setDisable] = useState(true)
+    
     const dispatch = useDispatch()
-    const { loading, error, userId } = useSelector(state => state.signup)
-    
-    useEffect(() => {
-        
-    }, [])
-    console.log("sucess", userId)
-    console.log("error", error)
-    
+    const navigate = useNavigate()
+    const { loading, error, userId,signup_success } = useSelector(state => state.signup)
+    const { signin_loading,signin_success, signin_error, userToken } = useSelector(state => state.signin)
+
     const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(first_name,last_name,email,password,username)
-        dispatch(signupAction(first_name,last_name,email,password,username))
+        e.preventDefault();
+        dispatch(signupAction(first_name, last_name, email, password, username));
+        setFirstname("");
+        setLastname("");
+        setEmail("");
+        setUsername("");
+        setPassword("");
     }
+    const loginHandler = (e) => {
+        e.preventDefault()
+        dispatch(loginAction(login_username,login_password))
+    }
+    useEffect(() => {
+        signin_success && navigate("/home")
+        check&&setDisable(false)
+        !check&& setDisable(true)
+    },[signin_success,navigate,check])
     
     const { isUser, setIsUser, message, setMessage, success, setSuccess } = AppContextInit()
 
@@ -139,10 +158,13 @@ export default function Auth(props) {
                 </div>
             </div>
             <div className="auth__content">
-                { props.isRegister ? 
+                {  !props.isRegister ? 
                 
                 <div className='login-auth'>
-                    <form action="" method="post" onSubmit={handleLoginSubmit}>
+                          <form onSubmit={loginHandler}>
+                              {
+                                  signin_loading ? <Loader /> : signin_success ? "logged In!" : signin_error && <Message varriant="danger" text={signin_error} />
+                              }
                         <div className="login-form-title">Welcome Back!</div>
                         <p className="login-description">Go inside the best gamers social network!</p>
                         
@@ -151,12 +173,12 @@ export default function Auth(props) {
                         })} */}
                         <div className={`form-group bmd-form-group`}>
                             <label className={`bmd-label-static`}>Enter Username <span>*</span></label>
-                            <input name={'username'} type={'username'} onChange={handleChange} className={`form-control `} placeholder={'Enter Username'} required/>
+                            <input name='username' type="text" onChange={(e)=>{setLogin_username(e.target.value)}} value={login_username} className={`form-control `} placeholder='Enter Username' required/>
                         </div>
 
                         <div className={`form-group bmd-form-group`}>
                             <label className={`bmd-label-static`}>Password <span>*</span></label>
-                            <input name={'password'} type={'password'} onChange={handleChange} className={`form-control `} placeholder={'Enter Password'} required/>
+                            <input name='password' type="password" onChange={(e)=>{setLogin_password(e.target.value)}} value={login_password} className={`form-control `} placeholder='Enter Password' required/>
                         </div>
 
                         <div className="form-group">
@@ -191,28 +213,28 @@ export default function Auth(props) {
                      </div>
                  </form> */}
                  <form action="" method="post" onSubmit={handleSubmit}>
-                     <div className="register-form-title">Join the game!</div>
+                     <p className="register-form-title">Join the game!</p>
                      <p className="register-description">Go inside the best gamers social network!</p>
                               {
-                                  loading&& <p>Loading...</p>
+                                  loading ? <Loader /> : signup_success ? <Message text="registered! please login" />:error&&<Message text={error}/>
                               }
-                        <div className={`form-group bmd-form-group`}>
+                        <div >
                             <label className={`bmd-label-static`}>Enter Username <span>*</span></label>
                             <input name="username" type="text" onChange={(e)=>{setUsername(e.target.value)}} value={username} className={`form-control `} placeholder={'Enter Username'} required/>
                         </div>
-                        <div className={`form-group bmd-form-group`}>
+                        <div >
                             <label className={`bmd-label-static`}>Enter Firstname <span>*</span></label>
                             <input name="first_name" type="text" onChange={(e)=>{setFirstname(e.target.value)}} value={first_name} className={`form-control `} placeholder={'Enter Firstname'} required/>
                         </div>
-                        <div className={`form-group bmd-form-group`}>
+                        <div >
                             <label className={`bmd-label-static`}>Enter Lastname <span>*</span></label>
                             <input name="last_name" type="text" onChange={(e)=>{setLastname(e.target.value)}} value={last_name} className={`form-control `} placeholder={'Enter Lastname'} required/>
                         </div>
-                        <div className={`form-group bmd-form-group`}>
+                        <div >
                             <label className={`bmd-label-static`}>Enter Email <span>*</span></label>
                             <input name="email" type="email" onChange={(e)=>{setEmail(e.target.value)}} value={email} className={`form-control `} placeholder={'Enter Email'} required/>
                         </div>
-                        <div className={`form-group bmd-form-group`}>
+                        <div >
                             <label className={`bmd-label-static`}>Enter Password <span>*</span></label>
                             <input name="password" type="password" onChange={(e)=>{setPassword(e.target.value)}} value={password} className={`form-control `} placeholder={'Enter Password'} required/>
                         </div>
@@ -221,18 +243,17 @@ export default function Auth(props) {
                             <input name="password2" type="password" onChange={handleChange} className={`form-control `} placeholder={'Enter Confirm password'} required/>
                         </div> */}
 
-                     <div className="form-group">
-                         <label htmlFor="register_checkbox">
-                             <input type="checkbox" className='register_checkbox' id='register_checkbox' name='register_checkbox' />
-                             {' '} I agree to terms & conditions
-                         </label>
+                     <div className='check_box--container' >
+                        <input type="checkbox" id='register_checkbox' name='register_checkbox' onChange={(e)=>{setCheck(prev=>!prev)}} />
+                        <span>I agree to terms & conditions</span>
                      </div>
-                     <div className="form-group">
-                         <button type="submit" >Signup</button>
+                     <div>
+                         <button type="submit" disabled={disable?true:false} className={!disable&& "btn_color"}>Signup</button>
                      </div>
+                             
                      <div className="check-register">
                          Do you already have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Log in</span>
-                     </div>
+                    </div>
                  </form>
 
              </div>)

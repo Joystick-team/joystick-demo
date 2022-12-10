@@ -1,5 +1,6 @@
 import React from 'react'
-import {Nav,Container } from 'react-bootstrap'
+import { Nav, Container } from 'react-bootstrap'
+import {useSelector} from "react-redux"
 import ConnectButton from '../../ConnectButton';
 import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
@@ -12,6 +13,7 @@ import { useTheme } from '../../../ThemeContext';
 import AuthButton from '../../../pages/Auth/AuthButton';
 
 export default function TopNav() {
+    const {userToken} = useSelector(state=>state.signin)
     // eslint-disable-next-line
     const [themeDetector, setThemeDetector] = useTheme()
     const {pathname} = useLocation()

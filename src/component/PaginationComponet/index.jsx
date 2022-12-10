@@ -9,29 +9,20 @@ import useFetch from '../../hooks/useFetch';
 import './pagination.scss';
 import { AppContextInit } from '../../context/AppContext';
 import LoadingScreen from '../LoadingScreen';
-<<<<<<< HEAD
 import {Paginate} from "../paginate"
-
+import NoData from '../../pages/ErrorPage/NoDataPage/nodata';
 
 function PaginationComponet(props) {
  
   //eslint-disable-next-line
   const { isUser, setIsUser, message, setMessage, setSuccess} = AppContextInit()
-  const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=1&limit=15`
+  // const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=1&limit=15`
   //eslint-disable-next-line
-  const [loading, data, error] = useFetch(url)
+  // const [loading, data, error] = useFetch(url)
   const page = props.page;
   const metaData = props.metaData;
   const pages = Math.ceil(metaData?.total / metaData?.limit);
   const paginate = props.paginate;
-=======
-import NoData from '../../pages/ErrorPage/NoDataPage/nodata';
-
-
-function PaginationComponet(props) {
-  const { setIsUser, setMessage, setSuccess} = AppContextInit()
-  
->>>>>>> origin/develop
   // eslint-disable-next-line
   const [defaultPage, setDefaultPage] = useState(1)
   const [currentPage, setCurrentPost] = useState(1)
