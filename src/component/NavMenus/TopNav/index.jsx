@@ -38,11 +38,11 @@ export default function TopNav() {
                         variant="pills"
                     >
                         <div className="top-nav-list">
-                            <ul>
+                           {userToken?.access_token && <ul>
                                 <li><Link to="/leaderboard" className={`${pathname === '/leaderboard'  && 'active'}`}>Leaderboard</Link></li>
                                 <li><Link to="/rewards" className={`${pathname === '/rewards'  && 'active'}`}>Rewards</Link></li>
                                 <li><Link to="/staking" className={`${pathname === '/staking'  && 'active'}`}>Staking</Link></li>
-                            </ul>
+                            </ul>}
                         </div>
                     </Nav>
                     <div className="notice-search">

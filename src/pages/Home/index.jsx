@@ -17,7 +17,8 @@ export default function Home() {
   // console.log(games)
   const dispatch = useDispatch()
   useEffect(() => {
-    userToken&& dispatch(profileAction())
+    dispatch(fetchGameAction(1))
+    userToken?.access_token&& dispatch(profileAction())
     if(window.innerWidth < 431){
       setSliderCount(Number(3))
     }
@@ -25,7 +26,7 @@ export default function Home() {
       setSliderCount(Number(3))
     }
     dispatch(fetchGameAction())
-  }, [dispatch])
+  }, [dispatch,userToken?.access_token])
   
   return (
     <div className="home-container">

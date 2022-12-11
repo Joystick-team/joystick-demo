@@ -57,7 +57,7 @@ export default function DrawerNav({TogglecloseOpen}) {
                   <Nav className=" flex-column" variant="tabs">
                     <div className="drawer__nav-slide">
                       <NavLink to="/home"> <FaHome /> <span>Home</span></NavLink>
-                      <NavLink to="/store"> <BsDropletFill /> <span>Store</span></NavLink>
+                      {userToken?.access_token &&<NavLink to="/store"> <BsDropletFill /> <span>Store</span></NavLink>}
                       <NavLink to="/library" > <BsGridFill/> <span>Library</span></NavLink>
                       <NavLink to="/socials" > <BsFillPeopleFill /> <span>Socials</span></NavLink>
                       <NavLink to="/livestream"> <BsBroadcast /> <span>Live</span></NavLink>

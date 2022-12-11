@@ -57,9 +57,9 @@ function PaginationComponet(props) {
     }
 
   const siteGames = data && currentPost?.map((game, idx) => (
-    <Col>
+    <Col  key={game.id}>
         <MyCard 
-            key={game.id?.toString() ?? game.key.toString()}
+            key={game.id}
             title={game.name ?? game.name}
             // text={game.description}
             img={game?.images?.large ?? game.image}
