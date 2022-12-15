@@ -48,7 +48,7 @@ export default function Home() {
         </div>
         <div className="side-adverts">
             {/* The left advert/chat/friends should be written here */}
-            <SidePost />
+           {userToken?.access_token&& <SidePost />}
             <div className="empty-div" ></div>
           </div>
     </div>
