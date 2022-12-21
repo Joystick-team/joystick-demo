@@ -5,9 +5,11 @@ import {useSelector,useDispatch} from "react-redux"
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom"
 import { logoutAction } from '../../Actions/Authentication/Signin.Action'
+import { ProfileUpdate } from '../Profile/UpdateProfile'
 import './dropdown.scss'
 
 export default function SelectDropDown(props) {
+  //  const [modalShow, setModalShow] = useState(false);
   const optionsList = props.options
   const [currentOption, setCurrentOption] = useState();
   const { userToken } = useSelector(state => state.signin)
@@ -54,6 +56,11 @@ export default function SelectDropDown(props) {
           userToken?.access_token &&<Dropdown.Item as="button" onClick={logoutHandler}>
           logout
         </Dropdown.Item>
+        }
+        {
+          userToken?.access_token && <Dropdown.Item as="button">
+           <ProfileUpdate/>
+          </Dropdown.Item>
         }
     </DropdownButton>
 

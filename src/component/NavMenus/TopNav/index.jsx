@@ -16,8 +16,7 @@ export default function TopNav() {
     const {userToken} = useSelector(state=>state.signin)
     // eslint-disable-next-line
     const [themeDetector, setThemeDetector] = useTheme()
-    const {pathname} = useLocation()
-
+    const { pathname } = useLocation()
   return (
     <div className='top-nav'>
                 <Container className='navbar'>
@@ -49,7 +48,7 @@ export default function TopNav() {
                         <abbr title="notifications">
                             <div className='top-notifications-icon'> <MdNotifications /> </div>
                         </abbr>
-                        <SearchBox />
+                  <SearchBox />
                     </div>
                         <AuthButton />
                     <ConnectButton className='btn-connect' color="danger" title='Connect'/>

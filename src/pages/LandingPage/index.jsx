@@ -18,13 +18,14 @@ export default function LandingPage(props) {
     const dispatch = useDispatch()
     const params = useParams()
     const id = params?.id||1
-    const { games, loading, error } = useSelector(state => state.fetchAllGames)
+    const { games } = useSelector(state => state.fetchAllGames)
     const { userToken } = useSelector(state => state.signin)
+    const { search_string } = useSelector(state => state.search)
     
     useEffect(() => {
         userToken&& dispatch(profileAction())
-        dispatch(fetchGameAction(id))
-    }, [dispatch, id,userToken])
+        dispatch(fetchGameAction(id,search_string))
+    }, [dispatch, id,userToken,search_string])
     
     const gameOptionsList = ["Off-site", "On-site"]
     const [paginate, setPaginate] = useState(false)
