@@ -20,6 +20,8 @@ import { ThemeProvider } from './ThemeContext';
 import AppContextContainer from './context/AppContext';
 import WebinarCall from './pages/Live/WebinarCall';
 import ErrorBoundary from './Layout/ErrorBoundary/index.js';
+import SinglePost from './pages/Socials/pages/Feeds/SinglePost';
+import Messenger from './pages/Messenger';
 
 
 function App() {
@@ -44,6 +46,9 @@ function App() {
                 />
                 <Route
                   path='/socials' element={<Socials/>}
+                />
+                <Route
+                  path='/socials/:id' element={<SinglePost/>} 
                 />
                 <Route
                   path='/test' element={<TestPage/>}
@@ -78,7 +83,7 @@ function App() {
                 />
                 <Route
                   exact
-                  path="/message" element={<Message />}
+                  path="/message" element={< Messenger/>}
                 />
                 <Route
                   exact
@@ -120,10 +125,6 @@ function App() {
               <Route
                 exact
                 path="/rewards" element={<Rewards />}
-              />
-              <Route
-                exact
-                path="/message" element={<Message />}
               />
               <Route
                 exact
