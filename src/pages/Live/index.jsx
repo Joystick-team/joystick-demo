@@ -24,7 +24,7 @@ export default function Livescream() {
   const [modal, setModal] = useState(false)
   const [message, setMessage] = useState({success:'', failure:''})
   const [isLoading, setIsLoading] = useState(false)
-  const [state, setState] = useState({privacy: 'public'})
+  const [state, setState] = useState({privacy: 'public', room_name:''})
   const [allRoom, setAllRoom] = useState([])
   const [history, setHistory] = useState([])
   const [room, setRoom] = useState('');
@@ -34,16 +34,10 @@ export default function Livescream() {
   const navigate = useNavigate()
 
   const getAllRoom = async()=>{
-    const token = localStorage.getItem('userToken')
-    var config = {
-      method: 'get',
-      url: `${api.url}/room/live-stream/all`,
-      headers: { Authorization: `Bearer ${token}` }
-    };
     try {
-      const res = await axios(config)
+      const res = await axios.get(`${api.test_url}/api/v1/room/get-all-live-stream`)
       // console.log(res.data)
-      setAllRoom(res?.data?.data.filter(r=> r.privacy === 'public'))
+      setAllRoom(res.data.filter(r=> r.privacy === 'public'))
     } catch (error) {
       console.log(error)
     }
@@ -53,12 +47,12 @@ export default function Livescream() {
     try {
       var config = {
         method: 'get',
-        url: `${api.url}/room/live-stream/user`,
+        url: `${api.test_url}/api/v1/room/get-user-live-stream`,
         headers: { Authorization: `Bearer ${token}` }
       };
       const res = await axios(config)
       console.log(res.data)
-      setHistory(res.data.data)
+      setHistory(res.data)
     } catch (error) {
       console.log(error)
     }
@@ -72,7 +66,7 @@ export default function Livescream() {
   const lastPageIndex = currentPage * postPerPage
   const firstPageIndex = lastPageIndex - postPerPage
   const currentPost = (allRoom)?.slice(firstPageIndex, lastPageIndex)
-  const historyPost = history?.slice(firstPageIndex, lastPageIndex)
+  const historyPost = (history)?.slice(firstPageIndex, lastPageIndex)
 
 
   const toggleModal=()=>{
@@ -91,7 +85,7 @@ export default function Livescream() {
     try{
       var config = {
         method: 'post',
-        url: `${api.url}/room`,
+        url: `${api.test_url}/api/v1/room`,
         headers: { Authorization: `Bearer ${token}` },
         data: state
       };
@@ -162,8 +156,9 @@ export default function Livescream() {
                     )}
                 </Tab>
                 <Tab eventKey="feeds" title="History">
-                  {history.length >0?
+                {allRoom.length > 0 ? (
                   <>
+                  
                     <History history={historyPost}/>
                     <div className='pagination-container mt-2'>
                         <PaginationRange 
@@ -179,8 +174,12 @@ export default function Livescream() {
                         />
                     </div>
                   </>
-                  : <h4 className='ml-4'>No history record found</h4>
-                }
+                  ):
+                  (
+                    <div className='container mt-2'>
+                      <h4>No livestream records found</h4>
+                    </div>
+                  )}
                 </Tab>
               </Tabs>
               </div>
@@ -207,13 +206,13 @@ export default function Livescream() {
                         {message.failure && <Alert variant='danger' className=' text-center'>{message.failure}</Alert>}
                         <form className="mt-2" onSubmit={(v)=> handleSubmit(v)}>
                             <div className='mt-2'>
-                              {/* <div className='form-group'>
+                              <div className='form-group'>
                                 <input type='text' 
                                 onChange={(e)=> setState({...state, room_name:e.target.value})}
                                 className='form-control'
                                 placeholder='Meeting-name'
                                 />
-                              </div> */}
+                              </div>
                               <label>Room privacy</label>
                               <div onChange={(e)=> setState({...state,privacy:e.target.value})}>
                                 <input type="radio" value="public" name="privacy" checked /> Public <span>{ }</span>

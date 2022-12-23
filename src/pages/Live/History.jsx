@@ -11,7 +11,7 @@ function History({history}) {
         <tr key={req.id}>
             <td>{req.created_at}</td>
             <td>{req.room_id}</td>
-            <td>{req.name}</td>
+            <td>{req.room_name}</td>
             <td>
               {`http://localhost:3000/livestream/${req.name}`}
                 {/* <button className='btn btn-sm'

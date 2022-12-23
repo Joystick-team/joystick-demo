@@ -50,9 +50,9 @@ export default function Auth(props) {
         try{ 
             setIsLoading(true)
             const response =  await axios(config);
-            console.log(response.status)
                 setSuccess(true)
                 setMessage(() => res)
+                console.log(success)
                 localStorage.setItem('userToken', response.data.access_token)
                 setIsLoading(false)
                 setIsUser(true)
@@ -81,7 +81,7 @@ export default function Auth(props) {
     const handleLoginSubmit = async (event) => {
         event.preventDefault(); 
         postDataAuth({
-            url: `${api.url}/auth/login`, 
+            url: `${api.test_url}/api/v1/auth/login`, 
             option : inputsData, 
             res : success ? "Welcome Back" : "An error occured during Login"
         })     
@@ -91,7 +91,7 @@ export default function Auth(props) {
         e.preventDefault();
 
         postDataAuth({
-            url: `${api.url}/auth/signup`, 
+            url: `${api.test_url}/api/v1/auth/signup`, 
             option : inputsData, 
             res :  success ? "User created successfully" : "An error occured during signup"
         })  
