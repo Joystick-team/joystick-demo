@@ -3,7 +3,6 @@ import socialsavatar from '../../assets/images/socialsavatar.png'
 import profilebg from '../../assets/images/profile-bg.png'
 import { MdOutlineEdit } from 'react-icons/md'
 
-
 import './socials.scss'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import Chats from '../../component/Chats'
@@ -17,20 +16,26 @@ import axios from 'axios';
 
 export default function Socials() {
   const [sliderCount, setSliderCount] = useState(Number(6))
-  const token = localStorage.getItem('userToken')
+  const [popChat, setPopChat] = useState(false)
   const getData = async()=>{
+    const token = localStorage.getItem('userToken')
     var config = {
         method: 'get',
-        url: `${api.test_url}/api/v1/auth/profile`,
+        url: `${api.url}/auth/profile`,
         headers: { Authorization: `Bearer ${token}` },
       };
     try {
         const res = await axios(config)
-        console.log(res.data)
+        localStorage.setItem("user_id",res.data.id)
     } catch (error) {
         console.log(error.response.data)
     }
   }
+
+  const handlePopUp = ()=>{
+    setPopChat(!popChat)
+  }
+
   useEffect(() => {
     getData()
     if(window.innerWidth < 1200){
@@ -84,25 +89,22 @@ export default function Socials() {
                           />
                 })}
               </PreviousNextMethods>
-              </div>
+            </div>
           </div>
           </div>
-        </div>
-
+        </div>          
         <div className={"side-adverts"} style={{flexGrow: '1'}}>
           <div className="friends-social">
             <h5>Friends</h5>
-          {FriendrequestData.map((friend, idx) =>{
-                  return <Chats 
-                            key={idx}
-                            title={friend.title}
-                            image={friend.image}
-                          />
+            {FriendrequestData.map((friend, idx) =>{
+                    return <Chats 
+                              key={idx}
+                              title={friend.title}
+                              image={friend.image}
+                            />
                 })}
-        {/* <SidePost /> */}
-      </div>
+          </div>
         </div>
-
     </div>
   )
 }
