@@ -8,7 +8,7 @@ body, html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--background);
-  color: var(--secondary);
+  color: var(--secondary--text);
   box-sizing: border-box;
   max-width: 1440px;
   margin: auto;
@@ -50,5 +50,5 @@ html{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary); 
+  background: var(--secondary--text); 
 }

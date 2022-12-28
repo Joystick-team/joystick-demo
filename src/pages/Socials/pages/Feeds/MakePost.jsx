@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 import socialsavatar from '../../../../assets/images/socialsavatar.png'
 import styled from 'styled-components'
+import  { default as api } from '../../../../config/config.json'
+import { Alert } from 'react-bootstrap';
+import VideoPlayer from '../../../../component/VideoPlayer';
+import { message } from 'antd';
 
 const Styles = styled.div`
         .cs-upload_btn{
@@ -23,7 +28,7 @@ const Styles = styled.div`
         }
         .big-margin{
             margin-left: 10px;
-            margin-right: 10px;
+            margin-right: 0px;
         }
         textarea{
             font-size: 15.4443px;
@@ -96,32 +101,78 @@ const Styles = styled.div`
 
 function MakePost(props) {
     const [description, setDescription] = useState('')
-    const [avatar, setAvatar] = useState(null)
+    const [isLoading, setIsLoading] = useState(false)
+    const [file, setFile] = useState(null)
+    const [preview, setPreview] = useState(null)
+    const [messageApi, contextHolder] = message.useMessage();
     const handleChange= (e)=>{
         setDescription(e.target.value)
     }
-
+    function checkURL(url) {
+        let message
+        if(url.match(/\.(jpeg|jpg|gif|svg|png|webp)$/) != null){
+            message = 'isImage'
+        }
+        else if(url.match(/\.(mp4|gif|mp3)$/) != null){
+            message = 'isVideo'
+        }
+        else{
+            message = 'notfound'
+        }
+        console.log(message)
+        return message
+        }
     const onFileChange = (e)=>{
-        setAvatar(e.target.files[0])
+        setFile(e.target.files[0])
+        setPreview(URL.createObjectURL(e.target.files[0]))
     }
 
-    const handleSubmit= (e)=>{
+
+    const handleSubmit= async(e)=>{
         e.preventDefault()
-        var formData = {description, file: avatar}
-        console.log(formData)
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('text', description);
+        const token = localStorage.getItem('userToken')
+        var config = {
+            method: 'post', 
+            url: `${api.url}/post`,
+            headers: { Authorization: `Bearer ${token}` },
+            data: formData
+          };
+        // console.log(`${api.posturl}/post`)
+        setIsLoading(true)
+        try {
+            const res = await axios(config)
+            console.log(res.data)
+            messageApi.open({
+                type: 'success',
+                content: res.data.message,
+              });
+            setTimeout(()=>{
+                window.location.reload()
+            }, 2000)
+        } catch (error) {
+            console.log(error.response.data)
+            messageApi.open({
+                type: 'error',
+                content: error.response.data.message,
+              });
+            setIsLoading(false)
+        }
     }
     
     return (
             <Styles>
-                <div className='col-11.4'>
-                    <div className='card'>
+                <div className='col-12'>
+                    <div className='card post-header'>
                         <div className='card-body pl-1 pr-1'>
                             <div className='row sl'>
                                 <div className='col-2 col-md-1 pl-4 pr-0'>
                                     <img loading='eager' height={'40px'} className='rounded'
                                     src={socialsavatar}  alt="Profile-picture" />
                                 </div>
-                                <div className='col-10 col-md-11 pl-0'>
+                                <div className='col-10 col-md-11  pl-0'>
                                     <textarea type='text' 
                                     onChange={handleChange}
                                     value={description}
@@ -129,10 +180,36 @@ function MakePost(props) {
                                     className='form-control shadow-none'/>
                                 </div>
                             </div>
-                            <div className='row big-margin mt-4 pl-0 pr-0'>
-                                <div className='card card-inner'>
-                                    <div className='card-body pl-0 pr-0'>
+                            {preview && 
+                                <div className='row  mt-2'>
+                                    <div className='col-12 text-center '>
+                                    {checkURL(file.name) === 'isImage' &&
+                                        <>
+                                            <img height={100} width={150}
+                                            src={[preview]}  alt="image-content" /> 
+                                                <i class="fa fa-times-circle" style={{cursor: "pointer"}} onClick={()=> setPreview(null)} aria-hidden="true"></i>
+                                            <span >
+                                            </span>
+                                        </>
+                                        
+                                    }
+                                    {checkURL(file.name) === 'isVideo' &&
                                         <div className='row'>
+                                            <div className='col-12 col-md-6 col-8 offset-3 offset-md-4 text-center '>
+                                                <VideoPlayer source={preview} width="200px"  height="100px" />
+                                                <i class="fa fa-times-circle" style={{cursor: "pointer"}} onClick={()=> setPreview(null)} aria-hidden="true"></i>
+
+                                            </div>
+                                        </div> 
+                                    }
+                                        
+                                    </div>
+                                </div>
+                            }
+                            <div className='row big-margin mt-4'>
+                                <div className='card card-inner'>
+                                    <div className='card-body pl-1 pr-1'>
+                                        <div className='row sl'>
                                             <div className='col-3 col-md-2 align-self-center'>
                                                 <label for="files" className="cs-upload_btn">
                                                 <i className="far fa-images mr-2"></i> <span>Add a</span> Photo
@@ -165,9 +242,9 @@ function MakePost(props) {
                                             </div>
                                             <div className='col-3 col-md-3 offset-md-2 text-right'>
                                                 <button onClick={handleSubmit}
-                                                disabled={description ? false : true}
+                                                disabled={description || !isLoading ? false : true}
                                                 className='btn publish mr-0 w-100'>
-                                                    <span>Publish</span> post
+                                                    {isLoading ? <>Loading...</> : <><span>Publish</span> post</> }
                                                 </button>
                                             </div>
                                         </div>

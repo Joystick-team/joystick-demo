@@ -1,11 +1,13 @@
 import React from 'react';
 import postData from '../../../Store/postfile'
 import Posts from '../../../component/Posts'
+import MakePost from './Feeds/MakePost';
 
 function MyPost(props) {
     return (
         <div>
-            <div className="post-card-container">
+            <MakePost/>
+            <div className="post-card-container mt-3">
               {
                 postData.map((data, idx) => {
                   return <Posts 

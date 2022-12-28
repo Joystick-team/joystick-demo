@@ -159,6 +159,88 @@
         }
     }
 
+    .post-header{
+        background: var(--secondary-background);
+    }
+    .post-header .carder{
+        background: var(--secondary-background);
+        color: var(--secondary);
+    }
+    .post-header .remove-arrow .icon{
+        background: var(--secondary-background);
+    }
+    .card-body .scroll{
+        max-height: 150px;
+        overflow-y: auto;
+    }
+    .card-body .scroll input{
+        background: var(--secondary-background);
+        color: var(--secondary);
+        outline: none;
+        border: 0px;
+    }
+    .card-body input:focus{
+        outline: none !important;
+    }
+
+    .card-comment{
+        background: var(--secondary-background);
+        color: var(--secondary);
+    }
+    .btn-comment{
+        background-color: #C71F1F;
+        color: white
+    }
+    .open-button {
+        background: var(--secondary-background);
+        color: var(--secondary);
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        // opacity: 0.8;
+        position: fixed;
+        bottom: 0 !important;
+        right: 15px;
+        width: 280px;
+        
+      }
+    .open-button .carder{
+        border-radius: 20px !important;
+        
+        
+    }
+    // .carder .card-body{
+    //     background: var(--background);
+    //     color: var(--secondary);
+    //     max-height: 300px;
+    //     overflow-y: auto;
+        
+    // }
+    // .carder .card-body:hover{
+    //     background: var(--secondary-background);
+    //     color: var(--secondary);
+    //     max-height: 300px;
+    //     overflow-y: auto;
+        
+    // }
+    .open-button .card-header{
+        border-radius: 16px;
+        background-color: #C71F1F;
+        // width: 300px;
+        
+    }
+    .chat-popup {
+    height: 380px;
+    background: var(--background);
+    display: inline;
+    position: fixed;
+    // padding: 16px 20px;
+    width: 280px;
+    bottom: 0;
+    right: 15px;
+    border: 1px solid #f1f1f1;
+    z-index: 9;
+    }
     .side-adverts{
         background: var(--secondary-background);
         padding: 1rem;
@@ -198,6 +280,7 @@
         //         }
         //     }
         // }
+        
     }
 }
 
@@ -402,4 +485,5 @@
 }
 }
 }
+
 }

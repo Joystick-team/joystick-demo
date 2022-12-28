@@ -1,4 +1,5 @@
+
 {
     "url": "https://api.joysticklabs.io/api/v1",
-    "testServer" : "https://jsonplaceholder.typicode.com"
+    "testServer" : "https://jsonplaceholder.typicode.com",
 }
