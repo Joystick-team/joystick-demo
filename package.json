@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "https://testing-live.daily.co",
   "dependencies": {
+    "@babel/runtime": "^7.20.7",
     "@daily-co/daily-js": "^0.31.0",
     "@daily-co/daily-react-hooks": "^0.4.0",
     "@emoji-mart/data": "^1.1.0",
