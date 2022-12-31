@@ -18,7 +18,7 @@ import ProfileDetails from '../../component/ProfileDetails'
 import axios from 'axios';
 import AllRooms from './AllRooms';
 import PaginationRange from '../../component/PaginationComponet/paginationRange';
-import History from './History';
+// import History from './History';
 
 export default function Livescream() {
   const [modal, setModal] = useState(false)
@@ -156,7 +156,7 @@ export default function Livescream() {
                     )}
                 </Tab>
                 <Tab eventKey="feeds" title="History">
-                    <History history={historyPost}/>
+                    {/* <History history={historyPost}/> */}
                     <div className='pagination-container mt-2'>
                         <PaginationRange 
                           firstPosts={defaultPage}
