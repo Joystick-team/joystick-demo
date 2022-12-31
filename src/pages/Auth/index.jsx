@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState,useEffect} from 'react'
+import { useState, useEffect } from 'react'
+import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from 'react-router-dom'
 import { signupAction } from '../../Actions/Authentication/Sigup.Action'
@@ -8,10 +9,10 @@ import Message from '../../component/Message'
 import Loader from '../../component/Loader'
 // import InputField from '../../component/InputField'
 import GamePad from '../../assets/images/GamePad.png'
-import  { default as api } from '../../config/config.json'
-import './auth.scss'
+import InputField from '../../component/InputField'
+import { default as api } from '../../config/config.json'
 import { AppContextInit } from '../../context/AppContext'
-import axios from 'axios'
+import './auth.scss'
 
 export default function Auth(props) {
     // eslint-disable-next-line
@@ -64,88 +65,157 @@ export default function Auth(props) {
         this.groupClass = groupClass
     }
 
-    const input1 = new InputData('text', 'Enter Username', 'Username', 'username', 'username', 'login_username1',)
-    const input2 = new InputData('email', 'Enter email', 'Email', 'email', 'email', 'login_email2',)
-    const input5 = new InputData('password', 'Password', 'Create Password', 'password', 'password', 'login_password6',)
-    const input3 = new InputData('password', 'Password', 'Repeat Password', 'repeat_password', 'repeat_password', 'login_password3',)
+  function InputData(
+    type,
+    placeholder,
+    label,
+    htmlFor,
+    name,
+    id,
+    labelClass,
+    inputClass,
+    groupClass,
+  ) {
+    this.type = type
+    this.placeholder = placeholder
+    this.label = label
+    this.htmlFor = htmlFor
+    this.name = name
+    this.id = id
+    this.labelClass = labelClass
+    this.inputClass = inputClass
+    this.groupClass = groupClass
+  }
 
-    const input4 = new InputData('text', 'Enter email address or Username', 'Email address or Username', 'email', 'email', 'login_username4',)
-    const input6 = new InputData('password', 'Password', 'Password', 'password', 'password', 'login_password5',)
+  const input1 = new InputData(
+    'text',
+    'Enter Username',
+    'Username',
+    'username',
+    'username',
+    'login_username1',
+  )
+  const input2 = new InputData(
+    'email',
+    'Enter email',
+    'Email',
+    'email',
+    'email',
+    'login_email2',
+  )
+  const input5 = new InputData(
+    'password',
+    'Password',
+    'Create Password',
+    'password',
+    'password',
+    'login_password6',
+  )
+  const input3 = new InputData(
+    'password',
+    'Password',
+    'Repeat Password',
+    'repeat_password',
+    'repeat_password',
+    'login_password3',
+  )
 
-    // eslint-disable-next-line
-    const [registerInputData, setRegisterData] = useState([input1, input2, input5, input3])
-    // eslint-disable-next-line
-    const [loginInputData, setloginDate] = useState([input4, input6])
+  const input4 = new InputData(
+    'text',
+    'Enter email address or Username',
+    'Email address or Username',
+    'email',
+    'email',
+    'login_username4',
+  )
+  const input6 = new InputData(
+    'password',
+    'Password',
+    'Password',
+    'password',
+    'password',
+    'login_password5',
+  )
 
-    const [isLoading, setIsLoading] = useState(false)
-    const [inputsData, setInputsData] = useState({});
+  // eslint-disable-next-line
+  const [registerInputData, setRegisterData] = useState([
+    input1,
+    input2,
+    input5,
+    input3,
+  ])
+  // eslint-disable-next-line
+  const [loginInputData, setloginDate] = useState([input4, input6])
 
-    async function postDataAuth({url, option, res}) {
-        var config = {
-            method: 'post',
-            url: url,
-            headers: { },
-            data : option
-          };
+  const [isLoading, setIsLoading] = useState(false)
+  const [inputsData, setInputsData] = useState({})
 
-        try{ 
-            setIsLoading(true)
-            const response =  await axios(config);
-            console.log(response.status)
-                setSuccess(true)
-                setMessage(() => res)
-                localStorage.setItem('userToken', response.data.access_token)
-                setIsLoading(false)
-                setIsUser(true)
-
-        }catch(error){ 
-            setIsLoading(true)
-            setSuccess(false)
-            setMessage(() => error.response.data.message ?? res)
-            console.log(error.response.data.message);
-            setIsLoading(false)
-            setIsUser(true)
-
-            setTimeout(() => {
-                setIsUser(false)
-            }, 2000);
-        }   
-
+  async function postDataAuth({ url, option, res }) {
+    var config = {
+      method: 'post',
+      url: url,
+      headers: {},
+      data: option,
     }
 
-    const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputsData(prev => ({...prev, [name]: value}))
-    }
-    
-    const handleLoginSubmit = async (event) => {
-        event.preventDefault(); 
-        postDataAuth({
-            url: `${api.test_url}/api/v1/auth/login`, 
-            option : inputsData, 
-            res : success ? "Welcome Back" : "An error occured during Login"
-        })     
-    }
+    try {
+      setIsLoading(true)
+      const response = await axios(config)
+      setSuccess(true)
+      setMessage(() => res)
+      console.log(success)
+      localStorage.setItem('userToken', response.data.access_token)
+      setIsLoading(false)
+      setIsUser(true)
+    } catch (error) {
+      setIsLoading(true)
+      setSuccess(false)
+      setMessage(() => error.response.data.message ?? res)
+      console.log(error.response.data.message)
+      setIsLoading(false)
+      setIsUser(true)
 
-    let handleRegisterSubmit = async (e) => {
-        e.preventDefault();
-
-        postDataAuth({
-            url: `${api.test_url}/api/v1/auth/signup`, 
-            option : inputsData, 
-            res :  success ? "User created successfully" : "An error occured during signup"
-        })  
-      };
-
-    const setLog = {
-        fontSize: '16px',
-        lineHeight: '20px',
-        textDecorationLine: 'underline',
-        color: '#C71F1F',
-        cursor: 'pointer',
-        transition: `all 500ms ease-out`
+      setTimeout(() => {
+        setIsUser(false)
+      }, 2000)
     }
+  }
+
+  const handleChange = event => {
+    const name = event.target.name
+    const value = event.target.value
+    setInputsData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleLoginSubmit = async event => {
+    event.preventDefault()
+    postDataAuth({
+      url: `${api.test_url}/api/v1/auth/login`,
+      option: inputsData,
+      res: success ? 'Welcome Back' : 'An error occured during Login',
+    })
+  }
+
+  let handleRegisterSubmit = async e => {
+    e.preventDefault()
+
+    postDataAuth({
+      url: `${api.test_url}/api/v1/auth/signup`,
+      option: inputsData,
+      res: success
+        ? 'User created successfully'
+        : 'An error occured during signup',
+    })
+  }
+
+  const setLog = {
+    fontSize: '16px',
+    lineHeight: '20px',
+    textDecorationLine: 'underline',
+    color: '#C71F1F',
+    cursor: 'pointer',
+    transition: `all 500ms ease-out`,
+  }
 
   return (
     <div className="auth">
@@ -259,7 +329,9 @@ export default function Auth(props) {
              </div>)
             }
             </div>
-       </div>
-    </div>
+          
+        </div>
+      </div>
+    
   )
 }

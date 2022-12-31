@@ -6,6 +6,7 @@ export const profileAction = () => async (dispatch, getState) => {
         dispatch({type: PROFILE_REQUEST });
         const { signin } = getState();
         const userToken = signin?.userToken;
+        console.log("tk",userToken?.access_token)
         const config = {
             headers: {
                 "Content-Type": "application/json",
@@ -14,7 +15,7 @@ export const profileAction = () => async (dispatch, getState) => {
         }
         const { data } = await axios.get("https://api.joysticklabs.io/api/v1/auth/profile", config)
         dispatch({ type: PROFILE_SUCCESS, payload: data })
-        console.log(data)
+        console.log("profile",data)
     } catch (error) {
         dispatch({type:PROFILE_FAIL,payload:error?.response?.data?.message})
         console.log(error)

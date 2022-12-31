@@ -4,14 +4,14 @@ import {useParams}  from "react-router-dom"
 import { fetchGameAction } from '../../Actions/Games.Action'
 import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
-import SelectDropDown from '../../component/SelectDropDown'
+import  DropDown from '../../component/SelectDropDown/Dropdown'
 // import useFetch from '../../hooks/useFetch'
 // import  { default as api } from '../../config/config.json'
 import { default as OnsiteGames} from '../../Store/librarygamesdata'
 
 import PaginationComponet from '../../component/PaginationComponet'
-import './landingpage.scss'
 import NoInternet from '../ErrorPage/NoConnection/internet'
+import './landingpage.scss'
 
 export default function LandingPage(props) {
     const online = navigator.onLine
@@ -25,7 +25,8 @@ export default function LandingPage(props) {
     useEffect(() => {
         userToken&& dispatch(profileAction())
         dispatch(fetchGameAction(id,search_string))
-    }, [dispatch, id,userToken,search_string])
+    }, [dispatch, id, userToken, search_string]
+    )
     
     const gameOptionsList = ["Off-site", "On-site"]
     const [paginate, setPaginate] = useState(false)
@@ -38,90 +39,97 @@ export default function LandingPage(props) {
     const metaData = useMemo(() => { return games?.metadata }, [games])
     // console.log('data', offSiteGame);
 
+  //eslint-disable-next-line
+  // const [loading, data, error] = useFetch(url)
+  // const offSiteGame = useMemo(() => {
+  //   return data?.data
+  // }, [data])
 
-    // function openModal(data) {
-    //     setIsOpen(true);
-    //     setDetails(data)
-    //   }
+  // const online = navigator.onLine
+  // function openModal(data) {
+  //     setIsOpen(true);
+  //     setDetails(data)
+  //   }
 
-    //     const closeModal = () => {
-    //         setIsOpen(false)
-    //     }
+  //     const closeModal = () => {
+  //         setIsOpen(false)
+  //     }
 
-    //     const lastPageIndex = currentPage * postPerPage;
-    //     const firstPageIndex = lastPageIndex - postPerPage;
-    //     const currentPost = data?.data?.data?.slice(firstPageIndex, lastPageIndex);
+  //     const lastPageIndex = currentPage * postPerPage;
+  //     const firstPageIndex = lastPageIndex - postPerPage;
+  //     const currentPost = data?.data?.data?.slice(firstPageIndex, lastPageIndex);
 
-    //     // eslint-disable-next-line
-    //     const [totalPages, setTotalPages] = useState( paginate ? OnsiteGames.length : OffSiteGames.length )
-    //     const currentPostOnsite = OnsiteGames.slice(firstPageIndex, lastPageIndex);
+  //     // eslint-disable-next-line
+  //     const [totalPages, setTotalPages] = useState( paginate ? OnsiteGames.length : OffSiteGames.length )
+  //     const currentPostOnsite = OnsiteGames.slice(firstPageIndex, lastPageIndex);
 
-    //     const offSiteGame = data && currentPost.map((game, idx) => (
-    //         <Col>
-    //             <MyCard 
-    //                 key={game.id ?? game.key}
-    //                 title={game.name ?? game.name}
-    //                 text={game.text}
-    //                 img={game.images.thumb ?? game.images}
-    //                 // button={game.btn}
-    //                 button={"More Info"}
-    //                 openModal={openModal.bind(this, game)}
-    //             />
-    //         </Col>
-    //     ))
+  //     const offSiteGame = data && currentPost.map((game, idx) => (
+  //         <Col>
+  //             <MyCard
+  //                 key={game.id ?? game.key}
+  //                 title={game.name ?? game.name}
+  //                 text={game.text}
+  //                 img={game.images.thumb ?? game.images}
+  //                 // button={game.btn}
+  //                 button={"More Info"}
+  //                 openModal={openModal.bind(this, game)}
+  //             />
+  //         </Col>
+  //     ))
 
-    // const games2 = currentPostOnsite.map((game, idx) => (
-    //     <Col>
-    //         <MyCard 
-    //             key={game.key.toString() && idx}
-    //             title={game.name}
-    //             text={game.text}
-    //             img={game.images}
-    //             button={"Play"}
-    //             openModal={openModal.bind(this, game)}
-    //         />
-    //     </Col>
-    // ))
+  // const games2 = currentPostOnsite.map((game, idx) => (
+  //     <Col>
+  //         <MyCard
+  //             key={game.key.toString() && idx}
+  //             title={game.name}
+  //             text={game.text}
+  //             img={game.images}
+  //             button={"Play"}
+  //             openModal={openModal.bind(this, game)}
+  //         />
+  //     </Col>
+  // ))
 
-// eslint-disable-next-line
-    // const [currentValue, setCurrentValue] = useState(offSiteGame)
-    let handleChange = (gameOption) => {
-        if(gameOption === 'On-site') { 
-            // setCurrentValue(games2)
-            setPaginate(true)
-        } else if(gameOption === 'Off-site') {
-            // setCurrentValue(offSiteGame)
-            setPaginate(false)
-        }else{
-            // setCurrentValue(`Game Option ${gameOption}`) 
-            return `Game Option ${gameOption}`
-        }
+  // eslint-disable-next-line
+  // const [currentValue, setCurrentValue] = useState(offSiteGame)
+  let handleChange = gameOption => {
+    if (gameOption === 'On-site') {
+      // setCurrentValue(games2)
+      setPaginate(true)
+    } else if (gameOption === 'Off-site') {
+      // setCurrentValue(offSiteGame)
+      setPaginate(false)
+    } else {
+      // setCurrentValue(`Game Option ${gameOption}`)
+      return `Game Option ${gameOption}`
     }
-    
+  }
+
   return (
     <div className='landing-page-container'>
-                { !online ? 
-                    <NoInternet />
-                    :
-        <div className="landing-page-holder">
-            <div className="landing-page-anouncement">
-                <AnnouncementCarousel />
+      {!online ? (
+        <NoInternet />
+      ) : (
+        <div className='landing-page-holder'>
+          <div className='landing-page-anouncement'>
+            <AnnouncementCarousel />
+          </div>
+          <div className='site-games-container'>
+            <div className='select-container'>
+              <DropDown
+                onChange={handleChange}
+                getValue={handleChange}
+                options={gameOptionsList}
+                placeholder={'Off-site'}
+                option ={gameOptionsList}
+              />
             </div>
-            <div className="site-games-container">
-                <div className="select-container">
-                    <SelectDropDown 
-                        // onChange={handleChange} 
-                        getValue={handleChange}
-                        options={gameOptionsList} 
-                        placeholder={'Off-site'}
-                    />
-                </div>
-                {/* <ModalEffect show={isOpen} closeModal={closeModal}>
+            {/* <ModalEffect show={isOpen} closeModal={closeModal}>
                     <div className="site-games">
                         {details && <DetailsCard {...(details ? {...details} : {})} />}
                     </div>
                 </ModalEffect> */}
-                {/* <div className="page_sites">
+            {/* <div className="page_sites">
                     <div className="site-games">
                         {currentValue}
                     </div>
@@ -131,9 +139,9 @@ export default function LandingPage(props) {
                       <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} />
                 </div>
             </div>
-        
-        </div>
-    }
+          </div>
+        )
+      }
     </div>
   )
 }

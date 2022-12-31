@@ -57,11 +57,11 @@ export default function SelectDropDown(props) {
           logout
         </Dropdown.Item>
         }
-        {
+        {/* {
           userToken?.access_token && <Dropdown.Item as="button">
            <ProfileUpdate/>
           </Dropdown.Item>
-        }
+        } */}
     </DropdownButton>
 
     </div>
