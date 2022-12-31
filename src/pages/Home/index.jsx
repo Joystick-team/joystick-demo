@@ -1,23 +1,32 @@
 import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from "react-redux"
+import { fetchGameAction } from '../../Actions/Games.Action'
 import { Col } from 'react-bootstrap'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import MyCard from '../../component/MyCard'
 import PreviousNextMethods from '../../component/PreviousNextMethods'
 import SidePost from '../../component/SidePost'
 import LiberyGamesData from '../../Store/gamesdata'
+import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import './home.scss'
 
 export default function Home() {
   const [sliderCount, setSliderCount] = useState(Number(4))
-
+  // const {loading,success,error,games} = useSelector(state=>state.fetchAllGames)
+  const {userToken} = useSelector(state=>state.signin)
+  // console.log(games)
+  const dispatch = useDispatch()
   useEffect(() => {
+    dispatch(fetchGameAction(1))
+    userToken?.access_token&& dispatch(profileAction())
     if(window.innerWidth < 431){
       setSliderCount(Number(3))
     }
     if(window.innerWidth < 1025){
       setSliderCount(Number(3))
     }
-  }, [])
+    dispatch(fetchGameAction())
+  }, [dispatch,userToken?.access_token])
   
   return (
     <div className="home-container">
@@ -25,7 +34,7 @@ export default function Home() {
           <AnnouncementCarousel />
           <PreviousNextMethods rowNum={sliderCount} header={'Recent Games'}>
             {LiberyGamesData.map((game, idx) => (
-              <Col>
+              <Col key={game.key}>
                   <MyCard 
                     key={game.key.toString()}
                     title={game.name}
@@ -39,7 +48,7 @@ export default function Home() {
         </div>
         <div className="side-adverts">
             {/* The left advert/chat/friends should be written here */}
-            <SidePost />
+           {userToken?.access_token&& <SidePost />}
             <div className="empty-div" ></div>
           </div>
     </div>

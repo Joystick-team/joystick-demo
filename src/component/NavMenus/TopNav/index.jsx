@@ -1,5 +1,6 @@
 import React from 'react'
-import {Nav,Container } from 'react-bootstrap'
+import { Nav, Container } from 'react-bootstrap'
+import {useSelector} from "react-redux"
 import ConnectButton from '../../ConnectButton';
 import { Link, useLocation } from 'react-router-dom';
 import SearchBox from '../../SearchBox';
@@ -12,10 +13,10 @@ import { useTheme } from '../../../ThemeContext';
 import AuthButton from '../../../pages/Auth/AuthButton';
 
 export default function TopNav() {
+    const {userToken} = useSelector(state=>state.signin)
     // eslint-disable-next-line
     const [themeDetector, setThemeDetector] = useTheme()
-    const {pathname} = useLocation()
-
+    const { pathname } = useLocation()
   return (
     <div className='top-nav'>
                 <Container className='navbar'>
@@ -36,18 +37,18 @@ export default function TopNav() {
                         variant="pills"
                     >
                         <div className="top-nav-list">
-                            <ul>
+                           {userToken?.access_token && <ul>
                                 <li><Link to="/leaderboard" className={`${pathname === '/leaderboard'  && 'active'}`}>Leaderboard</Link></li>
                                 <li><Link to="/rewards" className={`${pathname === '/rewards'  && 'active'}`}>Rewards</Link></li>
                                 <li><Link to="/staking" className={`${pathname === '/staking'  && 'active'}`}>Staking</Link></li>
-                            </ul>
+                            </ul>}
                         </div>
                     </Nav>
                     <div className="notice-search">
                         <abbr title="notifications">
                             <div className='top-notifications-icon'> <MdNotifications /> </div>
                         </abbr>
-                        <SearchBox />
+                  <SearchBox />
                     </div>
                         <AuthButton />
                     <ConnectButton className='btn-connect' color="danger" title='Connect'/>
