@@ -1,14 +1,14 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import store from './store';
-import ReactDOM from 'react-dom';
-import './index.css';
-import "./_variables.scss";
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import App from './App'
+import './index.css'
+import store from './store'
+import './_variables.scss'
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
-);
+  document.getElementById('root'),
+)
