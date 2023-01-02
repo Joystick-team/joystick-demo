@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import { useSelector } from 'react-redux'
 import { FaUserAlt } from 'react-icons/fa'
 import Auth from '..'
 import ModalEffect from '../../../component/Modal'
@@ -8,7 +9,10 @@ import { AppContextInit } from '../../../context/AppContext'
 export default function AuthButton() {
     // const [isOpen, setIsOpen] = useState(false)
     // const [isRegister, setIsRegister] = useState(false)
-    const {setMobileDrawer, regModal, setRegModal, signUp, setSignUp, isUser} = AppContextInit();
+    const { signin_loading, signin_success, signin_error, userToken } = useSelector(state => state.signin)
+    const { userId,signup_success } = useSelector(state => state.signup)
+    const [signUp, setSignUp] = useState(true)
+    const {setMobileDrawer, regModal, setRegModal, isUser} = AppContextInit();
 
     const toggleRegister = () => {
         setRegModal(false);
@@ -32,14 +36,20 @@ export default function AuthButton() {
             setMobileDrawer(false)
         
     }
+    useEffect(() => {
+     const timer = setTimeout(() => {
+         signup_success&& setSignUp(false)
+     }, 1000);
+        return ()=>clearInterval(timer)
+    },[signup_success])
 
   return (
     <>{
         !isUser &&     
         <div className="user-reg" style={{cursor: 'pointer'}}>
-        <ModalEffect show={regModal} closeModal={toggleRegister}>
+        <ModalEffect show={signin_success? false:regModal} closeModal={toggleRegister}>
             <div className="">
-                <Auth isRegister={!signUp} checkRegister={checkRegister} />
+                <Auth isRegister={signUp} checkRegister={checkRegister} />
             </div>
         </ModalEffect>
     
