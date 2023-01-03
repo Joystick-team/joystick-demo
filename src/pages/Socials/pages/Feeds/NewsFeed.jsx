@@ -1,11 +1,11 @@
-import React,{useState, useRef, useEffect} from 'react';
+import React,{useState,  useEffect} from 'react';
 import axios from 'axios';
 import { RWebShare } from "react-web-share";
 import { message } from 'antd';
 import  { default as api } from '../../../../config/config.json'
 import Dropdown from 'react-bootstrap/Dropdown';
 import Comments from './Comments';
-import { BsFillPauseFill, BsFillPlayFill, BsVoicemail } from 'react-icons/bs'
+// import { BsFillPauseFill, BsFillPlayFill, BsVoicemail } from 'react-icons/bs'
 import VideoPlayer from '../../../../component/VideoPlayer';
 import PaginationRange from '../../../../component/PaginationComponet/paginationRange';
 import { format } from 'timeago.js'
@@ -17,11 +17,11 @@ function NewsFeed(props) {
     const [data, setData] = useState([])
     const [isLiked, setIsLiked] = useState(false)
     const [showComment, setShowComment] = useState({})
-    const [file, setFile] = useState();
+    // const [file, setFile] = useState();
     const [copySuccess, setCopySuccess] = useState('');
     const [currentPage, setCurrentPage] = useState(1)
-    const [defaultPage, setDefaultPage] = useState(1)
-    const [postPerPage, setPostPerPage] = useState(4)
+    const [defaultPage] = useState(1)
+    const [postPerPage] = useState(4)
     const lastPageIndex = currentPage * postPerPage
     const firstPageIndex = lastPageIndex - postPerPage
     const currentPost = (data)?.slice(firstPageIndex, lastPageIndex)
@@ -62,7 +62,7 @@ function NewsFeed(props) {
         getData()
       }, [isLiked])
 
-      const textAreaRef = useRef(null);
+    //   const textAreaRef = useRef(null);
 
       function copyToClipboard(e, url){
         e.stopPropagation()
@@ -75,14 +75,14 @@ function NewsFeed(props) {
       };
 
     const handleLike = async(id)=>{
-        const token = localStorage.getItem('userToken')
-        var config = {
-            method: 'post',
-            url: `${api.url}/post/like-post/${id}`,
-            headers: { Authorization: `Bearer ${token}` },
-          };
+        // const token = localStorage.getItem('userToken')
+        // var config = {
+        //     method: 'post',
+        //     url: `${api.url}/post/like-post/${id}`,
+        //     headers: { Authorization: `Bearer ${token}` },
+        //   };
         try {
-            const res = await axios(config)
+            // const res = await axios(config)
             setIsLiked(!isLiked)
         } catch (error) {
             console.log(error.response.data)
@@ -126,7 +126,7 @@ function NewsFeed(props) {
                             <div className="col-9">
                                 <div className="d-flex flex-start align-items-center">
                                     <img className="rounded-circle shadow-1-strong me-3"
-                                      src={"assets/images/userAvarta.png"}  alt="Profile-picture" width="60"
+                                      src={"assets/images/userAvarta.png"}  alt="Profile-pic" width="60"
                                       height="60" />
                                     <div>
                                       <h6 className="fw-bold text-primary mb-1">{d.user.username}</h6>
@@ -159,7 +159,7 @@ function NewsFeed(props) {
                             </p>
                             {checkURL(d.url) === 'isImage' &&
                                 <img className='img-fluid'
-                                src={d.url}  alt="image-content" /> 
+                                src={d.url}  alt="img-content" /> 
                             }
                             {checkURL(d.url) === 'isVideo' &&
                                 <>
