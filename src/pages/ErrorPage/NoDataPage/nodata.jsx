@@ -24,7 +24,7 @@ export default function NoData() {
                 <h3> Data not found </h3>
             </div>
             <div className="dev__error_content__message">
-                <p>Sorry we can’t load the page you are looking for </p>
+                <p>Sorry we can't load the page you are looking for </p>
             </div>
             <div className="dev__error_content__btn">
                 <Button variant="danger" onClick={goBack}>Go back To Previous Page</Button>

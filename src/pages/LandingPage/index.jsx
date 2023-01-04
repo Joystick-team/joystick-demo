@@ -1,27 +1,51 @@
-import React, { useMemo, useState } from 'react'
+import React, { useMemo, useState,useEffect } from 'react'
+import { useSelector, useDispatch } from "react-redux"
+import {useParams}  from "react-router-dom"
+import { fetchGameAction } from '../../Actions/Games.Action'
+import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
-import SelectDropDown from '../../component/SelectDropDown'
-import { default as api } from '../../config/config.json'
-import useFetch from '../../hooks/useFetch'
-import { default as OnsiteGames } from '../../Store/librarygamesdata'
+import  DropDown from '../../component/SelectDropDown/Dropdown'
+// import useFetch from '../../hooks/useFetch'
+// import  { default as api } from '../../config/config.json'
+import { default as OnsiteGames} from '../../Store/librarygamesdata'
 
 import PaginationComponet from '../../component/PaginationComponet'
 import NoInternet from '../ErrorPage/NoConnection/internet'
 import './landingpage.scss'
 
 export default function LandingPage(props) {
-  const gameOptionsList = ['Off-site', 'On-site']
-  const [paginate, setPaginate] = useState(false)
+    const online = navigator.onLine
+    const dispatch = useDispatch()
+    const params = useParams()
+    const id = params?.id||1
+    const { games } = useSelector(state => state.fetchAllGames)
+    const { userToken } = useSelector(state => state.signin)
+    const { search_string } = useSelector(state => state.search)
+    
+    useEffect(() => {
+        userToken&& dispatch(profileAction())
+        dispatch(fetchGameAction(id,search_string))
+    }, [dispatch, id, userToken, search_string]
+    )
+    
+    const gameOptionsList = ["Off-site", "On-site"]
+    const [paginate, setPaginate] = useState(false)
+    
+    // const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=${id}&limit=15`;
 
-  const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=1&limit=15`
+    //eslint-disable-next-line
+    // const [loading, data, error] = useFetch(url)
+    const offSiteGame = useMemo(() => { return games?.data }, [games])
+    const metaData = useMemo(() => { return games?.metadata }, [games])
+    // console.log('data', offSiteGame);
 
   //eslint-disable-next-line
-  const [loading, data, error] = useFetch(url)
-  const offSiteGame = useMemo(() => {
-    return data?.data
-  }, [data])
+  // const [loading, data, error] = useFetch(url)
+  // const offSiteGame = useMemo(() => {
+  //   return data?.data
+  // }, [data])
 
-  const online = navigator.onLine
+  // const online = navigator.onLine
   // function openModal(data) {
   //     setIsOpen(true);
   //     setDetails(data)
@@ -92,11 +116,12 @@ export default function LandingPage(props) {
           </div>
           <div className='site-games-container'>
             <div className='select-container'>
-              <SelectDropDown
-                // onChange={handleChange}
+              <DropDown
+                onChange={handleChange}
                 getValue={handleChange}
                 options={gameOptionsList}
                 placeholder={'Off-site'}
+                option ={gameOptionsList}
               />
             </div>
             {/* <ModalEffect show={isOpen} closeModal={closeModal}>
@@ -109,15 +134,14 @@ export default function LandingPage(props) {
                         {currentValue}
                     </div>
                 </div>  */}
-            <div className='page_sites'>
-              <PaginationComponet
-                btn={paginate ? 'OnsiteGames' : 'offSiteGame'}
-                api={paginate ? OnsiteGames : offSiteGame?.data}
-              />
+                <div className="page_sites">
+                    {/* <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/> */}
+                      <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} />
+                </div>
             </div>
           </div>
-        </div>
-      )}
+        )
+      }
     </div>
   )
 }
