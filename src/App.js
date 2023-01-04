@@ -22,7 +22,8 @@ import WebinarCall from './pages/Live/WebinarCall';
 import ErrorBoundary from './Layout/ErrorBoundary/index.js';
 import SinglePost from './pages/Socials/pages/Feeds/SinglePost';
 import Messenger from './pages/Messenger';
-
+import NewSocials from './pages/NewSocials';
+import Feeds from './pages/NewSocials/pages/Feeds';
 
 function App() {
 
@@ -130,6 +131,16 @@ function App() {
                 exact
                 path="*" element={<ErrorPage />}
               />
+
+              <Route
+                exact
+                path="/newsocials" element={<NewSocials />}
+              >
+                   <Route
+                        exact
+                        path="feeds" element={<Feeds />}
+                      />
+                </ Route>
             </Routes>
             </Layout>
             </ThemeProvider>
