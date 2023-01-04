@@ -20,7 +20,8 @@ import Store from './pages/Store'
 import TestPage from './pages/TestPage'
 import Wallet from './pages/Wallet'
 import { ThemeProvider } from './ThemeContext'
-
+import NewSocials from './pages/NewSocials';
+import Feeds from './pages/NewSocials/pages/Feeds';
 function App() {
   return (
     <div className='App'>
@@ -63,6 +64,15 @@ function App() {
                   <Route exact path='/rewards' element={<Rewards />} />
                   <Route exact path='/message' element={<Message />} />
                   <Route exact path='*' element={<ErrorPage />} />
+                  <Route
+                      exact
+                      path="/newsocials" element={<NewSocials />}
+                       >
+                   <Route
+                      exact
+                      path="feeds" element={<Feeds />}
+                      />
+                </ Route>
                 </Routes>
               </Layout>
             </ThemeProvider>
