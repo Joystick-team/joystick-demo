@@ -13,12 +13,13 @@ import './landingpage.scss'
 
 export default function LandingPage(props) {
     const online = navigator.onLine
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const [gameSate,setGameState] = useState("off-site")
     const params = useParams()
     const id = params?.id||1
     const { games } = useSelector(state => state.fetchAllGames)
     const { userToken } = useSelector(state => state.signin)
-    const { search_string } = useSelector(state => state.search)
+  const { search_string } = useSelector(state => state.search)
     
     useEffect(() => {
         userToken&& dispatch(profileAction())
@@ -35,9 +36,11 @@ export default function LandingPage(props) {
   
   let handleChange = gameOption => {
     if (gameOption === 'On-site') {
+      setGameState("On-site")
       // setCurrentValue(games2)
       setPaginate(true)
     } else if (gameOption === 'Off-site') {
+      setGameState("Off-site")
       // setCurrentValue(offSiteGame)
       setPaginate(false)
     } else {
@@ -61,7 +64,7 @@ export default function LandingPage(props) {
                 onChange={handleChange}
                 getValue={handleChange}
                 options={gameOptionsList}
-                placeholder={'Off-site'}
+                placeholder={gameSate}
                 option ={gameOptionsList}
               />
             </div>

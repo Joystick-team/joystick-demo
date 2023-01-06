@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Collapse, Nav } from 'react-bootstrap'
 import { BiMenu } from 'react-icons/bi'
+import { useSearchParams } from "react-router-dom";
 import {
   BsBroadcast,
   BsDropletFill,
@@ -21,6 +22,9 @@ import ThemeToggle from '../../ThemeToggle'
 import './drawalNav.scss'
 
 export default function DrawerNav({ TogglecloseOpen }) {
+  console.log("location", window.location.href.endsWith("/"))
+  const isLandingPage = window.location.href.endsWith("/")
+ 
   const [open, setOpen] = useState(true)
   // const {profile_data} = useSelector(state=>state.profile)
   const { userToken } = useSelector(state => state.signin)
@@ -73,41 +77,46 @@ export default function DrawerNav({ TogglecloseOpen }) {
             <div>
               <Nav className=' flex-column' variant='tabs'>
                 <div className='drawer__nav-slide'>
-                  <NavLink to='/home'>
-                    {' '}
-                    <FaHome /> <span>Home</span>
-                  </NavLink>
-                  {userToken?.access_token && (
+                  {!isLandingPage&&<NavLink to='/home'>
+                      {' '}
+                      <FaHome /> <span>Home</span>
+                    </NavLink>
+                  }
+                  {userToken?.access_token && !isLandingPage&&(
                     <NavLink to='/store'>
                       {' '}
                       <BsDropletFill /> <span>Store</span>
                     </NavLink>
                   )}
-                  <NavLink to='/library'>
-                    {' '}
-                    <BsGridFill /> <span>Library</span>
-                  </NavLink>
-                  <NavLink to='/socials'>
-                    {' '}
-                    <BsFillPeopleFill /> <span>Socials</span>
-                  </NavLink>
-                  <NavLink to='/livestream'>
-                    {' '}
-                    <BsBroadcast /> <span>Live</span>
-                  </NavLink>
+                 {!isLandingPage&& <NavLink to='/library'>
+                      {' '}
+                      <BsGridFill /> <span>Library</span>
+                    </NavLink>
+                  }
+                  {!isLandingPage&&<NavLink to='/socials'>
+                      {' '}
+                      <BsFillPeopleFill /> <span>Socials</span>
+                    </NavLink>
+                  }
+                 {!isLandingPage&& <NavLink to='/livestream'>
+                      {' '}
+                      <BsBroadcast /> <span>Live</span>
+                    </NavLink>
+                  }
                 </div>
 
-                <hr />
+                {/* <hr /> */}
                 <div className='drawer_down_nav-sids'>
                   {userToken?.access_token && (
                     <NavLink to='/u/wallet'>
                       <FaWallet /> <span>Wallet</span>
                     </NavLink>
                   )}
-                  <NavLink to='/u/settings'>
-                    <BsGearWideConnected /> <span>Settings</span>
-                  </NavLink>
-                  <div className='icons-drawer_nav-footer'>
+                  {!isLandingPage&&<NavLink to='/u/settings'>
+                      <BsGearWideConnected /> <span>Settings</span>
+                    </NavLink>
+                  }
+                  {/* <div className='icons-drawer_nav-footer'>
                     <Nav.Link href='#' target='_blank'>
                       <FaTelegram />{' '}
                     </Nav.Link>
@@ -120,7 +129,7 @@ export default function DrawerNav({ TogglecloseOpen }) {
                     <NavLink to='/message'>
                       <BsFillChatLeftQuoteFill />{' '}
                     </NavLink>
-                  </div>
+                  </div> */}
                   <ThemeToggle />
                 </div>
               </Nav>
@@ -128,6 +137,6 @@ export default function DrawerNav({ TogglecloseOpen }) {
           </Collapse>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
