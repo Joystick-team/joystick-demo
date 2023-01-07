@@ -1,0 +1,127 @@
+.friends {
+  background-color: var(--friends-ash-bg);
+  padding: 0.8rem;
+  border-radius: 12px;
+
+  & > .friends-container {
+    border-radius: 12px;
+    background-color: var(--friends-white-bg);
+    padding: 1.5rem 0.5rem;
+
+    .search-friends {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      border-radius: 24px;
+      padding: 10px;
+      height: 34px;
+      background-color: var(--friends-ash-input-bg);
+      color: var(--friends-search-icon);
+    }
+
+    .search-friends > input {
+      border: none;
+      outline: none;
+      background-color: inherit;
+      font-size: 14px;
+      color: var(--primary--text);
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
+
+      &::placeholder {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--friends-search-icon);
+      }
+    }
+
+    .friends-profile-pics {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+
+      .profile {
+        margin-top: 2.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+
+        .pics {
+          background-image: url("/assets/images/joystick-user.png"),
+            linear-gradient(157.14deg, #db242d, #283ade, #9f0d28, #741f04);
+          background-size: cover;
+          background-origin: border-box;
+          background-clip: content-box, border-box;
+          border: 2.42px solid transparent;
+          height: 63px;
+          width: 63px;
+          border-radius: 50%;
+        }
+
+        .profile-name {
+          font-size: 9.692px;
+          font-weight: 700;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .friends-online {
+      margin-top: 2.5rem;
+
+      .friends-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        & > p {
+          font-weight: 700;
+          line-height: 20px;
+          margin: 0;
+          color: var(--primary--text);
+        }
+
+        &:last-child {
+          color: var(--friends-search-icon);
+        }
+      }
+
+      .friend-list {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.7rem;
+
+        .flex-online {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+
+          & > .profile-details {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            & > img {
+              border-radius: 50%;
+              height: 38px;
+              width: 38px;
+            }
+
+            & > p {
+              margin: 0;
+              font-size: 14.1457px;
+              font-weight: 600;
+              line-height: 17px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
