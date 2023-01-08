@@ -1,0 +1,101 @@
+@mixin follow-btn($bg) {
+  border-radius: 8px;
+  @if $bg == #db242d {
+    background: $bg;
+    color: #d9d9d9;
+    border: none;
+  } @else {
+    background: inherit;
+    color: var(--follow-btn-text);
+    border: 1px solid var(--follow-btn-border);
+  }
+  padding: 10px 4rem;
+  font-weight: 500;
+  font-size: 15px;
+  height: 40px;
+
+  &:hover {
+    background: #bd232a;
+    color: #d9d9d9;
+    transition: all ease-out 200ms;
+  }
+}
+
+@mixin notify-icon($bg) {
+  background: $bg;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-card {
+  padding: 1rem 1.5rem;
+  border-top: 2px solid var(--notification--card--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .notify-body {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    .user-icon {
+      @include notify-icon(rgba(154, 227, 250, 0.7));
+    }
+    .comments-icon {
+      @include notify-icon(rgba(189, 250, 195, 0.7));
+    }
+    .shares-icon {
+      @include notify-icon(rgba(255, 247, 179, 0.7));
+    }
+    .likes-icon {
+      @include notify-icon(rgba(251, 192, 192, 0.7));
+    }
+    .photos-icon {
+      @include notify-icon(rgba(154, 227, 250, 0.7));
+    }
+
+    .notify-contents {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+
+      .profile-pics > img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+      }
+
+      .notify-details {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .notify-details > p:first-child {
+        font-weight: 600;
+        margin: 0;
+      }
+      .notify-details > p:last-child {
+        font-size: 13px;
+        color: var(--notify--time);
+        font-weight: 500;
+        margin: 0;
+      }
+    }
+  }
+
+  .follow-btn {
+    & > .follow {
+      @include follow-btn(#db242d);
+    }
+
+    & > .followed {
+      @include follow-btn(inherit);
+    }
+  }
+}

@@ -1,54 +1,85 @@
-html{
-    --primary--text: #161515;
-    // --background: #E5E5E5;
-    --background: #fff;
-    --button: #C71F1F;
-    --secondary--text: var(--primary--text);
-    --secondary-background: #EEECEC;
-    --live-btn: #1BB04A;
-    --text-field: #7AC231;
-    --chat-text: rgba(22, 21, 21, 0.7);
-    --color-icon: rgba(22, 21, 21, 0.6);
-    --text-icon: rgba(22, 21, 21, 0.8);
-    --input-background: #EEECEC;
-    --active-text: #FBFBFB;
-    --plain-text: rgba(22, 21, 21, 0.8);
-    --winner-post: rgba(0, 0, 0, 0.2);
-    --chat-option-icon: #161515;
-    --search-box-background: #EEECEC;
-    --other-token-text:#161515;
-    --wallet-tx-text:#FFFFFF;
-    --tx-card:#BDBFC9;
-    --wallet-tx-div:#D2D5DC;
-    --token-stat-text :#0D0D0D;
-    --select-background : var(--secondary-background);
-    --nodata-title: #141414;
-    --nodata-text: rgba(83, 78, 78, 0.9);
-}
-html[data-theme='dark']{
-    --primary--text: #fff;
-    --background: #0D0D0D;
-    --button: #C71F1F;
-    --secondary--text: #FBFBFB;
-    --secondary-background : #141414;
-    --live-btn: #1BB04A;
-    --text-field: #7AC231;
-    --chat-text: rgba(255, 255, 255, 0.7);
-    --color-icon: rgba(235, 235, 245, 0.6);
-    --text-icon: #ebebf5;
-    --input-background: #2F2F2F;
-    --active-text: #FBFBFB;
-    --plain-text: #ebebf599;
-    --winner-post: rgba(196, 196, 196, 0.1);
-    --chat-option-icon: #C4C4C4;
-    --search-box-background: #2F2F2F;
-    --other-token-text:#FFFFFF;
-    --wallet-tx-text:#606166;
-    --tx-card:#2A2B31;
-    --wallet-tx-div:#1D2024;
-    --token-stat-text :#FFFFFF;
-    --select-background: #141414;
-    --nodata-title: #fff;
-    --nodata-text: rgba(146, 137, 137, 0.9);
+html {
+  --primary--text: rgba(0, 0, 0, 0.9);
+  // --background: #E5E5E5;
+  --background: #fff;
 
+  // Notifications
+  --ash--background: #ebebeb;
+  --notifications--text: #6c6b6b;
+  --notification--card--border: #e0e0e0;
+  --notify--time: rgba(50, 50, 50, 0.9);
+  --follow-btn-border: #1b1b1b;
+  --follow-btn-text: #2c2c2c;
+  // End
+
+  // Friends
+  --friends-ash-input-bg: #eeecec;
+  --friends-ash-bg: #ebebeb;
+  --friends-white-bg: #ffffff;
+  --friends-search-icon: rgba(30, 30, 30, 0.6);
+  // End
+
+  --button: #c71f1f;
+  --secondary--text: var(--primary--text);
+  --secondary-background: #eeecec;
+  --live-btn: #1bb04a;
+  --text-field: #7ac231;
+  --chat-text: rgba(22, 21, 21, 0.7);
+  --color-icon: rgba(22, 21, 21, 0.6);
+  --text-icon: rgba(22, 21, 21, 0.8);
+  --input-background: #eeecec;
+  --active-text: #fbfbfb;
+  --plain-text: rgba(22, 21, 21, 0.8);
+  --winner-post: rgba(0, 0, 0, 0.2);
+  --chat-option-icon: #161515;
+  --search-box-background: #eeecec;
+  --other-token-text: #161515;
+  --wallet-tx-text: #ffffff;
+  --tx-card: #bdbfc9;
+  --wallet-tx-div: #d2d5dc;
+  --token-stat-text: #0d0d0d;
+  --select-background: var(--secondary-background);
+  --nodata-title: #141414;
+  --nodata-text: rgba(83, 78, 78, 0.9);
+}
+html[data-theme="dark"] {
+  --primary--text: rgba(255, 255, 255, 0.9);
+  --background: #0d0d0d;
+  // Notifications
+  --ash--background: #1d1c1c;
+  --notifications--text: #dadada;
+  --notification--card--border: #000000;
+  --notify--time: rgba(172, 166, 166, 0.9);
+  --follow-btn-border: #aaaaaa;
+  --follow-btn-text: #d9d9d9;
+  // End
+
+  // Friends
+  --friends-ash-input-bg: #2f2f2f;
+  --friends-ash-bg: #211e1e;
+  --friends-white-bg: #211e1e;
+  --friends-search-icon: rgba(235, 235, 245, 0.6);
+  // End
+  --button: #c71f1f;
+  --secondary--text: #fbfbfb;
+  --secondary-background: #141414;
+  --live-btn: #1bb04a;
+  --text-field: #7ac231;
+  --chat-text: rgba(255, 255, 255, 0.7);
+  --color-icon: rgba(235, 235, 245, 0.6);
+  --text-icon: #ebebf5;
+  --input-background: #2f2f2f;
+  --active-text: #fbfbfb;
+  --plain-text: #ebebf599;
+  --winner-post: rgba(196, 196, 196, 0.1);
+  --chat-option-icon: #c4c4c4;
+  --search-box-background: #2f2f2f;
+  --other-token-text: #ffffff;
+  --wallet-tx-text: #606166;
+  --tx-card: #2a2b31;
+  --wallet-tx-div: #1d2024;
+  --token-stat-text: #ffffff;
+  --select-background: #141414;
+  --nodata-title: #fff;
+  --nodata-text: rgba(146, 137, 137, 0.9);
 }
