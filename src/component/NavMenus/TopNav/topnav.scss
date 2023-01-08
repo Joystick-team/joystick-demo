@@ -71,8 +71,9 @@
             height: 100px;
     
             img{
-                width: 127px;
+                width: 30px;
                 height: auto;
+                object-fit: contain;
             }
         }
         .Tab .nav-link, Link, a{

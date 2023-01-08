@@ -47,16 +47,12 @@ export default function DrawerNav({ TogglecloseOpen }) {
 
               {themeDetector === 'light' || themeDetector === null ? (
                 <img
-                  src={JOYSTICK2}
-                  width={'80px'}
-                  height={`auto`}
+                  src="/assets/images/newLogo.png"
                   alt='JOYSTICK-logo'
                 />
               ) : (
                 <img
-                  src={JOYSTICK}
-                  width={'80px'}
-                  height={`auto`}
+                  src="/assets/images/newLogo.png"
                   alt='JOYSTICK-logo'
                 />
               )}
