@@ -18,6 +18,7 @@ import './mobileSideNav.scss';
 import { AppContextInit } from '../../../context/AppContext';
 
 export default function MobileSideNav() {
+    const isLandingPage = window.location.href.endsWith("/")
     const { setMobileDrawer, mobileDrawer } = AppContextInit()
     const handleClose = () => setMobileDrawer(false);
     const handleShow = () => setMobileDrawer(true);
@@ -59,9 +60,9 @@ export default function MobileSideNav() {
                 </picture> */}
 
                 { themeDetector === 'light' || themeDetector === null ? 
-                    <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                    <img src="/assets/images/newLogo.png" width={'30px'} height={`auto`} alt="JOYSTICK-logo" />
                     :
-                    <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                    <img src="/assets/images/newLogo.png" width={'30px'} height={`auto`} alt="JOYSTICK-logo" />
                 }
                 
                 </NavLink>
@@ -81,31 +82,45 @@ export default function MobileSideNav() {
         <Offcanvas className='side-nav' show={mobileDrawer} onHide={handleClose.bind()}>
           <Offcanvas.Header closeButton>
             { themeDetector === 'light' || themeDetector === null ? 
-                <img src={JOYSTICK2} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                <img src="/assets/images/newLogo.png" width={'30px'} height={`auto`} alt="JOYSTICK-logo" />
                 :
-                <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
+                <img src="/assets/images/newLogo.png" width={'30px'} height={`auto`} alt="JOYSTICK-logo" />
             }
             {/* <Offcanvas.Title>Offcanvas</Offcanvas.Title> */}
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className=" flex-column side-nav-list-item" variant="pills" defaultActiveKey="/">
-                    <Link to="/home" onClick={handleClose} className={ ( pathname === '/home' || pathname === '/') && `active`}> <FaHome /> <span>Home</span></Link>
-                    <Link to="/store" onClick={handleClose} className={ pathname === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
-                    <Link to="/library" onClick={handleClose} className={ pathname === '/library' && `active`}> <BsGridFill/> <span>Library</span></Link>
-                    <Link to="/socials" onClick={handleClose} className={ pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>
-                    <Link to="/livestream" onClick={handleClose} className={ pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
+                   {! isLandingPage&& <Link to="/home" onClick={handleClose} className={ ( pathname === '/home' || pathname === '/') && `active`}> <FaHome /> <span>Home</span></Link>}
+                        {! isLandingPage&&
+                            <Link to="/store" onClick={handleClose} className={pathname === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
+                        }
+                        {!isLandingPage &&
+                            <Link to="/library" onClick={handleClose} className={pathname === '/library' && `active`}> <BsGridFill /> <span>Library</span></Link>
+                        }
+                        {!isLandingPage &&
+                            <Link to="/socials" onClick={handleClose} className={pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>
+                        }
+                        {!isLandingPage &&
+                            <Link to="/livestream" onClick={handleClose} className={pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
+                        }
                 <br />
                 <div className="footer-nav-side">
                 <div className="mobile-connect-btn"  onClick={handleClose}>
-                    <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{width: '100%', borderRadius: '12px'}} color="danger" title='Connect'/>
+                                {!isLandingPage &&
+                                    <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{ width: '100%', borderRadius: '12px' }} color="danger" title='Connect' />
+                                }
                 </div>
-                <Link to="/u/wallet" onClick={handleClose} className={ pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
-                <Link to="/u/settings" onClick={handleClose} className={ pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
-                    <div className="icons-sidenav-footer">
+                            {!isLandingPage &&
+                                <Link to="/u/wallet" onClick={handleClose} className={pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
+                            }
+                            {!isLandingPage &&
+                                <Link to="/u/settings" onClick={handleClose} className={pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
+                            }
+                    {/* <div className="icons-sidenav-footer">
                         <Nav.Link href="#" target="_blank" ><FaTelegram /> </Nav.Link>
                         <Nav.Link href="https://twitter.com/Joystick_labs?t=tJCfTkFcbIJ4KqJY0Ak4EQ&s=09" target="_blank"><FiTwitter /> </Nav.Link>
                         <Link to="/message" onClick={handleClose} className={ pathname === '/message' && `active`}><BsFillChatLeftQuoteFill /> </Link>
-                    </div>
+                    </div> */}
                     <AuthButton clicked={handleClose}/>
                     <ThemeToggle />
                 </div>

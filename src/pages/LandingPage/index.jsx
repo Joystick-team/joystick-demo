@@ -5,8 +5,6 @@ import { fetchGameAction } from '../../Actions/Games.Action'
 import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
 import  DropDown from '../../component/SelectDropDown/Dropdown'
-// import useFetch from '../../hooks/useFetch'
-// import  { default as api } from '../../config/config.json'
 import { default as OnsiteGames} from '../../Store/librarygamesdata'
 
 import PaginationComponet from '../../component/PaginationComponet'
@@ -15,12 +13,13 @@ import './landingpage.scss'
 
 export default function LandingPage(props) {
     const online = navigator.onLine
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const [gameSate,setGameState] = useState("off-site")
     const params = useParams()
     const id = params?.id||1
     const { games } = useSelector(state => state.fetchAllGames)
     const { userToken } = useSelector(state => state.signin)
-    const { search_string } = useSelector(state => state.search)
+  const { search_string } = useSelector(state => state.search)
     
     useEffect(() => {
         userToken&& dispatch(profileAction())
@@ -30,73 +29,18 @@ export default function LandingPage(props) {
     
     const gameOptionsList = ["Off-site", "On-site"]
     const [paginate, setPaginate] = useState(false)
-    
-    // const url = `${api?.url}/game?game_type=off_site&sort=asc-name&page=${id}&limit=15`;
-
-    //eslint-disable-next-line
-    // const [loading, data, error] = useFetch(url)
     const offSiteGame = useMemo(() => { return games?.data }, [games])
     const metaData = useMemo(() => { return games?.metadata }, [games])
     // console.log('data', offSiteGame);
 
-  //eslint-disable-next-line
-  // const [loading, data, error] = useFetch(url)
-  // const offSiteGame = useMemo(() => {
-  //   return data?.data
-  // }, [data])
-
-  // const online = navigator.onLine
-  // function openModal(data) {
-  //     setIsOpen(true);
-  //     setDetails(data)
-  //   }
-
-  //     const closeModal = () => {
-  //         setIsOpen(false)
-  //     }
-
-  //     const lastPageIndex = currentPage * postPerPage;
-  //     const firstPageIndex = lastPageIndex - postPerPage;
-  //     const currentPost = data?.data?.data?.slice(firstPageIndex, lastPageIndex);
-
-  //     // eslint-disable-next-line
-  //     const [totalPages, setTotalPages] = useState( paginate ? OnsiteGames.length : OffSiteGames.length )
-  //     const currentPostOnsite = OnsiteGames.slice(firstPageIndex, lastPageIndex);
-
-  //     const offSiteGame = data && currentPost.map((game, idx) => (
-  //         <Col>
-  //             <MyCard
-  //                 key={game.id ?? game.key}
-  //                 title={game.name ?? game.name}
-  //                 text={game.text}
-  //                 img={game.images.thumb ?? game.images}
-  //                 // button={game.btn}
-  //                 button={"More Info"}
-  //                 openModal={openModal.bind(this, game)}
-  //             />
-  //         </Col>
-  //     ))
-
-  // const games2 = currentPostOnsite.map((game, idx) => (
-  //     <Col>
-  //         <MyCard
-  //             key={game.key.toString() && idx}
-  //             title={game.name}
-  //             text={game.text}
-  //             img={game.images}
-  //             button={"Play"}
-  //             openModal={openModal.bind(this, game)}
-  //         />
-  //     </Col>
-  // ))
-
-  // eslint-disable-next-line
-  // const [currentValue, setCurrentValue] = useState(offSiteGame)
+  
   let handleChange = gameOption => {
     if (gameOption === 'On-site') {
+      setGameState("On-site")
       // setCurrentValue(games2)
       setPaginate(true)
     } else if (gameOption === 'Off-site') {
+      setGameState("Off-site")
       // setCurrentValue(offSiteGame)
       setPaginate(false)
     } else {
@@ -120,22 +64,11 @@ export default function LandingPage(props) {
                 onChange={handleChange}
                 getValue={handleChange}
                 options={gameOptionsList}
-                placeholder={'Off-site'}
+                placeholder={gameSate}
                 option ={gameOptionsList}
               />
             </div>
-            {/* <ModalEffect show={isOpen} closeModal={closeModal}>
-                    <div className="site-games">
-                        {details && <DetailsCard {...(details ? {...details} : {})} />}
-                    </div>
-                </ModalEffect> */}
-            {/* <div className="page_sites">
-                    <div className="site-games">
-                        {currentValue}
-                    </div>
-                </div>  */}
                 <div className="page_sites">
-                    {/* <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame?.data}/> */}
                       <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} />
                 </div>
             </div>

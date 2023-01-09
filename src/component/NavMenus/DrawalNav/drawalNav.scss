@@ -30,8 +30,9 @@
         align-items: center;
 
         img{
-            width: 127px;
+            width: 30px;
             height: auto;
+            object-fit: contain;
         }
 
         .no__link, a, Link, a:hover, Link:hover, .active, .no__link:hover{
