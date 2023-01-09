@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Container } from "react-bootstrap";
+import { Nav, Container,Image } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import ConnectButton from "../../ConnectButton";
 import { Link, useLocation } from "react-router-dom";
@@ -26,21 +26,26 @@ export default function TopNav() {
                                 <source srcSet={JOYSTICK2}  width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeDetector})`}/>
                                 <img src={JOYSTICK} width={'80px'} height={`auto`} alt="JOYSTICK-logo" />
                             </picture> */}
-            {themeDetector === "light" || themeDetector === null ? (
+            {/* {themeDetector === "light" || themeDetector === null ? (
               <img
-                src={JOYSTICK2}
-                width={"80px"}
+                src="/assets/images/newLogo.png"
+                width={"30px"}
                 height={`auto`}
                 alt="JOYSTICK-logo"
               />
             ) : (
               <img
-                src={JOYSTICK}
+                 
+                src="/assets/images/newLogo.png"
                 width={"80px"}
                 height={`auto`}
                 alt="JOYSTICK-logo"
               />
-            )}
+            )} */}
+             <img
+                src="/assets/images/newLogo.png"
+                alt="JOYSTICK-logo"
+              />
           </Link>
         </div>
         <Nav variant="pills">
