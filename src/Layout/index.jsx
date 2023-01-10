@@ -11,6 +11,7 @@ import Subscription from '../component/Subscription'
 
 
 export default function Layout(props) {
+ 
   const { isUser, message, success } = AppContextInit()
   return (
     <div className='layout-container'>

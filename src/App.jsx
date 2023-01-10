@@ -30,7 +30,7 @@ import Streams from './pages/NewSocials/pages/Profile/ProfileContents/streams/st
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Router>
         <ErrorBoundary>
           <AppContextContainer>
@@ -43,33 +43,32 @@ function App() {
                   {/* <Route path='/socials' element={<Socials />} /> */}
                   <Route path='/test' element={<TestPage />} />
 
-                  <Route path='/store' element={<Store />} />
-                  <Route path='/livestream' element={<Livescream />} />
-                  <Route path='/library' element={<Library />} />
-                  <Route path='u/settings' element={<Settings />} />
-                  <Route path='u/wallet' element={<Wallet />} />
-                  <Route exact path='/leaderboard' element={<Leaderboard />} />
-                  <Route exact path='/staking' element={<Staking />} />
-                  <Route exact path='/rewards' element={<Rewards />} />
-                  <Route exact path='/message' element={<Message />} />
-                  <Route exact path='*' element={<ErrorPage />} />
+                  <Route path="/store" element={<Store />} />
+                  <Route path="/livestream" element={<Livescream />} />
+                  <Route path="/library" element={<Library />} />
+                  <Route path="u/settings" element={<Settings />} />
+                  <Route path="u/wallet" element={<Wallet />} />
+                  <Route exact path="/leaderboard" element={<Leaderboard />} />
+                  <Route exact path="/staking" element={<Staking />} />
+                  <Route exact path="/rewards" element={<Rewards />} />
+                  <Route exact path="/message" element={<Message />} />
+                  <Route exact path="*" element={<ErrorPage />} />
 
-                  <Route exact path='/test' element={<TestPage />} />
-                  <Route path='/store' element={<Store />} />
-                  <Route exact path='/livestream' element={<Livescream />} />
+                  <Route exact path="/test" element={<TestPage />} />
+                  <Route path="/store" element={<Store />} />
+                  <Route exact path="/livestream" element={<Livescream />} />
                   <Route
                     exact
-                    path='/livestream/:url'
+                    path="/livestream/:url"
                     element={<WebinarCall />}
                   />
-                  <Route path='/library' element={<Library />} />
-                  <Route path='u/settings' element={<Settings />} />
-                  <Route path='u/wallet' element={<Wallet />} />
-                  <Route exact path='/leaderboard' element={<Leaderboard />} />
-                  <Route exact path='/staking' element={<Staking />} />
-                  <Route exact path='/rewards' element={<Rewards />} />
-                  <Route exact path='/message' element={<Message />} />
-                  <Route exact path='*' element={<ErrorPage />} />
+                  <Route path="/library" element={<Library />} />
+                  <Route path="u/settings" element={<Settings />} />
+                  <Route path="u/wallet" element={<Wallet />} />
+                  <Route exact path="/leaderboard" element={<Leaderboard />} />
+                  <Route exact path="/staking" element={<Staking />} />
+                  <Route exact path="/rewards" element={<Rewards />} />
+                  <Route exact path="/message" element={<Message />} />
                   <Route
                       exact
                       path='/socials' element={<NewSocials />}
@@ -112,7 +111,7 @@ function App() {
         </ErrorBoundary>
       </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

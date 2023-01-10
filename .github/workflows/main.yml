@@ -16,4 +16,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn build
-      - run: cp -fR ./dist/* /var/www/freetyl.io/html
+      # - run: cp -fR ./dist/* /var/www/freetyl.io/html

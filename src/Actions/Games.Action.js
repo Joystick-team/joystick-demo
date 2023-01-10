@@ -16,6 +16,6 @@ export const fetchGameAction =
       dispatch({ type: FETCH_GAMES_SUCCESS, payload: data })
     } catch (error) {
       dispatch({ type: FETCH_GAMES_FAIL, payload: error })
-      console.log('error', error)
+      console.log('error', error?.response)
     }
   }
