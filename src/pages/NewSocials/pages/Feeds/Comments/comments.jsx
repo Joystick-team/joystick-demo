@@ -12,43 +12,8 @@ import LoadingButton from '../../../../../component/LoadingButton'
 import {RiArrowDropDownLine} from "react-icons/ri"
 
 
-const comments=[
-  {
-    postImg: [comment1 ],
-    name:"Wide Fox",
-    handle:"@wide-control",
-    profileImg: postImg1 ,
-    title:"The evolution of gaming around the world",
-    post:"",
-    likes:"228",
-    comments:"228",
-    date:"1 hour ago"
-  },
-  {
-    postImg:[],
-    name:"Floyd Miles",
-    handle:"@wide-control",
-    profileImg: postImg2,
-    title:"The evolution of gaming around the world",
-    post:"The Navidia Workspace team is delivering features that matter, that streamline communication and collaboration without getting in the way. ",
-    date:"1 hour ago",
-    likes:"4001",
-    comments:"228"
-  },
 
-  {
-    postImg:[  comment3 ],
-    name:"Wide Fox",
-    handle:"@wide-control",
-    profileImg: postImg1,
-    title:"The evolution of gaming around the world",
-    post:" ",
-    date:"1 hour ago",
-    likes:"228",
-    comments:"228"
-  }
-]
-export default function Comments() {
+export default function Comments({comments}) {
 
 
   return (

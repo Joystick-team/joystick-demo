@@ -22,6 +22,12 @@ import Wallet from './pages/Wallet'
 import { ThemeProvider } from './ThemeContext'
 import NewSocials from './pages/NewSocials';
 import Feeds from './pages/NewSocials/pages/Feeds';
+import Profile from './pages/NewSocials/pages/Profile'
+import ProfileContents from './pages/NewSocials/pages/Profile/ProfileContents'
+import Posts from './pages/NewSocials/pages/Profile/ProfileContents/posts/posts'
+import Streams from './pages/NewSocials/pages/Profile/ProfileContents/streams/streams'
+
+
 function App() {
   return (
     <div className='App'>
@@ -34,7 +40,7 @@ function App() {
                   <Route exact path='/' element={<LandingPage />} />
                   <Route exact path='/page/:id' element={<LandingPage />} />
                   <Route exact path='/home' element={<HomePage />} />
-                  <Route path='/socials' element={<Socials />} />
+                  {/* <Route path='/socials' element={<Socials />} /> */}
                   <Route path='/test' element={<TestPage />} />
 
                   <Route path='/store' element={<Store />} />
@@ -66,12 +72,38 @@ function App() {
                   <Route exact path='*' element={<ErrorPage />} />
                   <Route
                       exact
-                      path="/newsocials" element={<NewSocials />}
+                      path='/socials' element={<NewSocials />}
                        >
                    <Route
                       exact
-                      path="feeds" element={<Feeds />}
+                      path="" element={<Feeds />}
                       />
+
+                     <Route
+                      exact
+                      path="profile" element={<Profile />}
+                      >
+
+                     <Route
+                      exact
+                        element={<ProfileContents />}
+                      >
+
+                      <Route
+                      exact
+                      path="" element={<Posts />}
+                      />
+
+                      <Route
+                      exact
+                      path="streams" element={<Streams />}
+                      />
+
+                    
+                    </Route>
+                    </Route>
+
+
                 </ Route>
                 </Routes>
               </Layout>

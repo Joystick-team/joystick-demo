@@ -1,0 +1,39 @@
+.profile-post{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    row-gap: 30px;
+  
+
+    .makepost{
+        background: #211E1E;
+
+        .post-div{
+
+            .post-text{
+                background: rgba(17, 16, 16, 0.88);
+    
+            }
+        }
+     
+
+        .publish-post{
+            
+            background: #211E1E;
+
+
+
+            .publish-btn{
+                border-radius: 21.7918px;
+                width: 114.66px;
+                height: 41.1px;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+        }
+
+    }
+
+
+}

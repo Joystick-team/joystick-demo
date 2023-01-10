@@ -11,7 +11,7 @@ import videoimg1 from  "../../../../../assets/images/videoimg1.jpeg"
 import videoimg2 from  "../../../../../assets/images/videoimg2.jpeg"
 import Recommendations from './Recommendations'
 import RecentEvents from './RecentsEvent'
-import {BiPodcast} from "react-icons/bs"
+// import {BiPodcast} from "react-icons/bs"
 import eventimg1 from "../../../../../assets/images/eventimg1.png"
 import eventimg2 from "../../../../../assets/images/eventimg2.jpeg"
 import Birthdays from './Birthdays'
