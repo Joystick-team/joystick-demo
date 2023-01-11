@@ -44,9 +44,9 @@
             }
     
             .user-pic-name{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center;
                  row-gap: 8px;
     
                 img{
@@ -94,5 +94,109 @@
                 }
 
     }
+
+}
+
+
+@media screen and (max-width: 480px){
+
+    .profileInfo{
+
+        .profile-bg-div{
+
+            width: 100%;
+            height: 144.17px;
+            border-radius: 14px;
+
+        }
+      
+
+        .profile-details-div{
+
+            width: 100%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        
+
+
+         .profile--details-stats{  
+          
+            column-gap: 30px;
+
+            h5{
+                display: flex;
+                flex-direction: column;
+
+                .text-num{
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+                .profile-text{
+                    font-weight: 400;
+                    font-size: 11px;
+                }
+            }
+            
+             
+          
+           
+            .user-pic-name{
+                width: 100%;
+               img{
+
+                    width: 90px ;
+                    height: 90px ;
+                    margin-top: -57px;
+
+
+                }
+                h5{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 8px;
+                    width: 100%;
+                    
+                    .user-name{
+                        font-weight: 600;
+                        font-size: 15px;
+
+                    }
+
+                    .user-role{
+                        font-weight: 400;
+                        font-size: 10px;
+                        color: #BFB2B2;
+
+                    }
+                
+                            }
+
+
+
+            }
+
+
+            
+
+         }
+        }
+
+
+        .edit-btn{
+          
+            width: 100px;
+            height: 34px;
+            font-weight: 500;
+            font-size: 11px !important;
+            
+        }
+
+    }
+
+
 
 }
