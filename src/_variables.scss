@@ -18,7 +18,7 @@ html {
   --friends-white-bg: #ffffff;
   --friends-search-icon: rgba(30, 30, 30, 0.6);
   // End
-
+  --mobile-titlebar: #c9c9c9;
   --button: #c71f1f;
   --secondary--text: var(--primary--text);
   --secondary-background: #eeecec;
@@ -60,6 +60,7 @@ html[data-theme="dark"] {
   --friends-white-bg: #211e1e;
   --friends-search-icon: rgba(235, 235, 245, 0.6);
   // End
+  --mobile-titlebar: #1d1c1c;
   --button: #c71f1f;
   --secondary--text: #fbfbfb;
   --secondary-background: #141414;

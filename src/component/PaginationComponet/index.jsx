@@ -21,6 +21,7 @@ function PaginationComponet(props) {
   // const [loading, data, error] = useFetch(url)
   const page = props.page;
   const metaData = props.metaData;
+  const item = props.game
   const pages = Math.ceil(metaData?.total / metaData?.limit);
   const paginate = props.paginate;
   // eslint-disable-next-line
@@ -106,6 +107,7 @@ function PaginationComponet(props) {
           <Paginate 
           page={page}
           pages={pages}
+          Item={item}
           />
         }
       </div>

@@ -69,7 +69,7 @@ export default function LandingPage(props) {
               />
             </div>
                 <div className="page_sites">
-                      <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} />
+                      <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} game={offSiteGame} />
                 </div>
             </div>
           </div>

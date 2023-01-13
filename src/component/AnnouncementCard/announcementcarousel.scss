@@ -1,13 +1,13 @@
 .announcement-carousel{
 
     .carousel {
-        height: 300px;
+        height: 35rem;
         width: 100%;
         position: relative;
     }
 
     .carousel-inner{
-        height: 300px;
+        height: 35rem;
         width: 100%;
         background-color: rgba(0,0,0,0.5);
     }
@@ -27,8 +27,8 @@
 
         img{
             width: 100%;
-            height: auto;
-            object-fit: fill;
+            height: 35rem;
+            object-fit: cover;
             filter: grayscale(30%);
             background-color: rgba(0,0,0,0.5);
             opacity: .7;
