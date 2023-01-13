@@ -73,7 +73,7 @@ export default function DrawerNav({ TogglecloseOpen }) {
             <div>
               <Nav className=' flex-column' variant='tabs'>
                 <div className='drawer__nav-slide'>
-                  {!isLandingPage&&<NavLink to='/home'>
+                  {!isLandingPage&&userToken?.access_token&&<NavLink to='/home'>
                       {' '}
                       <FaHome /> <span>Home</span>
                     </NavLink>
@@ -84,17 +84,17 @@ export default function DrawerNav({ TogglecloseOpen }) {
                       <BsDropletFill /> <span>Store</span>
                     </NavLink>
                   )}
-                 {!isLandingPage&& <NavLink to='/library'>
+                 {!isLandingPage&&userToken?.access_token&&<NavLink to='/library'>
                       {' '}
                       <BsGridFill /> <span>Library</span>
                     </NavLink>
                   }
-                  {!isLandingPage&&<NavLink to='/socials'>
+                  {!isLandingPage&&userToken?.access_token&&<NavLink to='/socials'>
                       {' '}
                       <BsFillPeopleFill /> <span>Socials</span>
                     </NavLink>
                   }
-                 {!isLandingPage&& <NavLink to='/livestream'>
+                 {!isLandingPage&&userToken?.access_token&&<NavLink to='/livestream'>
                       {' '}
                       <BsBroadcast /> <span>Live</span>
                     </NavLink>
@@ -108,7 +108,7 @@ export default function DrawerNav({ TogglecloseOpen }) {
                       <FaWallet /> <span>Wallet</span>
                     </NavLink>
                   )}
-                  {!isLandingPage&&<NavLink to='/u/settings'>
+                  {!isLandingPage&&userToken?.access_token&&<NavLink to='/u/settings'>
                       <BsGearWideConnected /> <span>Settings</span>
                     </NavLink>
                   }
