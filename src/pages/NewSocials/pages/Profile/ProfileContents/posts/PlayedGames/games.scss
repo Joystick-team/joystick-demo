@@ -59,3 +59,26 @@
 
             }
 }
+
+
+@media screen and (max-width: 480px){
+    .played-games{
+        height: 272px;
+
+        h5{
+            padding: 8px 12px 8px 12px;
+          
+        }
+
+        .games-list{
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+             
+            row-gap: 30px;
+            column-gap: 4px;
+        }
+
+    }
+
+}

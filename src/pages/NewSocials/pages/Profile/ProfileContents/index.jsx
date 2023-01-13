@@ -10,8 +10,8 @@ export default function ProfileContents() {
     <div className='profile-content'>
          <div className='content-tab'>
                <div className='tabs'>
-                  <Link to="" > Posts</Link>
-                  <Link to="streams">Streams</Link>  
+                  <Link to="" > <div>Posts</div></Link>
+                  <Link to="streams"><div>Streams</div></Link>  
                </div>
 
            </div>

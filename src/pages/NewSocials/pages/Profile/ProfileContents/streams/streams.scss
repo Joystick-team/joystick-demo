@@ -53,3 +53,54 @@
     }
 
 }
+
+
+@media screen and (max-width: 480px){
+
+   .profile-streams{
+     
+
+      .stream-item{
+
+         .stream-item-left{
+
+
+            img{
+               width: 133px;
+               height: 127px;
+             }
+           
+
+             .stream-info{
+              
+  
+               .stream-name{
+            
+                  font-size: 12px;
+                   
+              
+               }
+  
+               .streamer-name{
+               
+                  font-size: 10px;
+                
+               }
+  
+               .streamer-date{
+             
+                  font-size: 10px;
+              
+               }
+  
+  
+            }
+  
+
+         }
+
+      }
+
+   }
+
+}

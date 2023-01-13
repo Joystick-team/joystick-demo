@@ -50,4 +50,31 @@
 }
 
 
-@media screen and (max-width: 480px){}
+@media screen and (max-width: 480px){
+
+    .intro-div{
+        height:  152.32px;
+
+        .intro-header{
+         
+            border-bottom: 0;
+
+        }
+       
+        .intro-body-top{
+
+            flex-wrap: wrap;
+            justify-content:initial;
+            column-gap: 100px;
+            row-gap: 30px;
+    
+        }
+
+
+        .intro-body-social{
+
+            display: none;
+        }
+    }
+
+}
