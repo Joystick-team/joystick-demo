@@ -4,7 +4,9 @@ import {AiOutlinePicture} from "react-icons/ai"
 import {BiVideoPlus} from "react-icons/bi"
 import {CgFileDocument} from "react-icons/cg"
 import LoadingButton from '../../../../../component/LoadingButton'
-export default function MakePost({pic}) {
+
+
+export default function MakePost({pic,btnName}) {
   return (
     <div className='makepost'>
         <div className='post-div'>
@@ -36,7 +38,7 @@ export default function MakePost({pic}) {
                    </h5>
                </main>
 
-               <LoadingButton type='submit' title={"Publish post"} variant='red'  className='publish-btn'/>
+               <LoadingButton type='submit' title={btnName} variant='red'  className='publish-btn'/>
             </div>
            
         </div>

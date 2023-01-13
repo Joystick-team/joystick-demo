@@ -55,7 +55,7 @@ export default function DrawerNav({TogglecloseOpen}) {
                       <NavLink to="/home"> <FaHome /> <span>Home</span></NavLink>
                       <NavLink to="/store"> <BsDropletFill /> <span>Store</span></NavLink>
                       <NavLink to="/library" > <BsGridFill/> <span>Library</span></NavLink>
-                      <NavLink to="/socials" > <BsFillPeopleFill /> <span>Socials</span></NavLink>
+                      <NavLink to="/feeds" > <BsFillPeopleFill /> <span>Socials</span></NavLink>
                       <NavLink to="/livestream"> <BsBroadcast /> <span>Live</span></NavLink>
                     </div>
 
