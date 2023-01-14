@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSelector } from 'react-redux'
 import { Collapse, Nav } from "react-bootstrap";
 import {BiMenu} from 'react-icons/bi'
 import { MdClose } from 'react-icons/md'
@@ -13,10 +14,12 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useTheme } from "../../../ThemeContext";
 
-export default function DrawerNav({TogglecloseOpen}) {
-    const [open, setOpen] = useState(true);
-    // eslint-disable-next-line
-    const [themeDetector, setThemeDetector] = useTheme()
+export default function DrawerNav({ TogglecloseOpen }) {
+  
+  const [open, setOpen] = useState(true);
+  const { userToken } = useSelector(state => state.signin)
+  const [themeDetector, setThemeDetector] = useTheme()
+  const isLandingPage = window.location.href.endsWith("/")
     return (
       <div className={`${open ? 'drawer__nav' : 'empty__image'} `} >
         <div className="drawer-nav">
@@ -52,7 +55,9 @@ export default function DrawerNav({TogglecloseOpen}) {
               <div>
                   <Nav className=" flex-column" variant="tabs">
                     <div className="drawer__nav-slide">
-                      <NavLink to="/home"> <FaHome /> <span>Home</span></NavLink>
+                    {
+                      !isLandingPage && userToken?.access_token && <NavLink to="/home"> <FaHome /> <span>Home</span></NavLink>
+                    }
                       <NavLink to="/store"> <BsDropletFill /> <span>Store</span></NavLink>
                       <NavLink to="/library" > <BsGridFill/> <span>Library</span></NavLink>
                       <NavLink to="/socials" > <BsFillPeopleFill /> <span>Socials</span></NavLink>

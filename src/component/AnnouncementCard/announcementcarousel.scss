@@ -34,8 +34,9 @@
             opacity: .7;
 
             @media  screen and (max-width: '480px') {
-                height: 100%;
+                height: 35rem;
                 object-fit: cover;
+                width: 100%;
             }
         }
     }
