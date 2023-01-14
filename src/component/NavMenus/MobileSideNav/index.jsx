@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux'
 import { BsFillChatLeftQuoteFill, BsGridFill, BsDropletFill, BsFillPeopleFill, BsGearWideConnected, BsBroadcast, BsCurrencyBitcoin} from 'react-icons/bs'
 import { FiMenu, FiSearch, FiTwitter } from 'react-icons/fi'
 import { FaHome, FaWallet, FaTelegram} from "react-icons/fa";
@@ -18,6 +19,8 @@ import './mobileSideNav.scss';
 import { AppContextInit } from '../../../context/AppContext';
 
 export default function MobileSideNav() {
+
+    const { userToken } = useSelector(state => state.signin)
     const isLandingPage = window.location.href.endsWith("/")
     const { setMobileDrawer, mobileDrawer } = AppContextInit()
     const handleClose = () => setMobileDrawer(false);
@@ -90,31 +93,34 @@ export default function MobileSideNav() {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className=" flex-column side-nav-list-item" variant="pills" defaultActiveKey="/">
-                   {! isLandingPage&& <Link to="/home" onClick={handleClose} className={ ( pathname === '/home' || pathname === '/') && `active`}> <FaHome /> <span>Home</span></Link>}
-                        {! isLandingPage&&
-                            <Link to="/store" onClick={handleClose} className={pathname === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
+                        {
+                            !isLandingPage && userToken?.access_token && <Link to="/home" onClick={handleClose} className={(pathname === '/home' || pathname === '/') && `active`}> <FaHome /> <span>Home</span></Link>
                         }
-                        {!isLandingPage &&
-                            <Link to="/library" onClick={handleClose} className={pathname === '/library' && `active`}> <BsGridFill /> <span>Library</span></Link>
+                        {
+                        
+                            !isLandingPage && userToken?.access_token &&<Link to="/store" onClick={handleClose} className={pathname === '/store' && `active`}> <BsDropletFill /> <span>Store</span></Link>
                         }
-                        {!isLandingPage &&
-                            <Link to="/socials" onClick={handleClose} className={pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>
+                        {
+                             !isLandingPage && userToken?.access_token &&<Link to="/library" onClick={handleClose} className={pathname === '/library' && `active`}> <BsGridFill /> <span>Library</span></Link>
                         }
-                        {!isLandingPage &&
-                            <Link to="/livestream" onClick={handleClose} className={pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
+                        {
+                            !isLandingPage && userToken?.access_token && <Link to="/socials" onClick={handleClose} className={pathname === '/socials' && `active`}> <BsFillPeopleFill /> <span>Socials</span></Link>
+                        }
+                        {
+                             !isLandingPage && userToken?.access_token &&<Link to="/livestream" onClick={handleClose} className={pathname === '/livestream' && `active`}> <BsBroadcast /> <span>Live</span></Link>
                         }
                 <br />
                 <div className="footer-nav-side">
                 <div className="mobile-connect-btn"  onClick={handleClose}>
-                                {!isLandingPage &&
-                                    <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{ width: '100%', borderRadius: '12px' }} color="danger" title='Connect' />
+                                {
+                                    !isLandingPage && userToken?.access_token && <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{ width: '100%', borderRadius: '12px' }} color="danger" title='Connect' />
                                 }
                 </div>
-                            {!isLandingPage &&
-                                <Link to="/u/wallet" onClick={handleClose} className={pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
+                            {
+                                 !isLandingPage && userToken?.access_token &&<Link to="/u/wallet" onClick={handleClose} className={pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
                             }
-                            {!isLandingPage &&
-                                <Link to="/u/settings" onClick={handleClose} className={pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
+                            {
+                                !isLandingPage && userToken?.access_token && <Link to="/u/settings" onClick={handleClose} className={pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>
                             }
                     {/* <div className="icons-sidenav-footer">
                         <Nav.Link href="#" target="_blank" ><FaTelegram /> </Nav.Link>
