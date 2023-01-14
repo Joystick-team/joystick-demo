@@ -22,6 +22,7 @@ import ThemeToggle from '../../ThemeToggle'
 import './drawalNav.scss'
 
 export default function DrawerNav({ TogglecloseOpen }) {
+  
   console.log("location", window.location.href.endsWith("/"))
   const isLandingPage = window.location.href.endsWith("/")
  

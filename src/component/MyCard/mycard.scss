@@ -20,3 +20,9 @@
         color: var(--primary--text);
     }
 }
+
+@media only screen and (max-width:375px) {
+    .mycard{
+        width: 7rem;
+    }
+}
