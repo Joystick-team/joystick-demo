@@ -6,22 +6,26 @@
   
 
     .makepost{
-        background: #211E1E;
+        background: var( --feed-sidepage-bg);
 
         .post-div{
 
             .post-text{
-                background: rgba(17, 16, 16, 0.88);
-    
+                background:var( --post-attachment-bg);
+                border-radius: 8.65333px;
             }
         }
      
 
         .publish-post{
             
-            background: #211E1E;
-
-
+            background: var( --feed-sidepage-bg);
+            .post-attachment{
+              
+                h5{
+                    color: var(--tabs-text);
+                }
+            }
 
             .publish-btn{
                 border-radius: 21.7918px;

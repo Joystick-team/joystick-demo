@@ -1,10 +1,12 @@
 .profile-content{
-
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
     .content-tab{
         width: 100%;
         height: 34px;
         display: flex;
-        background: #211E1E;
+        background:var(--feeds-bg);
         border-radius: 3px;
         align-items: center;
         .tabs{
@@ -19,7 +21,7 @@
               height: 100%;
               text-decoration: none;
                div{
-                color: white;
+                color:var(--tabs-text);
                 text-align: center;
                 height: 100%;
                 width: 100%;
@@ -43,6 +45,9 @@
       }
 
    .profile-oulet{
+    background-color: var(  --feeds-bg);
+    padding: 14px;
+    border-radius: 12.3555px;
 
      }
 

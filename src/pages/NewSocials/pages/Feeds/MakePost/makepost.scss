@@ -1,7 +1,7 @@
 .makepost{
     width: 100%;
     padding: 5px;
-    background: #2F2F2F;
+    background: var( --post-textarea);
     height:187.39px;
     border-radius: 0.5rem;
      .post-div{
@@ -23,7 +23,7 @@
             .post-text{
                 width: 100%;
                 padding: 10px 10px 10px 10px;
-                background: #2F2F2F;
+                background: var( --post-textarea);
                 color: white;
                 border: 0;
                 height: 47.59px;
@@ -31,7 +31,7 @@
         }
 
         .publish-post{
-            background: #0D0B0B;
+            background: var( --post-attachment-bg);
             height: 63px;
             display: flex;
             align-items: center;
@@ -48,9 +48,11 @@
                     display: flex;
                     align-items: center;
                     column-gap: 4px;
+                    color: var( --post-text);
                  
                      span{
                         font-size:10.3px;
+                      
                      }
                 }
             }
@@ -78,7 +80,7 @@
           height:100%;
 
         .post-text{
-            background: #211E1E;
+            background:var( --post-textarea);
 
 
         }

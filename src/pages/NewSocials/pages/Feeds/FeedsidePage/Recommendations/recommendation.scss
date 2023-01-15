@@ -1,7 +1,7 @@
 .recommendation-div{
     display: flex;
-    flex-direction: column;
-    background: #211E1E;
+    flex-direction: column;  
+    background: var(  --feed-sidepage-bg); 
     padding: 8px 8px 8px 8px;
     border-radius: 8px;
     height: 215px;

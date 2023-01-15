@@ -1,6 +1,7 @@
-.mobilesocialtab{
-    display: none;
-}
+ .mobilesocialtab{
+        display: none;
+        
+    }
 @media screen and (max-width: 480px){
 
 .mobilesocialtab{
@@ -16,7 +17,7 @@
              display: flex;
              justify-content:space-evenly;
              align-items: center;
-             background: #2F2F2F;
+             background:var(--tabs-background);
              border-radius: 5px;
              height: 100%;
              .tab-items{
@@ -34,7 +35,7 @@
                     h5{
                         font-size: 10px;
                         font-weight: 500;
-                        color: white;
+                        color:var( --tabs-text);
                         display:flex;
                         align-items: center;
                         justify-content: center;

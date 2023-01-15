@@ -1,7 +1,7 @@
 .intro-div{
     height: 249px;
     width: 100%;
-    background: #211E1E;
+    background: var( --feed-sidepage-bg);
     border-radius: 6.08px;
 
     .intro-header{
@@ -31,7 +31,7 @@
             h5{
                 font-weight: 500;
                 font-size: 13px;
-                color: rgba(255, 255, 255, 0.9);
+                color: var(--tabs-text);
 
             }
         }
