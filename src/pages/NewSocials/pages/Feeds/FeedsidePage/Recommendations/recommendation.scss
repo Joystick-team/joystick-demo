@@ -59,7 +59,8 @@
        .ignore-btn{
         border: 1.02962px solid #E3E3E3;
         border-radius: 12.3555px;
-        background: #2F2F2F;
+        background: var( --social-btn);
+        color: var(--tabs-text);
         font-size: 12.3555px;
        width: 127px;
         height: 39px;

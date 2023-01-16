@@ -27,20 +27,20 @@
                 font-weight: 600;
                 font-size: 15px;
                  
-                color: rgba(255, 255, 255, 0.9);
+                color: var(--tabs-text);   
              }
 
              .streamer-name{
                 font-weight: 400;
                 font-size: 15px;
-                color: rgba(255, 255, 255, 0.9);
+                color: var(--tabs-text);   
 
              }
 
              .streamer-date{
                 font-weight: 300;
                 font-size: 15px;
-                color: rgba(255, 255, 255, 0.9);
+                color: var(--tabs-text);   
              }
 
 

@@ -6,6 +6,16 @@ import eventimg1 from "../../../../../assets/images/eventimg1.png"
 import eventimg2 from "../../../../../assets/images/eventimg2.jpeg"
 import Birthdays from '../../Feeds/FeedsidePage/Birthdays'
 import "./profilesidepage.scss"
+import FriendRequest from '../../Feeds/FeedsidePage/FriendRequest'
+import chatImg1 from "../../../../../assets/images/chatImg1.png"
+import chatImg2 from "../../../../../assets/images/chatImg2.png"
+import chatImg3 from "../../../../../assets/images/user1.png"
+
+
+import creator2 from "../../../../../assets/images/creator2.png"
+import creator3 from "../../../../../assets/images/creator3.png"
+import creator5 from "../../../../../assets/images/postImg3.png"
+import creator4 from "../../../../../assets/images/creator3.png"
 
 
 const recommendations=[
@@ -37,6 +47,64 @@ const events=[
 
 
 
+const friends=[
+  {
+      img:creator1,
+      name:"Wade Warren"
+
+  },
+  {
+      img:creator2,
+      name:"Leslie Alexander"
+
+  },
+  {
+      img:creator3,
+      name:"Robert Fox"
+
+  },
+  {
+      img:creator3,
+      name:"Joesin"
+
+  },
+  {
+      img:creator4,
+      name:"Annette Black"
+
+  },
+  {
+      img:creator5,
+      name:"John Doe"
+
+  },
+]
+
+
+const chats=[
+  {
+      img:chatImg1 ,
+      name:"Jane Cooper"
+
+  },
+  {
+      img:chatImg2,
+      name:"Esther Howard"
+
+  },
+  {
+      img:chatImg3,
+      name:"Cody Fisher"
+
+  },
+  {
+      img:creator3,
+      name:"Joesin"
+
+  }
+
+]
+
 
 
 export default function ProfileSidePage() {
@@ -45,6 +113,7 @@ export default function ProfileSidePage() {
       <Recommendations  recommendations={recommendations}/>
       <RecentEvents  events={events} />
       <Birthdays />
+      <FriendRequest   friends={friends}  chats={chats}/>
     </div>
   )
 }

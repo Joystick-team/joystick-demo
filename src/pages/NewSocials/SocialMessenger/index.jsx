@@ -9,7 +9,19 @@ const Friend=({ chat})=>{
 
   return(
     <div className='chat-friend-div'>
+
        <img src={chat.img}/>
+       <main className='chat-detail'>
+         <h5>
+           <span className='chat-name'>{chat.name}</span>
+           <span className='chat-msg'>{"wow,thanks"}</span>
+         </h5>
+         <h5>
+           <span className='chat-date'>{"Sat 24"}</span>
+           <span className='chat-count'>{"1"}</span>
+
+         </h5>
+       </main>
         
     </div>
   )

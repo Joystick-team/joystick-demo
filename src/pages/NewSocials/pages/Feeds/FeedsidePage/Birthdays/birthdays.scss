@@ -46,8 +46,8 @@
                         font-size: 14.1457px;
                     }
 
-                    .birthday-descp{
-                        color: rgba(172, 172, 172, 0.9);
+                    .birthday-descp{  
+                         color: var(--tabs-text);   
                         font-weight: 500;
                         font-size: 12px;
                     }
@@ -63,22 +63,24 @@
                 .box-text{
                     border: 0;
                     width: 85%;
-                    background: rgba(17, 16, 16, 0.88);
+                    background: var( --post-attachment-bg);
                     height: 34.12px;
                     border-radius: 8px;
                     font-size: 12px;
                     padding-left: 8px;
                     padding-top: 6px;
+                    color: white;
                 }
 
                 h5{
-                    background: rgba(17, 16, 16, 0.88);
+                    background: var( --post-attachment-bg);
                     padding: 8px;
                     border-radius: 8px;
                     height: 34.12px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
       
                 }
             }
@@ -107,12 +109,12 @@
             .upcoming-title{
                 font-weight: 500;
                 font-size: 14.1457px;
-                color: rgba(255, 255, 255, 0.9);
+                color: var(--tabs-text);
             }
             .upcoming-descp{
                 font-weight: 500;
                 font-size: 12px;
-                color: rgba(172, 172, 172, 0.9);
+                color: var(--tabs-text);
             }
         }
 

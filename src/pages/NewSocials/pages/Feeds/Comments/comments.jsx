@@ -1,4 +1,5 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from "react-redux"
 import  comment1 from "../../../../../assets/images/commentImg1.jpeg"
 import  comment2 from "../../../../../assets/images/commentImg2.jpeg"
 import  comment3 from "../../../../../assets/images/commentImg3.jpeg"
@@ -10,12 +11,54 @@ import {AiOutlineLike,AiOutlineSend} from "react-icons/ai"
 import {BiCommentDetail} from "react-icons/bi"
 import LoadingButton from '../../../../../component/LoadingButton'
 import {RiArrowDropDownLine} from "react-icons/ri"
-
+import axios from 'axios'
 
 
 export default function Comments({comments}) {
+   
+   const {userToken} = useSelector(state=>state.signin)
+   const [commentText,setText]=useState("")
 
 
+
+   const shareComment=async (Id)=>{
+
+      const config = {
+         headers: {
+             "Content-Type": "application/json",
+             Authorization: `Bearer ${userToken?.access_token}`
+         }
+       }
+
+       const res = await axios.get(
+         `https://api.joysticklabs.io/api/v1/post/comment-post/${Id}`,
+         config,
+         {
+            text:commentText
+         }
+       )
+
+       console.log(res,"resss")
+
+   }
+  
+   const likePost=async (Id)=>{
+
+      const config = {
+         headers: {
+             "Content-Type": "application/json",
+             Authorization: `Bearer ${userToken?.access_token}`
+         }
+       }
+
+       const res = await axios.get(
+         `https://api.joysticklabs.io/api/v1/post/like-post/${Id}`,
+         config
+       )
+
+       console.log(res,"resss")
+
+   }
   return (
     <div className='social-comment'>
        
