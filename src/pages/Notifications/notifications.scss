@@ -39,9 +39,12 @@
 @media screen and (max-width: 800px) {
   .notifications {
     .notifications-content {
+      width: 95%;
+      margin: auto;
       flex-direction: column;
 
       .left-section {
+        width: 100%;
         .header {
           background-color: var(--mobile-titlebar);
           .header-text {
