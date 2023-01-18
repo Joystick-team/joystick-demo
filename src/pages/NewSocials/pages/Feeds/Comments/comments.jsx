@@ -62,103 +62,104 @@ export default function Comments({comments,posts}) {
    }
 
 
+   console.log(posts)
+
   return (
+   
+   
     <div className='social-comment'>
        
-       { comments.map((comment)=>{
-
+       {posts?.map((post)=>{
+          console.log(post,"pppp")
+         console.log(post?.comment?.length) 
           return(
-             <div className='comment-div'>
-                 <main className='comment-top'>
-                    <div className=' comment-user'>
-                         <img src={comment?.profileImg}/>
-                         <h5>
-                            <span>{comment?.name}</span>
-                            <span className='handle-user'>{comment?.handle}</span>
-                         </h5>
-                    </div>
+            <div className='comment-div'>
+            <main className='comment-top'>
+               <div className=' comment-user'>
+                    <img src={post?.user?.avater}/>
+                    <h5>
+                       <span>{post?.user?.firstname?"" :+ post?.user?.firstname + " " +post?.user?.lastname?"" :+ post?.user?.lastname }</span>
+                       <span className='handle-user'>@{post?.user?.username}</span>
+                    </h5>
+               </div>
 
-                    <div className=' comment-date-option'>
-                         <h5>{comment?. date}</h5>
-                         <BsThreeDotsVertical className='option-icon' />
-                    </div>
-                 </main>
+               <div className=' comment-date-option'>
+                    {/* <h5>{post?. date}</h5> */}
+                    <BsThreeDotsVertical className='option-icon' />
+               </div>
+            </main>
 
-                 <main className='comment-img-div'> 
-                   {
-                    comment?. postImg.map((img)=>{
-                       return(
-                        <img  src={img} />
-                       )
-                    }
-                   
-                    )
-                   }
+            <main className='comment-img-div'> 
+          
+                   <img  src={post?.url} />
+               
+            </main>
+
+            <main className='comment-post-div'>
+               <div className='post-text-div'>
+                  
+                     <h5 className='post-handle'> <span>@{post?.user?.username}</span></h5>
+                     <p className=''>
+                       <span>{post?.text}.</span>
+                        {/* {
+                         post?.text
+                        }. */}
+                     </p>
                     
-                 </main>
+                   
+               </div>
 
-                 <main className='comment-post-div'>
-                    <div className='post-text-div'>
-                       
-                          <h5 className='post-handle'> <span>{ comment?.handle}</span></h5>
-                          <p className=''>
-                            <span>{comment?.title}.</span>
-                             {
-                              comment?.post
-                             }.
-                          </p>
+                <div className='comment-post-fx'>
+                     <main className='post-fx-top'>
+                         <div  className='post-fx-top-left'>
+                             <h5>
+                                <AiOutlineLike />
+                                <span> {post?.likes==null? 0:post?.likes}</span>
+                             </h5>
+                             <h5>
+                               <BiCommentDetail />
+                               <span> {post?.comment?.length}</span>
+                             </h5>
+                             <h5>
+                               <AiOutlineSend />
+                             </h5>
+                          
+                         </div>
+                         <div  className='post-fx-top-right'>
+                            <LoadingButton type='submit' title={"Share"} variant='red'  className='share-btn'
+                             onClick={shareComment()}
+                            />
+                          </div>
+
                          
-                        
-                    </div>
+                     </main>
 
-                     <div className='comment-post-fx'>
-                          <main className='post-fx-top'>
-                              <div  className='post-fx-top-left'>
-                                  <h5>
-                                     <AiOutlineLike />
-                                     <span> {comment?.likes}</span>
-                                  </h5>
-                                  <h5>
-                                    <BiCommentDetail />
-                                    <span> {comment?.comments}</span>
-                                  </h5>
-                                  <h5>
-                                    <AiOutlineSend />
-                                  </h5>
-                               
-                              </div>
-                              <div  className='post-fx-top-right'>
-                                 <LoadingButton type='submit' title={"Share"} variant='red'  className='share-btn'
-                                  onClick={shareComment()}
-                                 />
-                               </div>
+                     <main className='post-fx-bottom'>
+                          <h5>View all comments</h5>
+                          <h6><RiArrowDropDownLine /></h6>
+                     </main>
 
-                              
-                          </main>
-
-                          <main className='post-fx-bottom'>
-                               <h5>View all comments</h5>
-                               <h6><RiArrowDropDownLine /></h6>
-                          </main>
-
-                          <main className='comment-textfield'>
-                            <textarea 
-                             placeholder='Write your comment here'
-                             className='comment-text'
-                             name="commentText"
-                             value={commentText}
-                             onChange={(e)=>setText(e.target.value)}
-                             />        
-                         </main>
-                     </div>
+                     <main className='comment-textfield'>
+                       <textarea 
+                        placeholder='Write your comment here'
+                        className='comment-text'
+                        name="commentText"
+                        value={commentText}
+                        onChange={(e)=>setText(e.target.value)}
+                        />        
+                    </main>
+                </div>
 
 
 
-                 </main>
+            </main>
 
+        
+
+        </div>
+
+         
              
-
-             </div>
           )
 
        })
