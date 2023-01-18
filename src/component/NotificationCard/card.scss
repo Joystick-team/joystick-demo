@@ -9,10 +9,16 @@
     color: var(--follow-btn-text);
     border: 1px solid var(--follow-btn-border);
   }
+
+  @media (max-width: 800px) {
+    padding: 5px 10px;
+    font-weight: normal;
+    font-size: 8px;
+  }
+
   padding: 10px 4rem;
   font-weight: 500;
   font-size: 15px;
-  height: 40px;
 
   &:hover {
     background: #bd232a;
@@ -24,6 +30,9 @@
 @mixin notify-icon($bg) {
   background: $bg;
   border-radius: 50%;
+  @media (max-width: 800px) {
+    zoom: 0.5;
+  }
   width: 28px;
   height: 28px;
   display: flex;
@@ -41,6 +50,7 @@
   .notify-body {
     display: flex;
     align-items: center;
+    flex: 3;
     gap: 3rem;
 
     .user-icon {
@@ -90,12 +100,44 @@
   }
 
   .follow-btn {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
     & > .follow {
       @include follow-btn(#db242d);
     }
 
     & > .followed {
       @include follow-btn(inherit);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .notification-card {
+    padding: 0.5rem 1rem;
+    .notify-body {
+      gap: 1rem;
+
+      .notify-contents {
+        gap: 0.9rem;
+        align-items: center;
+        .profile-pics > img {
+          height: 22.92px;
+          width: 22.92px;
+        }
+
+        .notify-details {
+          gap: 2px;
+        }
+
+        .notify-details > p:first-child {
+          font-size: 10px;
+        }
+        .notify-details > p:last-child {
+          font-size: 8px;
+        }
+      }
     }
   }
 }

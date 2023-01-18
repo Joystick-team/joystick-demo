@@ -1,6 +1,6 @@
 import React, { useMemo, useState,useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
-import {useParams}  from "react-router-dom"
+import {useParams,useNavigate}  from "react-router-dom"
 import { fetchGameAction } from '../../Actions/Games.Action'
 import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import AnnouncementCarousel from '../../component/AnnouncementCard'
@@ -15,16 +15,18 @@ export default function LandingPage(props) {
     const online = navigator.onLine
   const dispatch = useDispatch()
   const [gameSate,setGameState] = useState("off-site")
-    const params = useParams()
+  const params = useParams()
+  const navigate = useNavigate()
     const id = params?.id||1
     const { games } = useSelector(state => state.fetchAllGames)
     const { userToken } = useSelector(state => state.signin)
   const { search_string } = useSelector(state => state.search)
     
     useEffect(() => {
-        userToken&& dispatch(profileAction())
-        dispatch(fetchGameAction(id,search_string))
-    }, [dispatch, id, userToken, search_string]
+        userToken?.access_token&& dispatch(profileAction())
+      dispatch(fetchGameAction(id, search_string))
+      userToken?.access_token&& navigate("home")
+    }, [dispatch, id, search_string,userToken?.access_token]
     )
     
     const gameOptionsList = ["Off-site", "On-site"]
@@ -69,7 +71,7 @@ export default function LandingPage(props) {
               />
             </div>
                 <div className="page_sites">
-                      <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} />
+                      <PaginationComponet btn={paginate ? 'OnsiteGames' : 'offSiteGame'} api={paginate ? OnsiteGames : offSiteGame} metaData={metaData} page={ id} paginate={paginate} game={offSiteGame} />
                 </div>
             </div>
           </div>

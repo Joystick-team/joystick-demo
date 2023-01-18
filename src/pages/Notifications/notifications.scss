@@ -34,3 +34,26 @@
     }
   }
 }
+
+// Media Queries
+@media screen and (max-width: 800px) {
+  .notifications {
+    .notifications-content {
+      flex-direction: column;
+
+      .left-section {
+        .header {
+          background-color: var(--mobile-titlebar);
+          .header-text {
+            font-size: 9.16667px;
+            color: var(--primary-text);
+          }
+        }
+      }
+    }
+
+    .right-section {
+      display: none;
+    }
+  }
+}

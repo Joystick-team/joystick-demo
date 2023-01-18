@@ -13,7 +13,7 @@ import {
 import { FaHome, FaTelegram, FaWallet } from 'react-icons/fa'
 import { FiTwitter } from 'react-icons/fi'
 import { MdClose } from 'react-icons/md'
-import { useSelector } from 'react-redux'
+import { useSelector} from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import JOYSTICK2 from '../../../assets/images/JOYSTICK-light.png'
 import JOYSTICK from '../../../assets/images/JOYSTICK-logo.png'
@@ -22,6 +22,7 @@ import ThemeToggle from '../../ThemeToggle'
 import './drawalNav.scss'
 
 export default function DrawerNav({ TogglecloseOpen }) {
+  
   console.log("location", window.location.href.endsWith("/"))
   const isLandingPage = window.location.href.endsWith("/")
  
@@ -73,28 +74,28 @@ export default function DrawerNav({ TogglecloseOpen }) {
             <div>
               <Nav className=' flex-column' variant='tabs'>
                 <div className='drawer__nav-slide'>
-                  {!isLandingPage&&<NavLink to='/home'>
+                  {userToken?.access_token&&<NavLink to='/home'>
                       {' '}
                       <FaHome /> <span>Home</span>
                     </NavLink>
                   }
-                  {userToken?.access_token && !isLandingPage&&(
+                  {userToken?.access_token&&(
                     <NavLink to='/store'>
                       {' '}
                       <BsDropletFill /> <span>Store</span>
                     </NavLink>
                   )}
-                 {!isLandingPage&& <NavLink to='/library'>
+                 {userToken?.access_token&&<NavLink to='/library'>
                       {' '}
                       <BsGridFill /> <span>Library</span>
                     </NavLink>
                   }
-                  {!isLandingPage&&<NavLink to='/socials'>
+                  {userToken?.access_token&&<NavLink to='/socials'>
                       {' '}
                       <BsFillPeopleFill /> <span>Socials</span>
                     </NavLink>
                   }
-                 {!isLandingPage&& <NavLink to='/livestream'>
+                 {userToken?.access_token&&<NavLink to='/livestream'>
                       {' '}
                       <BsBroadcast /> <span>Live</span>
                     </NavLink>
@@ -108,7 +109,7 @@ export default function DrawerNav({ TogglecloseOpen }) {
                       <FaWallet /> <span>Wallet</span>
                     </NavLink>
                   )}
-                  {!isLandingPage&&<NavLink to='/u/settings'>
+                  {!isLandingPage&&userToken?.access_token&&<NavLink to='/u/settings'>
                       <BsGearWideConnected /> <span>Settings</span>
                     </NavLink>
                   }

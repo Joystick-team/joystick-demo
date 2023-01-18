@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { fetchGameAction } from '../../Actions/Games.Action'
 import { Col } from 'react-bootstrap'
@@ -13,12 +14,14 @@ import './home.scss'
 export default function Home() {
   const [sliderCount, setSliderCount] = useState(Number(4))
   // const {loading,success,error,games} = useSelector(state=>state.fetchAllGames)
-  const {userToken} = useSelector(state=>state.signin)
+  const { userToken } = useSelector(state => state.signin)
+  const navigate = useNavigate()
   // console.log(games)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchGameAction(1))
-    userToken?.access_token&& dispatch(profileAction())
+    userToken?.access_token && dispatch(profileAction())
+    !userToken?.access_token&& navigate("/")
     if(window.innerWidth < 431){
       setSliderCount(Number(3))
     }

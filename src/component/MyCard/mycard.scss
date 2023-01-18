@@ -1,4 +1,5 @@
 .mycard{
+    width: 10rem;
     .mb-3, .card{
         color: var(--primary--text);
         background: var(--background);
@@ -17,5 +18,11 @@
     }
     .mycard-title, .mycard-btn{
         color: var(--primary--text);
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .mycard{
+        width: 7rem;
     }
 }
