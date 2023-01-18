@@ -2,7 +2,16 @@
    width: 100%;
    display: flex;
    flex-direction: column;
-   row-gap: 20px;
+    row-gap: 20px;
+
+   .feeds-sidepage-bottom{
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      background-color: var(  --feeds-bg);
+      padding: 14px;
+      border-radius: 12.3555px;
+   }
 }
 
 @media screen and (max-width: 480px){

@@ -4,7 +4,7 @@
     row-gap: 10px;
     .comment-div{
         width: 100%;
-        background: #2F2F2F;
+        background: var( --post-textarea);;
         padding: 10px 10px 10px 10px;
         border-radius: 0.5rem;
         .comment-top{
@@ -111,7 +111,8 @@
                         .share-btn{
                             border: 1.02962px solid #E3E3E3;
                             border-radius: 12.3555px;
-                            background: #2F2F2F;
+                            background: var( --social-btn);
+                            color: var(--tabs-text);
                             font-size: 12.3555px;
                         }
                     }
@@ -136,12 +137,15 @@
 
                 .comment-textfield{
                     width: 100%;
+                    border-radius: 6.17773px;
+                    height: 47.36px;
                     .comment-text{
-                        background: #0D0B0B;
+                        background: var( --post-attachment-bg);
+                        height: 100%;
                         width: 100%;
                         border: 0px;
-                      
-                        color: #AAAAAA;
+                        border-radius: 6.17773px;
+                        color: var( --post-text);
                        
                     }
                 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from "react-redux"
 import  comment1 from "../../../../../assets/images/commentImg1.jpeg"
 import  comment2 from "../../../../../assets/images/commentImg2.jpeg"
 import  comment3 from "../../../../../assets/images/commentImg3.jpeg"
@@ -10,45 +11,55 @@ import {AiOutlineLike,AiOutlineSend} from "react-icons/ai"
 import {BiCommentDetail} from "react-icons/bi"
 import LoadingButton from '../../../../../component/LoadingButton'
 import {RiArrowDropDownLine} from "react-icons/ri"
+import axios from 'axios'
 
 
-const comments=[
-  {
-    postImg: [comment1 ],
-    name:"Wide Fox",
-    handle:"@wide-control",
-    profileImg: postImg1 ,
-    title:"The evolution of gaming around the world",
-    post:"",
-    likes:"228",
-    comments:"228",
-    date:"1 hour ago"
-  },
-  {
-    postImg:[],
-    name:"Floyd Miles",
-    handle:"@wide-control",
-    profileImg: postImg2,
-    title:"The evolution of gaming around the world",
-    post:"The Navidia Workspace team is delivering features that matter, that streamline communication and collaboration without getting in the way. ",
-    date:"1 hour ago",
-    likes:"4001",
-    comments:"228"
-  },
+export default function Comments({comments,posts}) {
+   
+   const {userToken} = useSelector(state=>state.signin)
+   const [commentText,setText]=useState("")
 
-  {
-    postImg:[  comment3 ],
-    name:"Wide Fox",
-    handle:"@wide-control",
-    profileImg: postImg1,
-    title:"The evolution of gaming around the world",
-    post:" ",
-    date:"1 hour ago",
-    likes:"228",
-    comments:"228"
-  }
-]
-export default function Comments() {
+
+
+
+   const shareComment=async (Id)=>{
+
+      const config = {
+         headers: {
+             "Content-Type": "application/json",
+             Authorization: `Bearer ${userToken?.access_token}`
+         }
+       }
+
+       const res = await axios.post(
+         `https://api.joysticklabs.io/api/v1/post/comment-post/${Id}`,
+         config,
+         {
+            text:commentText
+         }
+       )
+
+       console.log(res,"resss")
+
+   }
+  
+   const likePost=async (Id)=>{
+
+      const config = {
+         headers: {
+             "Content-Type": "application/json",
+             Authorization: `Bearer ${userToken?.access_token}`
+         }
+       }
+
+       const res = await axios.post(
+         `https://api.joysticklabs.io/api/v1/post/like-post/${Id}`,
+         config
+       )
+
+       console.log(res,"resss")
+
+   }
 
 
   return (
@@ -117,7 +128,9 @@ export default function Comments() {
                                
                               </div>
                               <div  className='post-fx-top-right'>
-                                 <LoadingButton type='submit' title={"Share"} variant='red'  className='share-btn'/>
+                                 <LoadingButton type='submit' title={"Share"} variant='red'  className='share-btn'
+                                  onClick={shareComment()}
+                                 />
                                </div>
 
                               
@@ -132,6 +145,9 @@ export default function Comments() {
                             <textarea 
                              placeholder='Write your comment here'
                              className='comment-text'
+                             name="commentText"
+                             value={commentText}
+                             onChange={(e)=>setText(e.target.value)}
                              />        
                          </main>
                      </div>
