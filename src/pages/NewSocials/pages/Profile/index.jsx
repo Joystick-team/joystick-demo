@@ -5,6 +5,8 @@ import ProfileContents from './ProfileContents'
 import ProfileSidePage from './ProfieSidePage'
 import Link from 'antd/es/typography/Link'
 import { Outlet } from 'react-router-dom'
+import GuestProfile from './GuestProfileInfo'
+
 
 import MobileSocialTab from '../../SocialTab/mobileSocialTab'
 
@@ -15,7 +17,8 @@ export default function Profile() {
        < MobileSocialTab  />
        </div>
    
-       <ProfileInfo />
+       {/* <ProfileInfo /> */}
+      < GuestProfile />
         <div className='profile-feeds'>
             <main className='profile-contents'>
             

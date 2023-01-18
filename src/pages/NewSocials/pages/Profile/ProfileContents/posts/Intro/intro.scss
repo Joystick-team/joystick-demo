@@ -27,6 +27,7 @@
             img{
                 width: 11px;
                 height: 11px;
+              
             }
             h5{
                 font-weight: 500;
@@ -45,6 +46,33 @@
                 font-weight: 600;
 
             }
+
+            .intro-body-social-items{
+                display: grid;
+                grid-auto-flow: row;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                 align-items: center;
+                row-gap: 2px;
+                column-gap: 2px;
+
+                .social-handle{
+                    display: flex;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: var(--tabs-text);
+                    padding: 8px 12px 8px 12px;
+
+                    h5{
+                        font-weight: 500;
+                        font-size: 11px;
+
+                    }
+                
+                }
+            }
+
+
 
         }
 }

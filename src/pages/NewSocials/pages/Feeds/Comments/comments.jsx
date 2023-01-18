@@ -14,10 +14,11 @@ import {RiArrowDropDownLine} from "react-icons/ri"
 import axios from 'axios'
 
 
-export default function Comments({comments}) {
+export default function Comments({comments,posts}) {
    
    const {userToken} = useSelector(state=>state.signin)
    const [commentText,setText]=useState("")
+
 
 
 
@@ -30,7 +31,7 @@ export default function Comments({comments}) {
          }
        }
 
-       const res = await axios.get(
+       const res = await axios.post(
          `https://api.joysticklabs.io/api/v1/post/comment-post/${Id}`,
          config,
          {
@@ -51,7 +52,7 @@ export default function Comments({comments}) {
          }
        }
 
-       const res = await axios.get(
+       const res = await axios.post(
          `https://api.joysticklabs.io/api/v1/post/like-post/${Id}`,
          config
        )
@@ -59,6 +60,8 @@ export default function Comments({comments}) {
        console.log(res,"resss")
 
    }
+
+
   return (
     <div className='social-comment'>
        
@@ -125,7 +128,9 @@ export default function Comments({comments}) {
                                
                               </div>
                               <div  className='post-fx-top-right'>
-                                 <LoadingButton type='submit' title={"Share"} variant='red'  className='share-btn'/>
+                                 <LoadingButton type='submit' title={"Share"} variant='red'  className='share-btn'
+                                  onClick={shareComment()}
+                                 />
                                </div>
 
                               
@@ -140,6 +145,9 @@ export default function Comments({comments}) {
                             <textarea 
                              placeholder='Write your comment here'
                              className='comment-text'
+                             name="commentText"
+                             value={commentText}
+                             onChange={(e)=>setText(e.target.value)}
                              />        
                          </main>
                      </div>

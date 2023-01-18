@@ -24,9 +24,10 @@
                 width: 100%;
                 padding: 10px 10px 10px 10px;
                 background: var( --post-textarea);
-                color: white;
+                color: var(--tabs-text);
                 border: 0;
                 height: 47.59px;
+                outline: none;
             }
         }
 
@@ -53,6 +54,9 @@
                      span{
                         font-size:10.3px;
                       
+                     }
+                     input{
+                        display: none;
                      }
                 }
             }
