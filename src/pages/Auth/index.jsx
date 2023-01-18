@@ -43,13 +43,14 @@ export default function Auth(props) {
     }
     const loginHandler = (e) => {
         e.preventDefault()
-        dispatch(loginAction(login_username,login_password))
+      dispatch(loginAction(login_username, login_password))
     }
     useEffect(() => {
-        signin_success && navigate("/home")
+      signin_success && navigate("/home")
+      ! userToken?.access_token&& navigate("/")
         check&&setDisable(false)
         !check&& setDisable(true)
-    },[signin_success,navigate,check])
+    },[signin_success,navigate,check, userToken?.access_token])
     
     const { isUser, setIsUser, message, setMessage, success, setSuccess } = AppContextInit()
 

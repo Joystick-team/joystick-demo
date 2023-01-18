@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import './layout.scss'
 import TopNav from '../component/NavMenus/TopNav'
 // import SideNav from '../NavMenus/SideNav'
@@ -11,8 +12,12 @@ import Subscription from '../component/Subscription'
 
 
 export default function Layout(props) {
+
+  const { userToken } = useSelector(state => state.signin)
  
   const { isUser, message, success } = AppContextInit()
+
+  const isLandingPage = window.location.href.endsWith("/")
   return (
     <div className='layout-container'>
 
@@ -25,7 +30,7 @@ export default function Layout(props) {
             }
         <div className="side-nav-bar">
           <div className="fixed-top-sidemenu">
-         <DrawerNav />
+        {userToken?.access_token &&<DrawerNav />}
           </div>
         </div>
 
@@ -39,7 +44,7 @@ export default function Layout(props) {
               {props.children}
             </div>
             <div className='subscribers'>
-              <Subscription />
+              {/* <Subscription /> */}
             </div>
           </div>
  
