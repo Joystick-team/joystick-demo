@@ -5,12 +5,12 @@ import { Outlet } from 'react-router-dom'
 
 
 export default function NewSocials() {
-     const tabItems=["Feeds","Community","Profile","Explore"]
+     
   return (
     <div className='new-socials'>
        
         <div className='socialtab'>
-            <SocialTab  tabs={[...tabItems]}/>
+            <SocialTab  />
         </div>
             <div className='socials-outlet'>
                 <Outlet  />

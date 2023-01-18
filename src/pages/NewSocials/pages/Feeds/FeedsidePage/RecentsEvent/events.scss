@@ -1,5 +1,5 @@
 .events-main-div{
-    background: #211E1E;
+    background: var(  --feed-sidepage-bg);
     padding: 8px 8px 8px 8px;
     border-radius: 8px; 
     height: 361px;
@@ -10,7 +10,7 @@
         border-bottom: 1px solid #0D0D0D;
         padding-bottom: 8px;
         h5{
-            color: rgba(255, 255, 255, 0.9);
+            color: var(--tabs-text);   
             font-weight: 600;
             font-size: 14.1457px;
         }
@@ -41,12 +41,12 @@
 
                     .event-title{
                         font-weight: 500;
-                        color: rgba(255, 255, 255, 0.9);
+                        color: var(--tabs-text);   
                         font-size: 14.1457px;
                     }
 
                     .event-descp{
-                        color: rgba(172, 172, 172, 0.9);
+                        color: var(--tabs-text);   
                         font-weight: 500;
                         font-size: 12px;
                     }
@@ -61,7 +61,7 @@
                 h5{
                     font-weight: 500;
                      font-size: 10.989px;  
-                     color: #F9F9F9;
+                     color: var(--tabs-text);   
                 }
             }
         }

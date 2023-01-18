@@ -1,0 +1,237 @@
+
+
+
+.guest-profileInfo{
+    width: 100%;
+    padding-top: 20px;
+     .guest-profile-bg-div{
+     width: 100%;
+     height:278px;
+     border-radius: 14px;
+     img{
+         width: 100%;
+         height: 100%;
+         border-radius: 14px;
+     }
+     
+     }
+ 
+     .guest-profile-details-div{
+         width: 100%;
+         display:flex;
+         flex-direction: row;
+         justify-content: start;
+         column-gap: 160px;
+         padding-top: 40px !important;
+         padding: 0 30px 0 ;
+
+
+         .msg-btn{
+            width: 110px;
+            height: 34px;
+            background: #C71F1F;
+            backdrop-filter: blur(2px);
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 12px;
+            border: 0;
+            color:white;
+
+        }
+ 
+         .guest-profile--details-stats{
+             
+             display:flex;
+             column-gap: 60px;
+ 
+             h5{
+                 display: flex;
+                 flex-direction: column;
+ 
+                 .text-num{
+                     font-weight: 600;
+                     font-size: 23.125px;
+                 }
+                 .profile-text{
+                     font-weight: 400;
+                     font-size: 15.4167px;
+                     background: #C71F1F;
+                     border-radius: 5px;
+                     width: 92px;
+                     height: 29px;
+                     border: 0;
+                     color: white;
+                 }
+
+                 .profile-text-following{
+                    font-weight: 400;
+                    font-size: 14.5786px;
+                    border-radius: 5px;
+                    width: 92px;
+                    height: 29px;
+                    border: 1px solid #232222;
+                    background-color: white;
+                  
+                 }
+             }
+     
+             .user-pic-name{
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  row-gap: 8px;
+     
+                 img{
+                     width: 180px;
+                     height: 180px;
+                     border-radius: 9999px;
+                     margin-top: -106px;
+                 }
+     
+                 h5{
+                     display: flex;
+                     flex-direction: column;
+                     align-items: center;
+                     
+                     
+                     .user-name{
+                         font-weight: 600;
+                         font-size: 18px;
+ 
+                     }
+ 
+                     .user-role{
+                         font-weight: 400;
+                         font-size: 14px;
+                         color: #BFB2B2;
+ 
+                     }
+                 
+                             }
+                         }
+                     }
+ 
+       
+ 
+                 .edit-btn{
+                     width: 110px;
+                     height: 34px;
+                     background: #DADADA;
+                     backdrop-filter: blur(2px);
+                     border-radius: 8px;
+                     font-weight: 500;
+                     font-size: 12px;
+                     color:var(--tabs-text);
+                     border: 0;
+ 
+                 }
+ 
+     }
+ 
+ }
+ 
+ 
+ @media screen and (max-width: 480px){
+ 
+     .guest-profileInfo{
+ 
+         .guest-profile-bg-div{
+ 
+             width: 100%;
+             height: 144.17px;
+             border-radius: 14px;
+ 
+         }
+       
+ 
+         .guest-profile-details-div{
+ 
+             width: 100%;
+             display:flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+          
+             .msg-btn{
+              display: none;
+
+            }
+         
+ 
+ 
+          .guest-profile--details-stats{  
+           
+             column-gap: 30px;
+ 
+             h5{
+                 display: flex;
+                 flex-direction: column;
+ 
+                 .text-num{
+                     font-weight: 600;
+                     font-size: 20px;
+                 }
+                 .profile-text{
+                     font-weight: 400;
+                     font-size: 11px;
+                 }
+             }
+             
+              
+           
+            
+             .user-pic-name{
+                 width: 100%;
+                img{
+ 
+                     width: 90px ;
+                     height: 90px ;
+                     margin-top: -57px;
+ 
+ 
+                 }
+                 h5{
+                     display: flex;
+                     flex-direction: column;
+                     align-items: center;
+                     row-gap: 8px;
+                     width: 100%;
+                     
+                     .user-name{
+                         font-weight: 600;
+                         font-size: 15px;
+ 
+                     }
+ 
+                     .user-role{
+                         font-weight: 400;
+                         font-size: 10px;
+                         color: #BFB2B2;
+ 
+                     }
+                 
+                             }
+ 
+ 
+ 
+             }
+ 
+ 
+             
+ 
+          }
+         }
+ 
+ 
+         .edit-btn{
+           
+            display: none;
+             
+         }
+ 
+     }
+ 
+ 
+ 
+ }
+ 

@@ -18,7 +18,20 @@ html {
   --friends-white-bg: #ffffff;
   --friends-search-icon: rgba(30, 30, 30, 0.6);
   // End
-  --mobile-titlebar: #c9c9c9;
+
+    // social-Feed
+    --tabs-background: #eeecec;
+    --tabs-text:#151515;
+    --post-textarea:white;
+    --post-attachment-bg:rgba(22, 21, 21, 0.6);
+    --post-text: rgba(255, 255, 255, 0.6);
+    --feed-sidepage-bg:white;
+    --feeds-bg: #EEECEC;
+    --socials-bg:white;
+    --freiend-request-text:#3F3535;
+    --social-btn: white;
+    // End
+
   --button: #c71f1f;
   --secondary--text: var(--primary--text);
   --secondary-background: #eeecec;
@@ -83,4 +96,20 @@ html[data-theme="dark"] {
   --select-background: #141414;
   --nodata-title: #fff;
   --nodata-text: rgba(146, 137, 137, 0.9);
+
+
+    // social-Feed
+    --tabs-background: #2F2F2F;
+    --tabs-text:white;
+    --post-textarea:#262323;
+  
+    --post-attachment-bg: #0D0B0B;
+    --post-text:rgba(140, 134, 134, 0.6);
+    --feed-sidepage-bg:#211E1E;;
+    --feeds-bg:#0D0B0B;
+    --socials-bg:#0D0B0B;;
+    --freiend-request-text:#3F3535;
+    --social-btn: #2F2F2F;
+    // End
+
 }
