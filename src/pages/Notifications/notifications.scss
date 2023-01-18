@@ -24,8 +24,42 @@
         }
       }
 
+      & > .empty-data {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        text-align: center;
+        margin-top: 2rem;
+
+        @media (max-width: 800px) {
+          font-size: 12px;
+        }
+      }
+
       .left-body:last-child {
         border-bottom: 2px solid var(--notification--card--border);
+      }
+
+      & > .load-more-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+
+        button {
+          background-color: #db242d;
+          color: #fff;
+          border-radius: 8px;
+          border: none;
+          padding: 0.5rem 0.7rem;
+          font-weight: 500;
+          font-size: 14px;
+
+          @media (max-width: 800px) {
+            font-size: 12px;
+            padding: 0.5rem;
+          }
+        }
       }
     }
 
