@@ -1,0 +1,108 @@
+.intro-div{
+    height: 249px;
+    width: 100%;
+    background: var( --feed-sidepage-bg);
+    border-radius: 6.08px;
+
+    .intro-header{
+        padding: 8px 12px 8px 12px;
+        border-bottom: 2px solid #000000;;
+        h5{
+            font-size: 13px;
+            font-weight: 600;
+
+        }
+
+    }
+    .intro-body-top{
+        display: flex;
+        align-items: center;
+        padding: 14px 12px 8px 12px;
+        justify-content: space-between;
+        .intro-body-top-item{
+            display: flex;
+            column-gap: 20px;
+         
+            
+            img{
+                width: 11px;
+                height: 11px;
+              
+            }
+            h5{
+                font-weight: 500;
+                font-size: 13px;
+                color: var(--tabs-text);
+
+            }
+        }
+
+    }
+        .intro-body-social{
+
+            h5{
+                padding: 8px 12px 8px 12px;
+                font-size: 13px;
+                font-weight: 600;
+
+            }
+
+            .intro-body-social-items{
+                display: grid;
+                grid-auto-flow: row;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                 align-items: center;
+                row-gap: 2px;
+                column-gap: 2px;
+
+                .social-handle{
+                    display: flex;
+                    align-items: center;
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: var(--tabs-text);
+                    padding: 8px 12px 8px 12px;
+
+                    h5{
+                        font-weight: 500;
+                        font-size: 11px;
+
+                    }
+                
+                }
+            }
+
+
+
+        }
+}
+
+
+@media screen and (max-width: 480px){
+
+    .intro-div{
+        height:  152.32px;
+
+        .intro-header{
+         
+            border-bottom: 0;
+
+        }
+       
+        .intro-body-top{
+
+            flex-wrap: wrap;
+            justify-content:initial;
+            column-gap: 100px;
+            row-gap: 30px;
+    
+        }
+
+
+        .intro-body-social{
+
+            display: none;
+        }
+    }
+
+}

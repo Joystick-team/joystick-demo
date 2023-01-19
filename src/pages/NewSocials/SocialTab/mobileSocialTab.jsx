@@ -1,6 +1,6 @@
 import React from 'react'
 import "./mobilesocialtab.scss"
-
+import { Link } from 'react-router-dom'
 
 
 export default function MobileSocialTab({tabs}) {
@@ -9,11 +9,11 @@ export default function MobileSocialTab({tabs}) {
     <div className='mobilesocialtab-main'>
         <div className='tab-row'>
             <div className='tab-items'>
-                {tabs.map((tab)=>{
-                    return(
-                        <h5 className='text-sm font-semibold'>{tab}</h5>
-                    )
-                })}
+            <Link to=""><h5 className='text-sm font-semibold'>Feeds</h5></Link>
+            <Link to="community"><h5 className='text-sm font-semibold'>Community</h5></Link>
+            <Link to="Profile"><h5 className='text-sm font-semibold'>Profile</h5></Link>
+            <Link to="Explore"><h5 className='text-sm font-semibold'>Explore</h5></Link>
+           
             </div>
            
         </div>

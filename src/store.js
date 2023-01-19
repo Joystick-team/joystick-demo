@@ -7,12 +7,16 @@ import { signinReducer } from "./Reducers/AuthReducer/signin.Reducer"
 import { profileReducer } from "./Reducers/AuthReducer/profile.Reducer"
 import { profileUpdateReducer } from "./Reducers/AuthReducer/Profile.Update.Reducer"
 import { searchReducer } from "./Reducers/Search.Reducer"
+import { fetchAllPostsReducer } from "./Reducers/Posts.Reducer"
+ 
+
 
 const reducer = combineReducers({
     fetchAllGames: fetchAllGamesReducer,
     signup: signupReducer,
     signin: signinReducer,
     profile: profileReducer,
+   posts:fetchAllPostsReducer,
     profileUpdate: profileUpdateReducer,
     search:searchReducer
 })

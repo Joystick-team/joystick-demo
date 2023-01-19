@@ -14,6 +14,8 @@ import Feed from './pages/Feeds'
 import MyPost from './pages/MyPost'
 import './socials.scss'
 
+
+
 export default function Socials() {
   const [sliderCount, setSliderCount] = useState(Number(6))
   const [popChat, setPopChat] = useState(false)

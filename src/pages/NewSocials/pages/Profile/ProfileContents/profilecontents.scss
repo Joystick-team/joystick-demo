@@ -1,0 +1,62 @@
+.profile-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    .content-tab{
+        width: 100%;
+        height: 34px;
+        display: flex;
+        background:var( --tabs-background);
+        border-radius: 3px;
+        align-items: center;
+        .tabs{
+          display: flex;
+          width: 100%;
+          align-items: center;
+          padding: 4px 4px 4px 4px;
+          height: 100%;
+
+          
+            a{  
+              width: 50%;
+              height: 100%;
+              text-decoration: none;
+               div{
+                color:var(--tabs-text);
+                text-align: center;
+                height: 100%;
+                width: 100%;
+                font-weight: 600;
+                font-size: 13px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+               
+               }
+               
+             }
+
+             a:focus{  
+              background-color:rgba(199, 31, 31, 1);
+              height: 100%;
+              border-radius: 4px;
+              div{
+
+              }
+           }
+
+        
+          
+      
+ 
+        }
+      }
+
+   .profile-oulet{
+    background-color: var(  --feeds-bg);
+    padding: 14px;
+    border-radius: 12.3555px;
+
+     }
+
+}
