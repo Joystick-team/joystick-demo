@@ -20,9 +20,12 @@ import { AppContextInit } from '../../../context/AppContext';
 
 export default function MobileSideNav() {
 
-    const { userToken } = useSelector(state => state.signin)
-    const isLandingPage = window.location.href.endsWith("/")
-    const { setMobileDrawer, mobileDrawer } = AppContextInit()
+    const { userToken } = useSelector(state => state.signin);
+
+    const isLandingPage = window.location.href.endsWith("/");
+
+    const { setMobileDrawer, mobileDrawer } = AppContextInit();
+    
     const handleClose = () => setMobileDrawer(false);
     const handleShow = () => setMobileDrawer(true);
     const [showSearch, setShowSearch] = useState(false);
@@ -53,9 +56,9 @@ export default function MobileSideNav() {
     return (
       <div >
         <div className="mobile_top_nav navbar-dark">
-            <Navbar.Toggle onClick={handleShow} aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
+           {userToken?.access_token && <Navbar.Toggle onClick={handleShow} aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
                 <FiMenu />
-            </Navbar.Toggle>
+            </Navbar.Toggle>}
                 <NavLink to="/">
                 {/* <picture>
                     <source srcSet={JOYSTICK2} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeDetector})`}/>
