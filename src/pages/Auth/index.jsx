@@ -16,11 +16,12 @@ import './auth.scss'
 
 export default function Auth(props) {
     // eslint-disable-next-line
-    const [first_name,setFirstname] = useState("")
-    const [last_name,setLastname] = useState("")
+    // const [first_name,setFirstname] = useState("")
+    // const [last_name,setLastname] = useState("")
     const [email,setEmail] = useState("")
     const [username,setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [confirmPassword, setConfirmPassword] = useState("")
     const [login_username,setLogin_username] = useState("")
     const [login_password, setLogin_password] = useState("")
 
@@ -33,13 +34,16 @@ export default function Auth(props) {
     const { signin_loading,signin_success, signin_error, userToken } = useSelector(state => state.signin)
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(signupAction(first_name, last_name, email, password, username));
-        setFirstname("");
-        setLastname("");
+      e.preventDefault();
+      if (password !== confirmPassword) {
+        alert("password must match")
+        return;
+      }
+        dispatch(signupAction( email, password, username));
         setEmail("");
         setUsername("");
         setPassword("");
+      setConfirmPassword("")
     }
     const loginHandler = (e) => {
         e.preventDefault()
@@ -262,27 +266,7 @@ export default function Auth(props) {
                 </div>
                  :
                  (<div className='register-auth'>
-                 {/* <form action="" method="post" onSubmit={handleRegisterSubmit}>
-                     <div className="register-form-title">Join the game!</div>
-                     <p className="register-description">Go inside the best gamers social network!</p>
-                     
-                     {registerInputData.map((item, idx) => {
-                         return <InputField key={idx} onChange={handleChange} item={item} />
-                     })}
-
-                     <div className="form-group">
-                         <label htmlFor="register_checkbox">
-                             <input type="checkbox" className='register_checkbox' id='register_checkbox' name='register_checkbox' />
-                             {' '} I agree to terms & conditions
-                         </label>
-                     </div>
-                     <div className="form-group">
-                         <button type="submit" >{`${isLoading ? 'Loading...' : 'Register'}`}</button>
-                     </div>
-                     <div className="check-register">
-                         Do you already have an account?  <span style={setLog} onClick={props.checkRegister.bind()} >Log in</span>
-                     </div>
-                 </form> */}
+                
                  <form action="" method="post" onSubmit={handleSubmit}>
                      <p className="register-form-title">Join the game!</p>
                      <p className="register-description">Go inside the best gamers social network!</p>
@@ -290,24 +274,28 @@ export default function Auth(props) {
                                   loading ? <Loader /> : signup_success ? <Message text="registered! please login" />:error&&<Message text={error}/>
                               }
                         <div >
-                            <label className={`bmd-label-static`}>Enter Username <span>*</span></label>
+                            <label className={`bmd-label-static`}> Username <span>*</span></label>
                             <input name="username" type="text" onChange={(e)=>{setUsername(e.target.value)}} value={username} className={`form-control `} placeholder={'Enter Username'} required/>
                         </div>
-                        <div >
+                        {/* <div >
                             <label className={`bmd-label-static`}>Enter Firstname <span>*</span></label>
                             <input name="first_name" type="text" onChange={(e)=>{setFirstname(e.target.value)}} value={first_name} className={`form-control `} placeholder={'Enter Firstname'} required/>
-                        </div>
-                        <div >
+                        </div> */}
+                        {/* <div >
                             <label className={`bmd-label-static`}>Enter Lastname <span>*</span></label>
                             <input name="last_name" type="text" onChange={(e)=>{setLastname(e.target.value)}} value={last_name} className={`form-control `} placeholder={'Enter Lastname'} required/>
-                        </div>
+                        </div> */}
                         <div >
-                            <label className={`bmd-label-static`}>Enter Email <span>*</span></label>
+                            <label className={`bmd-label-static`}>Email Address<span>*</span></label>
                             <input name="email" type="email" onChange={(e)=>{setEmail(e.target.value)}} value={email} className={`form-control `} placeholder={'Enter Email'} required/>
                         </div>
                         <div >
-                            <label className={`bmd-label-static`}>Enter Password <span>*</span></label>
+                            <label className={`bmd-label-static`}>Create Password <span>*</span></label>
                             <input name="password" type="password" onChange={(e)=>{setPassword(e.target.value)}} value={password} className={`form-control `} placeholder={'Enter Password'} required/>
+                        </div>
+                        <div >
+                            <label className={`bmd-label-static`}>Repeat Password <span>*</span></label>
+                            <input name="password" type="password" onChange={(e)=>{setConfirmPassword(e.target.value)}} value={confirmPassword} className={`form-control `} placeholder={'Enter Password'} required/>
                         </div>
                         {/* <div className={`form-group bmd-form-group`}>
                             <label className={`bmd-label-static`}>Enter Username <span>*</span></label>
