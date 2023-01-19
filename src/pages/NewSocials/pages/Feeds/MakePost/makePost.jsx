@@ -56,7 +56,7 @@ export default function MakePost({pic,btnName}) {
     const formData = new FormData();
     formData.append('file', file);
     console.log(file)
-    formData.append('description', postText);
+    formData.append('text', postText);
     console.log(postText)
     console.log(formData)
     const config = {
