@@ -1,10 +1,11 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import { useNavigate,  useParams } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import DailyIframe from "@daily-co/daily-js";
 import styled from "styled-components";
 import  { default as api } from '../../config/config.json'
 import axios from "axios";
 import PasscodeModal from "./PasscodeModal";
+
 
 const CALL_OPTIONS = {
   iframeStyle: {
@@ -33,6 +34,43 @@ const WebinarCall = (props) => {
  
 
  let {url} = useParams()
+
+ const alertUser = e => {
+  e.preventDefault()
+  alert("rehwfkjs ")
+  e.returnValue = ''
+}
+
+const handleEndClose = async () => {
+  const token = JSON.parse(localStorage.getItem('userToken')).access_token
+  try {
+    var config = {
+      method: 'post',
+      url: `${api.url}/leave-room/${url}`,
+      headers: { Authorization: `Bearer ${token}` }
+    };
+    const res = await axios(config)
+    console.log(res.data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+//  useEffect(() => {
+//   window.onbeforeunload = undefined;
+//   window.addEventListener('beforeunload', (event) => {             //When they leave the site
+//       event.preventDefault();                                     // Cancel the event as stated by the standard.
+//       handleEndClose();
+//   });
+
+//   return () => {
+//       handleEndClose();                                                 //When they visit another local link
+//       document.removeEventListener('beforeunload', handleEndClose);
+//   };
+// }, [])
+
+const location = useLocation()
+
+
  
 
  const toggleModal=()=>{
@@ -52,12 +90,17 @@ const WebinarCall = (props) => {
 
  const leftMeeting = useCallback(async() => {
    try {
+    const { id } = location.state
+    const token = JSON.parse(localStorage.getItem('userToken')).access_token
+    var configTwo = {
+      method: 'post',
+      url: `${api.url}/room/leave-room/${id}`,
+      headers: { Authorization: `Bearer ${token}` }
+    };
     if(token){
-      const res = await axios.delete(`${api.test_url}/api/v1/room/${url}`)
+      const res = await axios(configTwo)
+      console.log(res)
       localStorage.clear('meeting-token')
-      window.alert(
-        "Are you sure you want to leave?"
-      );
       navigate('/livestream');
     }
     else{
@@ -109,11 +152,14 @@ const createAndJoinCallFrame = useCallback(async () => {
   }, [updateSize]);
 
   const getRoom = async()=>{
-    // sFKdMo
-    // let priv = 'private'
-    // let data = {privacy: priv, pass_code :'sFKdMo'}
+    const token = JSON.parse(localStorage.getItem('userToken')).access_token
+    var config = {
+      method: 'get',
+      url: `${api.url}/room/${url}`,
+      headers: { Authorization: `Bearer ${token}` }
+    };
     try {
-      const result = await axios.get(`${api.test_url}/api/v1/room/${url}`)
+      const result = await axios(config)
       if(result.data.privacy === 'private'){
         toggleModal()
       }

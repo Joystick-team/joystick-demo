@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import  { default as api } from '../../config/config.json'
 
 function History({history}) {
   const [text, setText] = useState('copy')
@@ -11,14 +12,9 @@ function History({history}) {
         <tr key={req.id}>
             <td>{req.created_at}</td>
             <td>{req.room_id}</td>
-            <td>{req.room_name}</td>
+            <td>{req.name}</td>
             <td>
-              {`http://localhost:3000/livestream/${req.name}`}
-                {/* <button className='btn btn-sm'
-                  onClick={handleCopy(`http://localhost:3000/livestream/${req.name}`)}
-                >
-                  {text}
-                </button> */}
+              {`${api.localServer}/livestream/${req.name}`}
             </td>
             <td>{req.pass_code}</td>
             <td>{req.privacy ==='public'? 
