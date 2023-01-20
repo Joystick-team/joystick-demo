@@ -1,0 +1,49 @@
+.profile-content{
+
+    .content-tab{
+        width: 100%;
+        height: 34px;
+        display: flex;
+        background: #211E1E;
+        border-radius: 3px;
+        align-items: center;
+        .tabs{
+          display: flex;
+          width: 100%;
+          align-items: center;
+          padding: 4px 0 4px 0 ;
+
+          
+            a{  
+              width: 50%;
+              height: 100%;
+              text-decoration: none;
+               div{
+                color: white;
+                text-align: center;
+                height: 100%;
+                width: 100%;
+                font-weight: 600;
+                font-size: 13px;
+               
+               }
+               
+             }
+
+             a:focus{  
+              background-color:rgba(199, 31, 31, 1);
+              height: 100%;
+             
+           }
+        
+          
+      
+ 
+        }
+      }
+
+   .profile-oulet{
+
+     }
+
+}

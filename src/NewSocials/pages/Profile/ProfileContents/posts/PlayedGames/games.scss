@@ -1,0 +1,84 @@
+.played-games{
+    height: 208px;
+    width: 100%;
+    background: #211E1E;
+    border-radius: 8px;
+    h5{
+        font-weight: 700;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.9);
+        padding: 8px 12px 8px 12px;
+
+    }
+
+    .games-list{
+        display: flex;  
+        padding: 14px 12px 8px 12px;
+        align-items: center;
+        height: 60%;
+        column-gap: 20px;
+
+        .game-div{
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            img{
+                width: 64px;
+                height: 70px;
+                border-radius: 1.87454px;
+            }
+
+            h5{
+                display: flex;
+                flex-direction: column;
+
+                .game-name{
+                    font-weight: 600;
+                     font-size: 10px;
+                }
+                .game-blockchain{
+                    font-weight: 400;
+                    font-size: 8px;
+
+                    color: rgba(235, 235, 245, 0.6);
+                }
+
+                .play-btn{
+                    font-weight: 600;
+                     font-size: 10px;
+                }
+
+            }
+
+        }
+    }
+
+            h5{
+                font-weight: 600;
+                font-size: 14px;
+
+            }
+}
+
+
+@media screen and (max-width: 480px){
+    .played-games{
+        height: 272px;
+
+        h5{
+            padding: 8px 12px 8px 12px;
+          
+        }
+
+        .games-list{
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+             
+            row-gap: 30px;
+            column-gap: 4px;
+        }
+
+    }
+
+}

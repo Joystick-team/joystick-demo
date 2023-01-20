@@ -1,0 +1,35 @@
+.creators-main-div{
+    width: 100%;
+    overflow-x: scroll;
+    .scroll-div{
+        width: 150%;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+     .bg-div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+        .creator-name{
+            font-size:13px;
+        }
+        .img-div{
+          border-radius: 9999px;
+          border-width: 10px;
+           border-color: linear-gradient(rgba(219, 36, 45, 1)
+           rgba(40, 58, 222, 0.89)
+           rgba(159, 13, 40, 0.97)
+           rgba(116, 31, 4, 0.73)); 
+
+            img{
+                border-radius: 9999px;
+                height:78px;
+                width: 78px;
+            }
+          
+          }
+     }
+     
+    }
+}

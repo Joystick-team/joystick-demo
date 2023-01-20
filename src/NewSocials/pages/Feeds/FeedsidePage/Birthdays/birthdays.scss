@@ -1,0 +1,128 @@
+.birthdays-main-div{
+    display: flex;
+    flex-direction: column;
+    background: #211E1E;
+    padding: 8px 8px 8px 8px;
+    border-radius: 8px;
+    height: 215px;
+    .birthdays-div-top{
+        display: flex;
+       
+        justify-content: space-between;
+        border-bottom: 2px;
+        border-color: #AAAAAA;
+       
+        h5{ 
+            font-size: 12.3px;
+        }
+    }
+
+
+    .birthday-mid{
+        
+        .birthday-today{
+           display: flex;
+           flex-direction: column;
+           row-gap: 15px;
+            .birthday-person{
+                display: flex;
+                column-gap: 15px;
+                
+                img{
+                    width: 36px;
+                    height: 36px; 
+                    border-radius: 8px;
+
+                }
+
+                h5{
+                    
+                    display: flex;
+                    flex-direction: column;
+                    
+                    .person-title{
+                        font-weight: 500;
+                        color: rgba(255, 255, 255, 0.9);
+                        font-size: 14.1457px;
+                    }
+
+                    .birthday-descp{
+                        color: rgba(172, 172, 172, 0.9);
+                        font-weight: 500;
+                        font-size: 12px;
+                    }
+
+                }
+            }
+
+            .write-inbox{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                border-radius: 8px;
+                .box-text{
+                    border: 0;
+                    width: 85%;
+                    background: rgba(17, 16, 16, 0.88);
+                    height: 34.12px;
+                    border-radius: 8px;
+                    font-size: 12px;
+                    padding-left: 8px;
+                    padding-top: 6px;
+                }
+
+                h5{
+                    background: rgba(17, 16, 16, 0.88);
+                    padding: 8px;
+                    border-radius: 8px;
+                    height: 34.12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+      
+                }
+            }
+        }
+    }
+    .birthday-upcoming{
+        display: flex;
+        column-gap: 15px;
+        
+        .gift-img{
+          
+           background: #C8C7C7;
+           border-radius: 8px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 36px;
+           height: 36px; 
+           padding: 8px;
+
+        }
+        h5{
+            display: flex;
+            flex-direction: column;
+            
+            .upcoming-title{
+                font-weight: 500;
+                font-size: 14.1457px;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            .upcoming-descp{
+                font-weight: 500;
+                font-size: 12px;
+                color: rgba(172, 172, 172, 0.9);
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 480px){
+
+    .birthdays-main-div{
+        display: none;
+    }
+}
