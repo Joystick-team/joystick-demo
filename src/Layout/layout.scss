@@ -1,223 +1,217 @@
-.layout-container{
-    // margin-left: 16rem;
+.layout-container {
+  // margin-left: 16rem;
 
-    .layout{
-        display: flex;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        overflow: hidden;
-        overflow-y: auto;
-        position: relative;
-        height: 95vh;
-        height: auto;
-        width: 100%;
-    
-    
-        .side-nav-bar{
-            // border: solid grey 2px;
-            box-sizing: border-box;
-            overflow: hidden;
-            flex-basis: content;
-            // max-width: 260px;
-            height: auto;
-            // height: 90vh;
-            max-width: 260px;
-            flex-basis: auto;
-            position: relative;
+  .layout {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    height: 95vh;
+    height: auto;
+    width: 100%;
 
-            .fixed-top-sidemenu {
-                display: block;
-                // top: 210px;
-                right: 0;
-                left: 0;
-                bottom: 0%;
-                z-index: 10;
-                background: var(--background);
-            }
-        }
-    
-        .main-container{
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
-            overflow-y: auto;
-            flex: 2;
-            height: 80%;
-            margin-right: .7rem;
-            margin-top: 7rem;
+    .side-nav-bar {
+      // border: solid grey 2px;
+      box-sizing: border-box;
+      overflow: hidden;
+      flex-basis: content;
+      // max-width: 260px;
+      height: auto;
+      // height: 90vh;
+      max-width: 260px;
+      flex-basis: auto;
+      position: relative;
 
-            .center-div{
-                // height: 100vh;
-                height: 86vh;
-                // height: 90vh;
-                overscroll-behavior: auto;
-                overflow-y: scroll;
-
-                .subscribers{
-                //     // position: fixed;
-                //     bottom: 50px;
-                //     // background: red;
-                //     display: flex;
-                //     align-items: center;
-                //     justify-content: flex-start;
-                //     // max-width: 480px;
-                //     width: 100%;
-                //     z-index: 7;
-                // margin-top: 3rem;
-                margin-bottom: 3rem;
-                }
-                // @media screen and (max-width: '430px') {
-                //     height: 95vh !important;
-                // }
-            }
-            .mobile-nav{
-                display: none;
-            }
-
-            .main-div{
-               display: flex;
-                
-
-                .main{
-                    box-sizing: border-box;
-                    overflow-y: auto;
-                    max-height: 85vh;
-                    flex-basis: auto;
-                    flex-grow: 2;
-                    overflow-x: hidden;
-                    // padding-top: 1.5rem;
-                    @media screen and (max-width: 480px){
-                        overflow: hidden;
-                        overflow-y: auto;
-                        max-height: 750px;
-                    }
-                }
-            
-                @media screen and (max-width: 480px){
-                    height: 88vh;
-                    margin-top: 4.3rem;
-
-
-                }
-
-
-                .side-adverts{
-                    box-sizing: border-box;
-                    flex-basis: content;
-                    max-width: 327px;
-                    max-height: 87vh;
-                    height: auto;
-                    background: var(--secondary-background);
-                    border-radius: 12px;
-                    flex-grow: 1;
-                    padding: 1.5rem 1rem;
-                }
-            }
-
-            .main-div {
-                .drop-message-alert{
-                    // display: none;
-                    z-index: 999999999;
-                }
-
-                & > div{
-                    display: contents;
-                    overflow: hidden;
-                    overflow-y: auto;
-                }
-            }
-
-        }
-    }
-}
-
-
-@supports ( position: sticky){
-    .fixed-top-sidemenu {
-        position: sticky;
-        top: 0;
-        left: 0;
+      .fixed-top-sidemenu {
+        display: block;
+        // top: 210px;
         right: 0;
+        left: 0;
+        bottom: 0%;
+        z-index: 10;
+        background: var(--background);
+      }
     }
+
+    .main-container {
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+      overflow-y: auto;
+      flex: 2;
+      height: 80%;
+      margin-right: 0.7rem;
+      margin-top: 7rem;
+
+      .center-div {
+        // height: 100vh;
+        height: 86vh;
+        // height: 90vh;
+        overscroll-behavior: auto;
+        overflow-y: scroll;
+
+        .subscribers {
+          //     // position: fixed;
+          //     bottom: 50px;
+          //     // background: red;
+          //     display: flex;
+          //     align-items: center;
+          //     justify-content: flex-start;
+          //     // max-width: 480px;
+          //     width: 100%;
+          //     z-index: 7;
+          // margin-top: 3rem;
+          margin-bottom: 3rem;
+        }
+        // @media screen and (max-width: '430px') {
+        //     height: 95vh !important;
+        // }
+      }
+      .mobile-nav {
+        display: none;
+      }
+
+      .main-div {
+        display: flex;
+
+        .main {
+          box-sizing: border-box;
+          overflow-y: auto;
+          max-height: 85vh;
+          flex-basis: auto;
+          flex-grow: 2;
+          overflow-x: hidden;
+          // padding-top: 1.5rem;
+          @media screen and (max-width: 480px) {
+            overflow: hidden;
+            overflow-y: auto;
+            max-height: 750px;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          height: 88vh;
+          margin-top: 4.3rem;
+        }
+
+        .side-adverts {
+          box-sizing: border-box;
+          flex-basis: content;
+          max-width: 327px;
+          max-height: 87vh;
+          height: auto;
+          background: var(--secondary-background);
+          border-radius: 12px;
+          flex-grow: 1;
+          padding: 1.5rem 1rem;
+        }
+      }
+
+      .main-div {
+        .drop-message-alert {
+          // display: none;
+          z-index: 999999999;
+        }
+
+        & > div {
+          display: contents;
+          overflow: hidden;
+          overflow-y: auto;
+        }
+      }
+    }
+  }
 }
 
-@media screen and (max-width: 480px){
-    .layout-container{
-        .top-nav, .side-nav-bar, .side-adverts, .side-advert{
-            display: none;
-        }
-
-        .drop-message-alert{
-            display: block;
-        }
-
-        .main-container{
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
-            flex: 2 1;
-            // height: 80%;
-            margin-right: auto;
-            overflow-y: auto;
-            margin-top: 0rem;
-        }
-        
-        .layout .main-container .main-div > div {
-            display: flow-root !important;
-            width: 100%;
-            overflow-y: auto;
-            // height: 80%;
-            margin-bottom: 1rem;
-            margin-top: 0rem;
-
-            .side-adverts{
-                // max-width: auto;
-                max-width: 100%;
-                // height: auto;
-                display: none;
-            }
-
-            .sliders img {
-                height: auto;
-            }
-        }
-
-    }
+@supports (position: sticky) {
+  .fixed-top-sidemenu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
-@media screen and (max-width: 1025px){
-    .layout-container{
-        .side-nav-bar{
-            display: none;
-        }
-        .top-nav .navbar{
-            max-width: 100%;
-            padding: 0;
-        }
-
-        .main-container{
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
-            flex: 2 1;
-            // height: 80%;
-            margin-right: auto;
-            overflow-y: auto;
-            margin-right: 0rem !important;
-            margin-top: 0rem !important;   
-
-            .mobile-nav{
-                display: block !important;
-
-                .navbar-dark{
-                    background: var(--secondary-background);
-                    height: 8vh;
-                    position: fixed;
-                    z-index: 5;
-                    width: 100vw;
-
-                }
-            }
-        }
+@media screen and (max-width: 480px) {
+  .layout-container {
+    .top-nav,
+    .side-nav-bar,
+    .side-adverts,
+    .side-advert {
+      display: none;
     }
+
+    .drop-message-alert {
+      display: block;
+    }
+
+    .main-container {
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+      flex: 2 1;
+      // height: 80%;
+      margin-right: auto;
+      overflow-y: auto;
+      margin-top: 0rem;
+    }
+
+    .layout .main-container .main-div > div {
+      display: flow-root !important;
+      width: 100%;
+      overflow-y: auto;
+      // height: 80%;
+      margin-bottom: 1rem;
+      margin-top: 0rem;
+
+      .side-adverts {
+        // max-width: auto;
+        max-width: 100%;
+        // height: auto;
+        display: none;
+      }
+
+      .sliders img {
+        height: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .layout-container {
+    .side-nav-bar {
+      display: none;
+    }
+    .top-nav .navbar {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .main-container {
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+      flex: 2 1;
+      // height: 80%;
+      margin-right: auto;
+      overflow-y: auto;
+      margin-right: 0rem !important;
+      margin-top: 0rem !important;
+
+      .mobile-nav {
+        display: block !important;
+
+        .navbar-dark {
+          background: var(--secondary-background);
+          height: 8vh;
+          position: fixed;
+          z-index: 5;
+          width: 100vw;
+        }
+      }
+    }
+  }
 }
