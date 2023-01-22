@@ -1,6 +1,6 @@
 import React from "react";
 import { templates } from "./templates";
-import moment from "moment/moment";
+// import moment from "moment/moment";
 import "./card.scss";
 
 const NotificationCard = ({ notification }) => {
