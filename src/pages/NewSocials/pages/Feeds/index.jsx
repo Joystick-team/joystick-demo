@@ -63,13 +63,17 @@ export default function Feeds() {
 
   console.log(loading,success,error,posts,"feeds")
 
+  //  const postArray=posts.posts
+  //  console.log(postArray)
+  console.log(posts?.posts,"soc")
+   const postArray=posts?.posts
 
   return (
     <div className='feeds-div'>
 
         <div className='feeds-comments'>
             < MakePost pic={ pic } btnName={"Publish post"} />
-             < Comments  comments={comments} posts={posts} />
+             < Comments  comments={comments} posts={postArray} />
         </div>
         <div className='feeds-sidepage'>
          < FeedSidepage />
