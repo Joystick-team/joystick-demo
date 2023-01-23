@@ -1,0 +1,42 @@
+.update--container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+}
+
+ label{
+    display: block;
+    font-size: 12px;
+    padding-top: 1rem;
+}
+
+input{
+    border-radius: 7px;
+    width: 20rem;
+    /* background-color: #0d0c0c; */
+    background-color: transparent;
+    border: 1px solid #9e9c9c;
+}
+textarea{
+     border-radius: 7px;
+    background-color: transparent;
+    border: 1px solid #9e9c9c;
+}
+.update--container h3{
+    font-size: 16px;
+}
+
+
+.flexedInputContainer{
+    display: flex;
+    
+}
+.firstName--container{
+    margin-right: 3rem;
+}
+
+
+
+.email--container input{
+    width: 30rem;
+}
