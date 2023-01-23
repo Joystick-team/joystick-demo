@@ -20,11 +20,6 @@ const Notifications = () => {
       dispatch(fetchAllNotifications(page, setLoading));
   }, [page]);
 
-  const goBack = () => {
-    history.go(-1);
-    return false;
-  };
-
   return (
     <div className="notifications">
       <div className="notifications-content">
