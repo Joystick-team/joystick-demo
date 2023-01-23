@@ -1,12 +1,11 @@
 import { SIGININ_REQUEST, SIGININ_SUCCESS, SIGININ_FAIL, LOGOUT } from "../../Action-Creators/Authenication/Signin.Auth";
 import axios from "axios";
-import  { default as api } from '../../config/config.json'
 
 export const loginAction = (username, password) => async (dispatch, getState) => {
     console.log("login-details", username,password)
     try {
         dispatch({ type: SIGININ_REQUEST });
-        const { data } = await axios.post(`${api.url}/auth/login`, { username, password });
+        const { data } = await axios.post("https://api.joysticklabs.io/api/v1/auth/login", { username, password });
         dispatch({ type: SIGININ_SUCCESS, payload: data });
         console.log("user_token", data)
         localStorage.setItem("userToken", JSON.stringify(data));

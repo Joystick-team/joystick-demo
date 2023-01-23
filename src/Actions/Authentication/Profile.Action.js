@@ -1,12 +1,11 @@
 import { PROFILE_REQUEST, PROFILE_SUCCESS, PROFILE_FAIL } from "../../Action-Creators/Authenication/Profile.Auth";
 import axios from "axios";
-import  { default as api } from '../../config/config.json'
 
 export const profileAction = () => async (dispatch, getState) => {
     try {
         dispatch({type: PROFILE_REQUEST });
         const { signin } = getState();
-        const userToken = signin?.userToken;
+        const userToken = signin?.userToken;y 
         console.log("tk",userToken?.access_token)
         const config = {
             headers: {
@@ -14,10 +13,10 @@ export const profileAction = () => async (dispatch, getState) => {
                 Authorization: `Bearer ${userToken?.access_token}`
             }
         }
-        const { data } = await axios.get(`${api.url}/auth/profile`, config)
-        localStorage.setItem("user_id", data.id)
+        const { data } = await axios.get("https://api.joysticklabs.io/api/v1/auth/profile", config)
         dispatch({ type: PROFILE_SUCCESS, payload: data })
         console.log("profile",data)
+        localStorage.setItem("user_id", data.id)
     } catch (error) {
         dispatch({type:PROFILE_FAIL,payload:error?.response?.data?.message})
         console.log(error)
