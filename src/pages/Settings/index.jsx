@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import Settings_Nav from "./Settings_Nav"
-import { UpdateAccountData, EditAccountData,SecurityData } from './Account.data';
+import { UpdateAccountData, EditAccountData, SecurityData } from './Account.data';
+import { profileFormAction } from '../../Actions/profileForm.Action';
 import { UpdateForm } from './Update.form';
 import "./settings.css"
 
@@ -10,14 +11,17 @@ export default function Settings() {
   const [selected, setSelected] = useState("Account")
   const [data, setData] = useState([])
   const [display, setDisplay] = useState(true)
-  const {open} = useSelector(state=>state.updateProfile)
+  const { open } = useSelector(state => state.updateProfile)
+  const {openUpdateForm} = useSelector(state => state.updateForm)
+  
+  const dispatch = useDispatch()
   
   
-useEffect(()=>{console.log("open",open)},[open])
+// useEffect(()=>{console.log("open",open)},[open])
 
 
   const handleDisplay = () => {
-    setDisplay((prev)=>!prev)
+    dispatch(profileFormAction(true))
   }
 
 
@@ -82,7 +86,7 @@ useEffect(()=>{console.log("open",open)},[open])
                 return (
                   <Settings_Nav navs={el.title} active={selected === el.id}
                     setSelected={setSelected} id={el.id}
-                    
+                    key={el.id}
                   />
                 )
               })
@@ -92,21 +96,21 @@ useEffect(()=>{console.log("open",open)},[open])
         
         <div className='settings--main'>{data?.map(item => {
             return (
-              <div className="settings--content" >
-                <h5 className={!display?"updateForm":'settings--heading'}>{item.title}</h5>
+              <div className="settings--content" key={item.title}>
+                <h5 className={openUpdateForm?"hideForm":'settings--heading'}>{item.title}</h5>
 
-                <div className={!display? "updateForm":'content'} onClick={!item.info5?handleDisplay:undefined}>
+                <div className={openUpdateForm? "hideForm":'content'} onClick={!item.info5?handleDisplay:undefined}>
                   <h6>{item.info1}</h6>
                   <p>{ item.info2}</p>
               </div>
-                <div className={!display? "updateForm":'content'}>
+                <div className={openUpdateForm? "hideForm":'content'}>
                   <h6>{item.info3}</h6>
                   <p>{ item.info4}</p>
               </div>
               </div>
             )
         })}
-          <div className={!display && open?"updateFormShow":'updateForm'}>
+          <div className={openUpdateForm?"updateFormShow":'hideForm'}>
              <UpdateForm/>
           </div>
         </div>

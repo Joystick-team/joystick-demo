@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { updateProfileAction } from '../../Actions/updateProfileAction'
+import { profileFormAction } from '../../Actions/profileForm.Action';
 import "./navs.css"
 const Settings_Nav = ({ navs, active, setSelected, id, }) => {
 
@@ -11,7 +12,8 @@ const Settings_Nav = ({ navs, active, setSelected, id, }) => {
 
     const handleChange = () => {
         if (id === "Security") {
-           dispatch(updateProfileAction(false))
+            dispatch(updateProfileAction(false))
+            dispatch(profileFormAction(false))
         }
         if (id === "Account") {
            dispatch(updateProfileAction(true))
