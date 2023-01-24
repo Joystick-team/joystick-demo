@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.settings--nav{
+    height: 100%;
+    width: 16rem;
+    border-radius: 30px;
+    margin-left: 0.6rem;
+    background-color: rgba(23, 22, 22, 0.5);
+}
+.settings--nav ul{
+    list-style-type: none;
+
+}
+.settings--nav ul li{
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-size: 14px;
+}
+
+.settings--nav h6{
+    margin-left: 1.8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.settings--main{
+    height: 100%;
+    width: 100%;
+    /* background-color: #0d0c0c; */
+}
+.settings--content{
+    margin-left: 5rem;
+}
+.settings--heading{
+    padding-bottom: 2rem;
+    padding-top: 0.8rem;
+}
+
+.content p{
+    font-size: 12px;
+}
+.content:hover{
+    background-color: rgba(83, 81, 81, 0.5);
+    width: 20rem;
+}
+
+.hideForm{
+    display: none;
+}
+.updateFormShow{
+    display: block;
+}
