@@ -9,6 +9,7 @@ import { profileUpdateReducer } from "./Reducers/AuthReducer/Profile.Update.Redu
 import { searchReducer } from "./Reducers/Search.Reducer";
 import { fetchAllPostsReducer } from "./Reducers/Posts.Reducer";
 import { fetchNotificationsReducer } from "./Reducers/Notifications.Reducer";
+import { updateProfileReducer } from "./Reducers/updateProfile.reducer";
 
 const reducer = combineReducers({
   fetchAllGames: fetchAllGamesReducer,
@@ -19,6 +20,7 @@ const reducer = combineReducers({
   profileUpdate: profileUpdateReducer,
   search: searchReducer,
   notifications: fetchNotificationsReducer,
+  updateProfile:updateProfileReducer
 });
 const token = localStorage.getItem("userToken")
   ? JSON.parse(localStorage.getItem("userToken"))

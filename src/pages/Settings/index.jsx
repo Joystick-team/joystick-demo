@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux';
 import Settings_Nav from "./Settings_Nav"
-import { UpdateAccountData, EditAccountData } from './Account.data';
+import { UpdateAccountData, EditAccountData,SecurityData } from './Account.data';
 import { UpdateForm } from './Update.form';
 import "./settings.css"
 
@@ -9,11 +10,17 @@ export default function Settings() {
   const [selected, setSelected] = useState("Account")
   const [data, setData] = useState([])
   const [display, setDisplay] = useState(true)
+  const {open} = useSelector(state=>state.updateProfile)
   
+  
+useEffect(()=>{console.log("open",open)},[open])
+
+
   const handleDisplay = () => {
     setDisplay((prev)=>!prev)
   }
-  
+
+
   const item = [
     {
       id: "Account",
@@ -46,7 +53,7 @@ export default function Settings() {
         setData(UpdateAccountData);
         break;
       case "Security":
-        setData([]);
+        setData(SecurityData);
         break;
       case "Wallet":
         setData([]);
@@ -73,7 +80,10 @@ export default function Settings() {
             {
               item?.map(el => {
                 return (
-                  <Settings_Nav navs={ el.title}  active={selected === el.id} setSelected={setSelected} id={el.id} />
+                  <Settings_Nav navs={el.title} active={selected === el.id}
+                    setSelected={setSelected} id={el.id}
+                    
+                  />
                 )
               })
             }
@@ -82,10 +92,10 @@ export default function Settings() {
         
         <div className='settings--main'>{data?.map(item => {
             return (
-              <div className="settings--content" onClick={handleDisplay}>
+              <div className="settings--content" >
                 <h5 className={!display?"updateForm":'settings--heading'}>{item.title}</h5>
 
-                <div className={!display? "updateForm":'content'}>
+                <div className={!display? "updateForm":'content'} onClick={!item.info5?handleDisplay:undefined}>
                   <h6>{item.info1}</h6>
                   <p>{ item.info2}</p>
               </div>
@@ -96,8 +106,8 @@ export default function Settings() {
               </div>
             )
         })}
-          <div className={!display?"updateFormShow":'updateForm'}>
-            <UpdateForm/>
+          <div className={!display && open?"updateFormShow":'updateForm'}>
+             <UpdateForm/>
           </div>
         </div>
         
