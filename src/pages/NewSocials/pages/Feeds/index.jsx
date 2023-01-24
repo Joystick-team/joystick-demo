@@ -72,7 +72,7 @@ export default function Feeds() {
     <div className='feeds-div'>
 
         <div className='feeds-comments'>
-            < MakePost pic={ pic } btnName={"Publish post"} />
+            < MakePost pic={ pic } btnName={"Post"} />
              < Comments  comments={comments} posts={postArray} />
         </div>
         <div className='feeds-sidepage'>

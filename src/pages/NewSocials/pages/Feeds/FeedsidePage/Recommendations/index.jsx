@@ -9,7 +9,7 @@ export default function Recommendations ({recommendations}) {
     <div className='recommendation-div'>
         <main className='recommendation-div-top'>
             <h5>
-                You Might Like
+                People you might know
             </h5>
             <h5 style={{color:"red"}}>
                 See All
