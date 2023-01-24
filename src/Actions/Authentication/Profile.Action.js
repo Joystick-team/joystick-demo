@@ -5,7 +5,7 @@ export const profileAction = () => async (dispatch, getState) => {
     try {
         dispatch({type: PROFILE_REQUEST });
         const { signin } = getState();
-        const userToken = signin?.userToken;y 
+        const userToken = signin?.userToken;
         console.log("tk",userToken?.access_token)
         const config = {
             headers: {
