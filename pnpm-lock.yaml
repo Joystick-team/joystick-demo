@@ -66,7 +66,6 @@ dependencies:
   bootstrap: 5.2.3
   dompurify: 2.4.3
   http-proxy-middleware: 2.0.6
-  moment: 2.29.4
   react: 17.0.2
   react-bootstrap: 2.7.0_sfoxds7t5ydpegc3knd667wn6m
   react-circular-progressbar: 2.1.0_react@17.0.2
@@ -105,6 +104,7 @@ devDependencies:
   eslint-config-prettier: 8.6.0_eslint@8.32.0
   eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
   eslint-plugin-react: 7.32.1_eslint@8.32.0
+  moment: 2.29.4
   prettier: 2.8.3
   vite: 4.0.4_sass@1.57.1
 
@@ -8341,7 +8341,6 @@ packages:
 
   /moment/2.29.4:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
-    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
