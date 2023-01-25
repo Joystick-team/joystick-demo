@@ -1,6 +1,7 @@
 .update--container{
     display: flex;
     flex-direction: column;
+    position: relative;
     margin-left: 4rem;
 }
 
@@ -16,6 +17,7 @@ input{
     /* background-color: #0d0c0c; */
     background-color: transparent;
     border: 1px solid #9e9c9c;
+    color: white;
 }
 textarea{
      border-radius: 7px;
@@ -40,6 +42,7 @@ textarea{
 
 .email--container input{
     width: 30rem;
+    /* font-size: 10pt; */
 }
 
 .Dob--container{
@@ -54,7 +57,7 @@ textarea{
 }
 .calender--img{
     position: absolute;
-    right: 43rem;
+    right: 42.4rem;
     bottom: 0.3rem;
     transform: scale(0.7);
 }
@@ -135,4 +138,34 @@ textarea{
 .radioBtn--container input{
     transform: scale(0.5);
     accent-color:red;
+}
+
+
+.btn--container{
+    display: flex;
+    position: absolute;
+    right: 60%;
+    bottom: -5rem;
+}
+.btn--container .cancel-btn{
+    border: 1px solid #FFFFFF;
+    width: 5rem;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+}
+.cancel-btn:hover{
+    background-color: red;
+}
+.save-btn{
+    position: absolute;
+    right: 10rem;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    width: 5rem;
+    color: white;
+    /* margin-right: 5rem; */
+}
+.save-btn:hover{
+    background-color: red;
 }
