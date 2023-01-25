@@ -25,16 +25,16 @@ export default function MobileSideNav() {
     const isLandingPage = window.location.href.endsWith("/");
 
     const { setMobileDrawer, mobileDrawer } = AppContextInit();
-    
+
     const handleClose = () => setMobileDrawer(false);
     const handleShow = () => setMobileDrawer(true);
     const [showSearch, setShowSearch] = useState(false);
     const {pathname} = useLocation()
     //eslint-disable-next-line
-    const [themeDetector, setThemeDetector] = useTheme()
+    const [themeDetector, setThemeDetector] = useTheme();
         
     const closeSearch = () => {
-        setShowSearch(false)
+        setShowSearch(false);
        }
        window.addEventListener('click', closeSearch)
 
@@ -56,9 +56,9 @@ export default function MobileSideNav() {
     return (
       <div >
         <div className="mobile_top_nav navbar-dark">
-           {userToken?.access_token && <Navbar.Toggle onClick={handleShow} aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
+           <Navbar.Toggle onClick={handleShow} aria-controls="offcanvasNavbar" className='mobile-Hamburger-button'>  
                 <FiMenu />
-            </Navbar.Toggle>}
+            </Navbar.Toggle>
                 <NavLink to="/">
                 {/* <picture>
                     <source srcSet={JOYSTICK2} width={'80px'} height={`auto`} media={`(prefers-color-scheme: ${themeDetector})`}/>
