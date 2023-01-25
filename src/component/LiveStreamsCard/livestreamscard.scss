@@ -15,7 +15,7 @@
     .view-count {
       width: 121.46px;
       height: 43px;
-      background: rgba(87, 87, 87, 0.6);
+      background: rgba(87, 87, 87, 0.8);
       border-radius: 6.03509px;
       display: flex;
       gap: 0.9rem;
@@ -89,7 +89,7 @@
         right: 0;
         z-index: 999;
         transform-origin: right;
-        transition: all ease-out 200ms;
+        transition: all ease-out 100ms;
         scale: 0;
 
         .flex-opt {

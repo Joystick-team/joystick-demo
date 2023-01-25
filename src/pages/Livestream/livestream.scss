@@ -28,7 +28,7 @@
         font-weight: 700;
         font-family: "Montserrat", sans-serif;
 
-        &.active {
+        &.activeTab {
           background-color: #c71f1f;
         }
 
@@ -137,6 +137,108 @@
       grid-template-columns: repeat(4, 1fr);
       column-gap: 1.2rem;
       justify-items: center;
+    }
+  }
+
+  .friends-online {
+    padding: 1.3rem;
+    margin-top: 0.7rem;
+
+    h3 {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .all-friends {
+      margin-top: 13px;
+      background: #000000;
+      border-radius: 5px;
+      padding: 1rem 2rem;
+      width: 100%;
+
+      .view-all {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: flex-end;
+
+        p {
+          margin: 0;
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          color: #db242d;
+          cursor: pointer;
+        }
+      }
+
+      .friends-grid {
+        padding: 1rem 0.8rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10rem;
+        row-gap: 2.2rem;
+        justify-items: center;
+
+        .friends-grid-item {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+
+          .picsandname {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            img {
+              width: 58.84px;
+              height: 58.84px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+
+            div > p {
+              margin: 0;
+            }
+
+            div > p:first-child {
+              font-family: "Montserrat";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 18.6269px;
+              line-height: 31px;
+            }
+
+            div > p:last-child {
+              font-family: "Montserrat";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 16.7396px;
+              line-height: 27px;
+              color: rgba(82, 81, 81, 0.9);
+            }
+          }
+
+          .online {
+            border-radius: 50%;
+            background: #69c40f;
+            width: 11.3px;
+            height: 11.3px;
+          }
+
+          .offline {
+            border-radius: 50%;
+            background: #595c56;
+            width: 11.3px;
+            height: 11.3px;
+          }
+        }
+      }
     }
   }
 }

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { BsCameraReelsFill } from "react-icons/bs";
 import TrendingCard from "../../component/TrendingCard";
-import LiveStreamsCard from "../../component/LiveStreamsCard";
-import { FaFilter } from "react-icons/fa";
+import LivestreamTab from "./LivestreamTab";
+import CurrentlyOnlineTab from "./CurrentlyOnlineTab";
+import TopStreamersTab from "./TopStreamersTab";
 import "./livestream.scss";
 
 const Livestream = () => {
@@ -16,7 +17,7 @@ const Livestream = () => {
           {TabItems.map((tab, i) => (
             <button
               key={i}
-              className={activeTab === tab ? "active" : ""}
+              className={activeTab === tab ? "activeTab" : ""}
               onClick={() => setActiveTab(tab)}
             >
               {tab}
@@ -41,24 +42,13 @@ const Livestream = () => {
         </div>
       </div>
 
-      <div className="livestream-grid">
-        <div className="view-all">
-          <p>View All</p>
-          <div className="filter">
-            <FaFilter />
-            <p>Filter</p>
-          </div>
-        </div>
-        <div className="live-grid-items">
-          <LiveStreamsCard />
-          <LiveStreamsCard />
-          <LiveStreamsCard />
-          <LiveStreamsCard />
-          <LiveStreamsCard />
-          <LiveStreamsCard />
-          <LiveStreamsCard />
-        </div>
-      </div>
+      {activeTab === "Live Stream" ? (
+        <LivestreamTab />
+      ) : activeTab === "Currently Online" ? (
+        <CurrentlyOnlineTab />
+      ) : (
+        <TopStreamersTab />
+      )}
     </div>
   );
 };
