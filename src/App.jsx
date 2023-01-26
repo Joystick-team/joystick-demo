@@ -12,7 +12,8 @@ import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/Home";
 import LandingPage from "./pages/LandingPage";
 import Library from "./pages/Library";
-import Livescream from "./pages/Live";
+// import Livescream from "./pages/Live";
+import Livestream from "./pages/Livestream";
 import WebinarCall from "./pages/Live/WebinarCall";
 import Settings from "./pages/Settings";
 import Socials from "./pages/Socials";
@@ -49,7 +50,7 @@ function App() {
                   />
 
                   <Route path="/store" element={<Store />} />
-                  <Route path="/livestream" element={<Livescream />} />
+                  {/* <Route path="/livestream" element={<Livescream />} /> */}
                   <Route path="/library" element={<Library />} />
                   <Route path="u/settings" element={<Settings />} />
                   <Route path="u/wallet" element={<Wallet />} />
@@ -61,7 +62,7 @@ function App() {
 
                   <Route exact path="/test" element={<TestPage />} />
                   <Route path="/store" element={<Store />} />
-                  <Route exact path="/livestream" element={<Livescream />} />
+                  <Route exact path="/livestream" element={<Livestream />} />
                   <Route
                     exact
                     path="/livestream/:url"
