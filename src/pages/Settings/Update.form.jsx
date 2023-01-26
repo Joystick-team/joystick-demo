@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { profileAction } from '../../Actions/Authentication/Profile.Action'
+import { updateProfileAction } from '../../Actions/Authentication/Profile.Update.Action'; 
 import { profileFormAction } from '../../Actions/profileForm.Action';
 import axios from "axios"
 import "./Update.form.css"
@@ -10,6 +11,13 @@ export const UpdateForm = () => {
 
     const { profile_data } = useSelector(state => state.profile)
     const { userToken } = useSelector(state => state.signin)
+
+    const {
+        profile_updating,
+        profile_update_success,
+        profile_update_data,
+        profile_update_error
+    } = useSelector(state => state.profileUpdate)
     
     const [type, setType] = useState("text")
     const [focus, setFocus] = useState(false)
@@ -18,6 +26,7 @@ export const UpdateForm = () => {
     const [last_name,setLastname] = useState("")
     const [email,setEmail] = useState("")
     const [avatar,setAvater] = useState("")
+    const [cover,setCover] = useState("")
     const [bio,setBio] = useState("")
     const [website,setWebsite] = useState("")
     const [location,setLocation] = useState("")
@@ -51,10 +60,6 @@ export const UpdateForm = () => {
         profile_data && setEmail(profile_data?.email)
         fetchProfile()
     },[userToken?.access_token,dispatch])
-
-   
-    console.log("email",email)
-     console.log("gender",gender)
 
     const handleImageChange = (e) => {
         const { files } = e.target;
@@ -135,11 +140,15 @@ export const UpdateForm = () => {
   return (
     <div className='update--container'>
           <h3>Update Profile</h3>
-          <div className='img--rectangle'>
-              <img src='/assets/images/inputRectangle.png' alt='camera' className='inputRectangle' />
-              <img src='/assets/images/camera.png' alt='camera' className='camera'/>
-          </div>
+          {
+              profile_updating?"updating":profile_update_success?"success":profile_update_error&&"error"
+          }
           <form onSubmit={handleSubmit}>
+              
+              <div className='cover--container'>
+                  <input className='cover-pic--input' value={cover} onChange={ (e)=>setCover(e.target.value)}  type="file"/>
+                  <img src='/assets/images/camera.png' alt='camera' className='camera'/>
+              </div>
               <div className='circular_input--container'>
                   <input className='circular_input' type="file" onChange={handleImageChange} />
                   <img src='/assets/images/snap.png' alt='snap' className='snapImg'/>
@@ -150,6 +159,7 @@ export const UpdateForm = () => {
                       <input
                           value={first_name}
                           onChange={(e) => setFirstname(e.target.value)}
+                          required
                       />
                   </div>
                   <div className='lastName--container'>
