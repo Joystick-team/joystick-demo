@@ -19,6 +19,7 @@
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .settings--nav h6{
@@ -34,6 +35,7 @@
 }
 .settings--content{
     margin-left: 5rem;
+    cursor: pointer;
 }
 .settings--heading{
     padding-bottom: 2rem;
