@@ -4,6 +4,7 @@ import ActiveFriends from "../../component/ActiveFriends";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAllNotifications } from "../../Actions/Notifications.Action";
 import NotificationsLoader from "../../component/NotificationsLoader";
+import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import "./notifications.scss";
 
 const Notifications = () => {
@@ -24,6 +25,7 @@ const Notifications = () => {
       <div className="notifications-content">
         <div className="left-section">
           <div className="header">
+            <HiOutlineArrowNarrowLeft onClick={() => history.go(-1)} />
             <p className="header-text">Notifications</p>
           </div>
           {loading ? (
