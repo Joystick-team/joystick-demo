@@ -23,8 +23,8 @@ const reducer = combineReducers({
   profileUpdate: profileUpdateReducer,
   search: searchReducer,
   notifications: fetchNotificationsReducer,
-  fetchAllFollowers:fetchAllFollowersReducer ,
-  fetchAllFollowing:fetchAllFollowingReducer 
+  updateProfile: updateProfileReducer,
+  updateForm:updateFormReducer
 });
 const token = localStorage.getItem("userToken")
   ? JSON.parse(localStorage.getItem("userToken"))

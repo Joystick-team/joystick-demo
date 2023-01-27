@@ -13,6 +13,17 @@
         padding: 13px 16px;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        & > svg {
+          color: var(--notifications--text);
+          font-size: 22px;
+          font-weight: 700;
+          line-height: 22px;
+          cursor: pointer;
+        }
 
         .header-text {
           color: var(--notifications--text);
@@ -81,6 +92,13 @@
         width: 100%;
         .header {
           background-color: var(--mobile-titlebar);
+          gap: 1rem;
+
+          & > svg {
+            font-size: 13px;
+            color: var(--primary-text);
+          }
+
           .header-text {
             font-size: 9.16667px;
             color: var(--primary-text);

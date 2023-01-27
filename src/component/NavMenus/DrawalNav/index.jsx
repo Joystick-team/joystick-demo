@@ -109,7 +109,7 @@ export default function DrawerNav({ TogglecloseOpen }) {
                       <FaWallet /> <span>Wallet</span>
                     </NavLink>
                   )}
-                  {!isLandingPage&&userToken?.access_token&&<NavLink to='/u/settings'>
+                  {userToken?.access_token&&<NavLink to='/u/settings'>
                       <BsGearWideConnected /> <span>Settings</span>
                     </NavLink>
                   }
