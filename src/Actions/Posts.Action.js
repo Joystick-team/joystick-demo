@@ -20,6 +20,8 @@ export const fetchAllPostsAction = () =>
       }
       const { data } = await axios.get(
         `https://api.joysticklabs.io/api/v1/post/get-all-posts`,
+     
+
         config
       )
       dispatch({ type:FETCH_ALL_POSTS_SUCCESS, payload: data })

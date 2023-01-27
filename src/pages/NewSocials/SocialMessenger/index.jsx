@@ -39,6 +39,7 @@ export default function SocialMessenger({chats}) {
                       <main className='messenger-header-left'>
                         <SiGooglechat />
                         <TiArrowSortedDown onClick={()=>setTrigger(false)}/>
+                      
                       </main>
                 </div>
               
@@ -63,7 +64,7 @@ export default function SocialMessenger({chats}) {
           <main className='messenger-header-left'>
           <SiGooglechat />
           <TiArrowSortedUp onClick={()=>setTrigger(true)}/>
-
+          
           </main>
        
 

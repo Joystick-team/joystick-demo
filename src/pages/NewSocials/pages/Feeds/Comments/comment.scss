@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    position: relative;
     .comment-div{
         width: 100%;
         background: var( --post-textarea);;
@@ -35,10 +36,45 @@
                 display: flex;
                 align-items: center;
                 column-gap: 17px;
+                position: relative;
+               
 
                 h5{
                     color: rgba(255, 255, 255, 0.8);
                     font-size: 10px;
+                }
+
+                .comment-option-actions{
+                    background: rgba(17, 16, 16, 0.99);
+                    border-radius: 6.57653px;
+                    width: 190px;
+                    height: 169px;
+                    position: absolute;
+                    z-index: 9999;
+                     right: 0;
+                    margin-top: 181px;
+                    padding: 4px 4px 4px 4px;
+                    
+                    h5{
+                        display: flex;
+                        width: 100%;
+                        justify-content: end;
+                        font-weight: 700;
+                        font-size: 20px;
+                    }
+
+                    .comment-action-col{
+                         
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+
+                        h5{
+                            display: flex;
+                        }
+                    }
+
                 }
                 .option-icon{
                   
@@ -117,8 +153,28 @@
                         }
                     }
                 }
+                 .post-comments-session{
+                     .post-comments-all{
+                        height: min-content;
 
-                .post-fx-bottom{
+
+                        .posts-comment-col{
+                            display: flex;
+                            flex-direction: column;
+
+                            .comment-box{
+                                display: flex;
+                                p{
+                                    color: rgba(172, 172, 172, 0.9);
+                                    font-weight: 500;
+                                    font-size: 10.2962px;
+                                }
+                            }
+
+                        }
+                     }
+
+                 .post-fx-bottom{
                     display: flex;
                     align-items: center;
                     display: flex;
@@ -134,6 +190,8 @@
                    
 
                 }
+
+            }
 
                 .comment-textfield{
                     width: 100%;

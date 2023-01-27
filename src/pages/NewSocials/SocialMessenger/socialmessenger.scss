@@ -2,6 +2,12 @@
      padding-top: 10px;
      border-top-left-radius: 18px;
      border-top-right-radius: 18px;
+     position: fixed;
+     z-index: 999999;
+     bottom: 0;
+     width: 451px;
+     background:var( --tabs-background);
+     padding: 10px 20px 10px 20px;
      .messenger-header{
        display: flex;
        justify-content: space-between;
@@ -17,11 +23,12 @@
       .messenger-header-left{
            display: flex;
            column-gap: 20px;
+           color: var(--tabs-text);
       }
      }
    
      .messages-div{
-        height: 440px; 
+        height: 300px; 
      
 
 
@@ -89,4 +96,11 @@
      }
 
 
+}
+
+@media screen and (max-width: 480px){
+
+    .social-messenger-div{
+        display: none;
+    }
 }
