@@ -16,12 +16,29 @@ import creator2 from "../../../../../assets/images/creator2.png"
 import creator3 from "../../../../../assets/images/creator3.png"
 import creator5 from "../../../../../assets/images/postImg3.png"
 import creator4 from "../../../../../assets/images/creator3.png"
+import SocialMessenger from '../../../SocialMessenger'
 
 
 const recommendations=[
     {
         img: creator1 ,
         name:"Wade Warren",
+        description:"Founder & CEO at Megathron",
+        socials:[]
+     
+
+    },
+    {
+        img: creator2 ,
+        name:"Alex James",
+        description:"Founder & CEO at Megathron",
+        socials:[]
+     
+
+    },
+    {
+        img: creator3 ,
+        name:"John Doe",
         description:"Founder & CEO at Megathron",
         socials:[]
      
@@ -113,7 +130,8 @@ export default function ProfileSidePage() {
       <Recommendations  recommendations={recommendations}/>
       <RecentEvents  events={events} />
       <Birthdays />
-      <FriendRequest   friends={friends}  chats={chats}/>
+      {/* <FriendRequest   friends={friends}  chats={chats}/> */}
+      {/* <SocialMessenger chats={chats}  /> */}
     </div>
   )
 }

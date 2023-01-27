@@ -5,7 +5,8 @@ import {AiOutlinePicture} from "react-icons/ai"
 import {BiVideoPlus} from "react-icons/bi"
 import {CgFileDocument} from "react-icons/cg"
 import LoadingButton from '../../../../../component/LoadingButton'
-import axios from 'axios'
+import axios from 'axios' 
+import {AiOutlineClose} from "react-icons/ai"
 
 export default function MakePost({pic,btnName}) {
   const [postText,setPostText]=useState("")
@@ -42,6 +43,10 @@ export default function MakePost({pic,btnName}) {
 
       const handleRemoveFile = () => {
           setFile()
+          setFileUrl({
+            src: "",
+            alt: "",
+          })
           // handleFile(null)
       }
 
@@ -75,7 +80,10 @@ export default function MakePost({pic,btnName}) {
 
     console.log(res,"resss")
      setPostText("")
-
+     setFileUrl({
+      src: "",
+      alt: "",
+    })
 
  }
 
@@ -84,15 +92,30 @@ export default function MakePost({pic,btnName}) {
     <div className='makepost'>
         <div className='post-div'>
             <div className='write-post'>
+              <div className='write-post-top'>
               <img src={pic} className="post-img"/>
 
-              <textarea 
-                placeholder='Write something here ...'
-                className='post-text'
-                onChange={(e)=>setPostText(e.target.value)}
-                name="postText"
-                value={postText}
-              />
+            <textarea 
+              placeholder='Write something here ...'
+              className='post-text'
+              onChange={(e)=>setPostText(e.target.value)}
+              name="postText"
+              value={postText}
+            />
+              </div>
+            
+              {fileUrl.src==""?
+                ""
+                :
+                <div className='view-post-img-div'>
+                    <h5 onClick={ handleRemoveFile}><AiOutlineClose /></h5>
+                    <main className='view-img'>
+                      <img src={fileUrl?.src} className=""/>
+                    </main>
+                 
+                </div>
+
+              }
             </div>
             <div className='publish-post'>
                <main className='post-attachment'>
@@ -123,8 +146,8 @@ export default function MakePost({pic,btnName}) {
 
            
                    <h5>
-                      <CgFileDocument/>
-                      <span>Add a document</span>
+                      {/* <CgFileDocument/> */}
+                      <span>Create an event</span>
                        <input className=''
                           type="file"
                           ref={hiddenFileInput}

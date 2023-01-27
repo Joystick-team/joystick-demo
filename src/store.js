@@ -9,9 +9,12 @@ import { profileUpdateReducer } from "./Reducers/AuthReducer/Profile.Update.Redu
 import { searchReducer } from "./Reducers/Search.Reducer";
 import { fetchAllPostsReducer } from "./Reducers/Posts.Reducer";
 import { fetchNotificationsReducer } from "./Reducers/Notifications.Reducer";
+import { fetchAllFollowersReducer } from "./Reducers/MutualReducers/Followers.Reducer";
+import { fetchAllFollowingReducer } from "./Reducers/MutualReducers/Following.Reducing";
 import { updateProfileReducer } from "./Reducers/updateProfile.reducer";
 
 import { updateFormReducer } from "./Reducers/profileForm.reducer";
+
 
 const reducer = combineReducers({
   fetchAllGames: fetchAllGamesReducer,
@@ -23,7 +26,10 @@ const reducer = combineReducers({
   search: searchReducer,
   notifications: fetchNotificationsReducer,
   updateProfile: updateProfileReducer,
-  updateForm:updateFormReducer
+  updateForm:updateFormReducer,
+  fetchAllFollowers:fetchAllFollowersReducer ,
+  fetchAllFollowing:fetchAllFollowingReducer 
+  
 });
 const token = localStorage.getItem("userToken")
   ? JSON.parse(localStorage.getItem("userToken"))
