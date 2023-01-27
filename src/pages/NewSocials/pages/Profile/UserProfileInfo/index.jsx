@@ -2,7 +2,7 @@ import React from 'react'
 import profileBg from "../../../../../assets/images/profileBg.jpeg"
 import "./profileinfo.scss"
 import userPic from "../../../../../assets/images/creator4.png"
-
+import { Link } from 'react-router-dom'
 export default function ProfileInfo({profile}) {
    console.log(profile,"profile")
 
@@ -23,7 +23,7 @@ export default function ProfileInfo({profile}) {
                    
                    <h5>
                       <span className='text-num'>{profile?.followers}</span>
-                      <span className='profile-text'>Followers</span>
+                      <Link to={`/followers/${profile?.username}`}><span className='profile-text'>Followers</span></Link>
                    </h5>
 
                    <div className='user-pic-name'>
@@ -38,7 +38,7 @@ export default function ProfileInfo({profile}) {
                    </div>
                    <h5>
                       <span className='text-num'>{profile?.following}</span>
-                      <span className='profile-text'>Following</span>
+                      <Link  to={`/following/${profile?.username}`}><span className='profile-text'>Following</span></Link>  
                    </h5>
                </main>
                    

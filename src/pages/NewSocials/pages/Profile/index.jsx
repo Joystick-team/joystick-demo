@@ -9,6 +9,30 @@ import GuestProfile from './GuestProfileInfo'
 import MobileSocialTab from '../../SocialTab/mobileSocialTab'
 import { useSelector, useDispatch } from "react-redux"
 import { profileAction } from '../../../../Actions/Authentication/Profile.Action'
+import chatImg1 from "../../../../assets/images/chatImg1.png"
+import chatImg2 from "../../../../assets/images/chatImg2.png"
+import chatImg3 from "../../../../assets/images/user1.png"
+import SocialMessenger from '../../SocialMessenger'
+
+
+const chats=[
+  {
+      img:chatImg1 ,
+      name:"Jane Cooper"
+
+  },
+  {
+      img:chatImg2,
+      name:"Esther Howard"
+
+  },
+  {
+      img:chatImg3,
+      name:"Cody Fisher"
+
+  }
+
+]
 
 
 
@@ -38,6 +62,7 @@ export default function Profile() {
             </main>
             <main className='profile-sidepage'>
                < ProfileSidePage  />
+               <SocialMessenger  chats={chats} />
             </main>
 
         </div>

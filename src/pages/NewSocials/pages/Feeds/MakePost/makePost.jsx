@@ -80,7 +80,10 @@ export default function MakePost({pic,btnName}) {
 
     console.log(res,"resss")
      setPostText("")
-
+     setFileUrl({
+      src: "",
+      alt: "",
+    })
 
  }
 

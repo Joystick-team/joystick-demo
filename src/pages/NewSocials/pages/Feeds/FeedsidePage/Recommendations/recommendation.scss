@@ -17,66 +17,74 @@
         }
     }
 
-    .recommendation-div-mid{
+    .recommendation-scroll{
         display: flex;
-        column-gap: 10px;
-      
-        img{
-            border-radius: 999px;
-            width: 45px;
-            height: 45px;
-        }
-
-         h5{
+        flex-direction: column;
+        overflow-y: scroll;
+        row-gap: 8px;
+        .recommendation-div-mid{
             display: flex;
-            flex-direction: column;
-            font-size: 12.3px;
-            row-gap: 4px;
-
-            .recommendation-name{
-                font-weight: 700;
+            column-gap: 10px;
+          
+            img{
+                border-radius: 999px;
+                width: 45px;
+                height: 45px;
             }
-
-            .recommendation-descp{
-                font-weight: 300;
-            }
-         }
-         h6{
-            padding-top: 10px;
+    
+             h5{
+                display: flex;
+                flex-direction: column;
+                font-size: 12.3px;
+                row-gap: 4px;
+    
+                .recommendation-name{
+                    font-weight: 700;
+                }
+    
+                .recommendation-descp{
+                    font-weight: 300;
+                }
+             }
+             h6{
+                padding-top: 10px;
+                display: flex;
+                align-items: center;
+                column-gap: 6px;
+                color:  #AAAAAA;;
+             }
+    
+    
+        .recommendation-div-btns{
             display: flex;
             align-items: center;
-            column-gap: 6px;
-            color:  #AAAAAA;;
-         }
-
-
-    .recommendation-div-btns{
-        display: flex;
-        align-items: center;
-       justify-content: center;
-       column-gap: 30px;
-       width: 100%;
-       .ignore-btn{
-        border: 1.02962px solid #E3E3E3;
-        border-radius: 12.3555px;
-        background: var( --social-btn);
-        color: var(--tabs-text);
-        font-size: 12.3555px;
-       width: 127px;
-        height: 39px;
-       }
-       .follow-btn{
-        background: #C71F1F;
-        border: 0;
-        border-radius: 0.75rem;
-        height:33.98px;
-        font-size: 12.3555px;
-         width: 127px;
-         height: 39px;
-       }
-    }
+           justify-content: center;
+           column-gap: 30px;
+           width: 100%;
+           .ignore-btn{
+            border: 1.02962px solid #E3E3E3;
+            border-radius: 12.3555px;
+            background: var( --social-btn);
+            color: var(--tabs-text);
+            font-size: 12.3555px;
+           width: 127px;
+            height: 39px;
+           }
+           .follow-btn{
+            background: #C71F1F;
+            border: 0;
+            border-radius: 0.75rem;
+            height:33.98px;
+            font-size: 12.3555px;
+             width: 127px;
+             height: 39px;
+           }
+        }
+        }
+    
     }
 
+    
 }
 
 @media screen and (max-width: 480px){
