@@ -7,6 +7,9 @@ const TopStreamersTab = () => {
       <h3>Top Streamers</h3>
       <div className="streamer-list">
         <TopStreamerCard />
+        <TopStreamerCard />
+        <TopStreamerCard />
+        <TopStreamerCard />
       </div>
     </div>
   );

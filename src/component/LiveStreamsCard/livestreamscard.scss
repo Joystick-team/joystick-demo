@@ -16,6 +16,7 @@
       width: 121.46px;
       height: 43px;
       background: rgba(87, 87, 87, 0.8);
+      color: #fff;
       border-radius: 6.03509px;
       display: flex;
       gap: 0.9rem;
@@ -72,13 +73,13 @@
     .options-btn {
       position: relative;
       svg {
-        color: #c4c4c4;
+        color: var(--menu-icon);
         cursor: pointer;
         font-size: 16px;
       }
 
       .options {
-        background: #252323;
+        background: var(--options-bg);
         border-radius: 6.57653px;
         display: flex;
         flex-direction: column;
@@ -103,14 +104,15 @@
             background-color: #979797;
           }
 
-          p {
+          p,
+          svg {
             margin: 0;
             font-family: "Montserrat";
             font-style: normal;
             font-weight: 500;
             font-size: 11.5089px;
             line-height: 14px;
-            color: #d3d3d3;
+            color: var(--options-text);
           }
         }
       }
@@ -131,7 +133,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
 
         p {
           margin: 0;
@@ -148,7 +150,7 @@
       }
 
       div > p {
-        color: #979797;
+        color: var(--livestream-card-text);
         font-family: "Montserrat";
         font-style: normal;
         font-weight: 600;

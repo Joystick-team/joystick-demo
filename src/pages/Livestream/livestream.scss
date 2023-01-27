@@ -12,7 +12,7 @@
       display: flex;
       gap: 2rem;
       height: 31px;
-      background: #2f2f2f;
+      background: var(--livestream-tab);
       border-radius: 5px;
       padding: 3.5px 5px;
       align-self: center;
@@ -22,14 +22,15 @@
         width: 249px;
         background: inherit;
         border-radius: 4px;
+        color: var(--tab-text);
         border: none;
-        color: #ffffff;
         font-size: 14px;
         font-weight: 700;
         font-family: "Montserrat", sans-serif;
 
         &.activeTab {
           background-color: #c71f1f;
+          color: #fff;
         }
 
         &:hover {
@@ -41,6 +42,7 @@
 
     .go-live {
       background: #db242d;
+      color: #fff;
       border-radius: 19px;
       display: flex;
       align-items: center;
@@ -96,38 +98,51 @@
     margin-top: 2rem;
     margin-bottom: 5rem;
 
-    .view-all {
+    .live-streaming {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      justify-content: space-between;
       width: 100%;
-      justify-content: flex-end;
 
-      p {
-        margin: 0;
+      h3 {
         font-family: "Montserrat";
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
-        line-height: 24px;
-        color: #db242d;
-        cursor: pointer;
+        font-size: 24px;
+        line-height: 29px;
       }
 
-      .filter {
-        width: 91px;
-        height: 29px;
+      .view-all {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background: rgba(53, 52, 52, 0.66);
-        border-radius: 16px;
-        color: #d1bfc0;
+        gap: 2rem;
+
         p {
+          margin: 0;
           font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 24px;
+          color: #db242d;
+          cursor: pointer;
+        }
+
+        .filter {
+          width: 91px;
+          height: 29px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          background: rgba(53, 52, 52, 0.66);
+          border-radius: 16px;
           color: #d1bfc0;
-          font-size: 15px;
+          p {
+            font-family: "Montserrat";
+            color: #d1bfc0;
+            font-size: 15px;
+          }
         }
       }
     }
@@ -154,7 +169,7 @@
 
     .all-friends {
       margin-top: 13px;
-      background: #000000;
+      background: var(--all-friends-bg);
       border-radius: 5px;
       padding: 1rem 2rem;
       width: 100%;
@@ -244,7 +259,7 @@
 
   .top-streamers {
     margin: 1.5rem;
-    background: #121212;
+    background: var(--top-streamers-bg);
     border-radius: 12px;
     padding: 2rem;
 
@@ -260,7 +275,7 @@
       margin-top: 2.5rem;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 3.5rem;
     }
   }
 }
