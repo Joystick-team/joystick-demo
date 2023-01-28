@@ -37,10 +37,15 @@
                     font-weight: 600;
                     font-size: 23.125px;
                 }
-                .profile-text{
-                    font-weight: 400;
-                    font-size: 15.4167px;
+                a{
+                    text-decoration: none;
+                    .profile-text{
+                        font-weight: 400;
+                        font-size: 15.4167px;
+                        color: var(--tabs-text);
+                    }
                 }
+               
             }
     
             .user-pic-name{

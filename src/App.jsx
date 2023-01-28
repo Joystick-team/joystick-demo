@@ -28,6 +28,10 @@ import ProfileContents from "./pages/NewSocials/pages/Profile/ProfileContents";
 import Posts from "./pages/NewSocials/pages/Profile/ProfileContents/posts/posts";
 import Streams from "./pages/NewSocials/pages/Profile/ProfileContents/streams/streams";
 import Notifications from "./pages/Notifications";
+import Followers from "./pages/Follow/Followers";
+import Following from "./pages/Follow/Following";
+import GuestProfilePage from "./pages/NewSocials/pages/Profile/guestProfilePage";
+
 
 function App() {
   return (
@@ -86,6 +90,22 @@ function App() {
                       </Route>
                     </Route>
                   </Route>
+
+                   
+
+                  <Route exact path="/following/:id" element={<Following />} />
+                  <Route exact path="followers/:id" element={<Followers />} />
+                   
+                  <Route exact path="guestProfile" element={<GuestProfilePage  />}>
+                      {/* <Route exact element={<ProfileContents />}>
+                        <Route exact path="" element={<Posts />} />
+
+                        <Route exact path="streams" element={<Streams />} />
+                      </Route>
+                    </Route> */}
+                  </Route>
+
+
                 </Routes>
               </Layout>
             </ThemeProvider>
