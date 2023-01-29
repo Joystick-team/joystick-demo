@@ -212,7 +212,7 @@ export const UpdateForm = () => {
                         <label>Phone number</label>
                         {/* <input/> */}
                         <PhoneInput
-                            country={'NG'}
+                            country="ng"
                             value={phone}
                             onChange={call => setPhone(call)}
                             className="phone--input"
