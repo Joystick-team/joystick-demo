@@ -11,6 +11,7 @@
     padding-top: 1rem;
 }
 
+
 input{
     border-radius: 7px;
     width: 20rem;
@@ -50,17 +51,33 @@ textarea{
     position: relative;
 }
 .calender--input{
-    width: 10rem;
+    width: 12rem;
 }
 .calender--input::placeholder{
     font-size: 12px;
     padding-left: 0.4rem;
 }
+
 .calender--img{
     position: absolute;
     right: 42.4rem;
     bottom: 0.3rem;
     transform: scale(0.7);
+}
+
+.username_phone--group{
+    display: flex;
+}
+.phone--container{
+    background-color: transparent;
+    align-items: center;
+    position: relative;
+    right: -3rem;
+}
+.phone--input{
+   transform: scaleY(0.7);
+  position: absolute;
+   margin-right: 6rem;
 }
 
 .inputRectangle{

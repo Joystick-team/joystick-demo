@@ -1,5 +1,15 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect,useMemo } from 'react'
 import { useDispatch, useSelector } from "react-redux"
+// import PhoneInput from 'react-phone-number-input'
+// import 'react-phone-number-input/style.css'
+
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+import Select from 'react-select'
+import countryList from 'react-select-country-list'
+import chroma from 'chroma-js';
+
+
 import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import { updateProfileAction } from '../../Actions/Authentication/Profile.Update.Action'; 
 import { profileFormAction } from '../../Actions/profileForm.Action';
@@ -11,6 +21,7 @@ export const UpdateForm = () => {
 
     const { profile_data } = useSelector(state => state.profile)
     const { userToken } = useSelector(state => state.signin)
+   
 
     const {
         profile_updating,
@@ -23,7 +34,8 @@ export const UpdateForm = () => {
     const [focus, setFocus] = useState(false)
         
     const [first_name,setFirstname] = useState("")
-    const [last_name,setLastname] = useState("")
+    const [last_name, setLastname] = useState("")
+    const [username,setUsername]= useState("")
     const [email,setEmail] = useState("")
     const [avatar,setAvater] = useState("")
     const [cover,setCover] = useState("")
@@ -41,6 +53,23 @@ export const UpdateForm = () => {
     const [fileName, setFileName] = useState("")
     const [fileType, setFileType] = useState("")
 
+    const options = useMemo(() => countryList().getData(), [])
+    
+
+    const changeLocationHandler = value => {
+        setLocation(value)
+    }
+
+    const colourStyles = {
+        control: styles => ({ ...styles, backgroundColor: 'transparent',width:"20rem",color:"white" }),
+        option: (base, state) => ({
+            ...base,
+            backgroundColor: "grey",
+        })
+    };
+
+    // console.log("phone", "+".concat(phone))
+    // const modifiedPhoneNumber =  "+".concat(phone)
 
     const fetchProfile = async () => {
         const config = {
@@ -50,7 +79,9 @@ export const UpdateForm = () => {
             }
         }
         const { data } = await axios.get("https://api.joysticklabs.io/api/v1/auth/profile", config)
+        console.log(data,"profile")
         setEmail(data?.email)
+        setUsername(data?.username)
     }
    
     const dispatch = useDispatch()
@@ -75,6 +106,8 @@ export const UpdateForm = () => {
             })
         }
     }
+
+    console.log('location',location?.label)
 
     function b64toBlob(b64Data, contentType, sliceSize) {
         contentType = contentType || "";
@@ -116,8 +149,8 @@ export const UpdateForm = () => {
         formData.append("first_name", first_name);
         formData.append("last_name", last_name);
         formData.append("website", website);
-        formData.append("location", location);
-        formData.append("phone", phone);
+        formData.append("location", location?.label);
+        formData.append("phone", "+".concat(phone) );
         formData.append("date", date);
         formData.append("gender", gender);
         // formData.append("avatar", avatar);
@@ -170,9 +203,39 @@ export const UpdateForm = () => {
                        />
                   </div>
               </div>  
-              <div className='username--container'>
-                  <label>UserName</label>
-                  <input/>
+              <div className='username_phone--group'>
+                    <div className='username--container'>
+                        <label>Username</label>
+                        <input value={username}/>
+                    </div>
+                    <div className='phone--container'>
+                        <label>Phone number</label>
+                        {/* <input/> */}
+                        <PhoneInput
+                            country={'NG'}
+                            value={phone}
+                            onChange={call => setPhone(call)}
+                            className="phone--input"
+                          inputStyle={{ backgroundColor: "transparent",color:"white" }}
+                          dropdownStyle={{backgroundColor:"transparent"}}
+                            
+                        />
+                    </div>
+                  </div>
+              <div className='location--container'>
+                  <label>Location</label>
+                  {/* <input value={location} onChange={ (e)=>setLocation(e.target.value)} /> */}
+                  <Select
+                      options={options}
+                      value={location}
+                      onChange={changeLocationHandler}
+                      styles={colourStyles }
+                     
+                  />
+              </div>
+              <div className='website--container'>
+                  <label>Website</label>
+                  <input value={website} onChange={ (e)=>setWebsite(e.target.value)}/>
               </div>
               <div className='bio--container'>
                   <label>Bio</label>
@@ -184,12 +247,11 @@ export const UpdateForm = () => {
               </div>
               <div className='email--container'>
                   <label>Email</label>
-                  <input value={email} onChange={ (e)=>setEmail(e.target.value)} />
+                  <input value={email} />
               </div>
               <div className='flexedBio--container'>
                   <div className='Dob--container'>
                       <label>Date of Birth</label>
-                      {/* <input type="date" className='date--input' required pattern="\d{4}-\d{2}-\d{2}"/> */}
                       <input type={type}
                           placeholder="MM/DD/YYYY"
                           onFocus={focusHandler}

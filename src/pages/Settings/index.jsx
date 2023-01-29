@@ -55,7 +55,8 @@ export default function Settings() {
   useEffect(() => {
     switch (selected) {
       case "Account":
-       {profile_data?.id?setData(EditAccountData): setData(UpdateAccountData)};
+       {profile_data?.first_name||profile_data?.last_name
+       ?setData(EditAccountData): setData(UpdateAccountData)};
         break;
       case "Security":
         setData(SecurityData);
