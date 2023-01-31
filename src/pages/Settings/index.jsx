@@ -119,7 +119,7 @@ export default function Settings() {
         
       </div>
      
-      <div className="side-adverts">
+      <div className="side-advert">
         {/* The left advert/chat/friends should be written here */}
         
       </div>

@@ -1,4 +1,6 @@
 .home-container{
+    display: flex;
+    justify-content: space-between;
     .sliders{
         img{
             width: 90%;
@@ -85,10 +87,9 @@
         height: 40px;
      }
      .side-adverts{
+       
      .side-advert{
         // width:86%;
-
-      
         padding-left: 6px;
 
       }

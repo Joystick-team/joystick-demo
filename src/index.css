@@ -10,7 +10,8 @@ html {
   color: var(--secondary--text);
   box-sizing: border-box;
   max-width: 1440px;
-  margin: auto;
+  /* margin: auto; */
+  margin: auto 1rem;
   max-width: 1440px;
   max-height: 920px;
   width: 100%;

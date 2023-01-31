@@ -32,6 +32,8 @@ export const UpdateForm = () => {
     
     const [type, setType] = useState("text")
     const [focus, setFocus] = useState(false)
+
+    const [showNotification,setShowNotification] = useState(false)
         
     const [first_name,setFirstname] = useState("")
     const [last_name, setLastname] = useState("")
@@ -82,6 +84,11 @@ export const UpdateForm = () => {
         console.log(data,"profile")
         setEmail(data?.email)
         setUsername(data?.username)
+        setBio(data?.bio)
+        setWebsite(data?.website)
+        setFirstname(data?.first_name)
+        setLastname(data?.last_name)
+        setLocation(data?.location)
     }
    
     const dispatch = useDispatch()
@@ -92,22 +99,32 @@ export const UpdateForm = () => {
         fetchProfile()
     },[userToken?.access_token,dispatch])
 
-    const handleImageChange = (e) => {
+    const handleImageChange = (e,type) => {
+        console.log("fn",type)
         const { files } = e.target;
         console.log("files",files[0])
         if (files && files.length > 0) {
-            setFileName(files[0].name)
-            setFileType(files[0].type)
+            // setFileName(files[0].name)
+            // setFileType(files[0].type)
             const reader = new FileReader();
             reader.readAsDataURL(files[0]);
             reader.addEventListener("load", () => {
-                setImage(reader.result)
+              
+                if (type === "cover") {
+                    setCover(reader.result)
+                }
+                if (type === "avatar") {
+                    setAvater(reader.result)
+                }
                 // console.log("base64",reader.result)
             })
         }
     }
 
-    console.log('location',location?.label)
+    console.log("avatar", avatar)
+    console.log("cover",cover)
+
+    
 
     function b64toBlob(b64Data, contentType, sliceSize) {
         contentType = contentType || "";
@@ -153,6 +170,8 @@ export const UpdateForm = () => {
         formData.append("phone", "+".concat(phone) );
         formData.append("date", date);
         formData.append("gender", gender);
+        formData.append("cover", cover);
+        formData.append("avatar", avatar);
         // formData.append("avatar", avatar);
         formData.append("bio", bio);
         dispatch( updateProfileAction(formData))
@@ -170,21 +189,28 @@ export const UpdateForm = () => {
         setType("text")
         setFocus(false)
     }
+    console.log(showNotification,"noti")
   return (
     <div className='update--container'>
           <h3>Update Profile</h3>
-          {
-              profile_updating?"updating":profile_update_success?"success":profile_update_error&&"error"
-          }
+           {
+                profile_updating?"updating":profile_update_success?"success":profile_update_error&&"error"
+            }
           <form onSubmit={handleSubmit}>
               
               <div className='cover--container'>
-                  <input className='cover-pic--input' value={cover} onChange={ (e)=>setCover(e.target.value)}  type="file"/>
-                  <img src='/assets/images/camera.png' alt='camera' className='camera'/>
+                  <input className='cover-pic--input' type="file" onChange={(e)=>handleImageChange(e,"cover")}  />
+                  <img src='/assets/images/camera.png' alt='camera' className='camera' />
+                  {
+                      cover && <img src={cover} alt="cover" className='cover'/>
+                  }
               </div>
               <div className='circular_input--container'>
-                  <input className='circular_input' type="file" onChange={handleImageChange} />
-                  <img src='/assets/images/snap.png' alt='snap' className='snapImg'/>
+                  <input className='circular_input' type="file" onChange={(e)=>handleImageChange(e,"avatar")} />
+                  <img src='/assets/images/snap.png' alt='snap' className='snapImg' />
+                    {
+                      avatar && <img src={avatar} alt="avatar" className='avatar' />
+                    }
               </div>
               <div className='flexedInputContainer'>
                   <div className='firstName--container'>
@@ -224,7 +250,6 @@ export const UpdateForm = () => {
                   </div>
               <div className='location--container'>
                   <label>Location</label>
-                  {/* <input value={location} onChange={ (e)=>setLocation(e.target.value)} /> */}
                   <Select
                       options={options}
                       value={location}
