@@ -1,0 +1,25 @@
+.page-layout-follow{
+
+    .layout-follow-div{
+        display: flex;
+        width: 100%;
+        gap: 0.5rem;
+        padding-left: 10px;
+        padding-right: 10px;
+
+
+        .follow-left-section{
+            flex: 3;
+
+            .following-div{
+                padding: 0 20px 0 20px;
+
+            }
+        }
+
+        .follow-right-section{
+            flex: 1;
+        }
+    }
+
+}

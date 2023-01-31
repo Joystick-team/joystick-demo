@@ -1,0 +1,33 @@
+
+
+    .following-main{
+   
+
+       .following-top{
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 15px;
+            column-gap: 24px;
+        }
+
+        .following-col{
+            display: flex;
+            flex-direction: column;
+            padding: 20px 30px 10px 32px;
+            row-gap: 20px;
+
+            .person-main{
+              
+                .icon-main{
+                    display: none;
+                    .icon-menu{
+                        
+                    }
+                }
+            }
+
+
+        }
+    }
+

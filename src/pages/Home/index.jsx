@@ -20,7 +20,7 @@ export default function Home() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchGameAction(1))
-    userToken?.access_token && dispatch(profileAction())
+    // userToken?.access_token && dispatch(profileAction())
     !userToken?.access_token&& navigate("/")
     if(window.innerWidth < 431){
       setSliderCount(Number(3))

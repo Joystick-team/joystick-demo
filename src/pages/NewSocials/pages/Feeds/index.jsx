@@ -10,47 +10,31 @@ import  comment2 from "../../../../assets/images/commentImg2.jpeg"
 import  comment3 from "../../../../assets/images/commentImg3.jpeg"
 import { fetchAllPostsAction } from '../../../../Actions/Posts.Action'
 import { useSelector, useDispatch } from "react-redux"
+import SocialMessenger from '../../SocialMessenger'
+import chatImg1 from "../../../../assets/images/chatImg1.png"
+import chatImg2 from "../../../../assets/images/chatImg2.png"
+import chatImg3 from "../../../../assets/images/user1.png"
 
 
 
-const comments=[
+const chats=[
   {
-    postImg: [comment1 ],
-    name:"Wide Fox",
-    handle:"@wide-control",
-    profileImg: postImg1 ,
-    title:"The evolution of gaming around the world",
-    post:"",
-    likes:"228",
-    comments:"228",
-    date:"1 hour ago"
+      img:chatImg1 ,
+      name:"Jane Cooper"
+
   },
   {
-    postImg:[],
-    name:"Floyd Miles",
-    handle:"@wide-control",
-    profileImg: postImg2,
-    title:"The evolution of gaming around the world",
-    post:"The Navidia Workspace team is delivering features that matter, that streamline communication and collaboration without getting in the way. ",
-    date:"1 hour ago",
-    likes:"4001",
-    comments:"228"
-  },
+      img:chatImg2,
+      name:"Esther Howard"
 
+  },
   {
-    postImg:[  comment3 ],
-    name:"Wide Fox",
-    handle:"@wide-control",
-    profileImg: postImg1,
-    title:"The evolution of gaming around the world",
-    post:" ",
-    date:"1 hour ago",
-    likes:"228",
-    comments:"228"
+      img:chatImg3,
+      name:"Cody Fisher"
+
   }
+
 ]
-
-
 
 
 export default function Feeds() {
@@ -67,17 +51,20 @@ export default function Feeds() {
   //  console.log(postArray)
   console.log(posts?.posts,"soc")
    const postArray=posts?.posts
+  
+   const comments=[{}]
+
 
   return (
     <div className='feeds-div'>
 
         <div className='feeds-comments'>
-            < MakePost pic={ pic } btnName={"Publish post"} />
+            < MakePost pic={ pic } btnName={"Post"} />
              < Comments  comments={comments} posts={postArray} />
         </div>
         <div className='feeds-sidepage'>
-         < FeedSidepage />
-       
+          < FeedSidepage />
+           <SocialMessenger  chats={chats} />
         </div>
      
     </div>

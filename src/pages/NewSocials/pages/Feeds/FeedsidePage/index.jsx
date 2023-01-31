@@ -23,6 +23,7 @@ import eventimg2 from "../../../../../assets/images/eventimg2.jpeg"
 import Birthdays from './Birthdays'
 import MobileSocialTab from '../../../SocialTab/mobileSocialTab'
 import FriendRequest from './FriendRequest'
+import SocialMessenger from '../../../SocialMessenger'
 
 
 const creators=[
@@ -74,6 +75,22 @@ const recommendations=[
     {
         img: creator1 ,
         name:"Wade Warren",
+        description:"Founder & CEO at Megathron",
+        socials:[]
+     
+
+    },
+    {
+        img: creator2 ,
+        name:"Alex James",
+        description:"Founder & CEO at Megathron",
+        socials:[]
+     
+
+    },
+    {
+        img: creator3,
+        name:"Jane Doe",
         description:"Founder & CEO at Megathron",
         socials:[]
      
@@ -170,7 +187,8 @@ export default function FeedSidepage() {
        <Recommendations recommendations={recommendations} />
        <RecentEvents events={events} />
        < Birthdays img={ creator5} name="Brooklyn Simmons"/>
-       <FriendRequest  friends={friends}  chats={chats} />
+       {/* <FriendRequest  friends={friends}  chats={chats} /> */}
+       {/* <SocialMessenger  chats={chats} /> */}
        </div>
      
     </div>
