@@ -1,7 +1,7 @@
 .top-streamer-card {
   display: flex;
   align-items: center;
-  gap: 10rem;
+  gap: 8rem;
   padding: 0rem 0.4rem;
 
   .trophyandname {
@@ -12,7 +12,7 @@
 
     svg {
       color: #ffc700;
-      font-size: 20px;
+      font-size: 30px;
     }
 
     .nameandpic {
@@ -43,7 +43,7 @@
       .name {
         display: flex;
         flex-direction: column;
-        gap: 7px;
+        gap: 9px;
 
         span {
           display: flex;
@@ -59,6 +59,7 @@
           }
 
           svg {
+            font-size: 20px;
             color: #db242d;
           }
         }
@@ -70,7 +71,7 @@
           font-weight: 500;
           font-size: 12px;
           line-height: 15px;
-          color: rgba(211, 205, 205, 0.9);
+          color: var(--top-streamer-text);
         }
       }
     }
@@ -89,7 +90,7 @@
       font-weight: 500;
       font-size: 13px;
       line-height: 16px;
-      color: rgba(211, 205, 205, 0.9);
+      color: var(--top-streamer-follower-text);
     }
 
     .badge {
@@ -100,14 +101,60 @@
       font-weight: 700;
       font-size: 13px;
       line-height: 16px;
-      color: #ffca0d;
+      color: var(--badge-yellow);
       width: 182px;
     }
 
-    svg {
-      color: #c4c4c4;
-      font-size: 21px;
-      cursor: pointer;
+    .stream-card-options {
+      position: relative;
+      svg {
+        color: var(--menu-icon);
+        font-size: 21px;
+        cursor: pointer;
+      }
+
+      .options {
+        background: var(--options-bg);
+        border-radius: 6.57653px;
+        display: flex;
+        flex-direction: column;
+        width: 224px;
+        padding: 0.6rem 0rem;
+        position: absolute;
+        top: 0;
+        right: -40px;
+        z-index: 999;
+        transform-origin: right;
+        transition: all ease-out 100ms;
+        scale: 0;
+
+        .flex-opt {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          padding: 0.5rem 1.5rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #979797;
+          }
+
+          p,
+          svg {
+            margin: 0;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 11.5089px;
+            line-height: 14px;
+            color: var(--options-text);
+          }
+        }
+      }
     }
   }
+}
+
+.show {
+  scale: 1 !important;
 }
