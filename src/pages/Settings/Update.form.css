@@ -19,6 +19,7 @@ input{
     background-color: transparent;
     border: 1px solid #9e9c9c;
     color: white;
+    cursor:pointer ;
 }
 textarea{
      border-radius: 7px;
@@ -51,16 +52,18 @@ textarea{
     position: relative;
 }
 .calender--input{
-    width: 12rem;
+    width: 13rem;
 }
 .calender--input::placeholder{
     font-size: 12px;
     padding-left: 0.4rem;
+    opacity: 0.5;
 }
 
 .calender--img{
     position: absolute;
-    right: 42.4rem;
+    /* right: 30.4rem; */
+    left: 11rem;
     bottom: 0.3rem;
     transform: scale(0.7);
 }
@@ -164,12 +167,14 @@ textarea{
 }
 
 .gender--container{
-    right: 27rem;
+    /* right: 30rem; */
+    left: 20rem;
    position: absolute;
    /* top: 0.04rem; */
    bottom: 0.03rem;
 }
 .gender--container label{
+    padding-top: 0.8rem;
     margin-top: -0.6rem;
 }
 .radioBtn--container{
