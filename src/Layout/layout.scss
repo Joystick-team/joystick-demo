@@ -42,7 +42,6 @@
       overflow-y: auto;
       flex: 2;
       height: 80%;
-      margin-right: 0.7rem;
       margin-top: 7rem;
 
       .center-div {
@@ -100,12 +99,11 @@
           box-sizing: border-box;
           flex-basis: content;
           max-width: 327px;
-          max-height: 87vh;
-          height: auto;
+          height: fit-content;
           background: var(--secondary-background);
           border-radius: 12px;
           flex-grow: 1;
-          padding: 1.5rem 1rem;
+          padding: 1rem;
         }
       }
 
@@ -116,7 +114,7 @@
         }
 
         & > div {
-          display: contents;
+          display: flex;
           overflow: hidden;
           overflow-y: auto;
         }

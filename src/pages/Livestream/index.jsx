@@ -4,11 +4,13 @@ import TrendingCard from "../../component/TrendingCard";
 import LivestreamTab from "./LivestreamTab";
 import CurrentlyOnlineTab from "./CurrentlyOnlineTab";
 import TopStreamersTab from "./TopStreamersTab";
+import GoLive from "./GoLive";
 import "./livestream.scss";
 
 const Livestream = () => {
   const TabItems = ["Live Stream", "Currently Online", "Top Streamers"];
   const [activeTab, setActiveTab] = useState("Live Stream");
+  const [goLive, setGoLive] = useState(false);
 
   return (
     <div className="livestream">
@@ -18,13 +20,22 @@ const Livestream = () => {
             <button
               key={i}
               className={activeTab === tab ? "activeTab" : ""}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => {
+                setActiveTab(tab);
+                setGoLive(false);
+              }}
             >
               {tab}
             </button>
           ))}
         </div>
-        <div className="go-live">
+        <div
+          className="go-live"
+          onClick={() => {
+            setGoLive(!goLive);
+            setActiveTab("Live Stream");
+          }}
+        >
           <div className="live-icon">
             <BsCameraReelsFill />
           </div>
@@ -32,18 +43,24 @@ const Livestream = () => {
         </div>
       </div>
 
-      <div className="trending">
-        <h3>Trending</h3>
-        <div className="trending-slide">
-          <TrendingCard />
-          <TrendingCard />
-          <TrendingCard />
-          <TrendingCard />
+      {!goLive && (
+        <div className="trending">
+          <h3>Trending</h3>
+          <div className="trending-slide">
+            <TrendingCard />
+            <TrendingCard />
+            <TrendingCard />
+            <TrendingCard />
+          </div>
         </div>
-      </div>
+      )}
 
       {activeTab === "Live Stream" ? (
-        <LivestreamTab />
+        goLive ? (
+          <GoLive />
+        ) : (
+          <LivestreamTab />
+        )
       ) : activeTab === "Currently Online" ? (
         <CurrentlyOnlineTab />
       ) : (
