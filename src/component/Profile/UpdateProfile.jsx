@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { updateProfileAction } from '../../Actions/Authentication/Profile.Update.Action';
+// import { updateProfileAction } from '../../Actions/updateProfileAction';
 import ReactCrop from 'react-image-crop'
 import 'react-image-crop/dist/ReactCrop.css'
 import "./UpdateProfile.css"
@@ -135,7 +136,7 @@ export const ProfileUpdate = () => {
     formData.append("gender", gender);
     // formData.append("avatar", avatar);
     formData.append("bio", bio);
-    dispatch( updateProfileAction(formData))
+    dispatch(updateProfileAction(formData))
     //this is to see the values contained in the formData
     // for (let pair of formData.entries()) {
     //   console.log(pair); 

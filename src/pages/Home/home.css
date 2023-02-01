@@ -1,0 +1,9 @@
+.home--container{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main h1{
+    font-size: 18px;
+}
