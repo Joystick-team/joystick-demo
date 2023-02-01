@@ -5,6 +5,8 @@ import {useSelector,useDispatch} from "react-redux"
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom"
 import { logoutAction } from '../../Actions/Authentication/Signin.Action'
+import { profileFormAction } from '../../Actions/profileForm.Action';
+import { updateProfileAction } from '../../Actions/updateProfileAction'
 import { ProfileUpdate } from '../Profile/UpdateProfile'
 import './dropdown.scss'
 
@@ -19,6 +21,9 @@ export default function SelectDropDown(props) {
 
   const logoutHandler = () => {
     dispatch(logoutAction())
+    dispatch(profileFormAction(false))
+    dispatch( updateProfileAction(false))
+    
     navigate("/home")
   }
   useEffect(() => {

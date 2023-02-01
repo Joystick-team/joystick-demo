@@ -1,6 +1,17 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect,useMemo } from 'react'
 import { useDispatch, useSelector } from "react-redux"
+// import PhoneInput from 'react-phone-number-input'
+// import 'react-phone-number-input/style.css'
+
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+import Select from 'react-select'
+import countryList from 'react-select-country-list'
+import chroma from 'chroma-js';
+
+
 import { profileAction } from '../../Actions/Authentication/Profile.Action'
+import { updateProfileAction } from '../../Actions/Authentication/Profile.Update.Action'; 
 import { profileFormAction } from '../../Actions/profileForm.Action';
 import axios from "axios"
 import "./Update.form.css"
@@ -10,14 +21,26 @@ export const UpdateForm = () => {
 
     const { profile_data } = useSelector(state => state.profile)
     const { userToken } = useSelector(state => state.signin)
+   
+
+    const {
+        profile_updating,
+        profile_update_success,
+        profile_update_data,
+        profile_update_error
+    } = useSelector(state => state.profileUpdate)
     
     const [type, setType] = useState("text")
     const [focus, setFocus] = useState(false)
+
+    const [showNotification,setShowNotification] = useState(false)
         
     const [first_name,setFirstname] = useState("")
-    const [last_name,setLastname] = useState("")
+    const [last_name, setLastname] = useState("")
+    const [username,setUsername]= useState("")
     const [email,setEmail] = useState("")
     const [avatar,setAvater] = useState("")
+    const [cover,setCover] = useState("")
     const [bio,setBio] = useState("")
     const [website,setWebsite] = useState("")
     const [location,setLocation] = useState("")
@@ -32,6 +55,23 @@ export const UpdateForm = () => {
     const [fileName, setFileName] = useState("")
     const [fileType, setFileType] = useState("")
 
+    const options = useMemo(() => countryList().getData(), [])
+    
+
+    const changeLocationHandler = value => {
+        setLocation(value)
+    }
+
+    const colourStyles = {
+        control: styles => ({ ...styles, backgroundColor: 'transparent',width:"20rem",color:"white" }),
+        option: (base, state) => ({
+            ...base,
+            backgroundColor: "grey",
+        })
+    };
+
+    // console.log("phone", "+".concat(phone))
+    // const modifiedPhoneNumber =  "+".concat(phone)
 
     const fetchProfile = async () => {
         const config = {
@@ -41,7 +81,14 @@ export const UpdateForm = () => {
             }
         }
         const { data } = await axios.get("https://api.joysticklabs.io/api/v1/auth/profile", config)
+        console.log(data,"profile")
         setEmail(data?.email)
+        setUsername(data?.username)
+        setBio(data?.bio)
+        setWebsite(data?.website)
+        setFirstname(data?.first_name)
+        setLastname(data?.last_name)
+        setLocation(data?.location)
     }
    
     const dispatch = useDispatch()
@@ -52,24 +99,32 @@ export const UpdateForm = () => {
         fetchProfile()
     },[userToken?.access_token,dispatch])
 
-   
-    console.log("email",email)
-     console.log("gender",gender)
-
-    const handleImageChange = (e) => {
+    const handleImageChange = (e,type) => {
+        console.log("fn",type)
         const { files } = e.target;
         console.log("files",files[0])
         if (files && files.length > 0) {
-            setFileName(files[0].name)
-            setFileType(files[0].type)
+            // setFileName(files[0].name)
+            // setFileType(files[0].type)
             const reader = new FileReader();
             reader.readAsDataURL(files[0]);
             reader.addEventListener("load", () => {
-                setImage(reader.result)
+              
+                if (type === "cover") {
+                    setCover(reader.result)
+                }
+                if (type === "avatar") {
+                    setAvater(reader.result)
+                }
                 // console.log("base64",reader.result)
             })
         }
     }
+
+    console.log("avatar", avatar)
+    console.log("cover",cover)
+
+    
 
     function b64toBlob(b64Data, contentType, sliceSize) {
         contentType = contentType || "";
@@ -111,10 +166,12 @@ export const UpdateForm = () => {
         formData.append("first_name", first_name);
         formData.append("last_name", last_name);
         formData.append("website", website);
-        formData.append("location", location);
-        formData.append("phone", phone);
+        formData.append("location", location?.label);
+        formData.append("phone", "+".concat(phone) );
         formData.append("date", date);
         formData.append("gender", gender);
+        formData.append("cover", cover);
+        formData.append("avatar", avatar);
         // formData.append("avatar", avatar);
         formData.append("bio", bio);
         dispatch( updateProfileAction(formData))
@@ -132,17 +189,28 @@ export const UpdateForm = () => {
         setType("text")
         setFocus(false)
     }
+    console.log(showNotification,"noti")
   return (
     <div className='update--container'>
           <h3>Update Profile</h3>
-          <div className='img--rectangle'>
-              <img src='/assets/images/inputRectangle.png' alt='camera' className='inputRectangle' />
-              <img src='/assets/images/camera.png' alt='camera' className='camera'/>
-          </div>
+           {
+                profile_updating?"updating":profile_update_success?"success":profile_update_error&&"error"
+            }
           <form onSubmit={handleSubmit}>
+              
+              <div className='cover--container'>
+                  <input className='cover-pic--input' type="file" onChange={(e)=>handleImageChange(e,"cover")}  />
+                  <img src='/assets/images/camera.png' alt='camera' className='camera' />
+                  {
+                      cover && <img src={cover} alt="cover" className='cover'/>
+                  }
+              </div>
               <div className='circular_input--container'>
-                  <input className='circular_input' type="file" onChange={handleImageChange} />
-                  <img src='/assets/images/snap.png' alt='snap' className='snapImg'/>
+                  <input className='circular_input' type="file" onChange={(e)=>handleImageChange(e,"avatar")} />
+                  <img src='/assets/images/snap.png' alt='snap' className='snapImg' />
+                    {
+                      avatar && <img src={avatar} alt="avatar" className='avatar' />
+                    }
               </div>
               <div className='flexedInputContainer'>
                   <div className='firstName--container'>
@@ -150,6 +218,7 @@ export const UpdateForm = () => {
                       <input
                           value={first_name}
                           onChange={(e) => setFirstname(e.target.value)}
+                          required
                       />
                   </div>
                   <div className='lastName--container'>
@@ -160,9 +229,38 @@ export const UpdateForm = () => {
                        />
                   </div>
               </div>  
-              <div className='username--container'>
-                  <label>UserName</label>
-                  <input/>
+              <div className='username_phone--group'>
+                    <div className='username--container'>
+                        <label>Username</label>
+                        <input value={username}/>
+                    </div>
+                    <div className='phone--container'>
+                        <label>Phone number</label>
+                        {/* <input/> */}
+                        <PhoneInput
+                            country="ng"
+                            value={phone}
+                            onChange={call => setPhone(call)}
+                            className="phone--input"
+                          inputStyle={{ backgroundColor: "transparent",color:"white" }}
+                          dropdownStyle={{backgroundColor:"transparent"}}
+                            
+                        />
+                    </div>
+                  </div>
+              <div className='location--container'>
+                  <label>Location</label>
+                  <Select
+                      options={options}
+                      value={location}
+                      onChange={changeLocationHandler}
+                      styles={colourStyles }
+                     
+                  />
+              </div>
+              <div className='website--container'>
+                  <label>Website</label>
+                  <input value={website} onChange={ (e)=>setWebsite(e.target.value)}/>
               </div>
               <div className='bio--container'>
                   <label>Bio</label>
@@ -174,12 +272,11 @@ export const UpdateForm = () => {
               </div>
               <div className='email--container'>
                   <label>Email</label>
-                  <input value={email} onChange={ (e)=>setEmail(e.target.value)} />
+                  <input value={email} />
               </div>
               <div className='flexedBio--container'>
                   <div className='Dob--container'>
                       <label>Date of Birth</label>
-                      {/* <input type="date" className='date--input' required pattern="\d{4}-\d{2}-\d{2}"/> */}
                       <input type={type}
                           placeholder="MM/DD/YYYY"
                           onFocus={focusHandler}

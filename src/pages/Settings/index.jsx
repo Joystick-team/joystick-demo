@@ -12,7 +12,8 @@ export default function Settings() {
   const [data, setData] = useState([])
   const [display, setDisplay] = useState(true)
   const { open } = useSelector(state => state.updateProfile)
-  const {openUpdateForm} = useSelector(state => state.updateForm)
+  const { openUpdateForm } = useSelector(state => state.updateForm)
+  const { profile_data } = useSelector(state => state.profile)
   
   const dispatch = useDispatch()
   
@@ -54,7 +55,8 @@ export default function Settings() {
   useEffect(() => {
     switch (selected) {
       case "Account":
-        setData(UpdateAccountData);
+       {profile_data?.first_name||profile_data?.last_name
+       ?setData(EditAccountData): setData(UpdateAccountData)};
         break;
       case "Security":
         setData(SecurityData);
@@ -117,7 +119,7 @@ export default function Settings() {
         
       </div>
      
-      <div className="side-adverts">
+      <div className="side-advert">
         {/* The left advert/chat/friends should be written here */}
         
       </div>
