@@ -1,24 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;400;500;700&display=swap");
 .App {
   background: var(--background);
   color: var(--secondary--text);
-  font-family:'Montserrat', sans-serif;
-  max-width: 1440px;
-  max-height: 1920px;
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   height: 100%;
 
-  #themeToggle{
+  #themeToggle {
     margin: auto;
     width: 90%;
     padding: 0 15px;
   }
 
-  input[type="checkbox"]{
-    accent-color: #C71F1F !important;
+  input[type="checkbox"] {
+    accent-color: #c71f1f !important;
   }
 
-  .btn:focus{
+  .btn:focus {
     box-shadow: none;
   }
 }
