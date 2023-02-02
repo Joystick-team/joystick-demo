@@ -99,7 +99,7 @@ export default function TopNav() {
           <SearchBox />
         </div>
         <AuthButton />
-        <ConnectButton className="btn-connect" color="danger" title="Connect" />
+         <ConnectButton className="btn-connect" color="danger" title="Connect" />
       </Container>
     </div>
   );
