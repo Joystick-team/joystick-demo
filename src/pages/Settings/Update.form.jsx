@@ -9,6 +9,8 @@ import Select from 'react-select'
 import countryList from 'react-select-country-list'
 import chroma from 'chroma-js';
 
+import { UpdateAlert } from '../../component/Alerts/UpdateAlert'
+
 
 import { profileAction } from '../../Actions/Authentication/Profile.Action'
 import { updateProfileAction } from '../../Actions/Authentication/Profile.Update.Action'; 
@@ -22,7 +24,6 @@ export const UpdateForm = () => {
     const { profile_data } = useSelector(state => state.profile)
     const { userToken } = useSelector(state => state.signin)
    
-
     const {
         profile_updating,
         profile_update_success,
@@ -32,9 +33,9 @@ export const UpdateForm = () => {
     
     const [type, setType] = useState("text")
     const [focus, setFocus] = useState(false)
+    
+    const [showNotification, setShowNotification ] = useState(false)
 
-    const [showNotification,setShowNotification] = useState(false)
-        
     const [first_name,setFirstname] = useState("")
     const [last_name, setLastname] = useState("")
     const [username,setUsername]= useState("")
@@ -45,7 +46,7 @@ export const UpdateForm = () => {
     const [website,setWebsite] = useState("")
     const [location,setLocation] = useState("")
     const [phone,setPhone] = useState("")
-    const [date,setDate] = useState()
+    const [date,setDate] = useState("")
     const [gender, setGender] = useState("male")
     const [image, setImage] = useState(null)
     const [crop, setCrop] = useState()
@@ -81,7 +82,6 @@ export const UpdateForm = () => {
             }
         }
         const { data } = await axios.get("https://api.joysticklabs.io/api/v1/auth/profile", config)
-        console.log(data,"profile")
         setEmail(data?.email)
         setUsername(data?.username)
         setBio(data?.bio)
@@ -92,6 +92,14 @@ export const UpdateForm = () => {
     }
    
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        profile_update_success&& setShowNotification(true)
+        const timer = setTimeout(() => {
+            setShowNotification(false)
+        }, 4000);
+        return ()=>clearTimeout(timer)
+    },[ profile_update_success])
 
     useEffect(() => {
         userToken?.access_token && dispatch(profileAction())
@@ -120,9 +128,6 @@ export const UpdateForm = () => {
             })
         }
     }
-
-    console.log("avatar", avatar)
-    console.log("cover",cover)
 
     
 
@@ -189,12 +194,12 @@ export const UpdateForm = () => {
         setType("text")
         setFocus(false)
     }
-    console.log(showNotification,"noti")
+    console.log("date",date);
   return (
     <div className='update--container'>
           <h3>Update Profile</h3>
            {
-                profile_updating?"updating":profile_update_success?"success":profile_update_error&&"error"
+                profile_updating?"updating":profile_update_success?<p className={!showNotification?"hide":"show"}>Success!</p>:profile_update_error&&"error"
             }
           <form onSubmit={handleSubmit}>
               
