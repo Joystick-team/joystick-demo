@@ -20,6 +20,21 @@ html {
   --mobile-titlebar: #c9c9c9;
   // End
 
+  // Livestream Tab
+  --livestream-tab: #d9d9d9;
+  --tab-text: #232222;
+  --livestream-card-text: #292828;
+  --options-bg: #e9e9e9;
+  --options-text: #292828;
+  --all-friends-bg: #eeecec;
+  --top-streamers-bg: #eeecec;
+  --top-streamer-text: #000000;
+  --top-streamer-follower-text: rgba(95, 93, 93, 0.9);
+  --badge-yellow: #bd9404;
+  --menu-icon: #5f5d5d;
+
+  // End
+
   // social-Feed
   --tabs-background: #eeecec;
   --tabs-text: #151515;
@@ -74,6 +89,21 @@ html[data-theme="dark"] {
   --friends-white-bg: #211e1e;
   --friends-search-icon: rgba(235, 235, 245, 0.6);
   // End
+
+  // Livestream Tab
+  --livestream-tab: #2f2f2f;
+  --tab-text: #fff;
+  --livestream-card-text: #979797;
+  --options-bg: #252323;
+  --options-text: #d3d3d3;
+  --all-friends-bg: #000000;
+  --top-streamers-bg: #121212;
+  --top-streamer-text: rgba(211, 205, 205, 0.9);
+  --top-streamer-follower-text: rgba(211, 205, 205, 0.9);
+  --badge-yellow: #ffca0d;
+  --menu-icon: #c4c4c4;
+  // End
+
   --mobile-titlebar: #1d1c1c;
   --button: #c71f1f;
   --secondary--text: #fbfbfb;

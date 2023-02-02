@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .livestream {
+  display: contents !important;
   .tabsandlive {
     padding: 1.5rem;
     display: flex;
@@ -12,7 +13,7 @@
       display: flex;
       gap: 2rem;
       height: 31px;
-      background: #2f2f2f;
+      background: var(--livestream-tab);
       border-radius: 5px;
       padding: 3.5px 5px;
       align-self: center;
@@ -22,14 +23,15 @@
         width: 249px;
         background: inherit;
         border-radius: 4px;
+        color: var(--tab-text);
         border: none;
-        color: #ffffff;
         font-size: 14px;
         font-weight: 700;
         font-family: "Montserrat", sans-serif;
 
         &.activeTab {
           background-color: #c71f1f;
+          color: #fff;
         }
 
         &:hover {
@@ -41,6 +43,7 @@
 
     .go-live {
       background: #db242d;
+      color: #fff;
       border-radius: 19px;
       display: flex;
       align-items: center;
@@ -71,7 +74,7 @@
     padding: 1.5rem 0rem 1.5rem 1.5rem;
 
     h3 {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 500;
       line-height: 29px;
       margin-left: 0.8rem;
@@ -93,41 +96,54 @@
 
   .livestream-grid {
     padding: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 0.7rem;
     margin-bottom: 5rem;
 
-    .view-all {
+    .live-streaming {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      justify-content: space-between;
       width: 100%;
-      justify-content: flex-end;
 
-      p {
-        margin: 0;
+      h3 {
         font-family: "Montserrat";
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
-        line-height: 24px;
-        color: #db242d;
-        cursor: pointer;
+        font-size: 22px;
+        line-height: 29px;
       }
 
-      .filter {
-        width: 91px;
-        height: 29px;
+      .view-all {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background: rgba(53, 52, 52, 0.66);
-        border-radius: 16px;
-        color: #d1bfc0;
+        gap: 2rem;
+
         p {
+          margin: 0;
           font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 24px;
+          color: #db242d;
+          cursor: pointer;
+        }
+
+        .filter {
+          width: 91px;
+          height: 29px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          background: rgba(53, 52, 52, 0.66);
+          border-radius: 16px;
           color: #d1bfc0;
-          font-size: 15px;
+          p {
+            font-family: "Montserrat";
+            color: #d1bfc0;
+            font-size: 15px;
+          }
         }
       }
     }
@@ -154,7 +170,7 @@
 
     .all-friends {
       margin-top: 13px;
-      background: #000000;
+      background: var(--all-friends-bg);
       border-radius: 5px;
       padding: 1rem 2rem;
       width: 100%;
@@ -244,7 +260,7 @@
 
   .top-streamers {
     margin: 1.5rem;
-    background: #121212;
+    background: var(--top-streamers-bg);
     border-radius: 12px;
     padding: 2rem;
 
@@ -260,7 +276,300 @@
       margin-top: 2.5rem;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 3.5rem;
+    }
+  }
+
+  .live {
+    .live-video {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0.5rem;
+      img {
+        height: 602px;
+        object-fit: cover;
+      }
+
+      p {
+        margin: 0;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 29px;
+        padding: 0rem 1rem;
+      }
+    }
+
+    .live-profile-info {
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+      padding: 1.5rem;
+
+      .imgandname {
+        display: flex;
+        align-items: center;
+        gap: 1.3rem;
+        img {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+        }
+
+        .name {
+          display: flex;
+          flex-direction: column;
+          gap: 0.3rem;
+
+          span {
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+
+            p {
+              margin: 0;
+              font-family: "Montserrat";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 15px;
+              line-height: 20px;
+              color: var(--top-streamer-follower-text);
+            }
+
+            svg {
+              color: #db242d;
+            }
+          }
+
+          p {
+            margin: 0;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 17px;
+            color: rgba(172, 172, 172, 0.9);
+          }
+        }
+      }
+
+      button.follow-btn {
+        background: #db242d;
+        width: 102px;
+        height: 34px;
+        border-radius: 6px;
+        border: none;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        color: #ffffff;
+      }
+    }
+
+    .live-interaction {
+      padding: 1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+
+      .live-chat {
+        width: 75%;
+        background-color: var(--secondary-background);
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 1.3rem 1.3rem 3rem 1.3rem;
+
+        h4 {
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        .chat-comments {
+          height: 400px;
+          overflow-y: scroll;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          position: relative;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          & > .chats {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            color: rgb(20, 20, 20);
+
+            img {
+              border-radius: 50%;
+              width: 38px;
+              height: 38px;
+            }
+
+            div {
+              display: flex;
+              flex-direction: column;
+              gap: 0.2rem;
+
+              & > p:first-child {
+                margin: 0;
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13.1457px;
+                line-height: 17px;
+                color: rgba(141, 138, 138, 0.9);
+              }
+
+              & > p:last-child {
+                margin: 0;
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 20px;
+                color: var(--chat-text);
+              }
+            }
+          }
+        }
+
+        .comment {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+          border: 1px solid #8d8a8a;
+          border-radius: 16px;
+          height: 39px;
+          width: 543px;
+          padding: 0rem 0.8rem;
+
+          input {
+            border: none;
+            width: 95%;
+
+            &:focus {
+              outline: none;
+            }
+
+            &::placeholder {
+              font-family: "Montserrat";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 16px;
+              color: var(--primary-text);
+            }
+          }
+
+          svg {
+            width: 5%;
+            color: #c71f1f;
+            font-size: 24px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .live-friends {
+        width: 25%;
+        padding: 1.3rem 1.3rem 3rem 1.3rem;
+        background: var(--feed-sidepage-bg);
+        border-radius: 8px;
+
+        .friend-menu {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          p {
+            margin: 0;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            color: var(--primary-text);
+          }
+
+          svg {
+            font-size: 19px;
+          }
+        }
+
+        .friend-list {
+          margin-top: 2.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+
+          .friends-list-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .picsandname {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              img {
+                width: 38px;
+                height: 38px;
+                object-fit: cover;
+                border-radius: 50%;
+              }
+
+              div > p {
+                margin: 0;
+              }
+
+              div > p:first-child {
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 17px;
+                color: var(--primary-text);
+              }
+
+              div > p:last-child {
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 15px;
+                color: rgba(82, 81, 81, 0.9);
+              }
+            }
+
+            .online {
+              border-radius: 50%;
+              background: #69c40f;
+              width: 9px;
+              height: 9px;
+              margin-right: 0.3rem;
+            }
+
+            .offline {
+              border-radius: 50%;
+              background: #595c56;
+              width: 9px;
+              height: 9px;
+              margin-right: 0.3rem;
+            }
+          }
+        }
+      }
     }
   }
 }

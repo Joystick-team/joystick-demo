@@ -2,6 +2,7 @@ import { UPDATE_PROFILE_REQUEST, UPDATE_PROFILE_SUCCESS, UPDATE_PROFILE_FAIL } f
 import axios from "axios"
 
 export const updateProfileAction = (formData) => async (dispatch, getState) => {
+    console.log("inputs",formData)
     try {
         dispatch({ type: UPDATE_PROFILE_REQUEST })
         const { signin } = getState();

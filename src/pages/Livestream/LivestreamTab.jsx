@@ -6,11 +6,14 @@ const LivestreamTab = () => {
   return (
     <>
       <div className="livestream-grid">
-        <div className="view-all">
-          <p>View All</p>
-          <div className="filter">
-            <FaFilter />
-            <p>Filter</p>
+        <div className="live-streaming">
+          <h3>Streaming Live</h3>
+          <div className="view-all">
+            <p>View All</p>
+            <div className="filter">
+              <FaFilter />
+              <p>Filter</p>
+            </div>
           </div>
         </div>
         <div className="live-grid-items">
