@@ -27,7 +27,7 @@ export default function Followers() {
           <div className='follower-div'>
           <div className='follower-main'>
               <h5 className='follower-top'>
-                <CgArrowLongLeft />
+                <CgArrowLongLeft onClick={() => history.go(-1)}/>
                 <span>Following</span>
               </h5>
               {followers?.data.length===0?
