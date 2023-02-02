@@ -8,6 +8,7 @@
     "@daily-co/daily-react-hooks": "^0.4.0",
     "@emoji-mart/data": "^1.1.0",
     "@emoji-mart/react": "^1.1.0",
+    "@livepeer/react": "^2.1.4",
     "@metamask/detect-provider": "^1.2.0",
     "@nextui-org/react": "^1.0.0-beta.11",
     "antd": "^5.1.1",

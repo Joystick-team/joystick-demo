@@ -11,7 +11,8 @@ import {AiOutlineClose} from "react-icons/ai"
 export default function MakePost({pic,btnName}) {
   const [postText,setPostText]=useState("")
   const {userToken} = useSelector(state=>state.signin)
-
+  
+  const [fileExt,setFileExt]=useState("")
 
   const [fileUrl, setFileUrl] = useState({
     src: "",
@@ -37,6 +38,9 @@ export default function MakePost({pic,btnName}) {
                   alt: fileUploaded.name,
               });
               setFile(fileUploaded)
+              var ext = fileUploaded?.name?.substr(fileUploaded?.name?.lastIndexOf('.') + 1);
+              console.log(ext,"extt")
+              setFileExt(ext)
           }
           // handleFile(fileUploaded)
       }
@@ -87,6 +91,7 @@ export default function MakePost({pic,btnName}) {
 
  }
 
+ console.log(file,"url")
 
   return (
     <div className='makepost'>
@@ -110,7 +115,14 @@ export default function MakePost({pic,btnName}) {
                 <div className='view-post-img-div'>
                     <h5 onClick={ handleRemoveFile}><AiOutlineClose /></h5>
                     <main className='view-img'>
-                      <img src={fileUrl?.src} className=""/>
+                       {fileExt==="mp4" | fileExt==="mp3"?
+                         <video  controls>
+                              <source src={fileUrl?.src}></source>
+                          </video>
+                         :
+                         <img src={fileUrl?.src} className=""/>
+                      }
+                    
                     </main>
                  
                 </div>
@@ -134,7 +146,7 @@ export default function MakePost({pic,btnName}) {
                
                   <h5>
                       <BiVideoPlus />
-                      <span>Add a video</span>
+                      <span onClick={handleClick} >Add a video</span>
                        <input className=''
                         type="file"
                         ref={hiddenFileInput}

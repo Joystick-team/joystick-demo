@@ -41,10 +41,13 @@ export default function ProfileInfo({profile}) {
                       <Link  to={`/following/${profile?.username}`}><span className='profile-text'>Following</span></Link>  
                    </h5>
                </main>
-                   
-                <button className='edit-btn'>
+
+                <Link to="/u/settings">
+                  <button className='edit-btn'>
                    Update Profile
-                </button>
+                  </button>
+               </Link>    
+              
            
            </div>
 

@@ -281,14 +281,34 @@
   }
 
   .live {
+    
+   .modal-live{
+      display: none;
+    }
+   
+
     .live-video {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       padding: 0.5rem;
+
+      .live-video-player{
+        width: 100%;
+        background-color: black;
+        height: 602px;
+      }
       img {
         height: 602px;
         object-fit: cover;
+      }
+
+      button{
+        width: 162px;
+        height: 34px;
+        font-weight: 500;
+        font-size: 13px;
+        border-radius: 6px;
       }
 
       p {
@@ -299,6 +319,9 @@
         font-size: 20px;
         line-height: 29px;
         padding: 0rem 1rem;
+      }
+      .live-stream-create{
+
       }
     }
 
