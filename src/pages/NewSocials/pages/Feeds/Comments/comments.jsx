@@ -123,7 +123,7 @@ const Comment=({ post, shareComment,likePost,trigger,setTrigger,commentText, set
                { trigger?
 
                   <div className='post-comments-all'>
-                        <div className='post-fx-bottom'>
+                        <div className='post-fx-bottom' onClick={()=>setTrigger(false)}>
                           <h5>View all comments</h5>
                           <h6 onClick={()=>setTrigger(false)}><RiArrowDropUpLine /></h6>
                         </div>
@@ -138,7 +138,7 @@ const Comment=({ post, shareComment,likePost,trigger,setTrigger,commentText, set
 
                   </div>
                     :
-                    <div className='post-fx-bottom'>
+                    <div className='post-fx-bottom' onClick={()=>setTrigger(true)}>
                           <h5>View all comments</h5>
                           <h6 onClick={()=>setTrigger(true)}><RiArrowDropDownLine /></h6>
 

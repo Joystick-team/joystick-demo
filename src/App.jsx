@@ -32,10 +32,19 @@ import Followers from "./pages/Follow/Followers";
 import Following from "./pages/Follow/Following";
 import GuestProfilePage from "./pages/NewSocials/pages/Profile/guestProfilePage";
 
+import {
+  LivepeerConfig,
+  createReactClient,
+  studioProvider,
+} from '@livepeer/react';
+
+import { livepeerClient } from "./LiverperrClient";
+
 
 function App() {
   return (
     <div className="App">
+         <LivepeerConfig client={livepeerClient}>
       <Router>
         <ErrorBoundary>
           <AppContextContainer>
@@ -112,6 +121,8 @@ function App() {
           </AppContextContainer>
         </ErrorBoundary>
       </Router>
+
+      </LivepeerConfig>
     </div>
   );
 }

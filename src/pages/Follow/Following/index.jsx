@@ -22,7 +22,7 @@ export default function Following() {
        <div className='following-div'>
           <div className='following-main'>
               <h5 className='following-top'>
-                <CgArrowLongLeft />
+                <CgArrowLongLeft onClick={() => history.go(-1)} />
                 <span>Following</span>
               </h5>
               {followings?.data.length===0?

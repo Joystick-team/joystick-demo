@@ -47,7 +47,7 @@
                 .comment-option-actions{
                     background: rgba(17, 16, 16, 0.99);
                     border-radius: 6.57653px;
-                    width: 190px;
+                    width: 227px;
                     height: 169px;
                     position: absolute;
                     z-index: 9999;
@@ -67,11 +67,18 @@
                          
                         display: flex;
                         flex-direction: column;
-                        align-items: center;
+                        align-items:flex-start;
                         justify-content: center;
+                        padding: 4px 10px 4px 0px;
 
                         h5{
                             display: flex;
+                            justify-content: flex-start;
+                            column-gap: 20px;
+                            width: 100%;
+                            padding:0  4px 4px 0px;
+                            font-weight: 500;
+                            font-size: 11.5089px;
                         }
                     }
 
