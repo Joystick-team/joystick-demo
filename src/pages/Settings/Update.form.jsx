@@ -97,23 +97,16 @@ export const UpdateForm = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        if (profile_update_success) {
-            setShowNotification(true)
-            setShowErrorNotification(false)
-        }
-        if (profile_update_error) {
-             setShowNotification(false)
-            setShowErrorNotification(true)
-        }
-        // profile_update_success&& setShowNotification(true)
-        // profile_update_error&& setShowErrorNotification(true)
+       
+        profile_update_success&& setShowNotification(true)
+        profile_update_error&& setShowErrorNotification(true)
         const timer = setTimeout(() => {
             setShowNotification(false)
-             setShowErrorNotification(false)
+            setShowErrorNotification(false)
 
         }, 4000);
         return ()=>clearTimeout(timer)
-    },[ profile_update_success])
+    },[ profile_update_success, profile_update_error])
 
     useEffect(() => {
         userToken?.access_token && dispatch(profileAction())
@@ -122,7 +115,6 @@ export const UpdateForm = () => {
     },[userToken?.access_token,dispatch])
 
     const handleImageChange = (e,type) => {
-        console.log("fn",type)
         const { files } = e.target;
         
         if (files && files.length > 0) {
@@ -211,12 +203,12 @@ export const UpdateForm = () => {
         setType("text")
         setFocus(false)
     }
-    console.log("coverImg",coverImg);
+    console.log("error",profile_update_error?.toString());
   return (
     <div className='update--container'>
           <h3>Update Profile</h3>
            {
-                profile_updating?"updating":profile_update_success?<p className={!showNotification?"hide":"show"}>Success!</p>:profile_update_error&&<p className={!showErrorNotification?"hide":"show"}>Error occurred!</p>
+              profile_updating ? <p className='show'>Updating profile...</p> : profile_update_success ? <p className={!showNotification ? "hide" : "show"}>Success!</p> : profile_update_error && <p className={!showErrorNotification ? "hide" : "show"}>Error occurred! ( {profile_update_error?.toString() })</p>
             }
           <form onSubmit={handleSubmit}>
               
