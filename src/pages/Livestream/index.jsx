@@ -5,15 +5,23 @@ import LivestreamTab from "./LivestreamTab";
 import CurrentlyOnlineTab from "./CurrentlyOnlineTab";
 import TopStreamersTab from "./TopStreamersTab";
 import GoLive from "./GoLive";
+import LiveModal from "../../component/LiveModal";
 import "./livestream.scss";
 
 const Livestream = () => {
   const TabItems = ["Live Stream", "Currently Online", "Top Streamers"];
   const [activeTab, setActiveTab] = useState("Live Stream");
   const [goLive, setGoLive] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="livestream">
+      <LiveModal
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        setActiveTab={setActiveTab}
+        setGoLive={setGoLive}
+      />
       <div className="tabsandlive">
         <div className="tabs">
           {TabItems.map((tab, i) => (
@@ -29,13 +37,7 @@ const Livestream = () => {
             </button>
           ))}
         </div>
-        <div
-          className="go-live"
-          onClick={() => {
-            setGoLive(!goLive);
-            setActiveTab("Live Stream");
-          }}
-        >
+        <div className="go-live" onClick={() => setModalOpen(true)}>
           <div className="live-icon">
             <BsCameraReelsFill />
           </div>

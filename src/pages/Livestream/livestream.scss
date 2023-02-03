@@ -281,11 +281,9 @@
   }
 
   .live {
-    
-   .modal-live{
+    .modal-live {
       display: none;
     }
-   
 
     .live-video {
       display: flex;
@@ -293,7 +291,7 @@
       gap: 1rem;
       padding: 0.5rem;
 
-      .live-video-player{
+      .live-video-player {
         width: 100%;
         background-color: black;
         height: 602px;
@@ -303,7 +301,7 @@
         object-fit: cover;
       }
 
-      button{
+      button {
         width: 162px;
         height: 34px;
         font-weight: 500;
@@ -320,8 +318,7 @@
         line-height: 29px;
         padding: 0rem 1rem;
       }
-      .live-stream-create{
-
+      .live-stream-create {
       }
     }
 
@@ -491,7 +488,6 @@
               font-weight: 500;
               font-size: 12px;
               line-height: 16px;
-              color: var(--primary-text);
             }
           }
 
