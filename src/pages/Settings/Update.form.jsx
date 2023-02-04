@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux"
 // import PhoneInput from 'react-phone-number-input'
 // import 'react-phone-number-input/style.css'
 
-import PhoneInput from 'react-phone-input-2'
+import RPI from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import Select from 'react-select'
+import RS from 'react-select'
 import countryList from 'react-select-country-list'
-import chroma from 'chroma-js';
+// import chroma from 'chroma-js';
 
 import { UpdateAlert } from '../../component/Alerts/UpdateAlert'
 
@@ -20,6 +20,8 @@ import "./Update.form.css"
 
 
 export const UpdateForm = () => {
+    const ReactSelect = (RS).default ? (RS).default : RS;
+    const ReactPhoneInput = RPI.default ? RPI.default : RPI;
 
     const { profile_data } = useSelector(state => state.profile)
     const { userToken } = useSelector(state => state.signin)
@@ -251,7 +253,7 @@ export const UpdateForm = () => {
                     <div className='phone--container'>
                         <label>Phone number</label>
                         {/* <input/> */}
-                        <PhoneInput
+                        < ReactPhoneInput
                             country="ng"
                             value={phone}
                             onChange={call => setPhone(call)}
@@ -264,7 +266,7 @@ export const UpdateForm = () => {
                   </div>
               <div className='location--container'>
                   <label>Location</label>
-                  <Select
+                  <ReactSelect
                       options={options}
                       value={location}
                       onChange={changeLocationHandler}
