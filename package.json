@@ -43,7 +43,7 @@
     "redux-thunk": "^2.4.2",
     "sass": "^1.49.9",
     "scss": "^0.2.4",
-    "serve": "^14.0.1",
+    "serve": "^14.1.2",
     "slick-carousel": "^1.8.1",
     "socket.io-client": "^4.5.4",
     "styled-components": "^5.3.5",
@@ -53,7 +53,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+
+    "serve": "npx serve dist/"
   },
   "eslintConfig": {
     "extends": [
