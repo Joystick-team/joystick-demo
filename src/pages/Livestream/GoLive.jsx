@@ -59,8 +59,8 @@ const GoLive = () => {
            <button onClick={openModal}>Create stream</button>
             :
           <p>{stream?.name}</p>
-           }
-         {/* <div className="live-stream-create">
+           } 
+         {/*  <div className="live-stream-create">
           
          </div> */}
       </div>
