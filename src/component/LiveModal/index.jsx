@@ -1,7 +1,8 @@
 import "./livemodal.scss";
 
-const LiveModal = ({ modalOpen, setModalOpen, setActiveTab, setGoLive }) => {
+const LiveModal = ({ modalOpen, setModalOpen, setActiveTab, setGoLive , createLivestream,setStreamName}) => {
   const handleClick = () => {
+    createLivestream()
     setGoLive(true);
     setActiveTab("Live Stream");
     setModalOpen(false);
@@ -15,7 +16,7 @@ const LiveModal = ({ modalOpen, setModalOpen, setActiveTab, setGoLive }) => {
         </div>
         <div className="flex-stream-name">
           <p>Stream name</p>
-          <input type="text" />
+          <input type="text" onChange={(e)=>setStreamName(e.target.value)}/>
         </div>
 
         <div className="stream-period">
