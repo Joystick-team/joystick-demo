@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux"
 // import PhoneInput from 'react-phone-number-input'
 // import 'react-phone-number-input/style.css'
 
-import PhoneInput from 'react-phone-input-2'
+import RPI from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
-import Select from 'react-select'
+import RS from 'react-select'
 import countryList from 'react-select-country-list'
-import chroma from 'chroma-js';
+// import chroma from 'chroma-js';
 
 import { UpdateAlert } from '../../component/Alerts/UpdateAlert'
 
@@ -20,6 +20,8 @@ import "./Update.form.css"
 
 
 export const UpdateForm = () => {
+    const ReactSelect = (RS).default ? (RS).default : RS;
+    const ReactPhoneInput = RPI.default ? RPI.default : RPI;
 
     const { profile_data } = useSelector(state => state.profile)
     const { userToken } = useSelector(state => state.signin)
@@ -35,6 +37,7 @@ export const UpdateForm = () => {
     const [focus, setFocus] = useState(false)
     
     const [showNotification, setShowNotification ] = useState(false)
+    const [showErrorNotification, setShowErrorNotification ] = useState(false)
 
     const [first_name,setFirstname] = useState("")
     const [last_name, setLastname] = useState("")
@@ -55,6 +58,7 @@ export const UpdateForm = () => {
     const [test, setTest] = useState(null)
     const [fileName, setFileName] = useState("")
     const [fileType, setFileType] = useState("")
+    const [coverImg,setCoverImg] = useState("")
 
     const options = useMemo(() => countryList().getData(), [])
     
@@ -89,17 +93,22 @@ export const UpdateForm = () => {
         setFirstname(data?.first_name)
         setLastname(data?.last_name)
         setLocation(data?.location)
+        setCover(data?.cover?.url)
     }
    
     const dispatch = useDispatch()
 
     useEffect(() => {
+       
         profile_update_success&& setShowNotification(true)
+        profile_update_error&& setShowErrorNotification(true)
         const timer = setTimeout(() => {
             setShowNotification(false)
+            setShowErrorNotification(false)
+
         }, 4000);
         return ()=>clearTimeout(timer)
-    },[ profile_update_success])
+    },[ profile_update_success, profile_update_error])
 
     useEffect(() => {
         userToken?.access_token && dispatch(profileAction())
@@ -108,12 +117,14 @@ export const UpdateForm = () => {
     },[userToken?.access_token,dispatch])
 
     const handleImageChange = (e,type) => {
-        console.log("fn",type)
         const { files } = e.target;
-        console.log("files",files[0])
+        
         if (files && files.length > 0) {
             // setFileName(files[0].name)
             // setFileType(files[0].type)
+            if (type === "cover") {
+                setCoverImg(files[0])
+            }
             const reader = new FileReader();
             reader.readAsDataURL(files[0]);
             reader.addEventListener("load", () => {
@@ -175,7 +186,7 @@ export const UpdateForm = () => {
         formData.append("phone", "+".concat(phone) );
         formData.append("date", date);
         formData.append("gender", gender);
-        formData.append("cover", cover);
+        formData.append("cover", coverImg);
         formData.append("avatar", avatar);
         // formData.append("avatar", avatar);
         formData.append("bio", bio);
@@ -194,12 +205,12 @@ export const UpdateForm = () => {
         setType("text")
         setFocus(false)
     }
-    console.log("date",date);
+    console.log("error",profile_update_error?.toString());
   return (
     <div className='update--container'>
           <h3>Update Profile</h3>
            {
-                profile_updating?"updating":profile_update_success?<p className={!showNotification?"hide":"show"}>Success!</p>:profile_update_error&&"error"
+              profile_updating ? <p className='show'>Updating profile...</p> : profile_update_success ? <p className={!showNotification ? "hide" : "show"}>Success!</p> : profile_update_error && <p className={!showErrorNotification ? "hide" : "show"}>Error occurred! ( {profile_update_error?.toString() })</p>
             }
           <form onSubmit={handleSubmit}>
               
@@ -242,7 +253,7 @@ export const UpdateForm = () => {
                     <div className='phone--container'>
                         <label>Phone number</label>
                         {/* <input/> */}
-                        <PhoneInput
+                        < ReactPhoneInput
                             country="ng"
                             value={phone}
                             onChange={call => setPhone(call)}
@@ -255,7 +266,7 @@ export const UpdateForm = () => {
                   </div>
               <div className='location--container'>
                   <label>Location</label>
-                  <Select
+                  <ReactSelect
                       options={options}
                       value={location}
                       onChange={changeLocationHandler}
