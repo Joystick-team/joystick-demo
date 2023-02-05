@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Settings_Nav from "./Settings_Nav"
 import { UpdateAccountData, EditAccountData, SecurityData } from './Account.data';
 import { profileFormAction } from '../../Actions/profileForm.Action';
@@ -14,7 +14,7 @@ export default function Settings() {
   const { open } = useSelector(state => state.updateProfile)
   const { openUpdateForm } = useSelector(state => state.updateForm)
   const { profile_data } = useSelector(state => state.profile)
-  
+
   const dispatch = useDispatch()
   
   
@@ -49,7 +49,7 @@ export default function Settings() {
     },
     {
       id: "Notifications",
-      title:"Notifications"
+      title: "Notifications"
     },
   ]
   useEffect(() => {
