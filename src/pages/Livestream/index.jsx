@@ -30,6 +30,7 @@ const Livestream = () => {
      
      }
 
+      console.log(stream)
 
   return (
     <div className="livestream">
@@ -40,6 +41,7 @@ const Livestream = () => {
         setGoLive={setGoLive}
         createLivestream={createLivestream}
         setStreamName={setStreamName}
+        stream={stream}
       />
       <div className="tabsandlive">
         <div className="tabs">
