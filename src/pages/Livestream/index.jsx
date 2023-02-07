@@ -7,12 +7,30 @@ import TopStreamersTab from "./TopStreamersTab";
 import GoLive from "./GoLive";
 import LiveModal from "../../component/LiveModal";
 import "./livestream.scss";
+import { useCreateStream} from '@livepeer/react';
 
 const Livestream = () => {
   const TabItems = ["Live Stream", "Currently Online", "Top Streamers"];
   const [activeTab, setActiveTab] = useState("Live Stream");
   const [goLive, setGoLive] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+
+  const [streamName, setStreamName] = useState('');
+  const {
+      mutate: createStream,
+      data: stream,
+      status,
+    } = useCreateStream({ name: streamName });
+   
+ 
+
+    const createLivestream=async()=>{
+     
+      createStream?.();
+     
+     }
+
+      console.log(stream)
 
   return (
     <div className="livestream">
@@ -21,6 +39,9 @@ const Livestream = () => {
         setModalOpen={setModalOpen}
         setActiveTab={setActiveTab}
         setGoLive={setGoLive}
+        createLivestream={createLivestream}
+        setStreamName={setStreamName}
+        stream={stream}
       />
       <div className="tabsandlive">
         <div className="tabs">
@@ -59,7 +80,7 @@ const Livestream = () => {
 
       {activeTab === "Live Stream" ? (
         goLive ? (
-          <GoLive />
+          <GoLive stream={stream}/>
         ) : (
           <LivestreamTab />
         )
