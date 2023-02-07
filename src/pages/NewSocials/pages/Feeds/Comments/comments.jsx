@@ -79,7 +79,9 @@ const Comment=({ post, shareComment,likePost,trigger,setTrigger,commentText, set
       <main className='comment-post-div'>
          <div className='post-text-div'>
             
-               <h5 className='post-handle'> <span>@{post?.user?.username}</span></h5>
+               <h5 className='post-handle'>
+                   {/* <span>@{post?.user?.username}</span> */}
+               </h5>
                <p className=''>
                  <span>{post?.text}.</span>
                   {/* {
