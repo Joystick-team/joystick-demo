@@ -5,7 +5,7 @@ The Freetyl application/platform (formerly Joystick) is a gamefi platform that i
  2. A social network for gamers and content creators to communicate with one another
  3.  A live stream application to stream contents
 
-### Table of Milestone``
+### Table of Milestone
 | Milestones      | Links/Deliverables |
 | ---------------- | ---------------- |
 | Complete Social Media and Streaming app development     | [Freetyl](https://testnet.freetyl.io/)       |
