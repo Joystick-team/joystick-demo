@@ -8,6 +8,7 @@ import { MdNotifications } from "react-icons/md";
 import JOYSTICK from "../../../assets/images/JOYSTICK-logo.png";
 import JOYSTICK2 from "../../../assets/images/JOYSTICK-light.png";
 import ThemeToggle from '../../ThemeToggle';
+import NearConnectButton from "../../NearWalletConnect";
 
 import "./topnav.scss";
 import { useTheme } from "../../../ThemeContext";
@@ -99,7 +100,8 @@ export default function TopNav() {
           <SearchBox />
         </div>
         <AuthButton />
-         <ConnectButton className="btn-connect" color="danger" title="Connect" />
+         {/* <ConnectButton className="btn-connect" color="danger" title="Connect" /> */}
+         <NearConnectButton className="btn-connect" color="danger" title="Connect" />
       </Container>
     </div>
   );
