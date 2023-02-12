@@ -14,6 +14,7 @@ import { NavLink } from 'react-router-dom'
 import { useTheme } from '../../../ThemeContext'
 import ConnectButton from '../../ConnectButton'
 import AuthButton from '../../../pages/Auth/AuthButton'
+import NearConnectButton from '../../NearWalletConnect'
 
 export default function SideNav() {
     const [showSearch, setShowSearch] = useState(false);
@@ -103,7 +104,9 @@ export default function SideNav() {
                             <br />
                             <div className="footer-nav-side">
                             <div className="mobile-connect-btn" expand={false}>
-                                <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{width: '100%', borderRadius: '12px'}} color="danger" title='Connect'/>
+                                {/* <ConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{width: '100%', borderRadius: '12px'}} color="danger" title='Connect'/> */}
+
+                                <NearConnectButton className='btn-connect' icon={<BsCurrencyBitcoin />} style={{width: '100%', borderRadius: '12px'}} color="danger" title='Connect'/>
                             </div>
                             <Link to="/u/wallet" className={ pathname === '/u/wallet' && `active`}><FaWallet /> <span>Wallet</span></Link>
                             <Link to="/u/settings" className={ pathname === '/u/settings' && `active`}><BsGearWideConnected /> <span>Settings</span></Link>

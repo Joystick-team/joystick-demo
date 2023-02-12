@@ -39,11 +39,13 @@ import {
 } from '@livepeer/react';
 
 import { livepeerClient } from "./LiverperrClient";
-
+import { Provider } from "react-redux";
+import store from './store'
 
 function App() {
   return (
     <div className="App">
+       < Provider store={store} >
          <LivepeerConfig client={livepeerClient}>
       <Router>
         <ErrorBoundary>
@@ -123,6 +125,7 @@ function App() {
       </Router>
 
       </LivepeerConfig>
+      </Provider>
     </div>
   );
 }
