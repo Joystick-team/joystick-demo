@@ -20,6 +20,9 @@ import Socials from "./pages/Socials";
 import Store from "./pages/Store";
 import TestPage from "./pages/TestPage";
 import Wallet from "./pages/Wallet";
+import Wallet2 from "./pages/Wallet2";
+import Send from "./pages/Wallet2/Send";
+import Receive from "./pages/Wallet2/Receive";
 import { ThemeProvider } from "./ThemeContext";
 import NewSocials from "./pages/NewSocials";
 import Feeds from "./pages/NewSocials/pages/Feeds";
@@ -36,92 +39,104 @@ import {
   LivepeerConfig,
   createReactClient,
   studioProvider,
-} from '@livepeer/react';
+} from "@livepeer/react";
 
 import { livepeerClient } from "./LiverperrClient";
-
 
 function App() {
   return (
     <div className="App">
-         <LivepeerConfig client={livepeerClient}>
-      <Router>
-        <ErrorBoundary>
-          <AppContextContainer>
-            <ThemeProvider>
-              <Layout>
-                <Routes>
-                  <Route exact path="/" element={<LandingPage />} />
-                  <Route exact path="/page/:id" element={<LandingPage />} />
-                  <Route exact path="/home" element={<HomePage />} />
-                  {/* <Route path='/socials' element={<Socials />} /> */}
-                  <Route path="/test" element={<TestPage />} />
-                  <Route
-                    exact
-                    path="/notifications"
-                    element={<Notifications />}
-                  />
+      <LivepeerConfig client={livepeerClient}>
+        <Router>
+          <ErrorBoundary>
+            <AppContextContainer>
+              <ThemeProvider>
+                <Layout>
+                  <Routes>
+                    <Route exact path="/" element={<LandingPage />} />
+                    <Route exact path="/page/:id" element={<LandingPage />} />
+                    <Route exact path="/home" element={<HomePage />} />
+                    {/* <Route path='/socials' element={<Socials />} /> */}
+                    <Route path="/test" element={<TestPage />} />
+                    <Route
+                      exact
+                      path="/notifications"
+                      element={<Notifications />}
+                    />
 
-                  <Route path="/store" element={<Store />} />
-                  {/* <Route path="/livestream" element={<Livescream />} /> */}
-                  <Route path="/library" element={<Library />} />
-                  <Route path="u/settings" element={<Settings />} />
-                  <Route path="u/wallet" element={<Wallet />} />
-                  <Route exact path="/leaderboard" element={<Leaderboard />} />
-                  <Route exact path="/staking" element={<Staking />} />
-                  <Route exact path="/rewards" element={<Rewards />} />
-                  <Route exact path="/message" element={<Message />} />
-                  <Route exact path="*" element={<ErrorPage />} />
+                    <Route path="/store" element={<Store />} />
+                    {/* <Route path="/livestream" element={<Livescream />} /> */}
+                    <Route path="/library" element={<Library />} />
+                    <Route path="u/settings" element={<Settings />} />
+                    <Route path="u/wallet" element={<Wallet2 />} />
+                    <Route path="u/wallet/send" element={<Send />} />
+                    <Route path="u/wallet/receive" element={<Receive />} />
+                    <Route
+                      exact
+                      path="/leaderboard"
+                      element={<Leaderboard />}
+                    />
+                    <Route exact path="/staking" element={<Staking />} />
+                    <Route exact path="/rewards" element={<Rewards />} />
+                    <Route exact path="/message" element={<Message />} />
+                    <Route exact path="*" element={<ErrorPage />} />
 
-                  <Route exact path="/test" element={<TestPage />} />
-                  <Route path="/store" element={<Store />} />
-                  <Route exact path="/livestream" element={<Livestream />} />
-                  <Route
-                    exact
-                    path="/livestream/:url"
-                    element={<WebinarCall />}
-                  />
-                  <Route path="/library" element={<Library />} />
-                  <Route path="u/settings" element={<Settings />} />
-                  <Route path="u/wallet" element={<Wallet />} />
-                  <Route exact path="/leaderboard" element={<Leaderboard />} />
-                  <Route exact path="/staking" element={<Staking />} />
-                  <Route exact path="/rewards" element={<Rewards />} />
-                  <Route exact path="/message" element={<Message />} />
-                  <Route exact path="/socials" element={<NewSocials />}>
-                    <Route exact path="" element={<Feeds />} />
+                    <Route exact path="/test" element={<TestPage />} />
+                    <Route path="/store" element={<Store />} />
+                    <Route exact path="/livestream" element={<Livestream />} />
+                    <Route
+                      exact
+                      path="/livestream/:url"
+                      element={<WebinarCall />}
+                    />
+                    <Route path="/library" element={<Library />} />
+                    <Route path="u/settings" element={<Settings />} />
+                    {/* <Route path="u/wallet" element={<Wallet />} /> */}
+                    <Route
+                      exact
+                      path="/leaderboard"
+                      element={<Leaderboard />}
+                    />
+                    <Route exact path="/staking" element={<Staking />} />
+                    <Route exact path="/rewards" element={<Rewards />} />
+                    <Route exact path="/message" element={<Message />} />
+                    <Route exact path="/socials" element={<NewSocials />}>
+                      <Route exact path="" element={<Feeds />} />
 
-                    <Route exact path="profile" element={<Profile />}>
-                      <Route exact element={<ProfileContents />}>
-                        <Route exact path="" element={<Posts />} />
+                      <Route exact path="profile" element={<Profile />}>
+                        <Route exact element={<ProfileContents />}>
+                          <Route exact path="" element={<Posts />} />
 
-                        <Route exact path="streams" element={<Streams />} />
+                          <Route exact path="streams" element={<Streams />} />
+                        </Route>
                       </Route>
                     </Route>
-                  </Route>
 
-                   
+                    <Route
+                      exact
+                      path="/following/:id"
+                      element={<Following />}
+                    />
+                    <Route exact path="followers/:id" element={<Followers />} />
 
-                  <Route exact path="/following/:id" element={<Following />} />
-                  <Route exact path="followers/:id" element={<Followers />} />
-                   
-                  <Route exact path="guestProfile" element={<GuestProfilePage  />}>
+                    <Route
+                      exact
+                      path="guestProfile"
+                      element={<GuestProfilePage />}
+                    >
                       {/* <Route exact element={<ProfileContents />}>
                         <Route exact path="" element={<Posts />} />
 
                         <Route exact path="streams" element={<Streams />} />
                       </Route>
                     </Route> */}
-                  </Route>
-
-
-                </Routes>
-              </Layout>
-            </ThemeProvider>
-          </AppContextContainer>
-        </ErrorBoundary>
-      </Router>
-
+                    </Route>
+                  </Routes>
+                </Layout>
+              </ThemeProvider>
+            </AppContextContainer>
+          </ErrorBoundary>
+        </Router>
       </LivepeerConfig>
     </div>
   );

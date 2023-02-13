@@ -37,6 +37,7 @@ specifiers:
   react-phone-input-2: ^2.15.1
   react-phone-number-input: ^3.2.16
   react-player: ^2.10.1
+  react-qr-code: ^2.0.11
   react-redux: ^8.0.5
   react-router-bootstrap: ^0.26.2
   react-router-dom: ^6.2.1
@@ -87,6 +88,7 @@ dependencies:
   react-phone-input-2: 2.15.1_sfoxds7t5ydpegc3knd667wn6m
   react-phone-number-input: 3.2.16_sfoxds7t5ydpegc3knd667wn6m
   react-player: 2.11.0_react@17.0.2
+  react-qr-code: 2.0.11_react@17.0.2
   react-redux: 8.0.5_ykxqnxanlq42xavzz22bjdrwni
   react-router-bootstrap: 0.26.2_t6ekzhlf2ljwyljbkzj7bjxg2a
   react-router-dom: 6.7.0_sfoxds7t5ydpegc3knd667wn6m
@@ -10010,6 +10012,10 @@ packages:
     engines: {node: '>=0.6.0', teleport: '>=0.2.0'}
     dev: false
 
+  /qr.js/0.0.0:
+    resolution: {integrity: sha512-c4iYnWb+k2E+vYpRimHqSu575b1/wKl4XFeJGpFmrJQz5I88v9aY2czh7s0w36srfCM1sXgC/xpoJz5dJfq+OQ==}
+    dev: false
+
   /qrcode.react/3.1.0_react@17.0.2:
     resolution: {integrity: sha512-oyF+Urr3oAMUG/OiOuONL3HXM+53wvuH3mtIWQrYmsXoAq0DkvZp2RYUWFSMFtbdOpuS++9v+WAkzNVkMlNW6Q==}
     peerDependencies:
@@ -10848,6 +10854,20 @@ packages:
       react-dom: 17.0.2_react@17.0.2
       react-fast-compare: 3.2.0
       warning: 4.0.3
+    dev: false
+
+  /react-qr-code/2.0.11_react@17.0.2:
+    resolution: {integrity: sha512-P7mvVM5vk9NjGdHMt4Z0KWeeJYwRAtonHTghZT2r+AASinLUUKQ9wfsGH2lPKsT++gps7hXmaiMGRvwTDEL9OA==}
+    peerDependencies:
+      react: ^16.x || ^17.x || ^18.x
+      react-native-svg: '*'
+    peerDependenciesMeta:
+      react-native-svg:
+        optional: true
+    dependencies:
+      prop-types: 15.8.1
+      qr.js: 0.0.0
+      react: 17.0.2
     dev: false
 
   /react-redux/8.0.5_ykxqnxanlq42xavzz22bjdrwni:

@@ -1,0 +1,69 @@
+.transaction-history {
+  margin-top: 0.7rem;
+
+  table {
+    width: 100%;
+
+    thead {
+      height: 50px;
+
+      tr > th {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        color: var(--send-and-receive-text);
+
+        input {
+          width: fit-content;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        height: 50px;
+        border-bottom: 1px solid var(--secondary-background);
+
+        td {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 140%;
+          letter-spacing: 0.2px;
+          color: var(--send-and-receive-text);
+
+          &.completed {
+            color: #0afb05;
+          }
+
+          .flex-coin-label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            p {
+              margin: 0;
+              font-family: "Inter";
+              font-style: normal;
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 140%;
+              letter-spacing: 0.2px;
+              color: var(--send-and-receive-text);
+            }
+
+            img {
+              width: 18px;
+              height: 18px;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

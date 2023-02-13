@@ -35,6 +35,13 @@ html {
 
   // End
 
+  // Wallet
+  --balance-text: #151515;
+  --send-and-receive-text: #151515;
+  --rate-percent: rgba(22, 21, 21, 0.6);
+  --send-amount: rgba(22, 21, 21, 0.6);
+  // End
+
   // social-Feed
   --tabs-background: #eeecec;
   --tabs-text: #151515;
@@ -102,6 +109,13 @@ html[data-theme="dark"] {
   --top-streamer-follower-text: rgba(211, 205, 205, 0.9);
   --badge-yellow: #ffca0d;
   --menu-icon: #c4c4c4;
+  // End
+
+  // Wallet
+  --balance-text: #f0f0f0;
+  --send-and-receive-text: #e8e8e8;
+  --rate-percent: #cdcdcd;
+  --send-amount: #a4a4a4;
   // End
 
   --mobile-titlebar: #1d1c1c;
