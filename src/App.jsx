@@ -42,102 +42,114 @@ import {
 } from "@livepeer/react";
 
 import { livepeerClient } from "./LiverperrClient";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
     <div className="App">
-      <LivepeerConfig client={livepeerClient}>
-        <Router>
-          <ErrorBoundary>
-            <AppContextContainer>
-              <ThemeProvider>
-                <Layout>
-                  <Routes>
-                    <Route exact path="/" element={<LandingPage />} />
-                    <Route exact path="/page/:id" element={<LandingPage />} />
-                    <Route exact path="/home" element={<HomePage />} />
-                    {/* <Route path='/socials' element={<Socials />} /> */}
-                    <Route path="/test" element={<TestPage />} />
-                    <Route
-                      exact
-                      path="/notifications"
-                      element={<Notifications />}
-                    />
+      <Provider store={store}>
+        <LivepeerConfig client={livepeerClient}>
+          <Router>
+            <ErrorBoundary>
+              <AppContextContainer>
+                <ThemeProvider>
+                  <Layout>
+                    <Routes>
+                      <Route exact path="/" element={<LandingPage />} />
+                      <Route exact path="/page/:id" element={<LandingPage />} />
+                      <Route exact path="/home" element={<HomePage />} />
+                      {/* <Route path='/socials' element={<Socials />} /> */}
+                      <Route path="/test" element={<TestPage />} />
+                      <Route
+                        exact
+                        path="/notifications"
+                        element={<Notifications />}
+                      />
 
-                    <Route path="/store" element={<Store />} />
-                    {/* <Route path="/livestream" element={<Livescream />} /> */}
-                    <Route path="/library" element={<Library />} />
-                    <Route path="u/settings" element={<Settings />} />
-                    <Route path="u/wallet" element={<Wallet2 />} />
-                    <Route path="u/wallet/send" element={<Send />} />
-                    <Route path="u/wallet/receive" element={<Receive />} />
-                    <Route
-                      exact
-                      path="/leaderboard"
-                      element={<Leaderboard />}
-                    />
-                    <Route exact path="/staking" element={<Staking />} />
-                    <Route exact path="/rewards" element={<Rewards />} />
-                    <Route exact path="/message" element={<Message />} />
-                    <Route exact path="*" element={<ErrorPage />} />
+                      <Route path="/store" element={<Store />} />
+                      {/* <Route path="/livestream" element={<Livescream />} /> */}
+                      <Route path="/library" element={<Library />} />
+                      <Route path="u/settings" element={<Settings />} />
+                      <Route path="u/wallet" element={<Wallet2 />} />
+                      <Route path="u/wallet/send" element={<Send />} />
+                      <Route path="u/wallet/receive" element={<Receive />} />
+                      <Route
+                        exact
+                        path="/leaderboard"
+                        element={<Leaderboard />}
+                      />
+                      <Route exact path="/staking" element={<Staking />} />
+                      <Route exact path="/rewards" element={<Rewards />} />
+                      <Route exact path="/message" element={<Message />} />
+                      <Route exact path="*" element={<ErrorPage />} />
 
-                    <Route exact path="/test" element={<TestPage />} />
-                    <Route path="/store" element={<Store />} />
-                    <Route exact path="/livestream" element={<Livestream />} />
-                    <Route
-                      exact
-                      path="/livestream/:url"
-                      element={<WebinarCall />}
-                    />
-                    <Route path="/library" element={<Library />} />
-                    <Route path="u/settings" element={<Settings />} />
-                    {/* <Route path="u/wallet" element={<Wallet />} /> */}
-                    <Route
-                      exact
-                      path="/leaderboard"
-                      element={<Leaderboard />}
-                    />
-                    <Route exact path="/staking" element={<Staking />} />
-                    <Route exact path="/rewards" element={<Rewards />} />
-                    <Route exact path="/message" element={<Message />} />
-                    <Route exact path="/socials" element={<NewSocials />}>
-                      <Route exact path="" element={<Feeds />} />
+                      <Route exact path="/test" element={<TestPage />} />
+                      <Route path="/store" element={<Store />} />
+                      <Route
+                        exact
+                        path="/livestream"
+                        element={<Livestream />}
+                      />
+                      <Route
+                        exact
+                        path="/livestream/:url"
+                        element={<WebinarCall />}
+                      />
+                      <Route path="/library" element={<Library />} />
+                      <Route path="u/settings" element={<Settings />} />
+                      {/* <Route path="u/wallet" element={<Wallet />} /> */}
+                      <Route
+                        exact
+                        path="/leaderboard"
+                        element={<Leaderboard />}
+                      />
+                      <Route exact path="/staking" element={<Staking />} />
+                      <Route exact path="/rewards" element={<Rewards />} />
+                      <Route exact path="/message" element={<Message />} />
+                      <Route exact path="/socials" element={<NewSocials />}>
+                        <Route exact path="" element={<Feeds />} />
 
-                      <Route exact path="profile" element={<Profile />}>
-                        <Route exact element={<ProfileContents />}>
-                          <Route exact path="" element={<Posts />} />
+                        <Route exact path="profile" element={<Profile />}>
+                          <Route exact element={<ProfileContents />}>
+                            <Route exact path="" element={<Posts />} />
 
-                          <Route exact path="streams" element={<Streams />} />
+                            <Route exact path="streams" element={<Streams />} />
+                          </Route>
                         </Route>
                       </Route>
-                    </Route>
 
-                    <Route
-                      exact
-                      path="/following/:id"
-                      element={<Following />}
-                    />
-                    <Route exact path="followers/:id" element={<Followers />} />
+                      <Route
+                        exact
+                        path="/following/:id"
+                        element={<Following />}
+                      />
+                      <Route
+                        exact
+                        path="followers/:id"
+                        element={<Followers />}
+                      />
 
-                    <Route
-                      exact
-                      path="guestProfile"
-                      element={<GuestProfilePage />}
-                    >
-                      {/* <Route exact element={<ProfileContents />}>
+                      <Route
+                        exact
+                        path="guestProfile"
+                        element={<GuestProfilePage />}
+                      >
+                        {/* <Route exact element={<ProfileContents />}>
                         <Route exact path="" element={<Posts />} />
 
                         <Route exact path="streams" element={<Streams />} />
                       </Route>
                     </Route> */}
-                    </Route>
-                  </Routes>
-                </Layout>
-              </ThemeProvider>
-            </AppContextContainer>
-          </ErrorBoundary>
-        </Router>
-      </LivepeerConfig>
+                      </Route>
+                    </Routes>
+                  </Layout>
+                </ThemeProvider>
+              </AppContextContainer>
+            </ErrorBoundary>
+          </Router>
+        </LivepeerConfig>
+      </Provider>
     </div>
   );
 }
